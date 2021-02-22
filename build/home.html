@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <!-- Favicon-->
+  <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="manifest" href="favicons/site.webmanifest">
+  <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- CSS-->
+  <link rel="stylesheet" href="css/main.css">
+  <title>Glass Proekt | Home</title>
+</head>
+
+<body class="webpage">
+  <div style="display: none">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <symbol id="arrow-down">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.686 24.713h-.001a.962.962 0 01-1.37 0L.281 19.61a.983.983 0 01.003-1.381.962.962 0 011.369.003l3.378 3.426V.977C5.032.437 5.466 0 6 0c.535 0 .968.437.968.977v20.681l3.378-3.426a.962.962 0 011.369-.003c.379.38.38.999.003 1.381l-5.032 5.103z" />
+      </symbol>
+      <symbol id="chevron">
+        <path d="M.5 1L14 14.5.5 28" fill="none" stroke-width="2" />
+      </symbol>
+      <symbol id="marker">
+        <circle cx="17" cy="17" r="17" fill="#677B83" />
+        <circle cx="17" cy="17" r="5.1" fill="#F9F9F9" />
+      </symbol>
+      <symbol id="wood" viewBox="0 0 30 34">
+        <path stroke="#677B83" d="M14.659 33.074v-22m.242 5.571l5-3m-5 6.858l-5-3m13.758 7.071c-3.6 1.6-7.5 0-9-1-3.334.666-10.6.7-13-4.5-2.4-5.2 2.333-9.167 5-10.5.166-2.334 2.1-7.1 8.5-7.5 8-.5-.5 1.5 8.5 7.5s4.5 14 0 16z" />
+      </symbol>
+    </svg>
+  </div>
+  <header class="header">
+    <img src="img/__header.png" width="1440" height="100" alt="">
+    <!--.header__inner
+      +logo(isHome, 'header__logo')
+      
+      button.header__menu-toggle.menu-toggle(type="button")
+      	span.visually-hidden Menu
+      -->
+  </header>
+  <main>
+    <!-- Plan-->
+    <section class="plan">
+      <div class="plan__wrapper">
+        <div class="plan__title">Светопрозрачные конструкции</div>
+        <div class="plan__image">
+          <img src="img/plan.jpg" alt="">
+        </div>
+      </div>
+      <a class="plan__anchor" href="#">
+        <svg width="12" height="25">
+          <use xlink:href="#arrow-down"></use>
+        </svg>
+      </a>
+      <div class="plan-card plan__caption">
+        <div class="plan-card__image">
+          <img src="img/plan/item-1.jpg" alt="" />
+        </div>
+        <div class="plan-card__content">
+          <div class="plan-card__digit">07</div>
+          <a class="plan-card__link" href="#" target="_blank">
+            <span>Зимний сад в коттедже под Москвой</span>
+            <svg width="15" height="29">
+              <use xlink:href="#chevron"></use>
+            </svg>
+          </a>
+          <div class="plan-card__date">Проект 2019 года</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__inner container">
+      <!--+social('footer__social', ['facebook', 'twitter', 'google-plus', 'linkedin-original'])-->
+    </div>
+  </footer>
+  <section class="popup popup--thanks" id="thanks" style="display: none">
+    <div class="popup__title">Thanks!</div>
+  </section>
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.pagepiling.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/packery-mode.pkgd.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

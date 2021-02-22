@@ -1,0 +1,10 @@
+mixin plan-card(className, image, digit, href, title, date)
+	.plan-card(class=className)
+		.plan-card__image
+			img(src='img/plan/' + image, alt='')
+		.plan-card__content
+			.plan-card__digit= digit
+			a.plan-card__link(href=href, target='_blank')
+				span= title
+				+icon('chevron')(width="15", height="29")
+			.plan-card__date= date
