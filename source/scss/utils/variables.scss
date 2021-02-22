@@ -13,7 +13,11 @@ $color-default-black: #000000;
 //$color-smoky2: #f2f2f2;
 //$color-smoky3: #fbfaf6;
 
-$color-dark: #272727;
+$color-dark: #111c20;
+$color-dark2: #172328;
+$color-dark3: #1e2e34;
+
+$color-pale-sky: #677b83;
 
 $color-base: $color-default-black; // основной цвет текста, используется в миксине text()
 
@@ -55,9 +59,9 @@ $containerMaxWidths: (
 	sm: 540px,
 	md: 720px,
 	lg: 960px,
-	xl: 1140px,
-	xxl: 1140px,
-	xxx: 1140px,
+	xl: 990px,
+	xxl: 990px,
+	xxx: 990px,
 ) !default;
 
 // Retina

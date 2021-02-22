@@ -1,4 +1,41 @@
 footer.footer
 	.footer__inner.container
+		.footer__title.heading.heading--small О компании
+		.footer__wrapper
+			.footer__col
+				a.footer__link(href= URLS.about) О Компании
+				a.footer__link(href= URLS.production) Производство
 
-		//+social('footer__social', ['facebook', 'twitter', 'google-plus', 'linkedin-original'])
+			.footer__col
+				a.footer__link(href= URLS.office) Офис
+				a.footer__link(href= URLS.customers) Клиенты
+
+			.footer__col
+				a.footer__link(href= URLS.certificates) Сертификаты
+				a.footer__link(href= URLS.reviews) Отзывы
+
+			.footer__col
+				a.footer__link(href= URLS.projects) Проекты
+				a.footer__link(href= URLS.news) Новости
+
+		.footer__wrapper
+			.footer__col
+				a.footer__link(href= URLS.partnerProgram) Партнерская программа
+				a.footer__link(href= URLS.materials) Материалы
+
+			.footer__col
+				a.footer__link(href= URLS.suppliers) Поставщики
+				a.footer__link(href= URLS.wiki) WIKI-база знаний
+
+			.footer__col
+				a.footer__link(href= URLS.contact) Контакты
+
+			.footer__col
+				+social('footer__social', ['facebook', 'instagram'])
+
+		.footer__wrapper.footer__wrapper--bottom
+			.footer__copy © 2007 – 2020 ООО «Гласс Проект»; ОГРН 110507400256; ИНН 1105074002560
+			a.footer__privacy(href="#") Политика конфиденциальности
+			.footer__developer
+				a(href="#") Developed by
+				+icon('bofer')(width="38", height="12")

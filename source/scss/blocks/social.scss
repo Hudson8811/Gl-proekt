@@ -6,25 +6,26 @@
 	flex-wrap: wrap;
 
 	&__item + &__item {
-		margin-left: 28px;
+		margin-left: 21px;
 	}
 
 	&__link {
 		display: flex;
-		width: 17px;
-		height: 17px;
+		width: 29px;
+		height: 29px;
 		justify-content: center;
 
 		svg {
 			display: block;
 			align-self: center;
 			fill: $color-default-white;
+
 			@include transition(fill);
 		}
 
 		@include hover {
 			svg {
-				//fill: $color-yellow;
+				fill: $color-pale-sky;
 			}
 		}
 	}
