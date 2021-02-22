@@ -1,0 +1,26 @@
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+@import "swiper-bundle.css";
+// @import "jquery.pagepiling.css";
+@import "jquery.fancybox.css";
+
+@import "common/fonts";
+@import "utils/normalize";
+@import "common/global";
+@import "common/utils";
+@import "common/container";
+
+@import "blocks/btn";
+@import "blocks/field";
+@import "blocks/heading";
+@import "blocks/overlay";
+//@import "blocks/menu-toggle";
+//@import "blocks/navigation";
+//@import "blocks/logo";
+@import "blocks/social";
+
+@import "blocks/header";
+@import "blocks/footer";
+
+@import "blocks/webpage";

@@ -1,0 +1,111 @@
+-
+	//- Массив с именами файлов шрифтов, которые подключаются для предзагрузки в теге head миксином fonts
+	let FONTS = [
+		'Jost-Light',
+		'Jost-Regular',
+		'Jost-SemiBold',
+		'Jost-Italic',
+		'Cinzel-Regular'
+	];
+
+	let TITLE_PART = 'Glass Proekt';
+
+	let URLS = {
+		home: 'home.html',
+		about: '#',
+		production: '#',
+		office: '#',
+		customers: '#',
+		certificates: '#',
+		reviews: '#',
+		services: '#',
+		facadeGlazing: '#',
+		projects: '#',
+		materials: '#',
+		suppliers: '#',
+		news: '#',
+		partnerProgram: '#',
+		wiki: '#',
+	};
+
+	let TITULAR_MENU = [
+		{text: 'Главная', url: URLS.home, currentSection: 1, currentPage: 1.01, submenu: null},
+		{text: 'О Компании', url: null, currentSection: 2, currentPage: 2.01, submenu: [
+			{
+				title: null,
+				list: [
+					{text: 'О Компании', url: URLS.about, currentPage: 2.01, currentSection: 2},
+					{text: 'Производство', url: URLS.production, currentPage: 2.02, currentSection: 2},
+					{text: 'Офис', url: URLS.office, currentPage: 2.03, currentSection: 2},
+					{text: 'Клиенты', url: URLS.customers, currentPage: 2.04, currentSection: 2},
+					{text: 'Сертификаты', url: URLS.certificates, currentPage: 2.05, currentSection: 2},
+					{text: 'Отзывы', url: URLS.reviews, currentPage: 2.06, currentSection: 2}
+				]
+			}
+
+		]},
+		{text: 'Услуги', url: null, currentSection: 3, currentPage: 3.01, submenu: [
+			{
+				title: 'Фасадное остекление',
+				list: [
+					{text: 'Страница раздела', url: URLS.about, currentPage: 3.01, currentSection: 3},
+					{text: 'Страница раздела', url: URLS.production, currentPage: 3.02, currentSection: 3},
+				]
+			},
+			{
+				title: 'Фасадное остекление',
+				list: [
+					{text: 'Страница раздела', url: URLS.about, currentPage: 3.01, currentSection: 3},
+					{text: 'Страница раздела', url: URLS.production, currentPage: 3.02, currentSection: 3},
+				]
+			}
+		]},
+		{text: 'Проекты', url: URLS.projects, currentSection: 4, currentPage: 4.01, submenu: null},
+		{text: 'Материалы', url: URLS.materials, currentSection: 5, currentPage: 5.01, submenu: null},
+		{text: 'Поставщики', url: URLS.suppliers, currentSection: 6, currentPage: 6.01, submenu: null},
+		{text: 'Новости', url: URLS.news, currentSection: 7, currentPage: 7.01, submenu: null},
+		{text: 'Партнерская программа', url: URLS.partnerProgram, currentSection: 8, currentPage: 8.01, submenu: null},
+		{text: 'WIKI-база знаний', url: URLS.wiki, currentSection: 9, currentPage: 9.01, submenu: null}
+	];
+
+	/*
+	О компании
+		О Компании
+		Производство
+		Офис
+		Клиенты
+		Сертификаты
+		Отзывы
+	Услуги
+		Фасадное остекление
+			О Компании
+			Производство
+			Офис
+			Клиенты
+			Сертификаты
+			Отзывы
+		Фасадное остекление
+			О Компании
+			Производство
+			Офис
+			Клиенты
+			Сертификаты
+			Отзывы
+	Проекты
+	Материалы
+	Поставщики
+	Новости
+	Партнерская программа
+	WIKI-база знаний
+
+	*/
+
+	let MAIN_MENU = [
+
+	];
+
+	let PARTNERS_LOGO = [
+		{name: '1', w: '117', h: '47', alt: 'behr handelsagentur'},
+	];
+
+

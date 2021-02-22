@@ -1,0 +1,31 @@
+.social {
+	$self: &;
+
+	@include list-reset;
+	display: flex;
+	flex-wrap: wrap;
+
+	&__item + &__item {
+		margin-left: 28px;
+	}
+
+	&__link {
+		display: flex;
+		width: 17px;
+		height: 17px;
+		justify-content: center;
+
+		svg {
+			display: block;
+			align-self: center;
+			fill: $color-default-white;
+			@include transition(fill);
+		}
+
+		@include hover {
+			svg {
+				//fill: $color-yellow;
+			}
+		}
+	}
+}

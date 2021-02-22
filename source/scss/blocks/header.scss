@@ -1,0 +1,44 @@
+.header {
+	$self: &;
+
+	@include media(md) {
+	}
+
+	@include media(lg) {
+	}
+
+	/**/
+	overflow: hidden;
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+	/**/
+
+	&__inner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		width: 100%;
+		margin: 0 auto;
+
+		@include media(md) {
+		}
+
+		@include media(lg) {
+		}
+	}
+
+	&__logo {
+		@include media(md) {
+		}
+
+		@include media(lg) {
+		}
+	}
+
+	&__menu-toggle {
+		margin-left: auto;
+		order: 2;
+	}
+}

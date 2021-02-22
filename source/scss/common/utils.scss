@@ -1,0 +1,49 @@
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+
+.relative {
+	position: relative;
+}
+
+.d-none {
+	display: none !important;
+}
+
+.field-error {
+	font-size: 16px;
+	line-height: 20px;
+	//color: $color-orange--dark;
+	margin-bottom: 15px;
+	margin-top: 5px;
+}
+
+/* swiper */
+.swiper-pagination {
+}
+
+.swiper-container-horizontal > .swiper-scrollbar {
+}
+
+.swiper-pagination-bullets {
+}
+
+.swiper-pagination-bullet {
+	@include media(md) {
+	}
+
+	&-active {
+	}
+
+	&:hover,
+	&:focus {
+		outline: none;
+	}
+}

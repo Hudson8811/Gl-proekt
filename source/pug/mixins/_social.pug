@@ -1,0 +1,10 @@
+mixin social(cl, arr)
+	- let addClass = cl ? cl + ' social' : 'social';
+
+	// Social
+	ul(class= addClass)
+		each item in arr
+			li.social__item
+				a.social__link(href="#", target="_blank")
+					+icon(item)(width="20", height="20", aria-label= item + " icon")
+					span.visually-hidden= item

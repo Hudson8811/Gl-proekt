@@ -1,0 +1,113 @@
+// Подключение шрифтов
+@mixin font-face($font-family, $file-name, $weight, $style: normal) {
+	@font-face {
+		font-family: $font-family;
+		src: url("../fonts/#{$file-name}.woff2") format("woff2"),
+			url("../fonts/#{$file-name}.woff") format("woff");
+
+		font-weight: $weight;
+		font-style: $style;
+		font-display: swap;
+	}
+}
+
+@mixin list-reset() {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+@mixin text($fz: $font-size-base, $lh: $line-height-base, $c: $color-base) {
+	font-size: $fz;
+	line-height: $lh;
+	color: $c;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+
+@mixin hover {
+	@media (min-width: 992px) {
+		&:hover,
+		&:focus {
+			@content;
+		}
+	}
+}
+
+// Media
+//---------------------------------------
+@mixin media($media) {
+	@each $breakpoint, $breakpointValue in $breakpoints {
+		@if $media == $breakpoint {
+			@media (min-width: $breakpointValue) {
+				@content;
+			}
+		}
+	}
+}
+
+@mixin media-custom-height($height) {
+	@media (min-height: $height) {
+		@content;
+	}
+}
+
+// Отзывчатый размер шрифта - источник https://habr.com/ru/post/310186/
+// Пример использования - https://codepen.io/ROBsoer/pen/PGkWbK
+@mixin fluid-font-size($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+	font-size: $f-min;
+
+	@media (min-width: $w-min) {
+		@if ($fallback) {
+			font-size: $fallback;
+		}
+		font-size: calc-fluid-font-size($f-min, $f-max, $w-min, $w-max, px);
+	}
+
+	@media (min-width: $w-max) {
+		font-size: $f-max;
+	}
+}
+
+// Только для мозиллы
+//---------------------------------------
+
+@mixin only-moz {
+	@-moz-document url-prefix() {
+		@content;
+	}
+}
+
+// Transition проверить несколько свойств
+//---------------------------------------
+@mixin transition($args...) {
+	transition: $args $default-transition-settings;
+}
+
+@mixin retina {
+	@media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+		@content;
+	}
+}
+
+@mixin hover {
+	&:focus {
+		outline: none;
+		@content;
+	}
+
+	&:active {
+		opacity: 0.7;
+	}
+
+	@media (min-width: 992px) {
+		&:hover,
+		&:focus {
+			@content;
+		}
+	}
+}

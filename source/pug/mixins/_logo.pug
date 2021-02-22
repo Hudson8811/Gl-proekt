@@ -1,0 +1,10 @@
+mixin logo(isHome, cl)
+	if (isHome)
+		a(class= cl + " logo")
+			img(src="img/logo.svg", width="121", height="44", alt="Логотип Glass Proekt")
+	else
+		a(class= cl + " logo", href= URLS.home)
+			img(src="img/logo.svg", width="121", height="44", alt="Логотип Glass Proekt")
+
+
+

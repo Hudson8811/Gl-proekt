@@ -1,0 +1,3 @@
+@each $font-family, $file-name, $weight, $style in $fonts {
+	@include font-face($font-family, $file-name, $weight, $style);
+}
