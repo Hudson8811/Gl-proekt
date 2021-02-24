@@ -30,8 +30,8 @@
 	};
 
 	let TITULAR_MENU = [
-		{text: 'Главная', url: URLS.home, currentSection: 1, currentPage: 1.01, submenu: null},
-		{text: 'О Компании', url: null, currentSection: 2, currentPage: 2.01, submenu: [
+		{text: 'Главная', url: URLS.home, currentPage: 1.01, currentSection: 1, submenu: null},
+		{text: 'О Компании', url: null, currentPage: 2.01, currentSection: 2, submenu: [
 			{
 				title: null,
 				list: [
@@ -43,9 +43,8 @@
 					{text: 'Отзывы', url: URLS.reviews, currentPage: 2.06, currentSection: 2}
 				]
 			}
-
 		]},
-		{text: 'Услуги', url: null, currentSection: 3, currentPage: 3.01, submenu: [
+		{text: 'Услуги', url: null, currentPage: 3.01, currentSection: 3, submenu: [
 			{
 				title: 'Фасадное остекление',
 				list: [
@@ -61,17 +60,22 @@
 				]
 			}
 		]},
-		{text: 'Проекты', url: URLS.projects, currentSection: 4, currentPage: 4.01, submenu: null},
-		{text: 'Материалы', url: URLS.materials, currentSection: 5, currentPage: 5.01, submenu: null},
-		{text: 'Поставщики', url: URLS.suppliers, currentSection: 6, currentPage: 6.01, submenu: null},
-		{text: 'Новости', url: URLS.news, currentSection: 7, currentPage: 7.01, submenu: null},
-		{text: 'Партнерская программа', url: URLS.partnerProgram, currentSection: 8, currentPage: 8.01, submenu: null},
-		{text: 'WIKI-база знаний', url: URLS.wiki, currentSection: 9, currentPage: 9.01, submenu: null}
+		{text: 'Проекты', url: URLS.projects, currentPage: 4.01, currentSection: 4, submenu: null},
+		{text: 'Материалы', url: URLS.materials, currentPage: 5.01, currentSection: 5, submenu: null},
+		{text: 'Поставщики', url: URLS.suppliers, currentPage: 6.01, currentSection: 6, submenu: null},
+		{text: 'Новости', url: URLS.news, currentPage: 7.01, currentSection: 7, submenu: null},
+		{text: 'Партнерская программа', url: URLS.partnerProgram, currentPage: 8.01, currentSection: 8, submenu: null},
+		{text: 'WIKI-база знаний', url: URLS.wiki, currentPage: 9.01, currentSection: 9, submenu: null}
 	];
 
 	let MAIN_MENU = [
-
 	];
+
+	let HEADER_MENU = [
+		{text: 'О компании', url: URLS.about, currentPage: 2.01, currentSection: 2, submenu: null},
+		{text: 'Услуги', url: URLS.services, currentPage: 3.01, currentSection: 3, submenu: null},
+		{text: 'Проекты', url: URLS.projects, currentPage: 4.01, currentSection: 4, submenu: null}
+	]
 
 	let PARTNERS_LOGO = [
 		{name: '1', w: '117', h: '47', alt: 'behr handelsagentur'},

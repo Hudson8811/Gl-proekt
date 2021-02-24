@@ -1,0 +1,55 @@
+.menu-toggle {
+	position: relative;
+	display: block;
+	width: 25px;
+	height: 49px;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+
+	@include media(sm) {
+		width: 49px;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		width: 19px;
+		height: 4px;
+		background-color: $color-default-black;
+
+		transition: transform $default-transition-settings,
+			background-color $default-transition-settings;
+	}
+
+	&::before {
+		top: 19px;
+		left: 0;
+
+		@include media(sm) {
+			left: 12px;
+		}
+	}
+
+	&::after {
+		bottom: 19px;
+		right: 0;
+
+		@include media(sm) {
+			right: 12px;
+		}
+	}
+
+	@include hover {
+		&::before {
+			transform: translateX(3px);
+			background-color: $color-blue;
+		}
+		&::after {
+			transform: translateX(-3px);
+			background-color: $color-blue;
+		}
+	}
+}
