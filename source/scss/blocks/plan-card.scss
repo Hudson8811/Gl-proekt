@@ -60,6 +60,7 @@
 			width: 100%;
 			margin-left: 5px;
 			stroke: $color-default-black;
+			stroke-width: 2px;
 			@include transition(stroke);
 		}
 	}

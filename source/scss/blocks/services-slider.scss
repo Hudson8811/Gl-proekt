@@ -1,0 +1,194 @@
+.services-slider {
+	position: relative;
+	overflow: hidden;
+
+	&__container {
+		position: relative;
+		padding-bottom: 251px;
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+	}
+
+	&__top {
+		max-width: 486px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: absolute;
+		top: 65px;
+		right: 9px;
+		z-index: 100;
+	}
+
+	&__more {
+		display: block;
+		padding: 6px 24px;
+		background-color: $color-blue;
+		font-family: $font-family--secondary;
+		font-size: 18px;
+		font-weight: 900;
+		color: $color-default-white;
+		box-sizing: border-box;
+		@include transition(background-color);
+
+		@include hover {
+			background-color: rgba($color-blue, 0.7);
+		}
+	}
+
+	&__image {
+		width: 50%;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__content {
+		width: 50%;
+		padding-top: 68px;
+	}
+
+	&__digit {
+		font-size: 322px;
+		line-height: 64px;
+		font-weight: 200;
+		color: $color-pale-sky;
+		letter-spacing: -0.08em;
+		opacity: 0.04;
+	}
+
+	&__title {
+		margin-bottom: 70px;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		padding-left: 26px;
+
+		li {
+			width: 55%;
+			padding-left: 24px;
+			margin-bottom: 31px;
+			font-family: $font-family--secondary;
+			font-size: 14px;
+			line-height: 20px;
+			color: $color-dark2;
+			position: relative;
+			box-sizing: border-box;
+
+			&:nth-child(even) {
+				width: 45%;
+			}
+
+			&::before {
+				content: '';
+				display: block;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				position: absolute;
+				top: 5px;
+				left: 0;
+				background: linear-gradient(152.42deg, #93AFFF 15.44%, #93AFFF 38.1%, #5278FF 66.6%, #3F63E3 82.51%);
+			}
+		}
+	}
+
+	&__thumbs {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		margin-left: 16.6666%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+	&__thumb-wrapper {
+		margin-top: auto;
+		height: 154px;
+	}
+
+	&__thumb {
+		display: flex;
+		width: 16.6666%;
+		padding: 24px;
+		position: relative;
+		box-sizing: border-box;
+		cursor: pointer;
+
+		@include hover {
+			.digit,
+			.title {
+				color: $color-dark2;
+			}
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			width: 1px;
+			height: 100%;
+			background-color: rgba($color-dark2, 0.16);
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			width: 0;
+			height: 10px;
+			background-color: $color-blue;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			@include transition(width);
+		}
+
+		.digit,
+		.title {
+			@include transition(color);
+		}
+
+		.digit {
+			font-size: 64px;
+			line-height: 32px;
+			font-weight: 200;
+			letter-spacing: -0.07em;
+			color: rgba($color-dark2, 0.16);
+			margin-bottom: 40px;
+		}
+
+		.title {
+			font-size: 22px;
+			line-height: 28px;
+			font-weight: 900;
+			letter-spacing: -0.07em;
+			color: rgba($color-dark2, 0.16);
+			word-break: break-word;
+		}
+
+		&.swiper-slide-active {
+			width: 33.3333%;
+
+			&::after {
+				width: 100%;
+			}
+
+			.digit,
+			.title {
+				color: $color-dark2;
+			}
+		}
+	}
+}
