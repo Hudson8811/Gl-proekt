@@ -1,0 +1,36 @@
+.header-menu {
+	$self: &;
+
+	@include list-reset;
+	display: none;
+
+	@include media(lg) {
+		display: flex;
+	}
+
+	&__item {
+		&--current {
+			#{$self}__link {
+				color: $color-blue;
+
+				&:not([href]) {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		& + & {
+			margin-left: 30px;
+		}
+	}
+
+	&__link {
+		@include text(16px, 1.25);
+
+		@include transition(color);
+
+		@include hover {
+			color: $color-blue;
+		}
+	}
+}

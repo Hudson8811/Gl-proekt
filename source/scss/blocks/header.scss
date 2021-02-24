@@ -1,5 +1,6 @@
 .header {
 	$self: &;
+	padding: 26px 0 25px;
 
 	@include media(md) {
 	}
@@ -7,38 +8,101 @@
 	@include media(lg) {
 	}
 
-	/**/
-	overflow: hidden;
-	img {
-		display: block;
-		margin: 0 auto;
-	}
-	/**/
-
 	&__inner {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: center;
+		justify-content: space-between;
 		width: 100%;
 		margin: 0 auto;
+		padding: 0 15px;
+
+		& > * {
+			align-self: center;
+		}
+
+		@include media(sm) {
+		}
 
 		@include media(md) {
 		}
 
 		@include media(lg) {
+		}
+
+		@include media(xl) {
+			max-width: 1342px;
 		}
 	}
 
 	&__logo {
-		@include media(md) {
+		width: 100px;
+		margin-right: 12px;
+
+		@include media(sm) {
+			width: 121px;
 		}
 
 		@include media(lg) {
+			margin-right: 55px;
 		}
 	}
 
+	&__contacts {
+		@include media(sm) {
+			display: flex;
+			margin-left: auto;
+		}
+
+		@include media(lg) {
+			margin-left: 0;
+			margin-right: auto;
+		}
+	}
+
+	&__email {
+		display: none;
+		font-family: $font-family--secondary;
+
+		@include text(14px, 1, $color-pale-sky);
+		@include transition(color);
+
+		@include hover {
+			color: $color-blue;
+		}
+
+		@include media(sm) {
+			display: block;
+			margin-left: 24px;
+		}
+
+		@include media(lg) {
+			margin-left: 55px;
+		}
+	}
+
+	&__phone {
+		font-family: $font-family--secondary;
+
+		@include text(14px, 1);
+		font-weight: 900;
+	}
+
+	&__menu {
+	}
+
 	&__menu-toggle {
-		margin-left: auto;
-		order: 2;
+		margin-left: 12px;
+
+		@include media(sm) {
+			margin-left: 32px;
+		}
+
+		@include media(lg) {
+			margin-left: 64px;
+		}
+
+		@include media(xl) {
+			margin-left: 123px;
+		}
 	}
 }
