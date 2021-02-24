@@ -1,0 +1,23 @@
+mixin nav-dropdown(submenu, submenuId)
+	.navigation__dropdown.dropdown(id= submenuId)
+		button.dropdown__back.__js_back-to-menu(type="button")
+			+icon('arrow-left')(width="32", height="32")
+			span.visually-hidden Back to main menu
+		each item in submenu
+			.dropdown__section
+				if item.main
+					.dropdown__title
+						if item.main.currentPage === currentPage
+							a.current= item.main.text
+						else
+							a(href= item.main.url)= item.main.text
+				ul.dropdown__list
+					each it in item.list
+						if it.currentPage === currentPage
+							li.dropdown__item.dropdown__item--current
+								a= it.text
+						else
+							li.dropdown__item
+								a(href= it.url)= it.text
+
+

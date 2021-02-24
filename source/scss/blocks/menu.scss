@@ -1,0 +1,48 @@
+.menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	min-height: 540px;
+	background-color: $color-dark3;
+
+	display: none;
+
+	&__inner {
+		max-width: 1342px;
+		margin: 0 auto;
+		padding: 0 15px;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 16px; //32
+		padding: 26px 0 25px;
+	}
+
+	&__close {
+		display: flex;
+		justify-content: center;
+		width: 49px;
+		height: 49px;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+
+		@include transition(opacity);
+
+		svg {
+			align-self: center;
+			fill: $color-default-white;
+		}
+
+		@include hover {
+			outline: none;
+			opacity: 0.7;
+		}
+	}
+}
