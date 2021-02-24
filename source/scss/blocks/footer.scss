@@ -1,10 +1,11 @@
 .footer {
 	$self: &;
+	padding-top: 32px;
+	padding-bottom: 16px;
+	background-color: $color-dark;
 
 	&__inner {
 		position: relative;
-		padding-top: 32px;
-		padding-bottom: 32px;
 
 		@include media(md) {
 		}
@@ -16,8 +17,167 @@
 		}
 	}
 
-	&__social {
+	&__title {
+		margin-bottom: 16px;
+		color: $color-default-white;
+
+		@include media(lg) {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+
+		padding-top: 32px;
+		padding-bottom: 32px;
+
+		@include media(sm) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&--bottom {
+			@include media(lg) {
+				margin-top: 28px;
+				justify-content: space-between;
+
+				& > * {
+					align-items: center;
+				}
+			}
+		}
+	}
+
+	&__wrapper + &__wrapper {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100%;
+			border-top: solid 1px $color-dark3;
+
+			@include media(xl) {
+				width: 1198px;
+			}
+		}
+	}
+
+	&__col {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-top: 16px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		@include media(sm) {
+			width: 50%;
+
+			padding-right: 24px;
+
+			&:nth-child(2) {
+				margin-top: 0;
+			}
+		}
+
 		@include media(md) {
+			width: 33.33%;
+
+			&:nth-child(3) {
+				margin-top: 0;
+			}
+		}
+
+		@include media(lg) {
+			width: 25%;
+			margin-top: 0;
+		}
+	}
+
+	&__link {
+		font-family: $font-family--secondary;
+
+		@include text(18px, 1.166, $color-default-white);
+		font-weight: 900;
+
+		@include transition(color);
+
+		@include hover {
+			color: $color-pale-sky;
+		}
+
+		& + & {
+			margin-top: 16px;
+		}
+	}
+
+	&__social {
+		margin-top: 20px;
+
+		@include media(md) {
+		}
+	}
+
+	&__copy {
+		width: 100%;
+		margin-bottom: 16px;
+		font-family: $font-family--secondary;
+
+		@include text(12px, 1.166, $color-pale-sky);
+
+		@include media(lg) {
+			width: auto;
+			margin-bottom: 0;
+		}
+	}
+
+	&__privacy {
+		font-family: $font-family--secondary;
+
+		@include text(12px, 1.166, $color-pale-sky);
+		text-decoration: underline;
+
+		@include hover {
+			text-decoration: none;
+		}
+	}
+
+	&__developer {
+		width: 100%;
+		display: flex;
+		margin-top: 16px;
+
+		@include media(lg) {
+			width: auto;
+			margin-top: 0;
+		}
+
+		a {
+			font-family: $font-family--secondary;
+
+			@include text(12px, 1.166, $color-pale-sky);
+			text-decoration: underline;
+
+			@include hover {
+				text-decoration: none;
+			}
+		}
+
+		svg {
+			display: block;
+			margin-left: 9px;
+			fill: $color-default-white;
+		}
+
+		& > * {
+			align-self: center;
 		}
 	}
 }
