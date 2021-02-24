@@ -171,4 +171,9 @@ gulp.task('php', function() {
 		.pipe(gulp.dest('build/php/'));
 });
 
-gulp.task('default', gulp.series('clean', 'copy', 'copyVendorCss', 'img'/*, 'webp'*/, 'scripts', 'favicon', 'sprite', 'sass',  'pug', 'server'));
+gulp.task('data', function() {
+	return gulp.src('source/data/**/*.*')
+		.pipe(gulp.dest('build/data/'));
+});
+
+gulp.task('default', gulp.series('clean', 'copy', 'copyVendorCss', 'img'/*, 'webp'*/, 'scripts', 'favicon', 'sprite', 'sass',  'pug', 'data', 'server'));

@@ -27,23 +27,71 @@
 
 /* swiper */
 .swiper-pagination {
+	position: relative;
 }
 
 .swiper-container-horizontal > .swiper-scrollbar {
 }
 
 .swiper-pagination-bullets {
+	display: flex;
+	align-items: center;
+	margin: 0 22px;
 }
 
 .swiper-pagination-bullet {
+	width: 5px;
+	height: 5px;
+	margin: 0 1px;
+	@include transition(width);
+
 	@include media(md) {
 	}
 
 	&-active {
+		width: 9px;
+		height: 9px;
+		margin: 0 2px;
+		background-color: $color-blue;
 	}
 
 	&:hover,
 	&:focus {
 		outline: none;
+	}
+}
+
+.swiper-nav {
+	display: flex;
+	align-items: center;
+}
+
+.slider__btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+
+	@include hover {
+		svg {
+			stroke: $color-blue;
+		}
+	}
+
+	svg {
+		stroke: $color-dark2;
+		stroke-width: 3px;
+		@include transition(stroke);
+	}
+
+	&--prev {
+		svg {
+			transform: rotate(180deg);
+		}
 	}
 }
