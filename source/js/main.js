@@ -88,7 +88,7 @@ function setOverlay(cb) {
 	});
 */
 	menuLink.on('mouseover focus', function() {
-
+		$('.dropdown').hide();
 		/*if(activeDropdownId !== '#' + $(this).attr('data-target')) {
 			$('.dropdown').hide();
 		}*/
