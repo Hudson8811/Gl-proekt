@@ -645,6 +645,230 @@ p {
   }
 }
 
+[data-simplebar] {
+  position: relative;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -ms-flex-align: start;
+      align-items: flex-start;
+}
+
+.simplebar-wrapper {
+  overflow: hidden;
+  width: inherit;
+  height: inherit;
+  max-width: inherit;
+  max-height: inherit;
+}
+
+.simplebar-mask {
+  direction: inherit;
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: auto !important;
+  height: auto !important;
+  z-index: 0;
+}
+
+.simplebar-offset {
+  direction: inherit !important;
+  box-sizing: inherit !important;
+  resize: none !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.simplebar-content-wrapper {
+  direction: inherit;
+  box-sizing: border-box !important;
+  position: relative;
+  display: block;
+  height: 100%;
+  /* Required for horizontal native scrollbar to not appear if parent is taller than natural height */
+  width: auto;
+  max-width: 100%;
+  /* Not required for horizontal scroll to trigger */
+  max-height: 100%;
+  /* Needed for vertical scroll to trigger */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.simplebar-content-wrapper::-webkit-scrollbar,
+.simplebar-hide-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.simplebar-content:before,
+.simplebar-content:after {
+  content: " ";
+  display: table;
+}
+
+.simplebar-placeholder {
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.simplebar-height-auto-observer-wrapper {
+  box-sizing: inherit !important;
+  height: 100%;
+  width: 100%;
+  max-width: 1px;
+  position: relative;
+  float: left;
+  max-height: 1px;
+  overflow: hidden;
+  z-index: -1;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  -ms-flex-positive: inherit;
+      flex-grow: inherit;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+}
+
+.simplebar-height-auto-observer {
+  box-sizing: inherit;
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1000%;
+  width: 1000%;
+  min-height: 1px;
+  min-width: 1px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.simplebar-track {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+[data-simplebar].simplebar-dragging .simplebar-content {
+  pointer-events: none;
+  -ms-user-select: none;
+      user-select: none;
+  -webkit-user-select: none;
+}
+
+[data-simplebar].simplebar-dragging .simplebar-track {
+  pointer-events: all;
+}
+
+.simplebar-scrollbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-height: 10px;
+}
+
+.simplebar-scrollbar:before {
+  position: absolute;
+  content: "";
+  background: black;
+  border-radius: 7px;
+  left: 2px;
+  right: 2px;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+.simplebar-scrollbar.simplebar-visible:before {
+  /* When hovered, remove all transitions from drag handle */
+  opacity: 0.5;
+  transition: opacity 0s linear;
+}
+
+.simplebar-track.simplebar-vertical {
+  top: 0;
+  width: 11px;
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  top: 2px;
+  bottom: 2px;
+}
+
+.simplebar-track.simplebar-horizontal {
+  left: 0;
+  height: 11px;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {
+  height: 100%;
+  left: 2px;
+  right: 2px;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  right: auto;
+  left: 0;
+  top: 2px;
+  height: 7px;
+  min-height: 0;
+  min-width: 10px;
+  width: auto;
+}
+
+/* Rtl support */
+[data-simplebar-direction="rtl"] .simplebar-track.simplebar-vertical {
+  right: auto;
+  left: 0;
+}
+
+.hs-dummy-scrollbar-size {
+  direction: rtl;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  height: 500px;
+  width: 500px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.simplebar-hide-scrollbar {
+  position: fixed;
+  left: 0;
+  visibility: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 .btn {
   display: inline-block;
   vertical-align: top;
@@ -872,6 +1096,299 @@ p {
     -ms-transform: translateX(-3px);
         transform: translateX(-3px);
     background-color: #01a5e4;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+  background-color: #01a5e4;
+}
+
+.dropdown--simple .dropdown__item {
+  margin-bottom: 32px;
+}
+
+@media (min-width: 992px) {
+  .dropdown {
+    width: 50%;
+    left: auto;
+    right: 0;
+    padding: 132px 64px 64px;
+  }
+}
+
+.dropdown__wrapper {
+  padding-bottom: 32px;
+  height: calc(100% - 32px);
+}
+
+@media (min-width: 992px) {
+  .dropdown__wrapper {
+    height: calc(100% + 64px);
+    margin-bottom: -64px;
+  }
+}
+
+.dropdown__wrapper .simplebar-track {
+  width: 4px;
+  right: auto;
+  left: -18px;
+}
+
+@media (min-width: 992px) {
+  .dropdown__wrapper .simplebar-track {
+    left: -32px;
+  }
+}
+
+.dropdown__wrapper .simplebar-track .simplebar-scrollbar {
+  background-color: #172328;
+  border-radius: 100px;
+}
+
+.dropdown__back {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 32px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+.dropdown__back svg {
+  fill: #ffffff;
+}
+
+@media (min-width: 992px) {
+  .dropdown__back {
+    display: none;
+  }
+}
+
+.dropdown__section {
+  margin-bottom: 32px;
+}
+
+.dropdown__section:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown__title {
+  margin-bottom: 32px;
+}
+
+.dropdown__title a {
+  font-size: 22px;
+  line-height: 1.27;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.dropdown__title a:focus {
+  outline: none;
+}
+
+.dropdown__title a:active {
+  opacity: 0.7;
+}
+
+.dropdown__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown__title ~ .dropdown__list {
+  margin-left: 6px;
+}
+
+.dropdown__item {
+  margin-bottom: 16px;
+}
+
+.dropdown__item:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown__item a {
+  font-size: 16px;
+  line-height: 1.25;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.dropdown__item a:focus {
+  outline: none;
+}
+
+.dropdown__item a:active {
+  opacity: 0.7;
+}
+
+.navigation__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation__item {
+  margin-bottom: 3.56vh;
+}
+
+.navigation__item--current {
+  margin-bottom: 1.76vh;
+}
+
+.navigation__item--current .navigation__link {
+  font-size: 36px;
+  color: #01a5e4;
+  letter-spacing: -0.04em;
+  opacity: 1;
+}
+
+@media (min-width: 992px) {
+  .navigation__item--current .navigation__link {
+    font-size: 64px;
+  }
+}
+
+.navigation__item + .navigation__item--current {
+  margin-top: -1.76vh;
+}
+
+@media (min-height: 900px) {
+  .navigation__item {
+    margin-bottom: 32px;
+  }
+  .navigation__item--current {
+    margin-bottom: 16px;
+  }
+  .navigation__item + .navigation__item--current {
+    margin-top: -16px;
+  }
+}
+
+.navigation__item:last-child {
+  margin-bottom: 0;
+}
+
+.navigation__link {
+  font-size: 24px;
+  line-height: 1.04;
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: -0.07em;
+  opacity: 0.64;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 992px) {
+  .navigation__link {
+    font-size: 42px;
+  }
+}
+
+.navigation__link:focus {
+  outline: none;
+  color: #01a5e4;
+}
+
+.navigation__link:active {
+  opacity: 0.7;
+}
+
+@media (min-width: 992px) {
+  .navigation__link:hover, .navigation__link:focus {
+    color: #01a5e4;
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  background-color: #1e2e34;
+  display: none;
+}
+
+.menu__inner {
+  max-width: 1342px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.menu__header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 26px 0 25px;
+}
+
+@media (min-width: 992px) {
+  .menu__header {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 32px;
+  }
+}
+
+.menu__close {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 49px;
+  height: 49px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.menu__close svg {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  fill: #ffffff;
+}
+
+.menu__close:focus {
+  outline: none;
+  outline: none;
+  opacity: 0.7;
+}
+
+.menu__close:active {
+  opacity: 0.7;
+}
+
+@media (min-width: 992px) {
+  .menu__close:hover, .menu__close:focus {
+    outline: none;
+    opacity: 0.7;
+  }
+}
+
+@media (min-width: 992px) {
+  .menu__nav {
+    width: 50%;
   }
 }
 

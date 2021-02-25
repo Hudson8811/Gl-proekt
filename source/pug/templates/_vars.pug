@@ -19,6 +19,8 @@
 		certificates: '#',
 		reviews: '#',
 		services: '#',
+		servicesGroup: '#',
+		servicesDetail: '#',
 		facadeGlazing: '#',
 		projects: '#',
 		materials: '#',
@@ -33,7 +35,7 @@
 		{text: 'Главная', url: URLS.home, currentPage: 1.01, currentSection: 1, submenu: null},
 		{text: 'О Компании', url: null, currentPage: 2.01, currentSection: 2, submenu: [
 			{
-				title: null,
+				main: null,
 				list: [
 					{text: 'О Компании', url: URLS.about, currentPage: 2.01, currentSection: 2},
 					{text: 'Производство', url: URLS.production, currentPage: 2.02, currentSection: 2},
@@ -44,19 +46,11 @@
 				]
 			}
 		]},
-		{text: 'Услуги', url: null, currentPage: 3.01, currentSection: 3, submenu: [
+		{text: 'Услуги', url: URLS.services, currentPage: 3.01, currentSection: 3, submenu: [
 			{
-				title: 'Фасадное остекление',
+				main: {text: 'Услуги подгруппа', url: URLS.servicesGroup, currentPage: 3.02, currentSection: 3},
 				list: [
-					{text: 'Страница раздела', url: URLS.about, currentPage: 3.01, currentSection: 3},
-					{text: 'Страница раздела', url: URLS.production, currentPage: 3.02, currentSection: 3},
-				]
-			},
-			{
-				title: 'Фасадное остекление',
-				list: [
-					{text: 'Страница раздела', url: URLS.about, currentPage: 3.01, currentSection: 3},
-					{text: 'Страница раздела', url: URLS.production, currentPage: 3.02, currentSection: 3},
+					{text: 'Услуги детально', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
 				]
 			}
 		]},
@@ -69,6 +63,108 @@
 	];
 
 	let MAIN_MENU = [
+		{text: 'О компании', url: URLS.about, currentPage: 2.01, currentSection: 2, id: 'about', submenu: [
+			{
+				main: null,
+				list: [
+					{text: 'О компании', url: URLS.about, currentPage: 2.01, currentSection: 2},
+					{text: 'Производство', url: URLS.production, currentPage: 2.02, currentSection: 2},
+					{text: 'Офис', url: URLS.office, currentPage: 2.03, currentSection: 2},
+					{text: 'Клиенты', url: URLS.customers, currentPage: 2.04, currentSection: 2},
+					{text: 'Сертификаты', url: URLS.certificates, currentPage: 2.05, currentSection: 2},
+					{text: 'Отзывы', url: URLS.reviews, currentPage: 2.06, currentSection: 2}
+				]
+			}
+		]},
+		{text: 'Услуги', url: URLS.services, currentPage: 3.01, currentSection: 3, id: 'services', submenu: [
+			{
+				main: {text: 'Фасадное остекление', url: URLS.servicesGroup, currentPage: 3.02, currentSection: 3},
+				list: [
+					{text: 'Остекление фасадов', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Остекление зданий', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Остекление бизнес центров', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Остекление автосалонов', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Остекление жилых комплексов', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Фальш остекление', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3}
+				]
+			},
+			{
+				main: {text: 'Внешнее остекление', url: URLS.servicesGroup, currentPage: 3.02, currentSection: 3},
+				list: [
+					{text: 'Спайдерное остекление', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Козырьки и навесы', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Алюминиевые окна', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Входные группы', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Алюминиевые двери', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Зимние сады', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Зенитные фонари', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Стеклянные крыши', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3}
+				]
+			},
+			{
+				main: {text: 'Внутреннее остекление', url: URLS.servicesGroup, currentPage: 3.02, currentSection: 3},
+				list: [
+					{text: 'Стеклянные двери', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Стеклянные перегородки', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Офисные перегородки', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Цельностеклянные перегородки', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Алюминиевые перегородки', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Мобильные перегородки', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Душевые перегородки', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Сантехнические перегородки', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3}
+				]
+			},
+			{
+				main: {text: 'Навесные, вентилируемые фасады', url: URLS.servicesGroup, currentPage: 3.02, currentSection: 3},
+				list: [
+					{text: 'НВФ клинкерной плиткой', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'НВФ натуральным камнем', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'НВФ  композитным материалом', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'НВФ металлическими кассетами', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'НВФ керамогранитом', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3}
+				]
+			},
+			{
+				main: {text: 'Автоматизированные системы', url: URLS.servicesGroup, currentPage: 3.02, currentSection: 3},
+				list: [
+					{text: 'Проветривание и дымоудаление', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Автоматические входные группы', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Роллетные системы', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Секционные ворота', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3}
+				]
+			},
+			{
+				main: {text: 'Эксклюзивные изделия из стекла', url: URLS.servicesGroup, currentPage: 3.02, currentSection: 3},
+				list: [
+					{text: 'Стеклянные ограждения', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Стеклянные лестницы', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Стеклянные полы', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Смарт-стекло', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Зеркала на заказ', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Панно из зеркал', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3}
+				]
+			},
+			{
+				main: {text: 'Изделия из нержавеющей стали', url: URLS.servicesGroup, currentPage: 3.02, currentSection: 3},
+				list: [
+					{text: 'Ограждение лестниц', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Эксклюзивные изделия', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3}
+				]
+			},
+			{
+				main: {text: 'Конструкции из ПВХ профиля', url: URLS.servicesGroup, currentPage: 3.02, currentSection: 3},
+				list: [
+					{text: 'Окна из ПВХ профиля', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3},
+					{text: 'Двери из ПВХ профиля', url: URLS.servicesDetail, currentPage: 3.03, currentSection: 3}
+				]
+			}
+		]},
+		{text: 'Проекты', url: URLS.projects, currentPage: 4.01, currentSection: 4, submenu: null},
+		{text: 'Материалы', url: URLS.materials, currentPage: 5.01, currentSection: 5, submenu: null},
+		{text: 'Поставщики', url: URLS.suppliers, currentPage: 6.01, currentSection: 6, submenu: null},
+		{text: 'Новости', url: URLS.news, currentPage: 7.01, currentSection: 7, submenu: null},
+		{text: 'Партнерская программа', url: URLS.partnerProgram, currentPage: 8.01, currentSection: 8, submenu: null},
+		{text: 'WIKI-база знаний', url: URLS.wiki, currentPage: 9.01, currentSection: 9, submenu: null}
 	];
 
 	let HEADER_MENU = [

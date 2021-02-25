@@ -1,5 +1,39 @@
-section.menu
+section.menu.__js_menu
 	.menu__inner
-		button.menu__close(type="button")
-			//-+icon('close')(width="24", height="24")
-			span.visually-hidden Close menu
+		header.menu__header
+			+logo(isHome, 'menu__logo')
+			button.menu__close.__js_menu-close(type="button")
+				+icon('close')(width="27", height="27")
+				span.visually-hidden Close menu
+		nav.menu__nav.navigation
+			ul.navigation__list
+				each item in MAIN_MENU
+					- let addCl = item.submenu ? ' __js_dropdown-link' : '';
+					if item.currentSection === currentSection && item.currentPage === currentPage
+						li.navigation__item.navigation__item--current
+							if item.id
+								a.navigation__link(class= addCl, data-target= '#' + item.id)= item.text
+							else
+								a.navigation__link(class= addCl)= item.text
+							if item.submenu
+								+nav-dropdown(item.submenu, item.id)
+
+					else if item.currentSection === currentSection && item.currentPage !== currentPage
+						li.navigation__item.navigation__item--current
+							if item.id
+								a.navigation__link(class= addCl, data-target= '#' + item.id, href= item.url)= item.text
+							else
+								a.navigation__link(class= addCl, href= item.url)= item.text
+							if item.submenu
+								+nav-dropdown(item.submenu, item.id)
+
+					else
+						li.navigation__item
+							if item.id
+								a.navigation__link(class= addCl, data-target= '#' + item.id, href= item.url)= item.text
+							else
+								a.navigation__link(class= addCl, href= item.url)= item.text
+							if item.submenu
+								+nav-dropdown(item.submenu, item.id)
+
+

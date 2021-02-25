@@ -1,0 +1,63 @@
+.navigation {
+	$self: &;
+
+	&__list {
+		@include list-reset;
+	}
+
+	&__item {
+		margin-bottom: 3.56vh; //24px;
+
+		&--current {
+			margin-bottom: 1.76vh; //12px;
+
+			#{$self}__link {
+				font-size: 36px;
+				color: $color-blue;
+				letter-spacing: -0.04em;
+				opacity: 1;
+
+				@include media(lg) {
+					font-size: 64px;
+				}
+			}
+		}
+
+		& + &--current {
+			margin-top: -1.76vh; //-12px;
+		}
+
+		@include media-custom-height(900px) {
+			margin-bottom: 32px;
+
+			&--current {
+				margin-bottom: 16px;
+			}
+
+			& + &--current {
+				margin-top: -16px;
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__link {
+		@include text(24px, 1.04, $color-default-white);
+		font-weight: 900;
+		letter-spacing: -0.07em;
+		opacity: 0.64;
+
+		@include transition(all);
+
+		@include media(lg) {
+			font-size: 42px;
+		}
+
+		@include hover {
+			color: $color-blue;
+		}
+	}
+}
