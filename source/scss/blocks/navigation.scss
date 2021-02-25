@@ -6,24 +6,28 @@
 	}
 
 	&__item {
-		margin-bottom: 24px;
+		margin-bottom: 3.56vh; //24px;
 
 		&--current {
-			margin-bottom: 12px;
+			margin-bottom: 1.76vh; //12px;
 
 			#{$self}__link {
 				font-size: 36px;
 				color: $color-blue;
 				letter-spacing: -0.04em;
 				opacity: 1;
+
+				@include media(lg) {
+					font-size: 64px;
+				}
 			}
 		}
 
 		& + &--current {
-			margin-top: -12px;
+			margin-top: -1.76vh; //-12px;
 		}
 
-		@include media-custom-height(600px) {
+		@include media-custom-height(900px) {
 			margin-bottom: 32px;
 
 			&--current {
@@ -47,6 +51,10 @@
 		opacity: 0.64;
 
 		@include transition(all);
+
+		@include media(lg) {
+			font-size: 42px;
+		}
 
 		@include hover {
 			color: $color-blue;

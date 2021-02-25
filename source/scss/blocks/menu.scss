@@ -21,6 +21,12 @@
 		justify-content: space-between;
 		margin-bottom: 16px; //32
 		padding: 26px 0 25px;
+
+		@include media(lg) {
+			position: relative;
+			z-index: 2;
+			margin-bottom: 32px;
+		}
 	}
 
 	&__close {
@@ -43,6 +49,12 @@
 		@include hover {
 			outline: none;
 			opacity: 0.7;
+		}
+	}
+
+	&__nav {
+		@include media(lg) {
+			width: 50%;
 		}
 	}
 }
