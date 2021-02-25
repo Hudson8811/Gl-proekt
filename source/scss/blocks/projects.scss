@@ -1,0 +1,73 @@
+.projects {
+	overflow: hidden;
+
+	&__container {
+		padding: 23px 0 40px;
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__title {
+		font-family: $font-family--main;
+		font-weight: 700;
+	}
+
+	&__all {
+		display: inline-block;
+		margin: 0 10px;
+		padding-top: 30px;
+		font-family: $font-family--secondary;
+		font-size: 18px;
+		color: $color-dark2;
+		text-decoration: underline;
+
+		@include hover {
+			text-decoration: none;
+		}
+	}
+
+	&__nav {
+		padding-top: 30px;
+	}
+
+	&__slider {
+		border-left: 1px solid $color-gray-e5;
+		overflow: visible;
+
+		&::before {
+			content: '';
+			display: block;
+			width: 200%;
+			height: 100%;
+			background-color: $color-gray-fa;
+			position: absolute;
+			left: -200%;
+			top: 0;
+			z-index: 10;
+		}
+	}
+
+	&__slide {
+		max-width: 480px;
+
+		&::after {
+			content: '';
+			display: block;
+			width: 0;
+			height: 10px;
+			background-color: $color-blue;
+			position: absolute;
+			bottom: -10px;
+			left: 0;
+			@include transition(width);
+		}
+
+		&.swiper-slide-active::after {
+			width: 100%;
+		}
+	}
+}

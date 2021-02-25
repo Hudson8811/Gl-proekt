@@ -1,0 +1,31 @@
+.advantages {
+	background-color: $color-blue;
+	position: relative;
+
+	&__container {
+		position: relative;
+		padding: 149px 15px 172px;
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__title {
+		max-width: 530px;
+		margin-right: 60px;
+		font-size: 98px;
+		color: $color-default-white;
+	}
+
+	&__items {
+		padding-top: 36px;
+	}
+
+	&__item {
+		+ .advantages__item {
+			margin-top: 97px;
+		}
+	}
+}
