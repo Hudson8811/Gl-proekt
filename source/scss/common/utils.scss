@@ -43,6 +43,8 @@
 	width: 5px;
 	height: 5px;
 	margin: 0 1px;
+	background-color: $color-gray-c9;
+	opacity: 1;
 	@include transition(width);
 
 	@include media(md) {
@@ -64,13 +66,19 @@
 .swiper-nav {
 	display: flex;
 	align-items: center;
+
+	&--white {
+		.slider__btn svg {
+			stroke: $color-default-white;
+		}
+	}
 }
 
 .slider__btn {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 50px;
+	width: 16px;
 	height: 50px;
 	padding: 0;
 	background-color: transparent;

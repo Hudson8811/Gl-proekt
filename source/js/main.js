@@ -214,11 +214,11 @@ function setOverlay(cb) {
 (function(){
 	var servicesSlider = new Swiper('.__js_services-slider', {
 		pagination: {
-			el: '.swiper-pagination'
+			el: '.services-slider-pagi'
 		},
 		navigation: {
-			prevEl: '.slider__btn--prev',
-			nextEl: '.slider__btn--next'
+			prevEl: '.services-slider-prev',
+			nextEl: '.services-slider-next'
 		},
 		speed: 300,
 		loop: true,
@@ -234,4 +234,54 @@ function setOverlay(cb) {
 
 	servicesSlider.controller.control = servicesThumbs;
 	servicesThumbs.controller.control = servicesSlider;
+})();
+
+/* Projects slider */
+(function(){
+	var projectsSlider = new Swiper('.__js_projects-slider', {
+		pagination: {
+			el: '.projects-pagi'
+		},
+		navigation: {
+			prevEl: '.projects-prev',
+			nextEl: '.projects-next'
+		},
+		speed: 300,
+		slidesPerView: 'auto',
+		spaceBetween: 10,
+		loop: true
+	});
+})();
+
+/* Clients slider */
+(function(){
+	var projectsSlider = new Swiper('.__js_clients-slider', {
+		pagination: {
+			el: '.clients-pagi'
+		},
+		navigation: {
+			prevEl: '.clients-prev',
+			nextEl: '.clients-next'
+		},
+		speed: 300,
+		slidesPerView: 'auto',
+		centeredSlides: true
+	});
+})();
+
+/* News slider */
+(function(){
+	var projectsSlider = new Swiper('.__js_news-slider', {
+		pagination: {
+			el: '.news-pagi'
+		},
+		navigation: {
+			prevEl: '.news-prev',
+			nextEl: '.news-next'
+		},
+		speed: 300,
+		slidesPerView: 'auto',
+		spaceBetween: 10,
+		loop: true
+	});
 })();

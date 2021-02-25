@@ -57,7 +57,7 @@
 
 	&__caption {
 		position: absolute;
-		top: 14%;
+		top: 35%;
 		left: 50.4%;
 		transform: translateX(-50%);
 	}
@@ -71,7 +71,7 @@
 		border-radius: 50%;
 		background-color: $color-blue;
 		position: absolute;
-		bottom: 40%;
+		bottom: 30%;
 		left: 50%;
 		transform: translateX(-50%);
 		@include transition(background-color);
