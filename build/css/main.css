@@ -1173,7 +1173,7 @@ p {
   font-size: 32px;
   line-height: 1.125;
   color: #000000;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: -0.04em;
 }
 
@@ -2049,6 +2049,7 @@ p {
 
 .services-slider__title {
   margin-bottom: 70px;
+  word-break: break-word;
 }
 
 .services-slider__list {
