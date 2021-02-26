@@ -88,7 +88,7 @@ function setOverlay(cb) {
 	});
 */
 	menuLink.on('mouseover focus', function() {
-
+		$('.dropdown').hide();
 		/*if(activeDropdownId !== '#' + $(this).attr('data-target')) {
 			$('.dropdown').hide();
 		}*/
@@ -139,11 +139,12 @@ function setOverlay(cb) {
 
 /* Plan markers */
 (function(){
-	addMarker();
 
 	setTimeout(function () {
 		showPlanDetail();
 	}, 700);
+
+	addMarker();
 
 	function addMarker() {
 		$.getJSON('data/plan.json', function (data) {
@@ -155,7 +156,7 @@ function setOverlay(cb) {
 				var top = elem.top,
 					left = elem.left;
 
-				$('<svg data-index="' + index + '" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="outer" cx="17" cy="17" r="17" fill="#677B83"/><circle cx="17" cy="17" r="5.1" fill="#F9F9F9"/></svg>').css({
+				$('<svg data-index="' + index + '" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scale(0);"><circle class="outer" cx="17" cy="17" r="17" fill="#677B83"/><circle cx="17" cy="17" r="5.1" fill="#F9F9F9"/></svg>').css({
 					top: top + '%',
 					left: left + '%'
 				}).appendTo(tar);

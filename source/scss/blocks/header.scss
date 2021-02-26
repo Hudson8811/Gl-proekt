@@ -1,4 +1,6 @@
 .header {
+	position: relative;
+	z-index: 101;
 	$self: &;
 	padding: 26px 0 25px;
 

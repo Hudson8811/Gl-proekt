@@ -1,11 +1,22 @@
 .plan {
-	min-height: 100vh;
-	position: relative;
+	height: 100vh;
+	position: absolute;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	width: 100%;
+	box-sizing: border-box;
+	z-index: 100;
+	background-color: #fafafa;
 
 	&__wrapper {
 		position: relative;
 		transition: filter 0.7s ease;
 
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100%;
 		&.inactive {
 			-webkit-filter: blur(7px);
 			-moz-filter: blur(7px);
@@ -48,10 +59,11 @@
 		font-weight: 900;
 		letter-spacing: -0.05em;
 		color: $color-dark2;
-		margin-bottom: 20px;
+		margin-top: 100px;
 	}
 
 	&__image {
+		margin-top: 20px;
 		position: relative;
 	}
 

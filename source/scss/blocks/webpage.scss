@@ -2,3 +2,15 @@
 	$self: &;
 	background-color: $color-athens-gray;
 }
+
+
+body.blocked{
+	position: fixed;
+	width: 100%;
+	overflow-y: scroll;
+}
+
+.js-content{
+	position: relative;
+	z-index: 1;
+}
