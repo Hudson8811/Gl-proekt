@@ -1,0 +1,70 @@
+form.form(action='', method='POST')
+	.form__wrapper
+		.form__types
+			.form__type
+				label
+					input(type='radio', name='order_type', value='1', checked)
+					+icon('corporation')(width="33", height="33")
+					span Корпоративный заказ
+			.form__type
+				label
+					input(type='radio', name='order_type', value='2')
+					+icon('person')(width="27", height="32")
+					span Частный заказ
+		.form__grid
+			label.field.form__field
+				input(type='text', name='name', placeholder='Имя')
+			label.field.form__field
+				input(type='text', name='phone', placeholder='Телефон')
+			label.field.form__field
+				input(type='email', name='email', placeholder='Почта')
+			label.field.form__field(data-change)
+				input(type='text', name='position', placeholder='Должность')
+			label.field.form__field(data-change)
+				input(type='text', name='company', placeholder='Компания')
+			label.field.form__field.form__field--change
+				input(type='text', name='city', placeholder='Город')
+		.form__grid.form__grid--w50
+			label.field.form__field
+				input(type='text', name='build_date', placeholder='Дата строительства:')
+			.field.form__field(data-disabled)
+				select.select(name='service')
+					option(value='default' disabled selected) Услуга:
+					option(value='1') Услуга номер один
+					option(value='2') Услуга номер два
+					option(value='3') Услуга номер три
+					option(value='4') Услуга номер 4
+					option(value='5') Услуга номер 5
+					option(value='6') Услуга номер 6
+					option(value='7') Услуга номер 7
+					option(value='8') Услуга номер 8
+					option(value='9') Услуга номер 9
+		label.field.form__field.form__field--textarea
+			textarea(name='question', placeholder='Вопрос')
+		.form__radio-group
+			label.field.field--radio
+				input(type='radio', name='customer', checked)
+				.inner
+				span Ген. подрядчик
+			label.field.field--radio
+				input(type='radio', name='customer')
+				.inner
+				span Подрядчик (тендер)
+			label.field.field--radio
+				input(type='radio', name='customer')
+				.inner
+				span Собственник объекта
+		.form__switch
+			label.field.field--switch
+				span Объект под ключ
+				input(type='checkbox', name='object')
+				.inner
+	.form__nav
+		label.form__nav-btn.form__nav-btn--file
+			input(type='file', name='file')
+			+icon('clip')(width="27", height="29")
+			span Прикрепить файл
+		label.form__nav-btn
+			input(type='submit')
+			+icon('send')(width="27", height="27")
+			span Отправить

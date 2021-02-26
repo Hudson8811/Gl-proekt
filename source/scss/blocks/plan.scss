@@ -89,7 +89,7 @@
 		@include transition(background-color);
 
 		@include hover {
-			background-color: rgba($color-blue, 0.85);
+			background-color: rgba($color-blue, 0.75);
 		}
 
 		svg {

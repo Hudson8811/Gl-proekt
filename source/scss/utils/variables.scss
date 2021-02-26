@@ -20,8 +20,14 @@ $color-dark3: #1e2e34;
 $color-gray-e5: #e5e5e5;
 $color-gray-c9: #c9c9c9;
 $color-gray-fa: #fafafa;
+$color-gray-f9: #f9f9f9;
+$color-gray-bb: #bbbbbb;
+$color-gray-ee: #eeeeee;
+$color-gray-99: #999999;
 
 $color-blue: #01a5e4;
+$color-dark-blue: #0088d1;
+$color-light-blue: #3ba1d9;
 $color-pale-sky: #677b83;
 $color-athens-gray: #fafafa;
 
@@ -36,8 +42,8 @@ $fonts: "Roboto" "Roboto-Regular" 400 normal, "Roboto" "Roboto-Black" 900 normal
 	"Mulish" "Mulish-SemiBold" 600 normal, "Mulish" "Mulish-Bold" 700 normal,
 	"Mulish" "Mulish-Black" 900 normal;
 
-$font-family--main: "Mulish", "Arial", sans-serif;
-$font-family--secondary: "Roboto", "Arial", sans-serif;
+$font-family--main: "Mulish", "Open Sans", sans-serif;
+$font-family--secondary: "Roboto", "Open Sans", sans-serif;
 
 $font-size-base: 14px;
 $line-height-base: 1.5714; //22px

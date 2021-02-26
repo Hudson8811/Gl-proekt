@@ -1,5 +1,5 @@
 .news {
-	padding: 65px 0 190px;
+	padding: 65px 0 84px;
 	overflow: hidden;
 
 	&__top {
@@ -9,19 +9,27 @@
 		margin-bottom: 5px;
 	}
 
+	&__nav {
+		padding-top: 14px;
+		padding-right: 12px;
+	}
+
 	&__all {
 		font-family: $font-family--secondary;
 		font-size: 18px;
 		line-height: 26px;
 		color: $color-dark2;
 		text-decoration: underline;
+		@include transition(color);
 
 		@include hover {
-			text-decoration: none;
+			color: $color-blue;
+			text-decoration: underline;
 		}
 
 		span {
 			color: $color-blue;
+			text-decoration: underline;
 		}
 	}
 
@@ -46,5 +54,9 @@
 		max-width: 480px;
 		height: 650px;
 		padding: 15px 33px 9px 16px;
+
+		.preview-card__bottom {
+			padding-left: 10px;
+		}
 	}
 }

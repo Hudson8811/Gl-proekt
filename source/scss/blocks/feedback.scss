@@ -1,0 +1,65 @@
+.feedback {
+	background-color: $color-dark2;
+	position: relative;
+
+	&__container {
+		padding-top: 121px;
+		padding-bottom: 53px;
+	}
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		max-width: 485px;
+		width: 100%;
+	}
+
+	&__icon {
+		margin-bottom: 94px;
+	}
+
+	&__title {
+		color: $color-default-white;
+		margin-bottom: 60px;
+	}
+
+	&__tell-us,
+	&__phone,
+	&__mail {
+		font-family: $font-family--secondary;
+		font-size: 18px;
+		line-height: 26px;
+		color: $color-default-white;
+	}
+
+	&__phone,
+	&__mail {
+		align-self: flex-start;
+		@include transition(color);
+
+		@include hover {
+			color: $color-blue;
+		}
+	}
+
+	&__tell-us {
+		margin-bottom: 46px;
+	}
+
+	&__phone {
+		margin-bottom: 14px;
+	}
+
+	&__social {
+		margin-top: 79px;
+		padding-left: 7px;
+	}
+
+	&__form {
+		width: 50%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}

@@ -1,8 +1,12 @@
 section.about
-	.container
-		.heading.heading--large.about__title Новости
+	.container.about__container
+		.heading.about__title О компании
 		.about__wrapper
-			.about__col
-				.about__image
-			.about__col
-				.about__content
+			.about__image
+				img(src='img/about.jpg', alt='')
+			.about__content
+				.about__subtitle Светопрозрачные конструкции
+				.about__desc Светопрозрачные конструкции в наше время активно используются при строительстве самых разных объектов. Они позволяют сделать
+									|  здание теплее, защитить от лишних шумов, а также улучшить внешний вид постройки. Именно поэтому на многих фасадах различных зданий,
+									|  в офисах и частных домах предпочитают использовать светопрозрачные конструкции.
+				+button('Подробнее', 'about__btn', '#')

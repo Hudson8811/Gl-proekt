@@ -1,0 +1,28 @@
+.services {
+	background-color: $color-dark2;
+
+	&__container {
+		position: relative;
+		padding-top: 31px;
+		padding-bottom: 44px;
+	}
+
+	.lines {
+		opacity: 0.16;
+	}
+
+	&__title {
+		margin-bottom: 56px;
+		color: $color-default-white;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		width: 25%;
+		margin-bottom: 33px;
+	}
+}
