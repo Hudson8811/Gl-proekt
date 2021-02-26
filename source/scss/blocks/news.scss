@@ -1,12 +1,17 @@
 .news {
 	padding: 65px 0 84px;
 	overflow: hidden;
+	position: relative;
 
 	&__top {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 5px;
+	}
+
+	&__title {
+		margin-left: -7px;
 	}
 
 	&__nav {
