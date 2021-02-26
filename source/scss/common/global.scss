@@ -83,6 +83,14 @@ a {
 	}
 }
 
+input,
+textarea,
+select {
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+}
+
 ol,
 ul {
 	margin: 0;

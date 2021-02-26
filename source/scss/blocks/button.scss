@@ -1,0 +1,25 @@
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 100%;
+	padding: 8px 22px;
+	background-color: $color-blue;
+	font-size: 14px;
+	line-height: 17px;
+	font-weight: bold;
+	letter-spacing: -0.07em;
+	color: $color-default-white;
+	cursor: pointer;
+	box-sizing: border-box;
+	@include transition(background-color);
+
+	@include media(md) {
+		font-size: 16px;
+		line-height: 28px;
+	}
+
+	@include hover {
+		background-color: rgba($color-blue, 0.75);
+	}
+}

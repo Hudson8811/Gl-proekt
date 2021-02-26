@@ -1,0 +1,154 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	background-color: rgba($color-default-black, 0.12);
+	overflow: hidden;
+
+	&__wrapper {
+		padding: 116px 40px 0;
+	}
+
+	&__types {
+		display: flex;
+		margin-bottom: 24px;
+	}
+
+	&__type {
+		width: 57%;
+
+		&:last-child {
+			width: 43%;
+		}
+
+		label {
+			display: flex;
+			flex-direction: column;
+			cursor: pointer;
+
+			input {
+				display: none;
+
+				&:checked + svg {
+					fill: $color-blue;
+
+					+ span {
+						color: $color-blue;
+					}
+				}
+			}
+
+			svg {
+				fill: $color-gray-f9;
+				margin-bottom: 38px;
+				@include transition(fill);
+			}
+
+			span {
+				font-size: 16px;
+				color: $color-gray-f9;
+				@include transition(color);
+			}
+		}
+	}
+
+	&__grid {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -10px;
+
+		.form__field {
+			width: calc(33.3333% - 20px);
+			margin: 0 10px 11px;
+
+			&--full {
+				width: 100%;
+			}
+
+			&--disabled {
+				pointer-events: none;
+				color: $color-pale-sky;
+
+				&::after {
+					border-bottom-color: $color-pale-sky;
+					border-right-color: $color-pale-sky;
+				}
+			}
+		}
+
+		&--w50 {
+			margin: 0 -7.5px;
+
+			.form__field {
+				width: calc(42% - 15px);
+				margin: 0 7.5px 4px;
+
+				&:last-child {
+					width: calc(58% - 15px);
+				}
+			}
+		}
+	}
+
+	&__field {
+		&--textarea {
+			margin-top: 43px;
+
+			textarea {
+				padding: 17px 15px 17px 0;
+			}
+		}
+	}
+
+	&__switch {
+		text-align: right;
+		margin: 54px 0 45px;
+
+		label {
+			display: inline-flex;
+		}
+	}
+
+	&__radio-group {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 32px;
+	}
+
+	&__nav {
+		display: flex;
+	}
+
+	&__nav-btn {
+		display: flex;
+		align-items: center;
+		width: 50%;
+		padding: 53px 35px;
+		box-sizing: border-box;
+		cursor: pointer;
+		@include transition(background-color);
+
+		@include hover {
+			background-color: $color-blue;
+		}
+
+		input {
+			display: none;
+		}
+
+		svg {
+			margin-right: 28px;
+		}
+
+		span {
+			font-size: 16px;
+			color: $color-default-white;
+		}
+
+		&--file {
+			padding: 53px 63px;
+		}
+	}
+}

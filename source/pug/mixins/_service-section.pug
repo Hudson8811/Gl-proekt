@@ -1,0 +1,6 @@
+mixin service-section(className, title, href, links)
+	.service-section(class=className)
+		a.service-section__title(href=href, target='_blank')!= title
+		.service-section__links
+			each item in links
+				a(href=item.href, target='_blank')!= item.text

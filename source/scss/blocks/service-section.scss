@@ -1,0 +1,37 @@
+.service-section {
+	&__title {
+		display: block;
+		font-family: $font-family--secondary;
+		font-size: 18px;
+		line-height: 21px;
+		font-weight: 900;
+		margin-bottom: 18px;
+		color: $color-default-white;
+		@include transition(color);
+
+		@include hover {
+			color: $color-blue;
+		}
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: column;
+
+		a {
+			font-family: $font-family--secondary;
+			font-size: 12px;
+			line-height: 14px;
+			color: $color-pale-sky;
+			text-decoration: underline;
+
+			@include hover {
+				text-decoration: none;
+			}
+
+			+ a {
+				margin-top: 12px;
+			}
+		}
+	}
+}

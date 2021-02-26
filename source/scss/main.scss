@@ -4,6 +4,7 @@
 @import "swiper-bundle.css";
 // @import "jquery.pagepiling.css";
 @import "jquery.fancybox.css";
+@import "nice-select.css";
 
 @import "common/fonts";
 @import "utils/normalize";
@@ -13,7 +14,9 @@
 
 @import "vendor/simplebar";
 
+/* Components */
 @import "blocks/btn";
+@import "blocks/button";
 @import "blocks/field";
 @import "blocks/heading";
 @import "blocks/overlay";
@@ -23,6 +26,9 @@
 @import "blocks/menu";
 @import "blocks/logo";
 @import "blocks/social";
+@import "blocks/lines";
+
+/* Blocks */
 @import "blocks/plan-card";
 @import "blocks/plan";
 @import "blocks/services-slider";
@@ -32,6 +38,11 @@
 @import "blocks/preview-card";
 @import "blocks/clients";
 @import "blocks/news";
+@import "blocks/about";
+@import "blocks/form";
+@import "blocks/feedback";
+@import "blocks/service-section";
+@import "blocks/services";
 
 @import "blocks/header-menu";
 @import "blocks/header";

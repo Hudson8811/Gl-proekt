@@ -33,19 +33,34 @@
 		line-height: 26px;
 		color: $color-default-white;
 		text-decoration: underline;
+		@include transition(color);
 
 		@include hover {
-			text-decoration: none;
+			color: $color-blue;
+			text-decoration: underline;
 		}
 
 		span {
 			color: $color-blue;
+			text-decoration: underline;
 		}
 	}
 
 	&__slider {
 		margin-top: 52px;
 		overflow: visible;
+
+		&::before {
+			content: '';
+			display: block;
+			width: 200%;
+			height: 100%;
+			background-color: $color-dark2;
+			position: absolute;
+			left: calc(-200% - 1px);
+			top: 0;
+			z-index: 10;
+		}
 	}
 
 	&__grid {

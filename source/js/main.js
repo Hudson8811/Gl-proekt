@@ -229,7 +229,8 @@ function setOverlay(cb) {
 		slideToClickedSlide: true,
 		loop: true,
 		loopedSlides: 7,
-		slidesPerView: 'auto'
+		slidesPerView: 'auto',
+		allowTouchMove: false
 	});
 
 	servicesSlider.controller.control = servicesThumbs;
@@ -265,7 +266,8 @@ function setOverlay(cb) {
 		},
 		speed: 300,
 		slidesPerView: 'auto',
-		centeredSlides: true
+		centeredSlides: true,
+		loop: true
 	});
 })();
 
@@ -284,4 +286,55 @@ function setOverlay(cb) {
 		spaceBetween: 10,
 		loop: true
 	});
+})();
+
+/* Form */
+(function(){
+	var parent = $('.form'),
+			changedField = parent.find('.form__field[data-change]');
+
+	parent.find('.form__type input').change(function () {
+		if ($(this).val() === '2' && $(this).prop('checked')) {
+			changedField.hide();
+			parent.find('.form__field--change').addClass('form__field--full');
+		} else {
+			changedField.show();
+			parent.find('.form__field--change').removeClass('form__field--full');
+		}
+	});
+
+	parent.find('.field--switch input').change(function () {
+		if ($(this).prop('checked')) {
+			parent.find('.form__field[data-disabled] .nice-select').addClass('form__field--disabled');
+		} else {
+			parent.find('.form__field[data-disabled] .nice-select').removeClass('form__field--disabled');
+		}
+	});
+})();
+
+/* Select */
+(function(){
+	$('.select').niceSelect();
+
+	$('.nice-select .list').hide();
+
+	$(document).click(function (e) {
+		var tar = $('.nice-select');
+		if (!tar.is(e.target) && tar.has(e.target).length === 0 || !tar.hasClass('open')) {
+			tar.find('.list').hide();
+		} else {
+			tar.find('.list').show();
+		}
+	});
+
+	var scrollOpt = {
+		autohidemode: false,
+		horizrailenabled:false,
+		cursorcolor: "#01A5E4",
+		cursorborder: "1px solid #01A5E4",
+		cursorborderradius: "8px",
+		cursorwidth: "2px"
+	};
+
+	$('.nice-select .list').niceScroll(scrollOpt);
 })();

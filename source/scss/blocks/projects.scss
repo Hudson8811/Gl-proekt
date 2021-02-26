@@ -2,13 +2,14 @@
 	overflow: hidden;
 
 	&__container {
-		padding: 23px 0 40px;
+		padding-top: 23px;
 	}
 
 	&__top {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		margin-bottom: -28px;
 	}
 
 	&__title {
@@ -18,25 +19,29 @@
 
 	&__all {
 		display: inline-block;
-		margin: 0 10px;
+		margin: 0 68px 0 10px;
 		padding-top: 30px;
 		font-family: $font-family--secondary;
 		font-size: 18px;
 		color: $color-dark2;
 		text-decoration: underline;
+		@include transition(color);
 
 		@include hover {
-			text-decoration: none;
+			color: $color-blue;
+			text-decoration: underline;
 		}
 	}
 
 	&__nav {
 		padding-top: 30px;
+		padding-right: 11px;
 	}
 
 	&__slider {
 		border-left: 1px solid $color-gray-e5;
 		overflow: visible;
+		padding-top: 67px;
 
 		&::before {
 			content: '';
@@ -45,7 +50,7 @@
 			height: 100%;
 			background-color: $color-gray-fa;
 			position: absolute;
-			left: -200%;
+			left: calc(-200% - 1px);
 			top: 0;
 			z-index: 10;
 		}
