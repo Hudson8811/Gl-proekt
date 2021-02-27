@@ -49,7 +49,6 @@ $('.plan__anchor').on('click',function (){
 eventDelay(window, 'mousewheel', function (down, up) {
 	var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 	var planIcons = $('.plan__image > svg');
-	console.log(down, up,lock,step);
 	if (down && lock == 0 && scrollTop == 0){
 		switch (step) {
 			case 1:
