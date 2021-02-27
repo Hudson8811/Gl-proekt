@@ -1845,6 +1845,13 @@ p {
   background-color: #fafafa;
 }
 
+@media screen and (max-width: 999px) {
+  .plan {
+    height: auto;
+    position: relative;
+  }
+}
+
 .plan__wrapper {
   position: relative;
   transition: filter 0.7s ease;
@@ -1855,6 +1862,13 @@ p {
   -ms-flex-pack: center;
       justify-content: center;
   min-height: 100%;
+}
+
+@media screen and (max-width: 999px) {
+  .plan__wrapper {
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+  }
 }
 
 .plan__wrapper.inactive {
@@ -1961,6 +1975,12 @@ p {
 
 .plan__anchor svg {
   fill: #ffffff;
+}
+
+@media screen and (max-width: 999px) {
+  .plan__anchor {
+    display: none;
+  }
 }
 
 .services-slider {
