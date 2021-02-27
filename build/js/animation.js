@@ -39,7 +39,7 @@ $('.plan__anchor').on('click',function (){
 		onComplete: function () {
 			planText.hide();
 			TweenMax.staggerFromTo(planIcons, 0.4, { alpha: 0, scale: 0.5 }, { alpha: 1, scale: 1, delay: 0.1, overwrite: !0, ease: Back.easeOut }, 0.05);
-			lock = 0; step++;
+			setTimeout(function() {lock = 0; step++;}, 1000);
 		},
 	});
 });
@@ -75,7 +75,7 @@ $(window).on('wheel', function(e) {
 					onComplete: function () {
 						planText.hide();
 						TweenMax.staggerFromTo(planIcons, 0.4, { alpha: 0, scale: 0.5 }, { alpha: 1, scale: 1, delay: 0.1, overwrite: !0, ease: Back.easeOut }, 0.05);
-						lock = 0; step++;
+						setTimeout(function() {lock = 0; step++;}, 1000);
 					},
 				});
 
@@ -118,7 +118,7 @@ $(window).on('wheel', function(e) {
 									clearProps: "all",
 									onComplete: function () {
 										TweenMax.to(planAnchor, 0.5, { alpha: 1, scale: 1 });
-										lock = 0; step--;
+										setTimeout(function() {lock = 0; step--;}, 1000);
 									},
 								}
 							);
@@ -134,7 +134,7 @@ $(window).on('wheel', function(e) {
 				TweenMax.to(otherContent, 0.7,{opacity:0, webkitFilter:"blur(10px)"});
 				TweenMax.set(planContent, {height:"100vh"});
 				TweenMax.from(planContent, 0.9,{height:0, onComplete: function () {
-						lock = 0; step--;
+						setTimeout(function() {lock = 0; step--;}, 1000);
 					}
 				});
 				break;
