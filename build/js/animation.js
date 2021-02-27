@@ -104,7 +104,6 @@ eventDelay(window, 'mousewheel', function (down, up) {
 					{
 						y: 0,
 						clearProps: "all",
-						ease: Power1.easeInOut,
 						onStart: function () {
 							planText.show();
 							TweenMax.fromTo(
