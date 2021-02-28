@@ -1,32 +1,62 @@
 .services-slider {
+	$self: &;
+
 	position: relative;
 	overflow: hidden;
 
 	&__container {
 		position: relative;
-		padding-bottom: 251px;
+		padding-top: 71px;
+
+		@include media(lg) {
+			padding-top: 0;
+			padding-bottom: 251px;
+		}
+	}
+
+	&__slider {
+		margin: 0 -28px;
 	}
 
 	&__wrapper {
 		display: flex;
-		align-items: center;
+		flex-direction: column;
+
+		@include media(lg) {
+			flex-direction: row;
+			align-items: center;
+		}
 	}
 
 	&__top {
-		max-width: 486px;
 		width: 100%;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
+		padding: 0 32px;
 		position: absolute;
-		top: 65px;
-		right: 9px;
+		top: 0;
+		left: 0;
 		z-index: 100;
+
+		@include media(xs) {
+			flex-direction: row;
+		}
+
+		@include media(lg) {
+			max-width: 486px;
+			padding: 0;
+			top: 65px;
+			left: unset;
+			right: 9px;
+		}
 	}
 
 	&__more {
 		display: block;
 		padding: 6px 24px;
+		margin: 0 auto 10px;
 		background-color: $color-blue;
 		font-family: $font-family--secondary;
 		font-size: 18px;
@@ -35,50 +65,138 @@
 		box-sizing: border-box;
 		@include transition(background-color);
 
+		@include media(xs) {
+			flex-direction: row;
+			margin: 0;
+		}
+
 		@include hover {
 			background-color: rgba($color-blue, 0.7);
 		}
 	}
 
 	&__image {
-		width: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding-top: 50px;
+		margin-bottom: 32px;
+
+		@include media(xs) {
+			flex-direction: row;
+		}
+
+		@include media(lg) {
+			width: 50%;
+			display: block;
+			padding-top: 0;
+			margin-bottom: 0;
+		}
 
 		img {
-			width: 100%;
-			height: 100%;
+			width: 38%;
+			height: 38%;
 			object-fit: cover;
+
+			@include media(lg) {
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 
 	&__content {
-		width: 50%;
-		padding-top: 68px;
+		@include media(lg) {
+			width: 50%;
+			padding-top: 68px;
+		}
+
+		#{$self} {
+			&__digit,
+			&__title {
+				display: none;
+
+				@include media(lg) {
+					display: block;
+				}
+			}
+		}
+
+		&--mobile {
+			position: relative;
+			width: 57%;
+			padding-top: 20px;
+
+			@include media(xs) {
+				padding-top: 44px;
+			}
+
+			#{$self} {
+				&__digit,
+				&__title {
+					display: block;
+
+					@include media(lg) {
+						display: none;
+					}
+				}
+			}
+		}
 	}
 
 	&__digit {
-		font-size: 322px;
-		line-height: 64px;
+		font-size: 222px;
+		line-height: 120px;
 		font-weight: 200;
 		color: $color-pale-sky;
 		letter-spacing: -0.08em;
 		opacity: 0.04;
-		margin-left: -15px;
+		position: absolute;
+		bottom: 52px;
+		left: -12px;
+
+		@include media(lg) {
+			margin-left: -15px;
+			font-size: 322px;
+			line-height: 64px;
+			position: relative;
+			bottom: unset;
+			left: unset;
+		}
 	}
 
 	&__title {
-		margin-bottom: 70px;
+		font-size: 24px;
+		line-height: 28px;
+		text-align: center;
 		word-break: break-word;
+
+		@include media(xs) {
+			font-size: 32px;
+			line-height: 1.125;
+			text-align: left;
+		}
+
+		@include media(lg) {
+			margin-bottom: 70px;
+		}
 	}
 
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
-		padding-left: 26px;
+		padding-left: 35px;
+
+		@include media(lg) {
+			padding-left: 26px;
+		}
 
 		li {
-			width: 55%;
+			width: 100%;
 			padding-left: 24px;
-			margin-bottom: 31px;
+			margin-bottom: 30px;
 			font-family: $font-family--secondary;
 			font-size: 14px;
 			line-height: 20px;
@@ -86,8 +204,15 @@
 			position: relative;
 			box-sizing: border-box;
 
+			@include media(lg) {
+				width: 55%;
+				margin-bottom: 31px;
+			}
+
 			&:nth-child(even) {
-				width: 45%;
+				@include media(lg) {
+					width: 45%;
+				}
 			}
 
 			&::before {
@@ -108,11 +233,14 @@
 		display: flex;
 		width: 100%;
 		height: 100%;
-		padding: 0 15px;
-		position: absolute;
-		bottom: 0;
-		left: 0;
 		overflow: visible;
+
+		@include media(lg) {
+			padding: 0 15px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
 
 		&::before {
 			content: '';
@@ -129,16 +257,25 @@
 
 	&__thumb-wrapper {
 		margin-top: auto;
-		height: 154px;
+		height: 114px;
+
+		@include media(lg) {
+			height: 154px;
+		}
 	}
 
 	&__thumb {
 		display: flex;
-		width: 25%;
-		padding: 24px;
+		width: 40%;
+		padding: 18px 3px 0;
 		position: relative;
 		box-sizing: border-box;
 		cursor: pointer;
+
+		@include media(lg) {
+			width: 25%;
+			padding: 24px;
+		}
 
 		@include hover {
 			.digit,
@@ -149,13 +286,17 @@
 
 		&::before {
 			content: '';
-			display: block;
+			display: none;
 			width: 1px;
 			height: 100%;
 			background-color: rgba($color-dark2, 0.16);
 			position: absolute;
 			top: 0;
 			left: 0;
+
+			@include media(lg) {
+				display: block;
+			}
 		}
 
 		&::after {
@@ -176,26 +317,40 @@
 		}
 
 		.digit {
-			font-size: 64px;
-			line-height: 32px;
+			font-size: 32px;
+			line-height: 18px;
 			font-weight: 200;
 			letter-spacing: -0.07em;
 			color: rgba($color-dark2, 0.16);
-			margin-bottom: 40px;
+			margin-bottom: 23px;
+
+			@include media(lg) {
+				font-size: 64px;
+				line-height: 32px;
+				margin-bottom: 40px;
+			}
 		}
 
 		.title {
-			font-size: 22px;
-			line-height: 28px;
-			font-weight: 900;
+			font-size: 13px;
+			line-height: 16px;
+			font-weight: 700;
 			letter-spacing: -0.07em;
 			color: rgba($color-dark2, 0.16);
 			word-break: break-word;
+
+			@include media(lg) {
+				font-size: 22px;
+				line-height: 28px;
+			}
 		}
 
 		&.swiper-slide-active {
-			width: 50%;
 			@include transition(width);
+
+			@include media(lg) {
+				width: 50%;
+			}
 
 			&::after {
 				width: 100%;

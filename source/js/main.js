@@ -231,11 +231,51 @@ function setOverlay(cb) {
 		loop: true,
 		loopedSlides: 7,
 		slidesPerView: 'auto',
-		allowTouchMove: false
+		spaceBetween: 15,
+		allowTouchMove: false,
+		breakpoints: {
+			992: {
+				spaceBetween: 0
+			}
+		}
 	});
 
 	servicesSlider.controller.control = servicesThumbs;
 	servicesThumbs.controller.control = servicesSlider;
+})();
+
+/* Advantages slider */
+(function(){
+	var advantagesSlider = undefined;
+
+	if ($('.__js_advantages-slider').length > 0) {
+		$(window).resize(function () {
+			initAdvantagesSlider();
+		});
+	}
+
+	initAdvantagesSlider();
+
+	function initAdvantagesSlider() {
+		if (window.matchMedia('(max-width: 991px)').matches && advantagesSlider == undefined) {
+			var advantagesSlider = new Swiper('.__js_advantages-slider', {
+				pagination: {
+					el: '.advantages-pagi'
+				},
+				navigation: {
+					prevEl: '.advantages-prev',
+					nextEl: '.advantages-next'
+				},
+				speed: 300,
+				slidesPerView: 'auto',
+				spaceBetween: 40,
+				loop: true
+			});
+		} else if (window.matchMedia('(min-width: 992px)').matches && advantagesSlider != undefined) {
+			advantagesSlider.destroy();
+			advantagesSlider = undefined;
+		}
+	}
 })();
 
 /* Projects slider */
@@ -250,8 +290,13 @@ function setOverlay(cb) {
 		},
 		speed: 300,
 		slidesPerView: 'auto',
-		spaceBetween: 10,
-		loop: true
+		spaceBetween: 15,
+		loop: true,
+		breakpoints: {
+			992: {
+				spaceBetween: 10,
+			}
+		}
 	});
 })();
 
@@ -267,8 +312,14 @@ function setOverlay(cb) {
 		},
 		speed: 300,
 		slidesPerView: 'auto',
-		centeredSlides: true,
-		loop: true
+		slidesPerColumn: 2,
+		spaceBetween: 15,
+		slidesPerColumnFill: 'column',
+		breakpoints: {
+			992: {
+				slidesPerColumn: 3,
+			}
+		}
 	});
 })();
 
@@ -284,8 +335,13 @@ function setOverlay(cb) {
 		},
 		speed: 300,
 		slidesPerView: 'auto',
-		spaceBetween: 10,
-		loop: true
+		spaceBetween: 18,
+		loop: true,
+		breakpoints: {
+			992: {
+				spaceBetween: 10,
+			}
+		}
 	});
 })();
 
@@ -338,4 +394,16 @@ function setOverlay(cb) {
 	};
 
 	$('.nice-select .list').niceScroll(scrollOpt);
+})();
+
+/* Services accordion */
+(function(){
+	var parent = $('.service-section');
+
+	if (window.matchMedia('(max-width: 991px)').matches) {
+		parent.find('.service-section__title').click(function (e) {
+			e.preventDefault();
+			$(this).toggleClass('open').next().slideToggle(300);
+		});
+	}
 })();

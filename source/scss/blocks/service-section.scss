@@ -1,6 +1,8 @@
 .service-section {
 	&__title {
-		display: block;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		font-family: $font-family--secondary;
 		font-size: 18px;
 		line-height: 21px;
@@ -12,11 +14,50 @@
 		@include hover {
 			color: $color-blue;
 		}
+
+		&.open {
+			svg {
+				transform: rotate(270deg);
+			}
+		}
+
+		svg {
+			stroke: $color-default-white;
+			transform: rotate(90deg);
+			margin-left: 5px;
+			@include transition(transform);
+
+			@include media(lg) {
+				display: none;
+			}
+		}
+
+		br {
+			display: none;
+
+			@include media(lg) {
+				display: block;
+			}
+		}
+	}
+
+	&__links-wrapper {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 34px;
+
+		@include media(lg) {
+			margin-bottom: 0;
+		}
 	}
 
 	&__links {
-		display: flex;
+		display: none;
 		flex-direction: column;
+
+		@include media(lg) {
+			display: flex;
+		}
 
 		a {
 			font-family: $font-family--secondary;

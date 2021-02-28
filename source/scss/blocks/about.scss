@@ -2,23 +2,42 @@
 	overflow: hidden;
 
 	&__container {
-		padding-bottom: 50px;
+		padding-bottom: 64px;
+
+		@include media(xl) {
+			padding-bottom: 50px;
+		}
 	}
 
 	&__title {
-		margin-bottom: 30px;
+		margin-bottom: 33px;
+
+		@include media(xl) {
+			margin-bottom: 30px;
+		}
 	}
 
 	&__wrapper {
 		display: flex;
-		align-items: center;
-		margin-right: -80px;
+		flex-direction: column;
+
+		@include media(xl) {
+			flex-direction: row;
+			align-items: center;
+			margin-right: -80px;
+		}
 	}
 
 	&__image {
 		width: 100%;
 		max-width: 480px;
-		height: 667px;
+		height: 488px;
+		margin: 0 auto;
+
+		@include media(xl) {
+			height: 667px;
+			margin: 0;
+		}
 
 		img {
 			width: 100%;
@@ -28,40 +47,64 @@
 	}
 
 	&__content {
-		width: 50%;
-		padding: 80px 0 55px 132px;
-		background-color: $color-default-white;
+		width: 100%;
+		padding-top: 33px;
 		position: relative;
+
+		@include media(xl) {
+			width: 50%;
+			padding: 80px 0 55px 132px;
+			background-color: $color-default-white;
+		}
 
 		&::after {
 			content: '';
-			display: block;
+			display: none;
 			background-color: $color-default-white;
 			width: 600%;
 			position: absolute;
 			top: 0;
 			bottom: 0;
 			left: 100%;
+
+			@include media(xl) {
+				display: block;
+			}
 		}
 	}
 
 	&__subtitle {
 		font-size: 22px;
 		line-height: 28px;
-		font-weight: 900;
+		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: -0.07em;
-		margin-bottom: 44px;
+		margin-bottom: 21px;
+
+		@include media(xl) {
+			margin-bottom: 44px;
+		}
 	}
 
 	&__desc {
 		font-family: $font-family--secondary;
 		font-size: 18px;
 		line-height: 26px;
-		margin-bottom: 28px;
+		margin-bottom: 15px;
+
+		@include media(xl) {
+			margin-bottom: 28px;
+		}
 	}
 
 	&__btn {
 		width: 127px;
+		padding: 14px 22px;
+		font-size: 16px;
+
+		@include media(xl) {
+			padding: 8px 22px;
+			font-size: 14px;
+		}
 	}
 }

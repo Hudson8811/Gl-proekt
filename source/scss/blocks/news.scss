@@ -1,31 +1,79 @@
 .news {
-	padding: 65px 0 84px;
 	overflow: hidden;
 	position: relative;
 
+	&__container {
+		padding: 52px 32px 43px;
+
+		@include media(lg) {
+			padding: 65px 15px 84px;
+		}
+	}
+
 	&__top {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 5px;
+		position: relative;
+
+		@include media(xs) {
+			flex-direction: row;
+		}
 	}
 
 	&__title {
-		margin-left: -7px;
+		margin-bottom: 12px;
+		text-align: center;
+
+		@include media(xs) {
+			max-width: 50%;
+			margin-bottom: 0;
+			text-align: left;
+		}
+
+		@include media(lg) {
+			margin-left: -7px;
+			max-width: 100%;
+		}
 	}
 
 	&__nav {
-		padding-top: 14px;
-		padding-right: 12px;
+		@include media(xs) {
+			position: absolute;
+			top: 18px;
+			right: 0;
+		}
+
+		@include media(lg) {
+			padding-top: 14px;
+			padding-right: 12px;
+			position: relative;
+			top: unset;
+			right: unset;
+		}
 	}
 
 	&__all {
+		display: block;
 		font-family: $font-family--secondary;
 		font-size: 18px;
 		line-height: 26px;
 		color: $color-dark2;
+		text-align: center;
 		text-decoration: underline;
 		@include transition(color);
+
+		@include media(xs) {
+			display: inline-block;
+			max-width: 50%;
+			text-align: left;
+		}
+
+		@include media(lg) {
+			max-width: 100%;
+		}
 
 		@include hover {
 			color: $color-blue;
@@ -39,8 +87,12 @@
 	}
 
 	&__slider {
-		margin-top: 32px;
+		margin-top: 42px;
 		overflow: visible;
+
+		@include media(lg) {
+			margin-top: 32px;
+		}
 
 		&::before {
 			content: '';
@@ -56,12 +108,30 @@
 	}
 
 	&__slide {
-		max-width: 480px;
-		height: 650px;
-		padding: 15px 33px 9px 16px;
+		max-width: 257px;
+		height: 348px;
+		padding: 16px;
 
-		.preview-card__bottom {
-			padding-left: 10px;
+		@include media(lg) {
+			max-width: 480px;
+			height: 650px;
+			padding: 15px 33px 9px 16px;
+		}
+
+		.preview-card {
+			&__bottom {
+				@include media(lg) {
+					padding-left: 10px;
+				}
+			}
+
+			&__digit {
+				margin-bottom: 13px;
+
+				@include media(lg) {
+					margin-bottom: 17px;
+				}
+			}
 		}
 	}
 }

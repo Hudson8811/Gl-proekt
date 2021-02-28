@@ -3,24 +3,56 @@
 	position: relative;
 
 	&__container {
-		padding-top: 121px;
+		padding-top: 86px;
 		padding-bottom: 53px;
+
+		@include media(lg) {
+			padding-top: 121px;
+			padding-bottom: 170px;
+		}
+
+		@include media(xl) {
+			padding-bottom: 53px;
+		}
 	}
 
 	&__left {
 		display: flex;
 		flex-direction: column;
-		max-width: 485px;
 		width: 100%;
+
+		@include media(lg) {
+			max-width: 485px;
+		}
 	}
 
 	&__icon {
-		margin-bottom: 94px;
+		margin-bottom: 40px;
+
+		@include media(lg) {
+			margin-bottom: 94px;
+		}
+
+		svg {
+			width: 86px;
+			height: 93px;
+
+			@include media(lg) {
+				width: 140px;
+				height: 152px;
+			}
+		}
 	}
 
 	&__title {
 		color: $color-default-white;
-		margin-bottom: 60px;
+		margin-bottom: 32px;
+		line-height: 40px;
+
+		@include media(lg) {
+			margin-bottom: 60px;
+			line-height: 1.125;
+		}
 	}
 
 	&__tell-us,
@@ -43,7 +75,11 @@
 	}
 
 	&__tell-us {
-		margin-bottom: 46px;
+		margin-bottom: 42px;
+
+		@include media(lg) {
+			margin-bottom: 46px;
+		}
 	}
 
 	&__phone {
@@ -51,15 +87,23 @@
 	}
 
 	&__social {
-		margin-top: 79px;
-		padding-left: 7px;
+		margin-top: 47px;
+
+		@include media(lg) {
+			margin-top: 79px;
+			padding-left: 7px;
+		}
 	}
 
 	&__form {
-		width: 50%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		right: 0;
+		width: 100%;
+
+		@include media(lg) {
+			width: 50%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
 	}
 }
