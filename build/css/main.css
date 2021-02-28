@@ -3220,6 +3220,133 @@ p {
   margin-bottom: 33px;
 }
 
+.service-card {
+  position: relative;
+  overflow: hidden;
+  max-width: 480px;
+  padding-top: 40px;
+}
+
+.service-card::before {
+  content: attr(data-count);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 240px;
+  line-height: 0.76;
+  color: #677b83;
+  font-weight: 200;
+  letter-spacing: -0.08em;
+  opacity: 0.04;
+}
+
+@media (min-width: 992px) {
+  .service-card::before {
+    font-size: 312px;
+  }
+}
+
+.service-card--reverse .service-card__image {
+  margin-right: -30px;
+  margin-left: auto;
+}
+
+.service-card--reverse .service-card__title {
+  right: auto;
+  left: 0;
+}
+
+.service-card--reverse::before {
+  right: auto;
+  left: 0;
+}
+
+.service-card__image {
+  width: 80%;
+  max-width: 367px;
+  margin-left: -30px;
+}
+
+@media (min-width: 768px) {
+  .service-card__image {
+    width: 90%;
+  }
+}
+
+.service-card__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.service-card__title {
+  position: absolute;
+  top: 47px;
+  right: 0;
+  width: 175px;
+  padding: 8px;
+}
+
+.service-card__title a {
+  font-size: 18px;
+  line-height: 1.27;
+  color: #000000;
+  font-weight: 900;
+  letter-spacing: -0.07em;
+  transition: color 0.3s ease;
+}
+
+@media (min-width: 992px) {
+  .service-card__title a {
+    font-size: 22px;
+  }
+}
+
+.service-card__title a:focus {
+  outline: none;
+  color: #01a5e4;
+}
+
+.service-card__title a:active {
+  opacity: 0.7;
+}
+
+@media (min-width: 992px) {
+  .service-card__title a:hover, .service-card__title a:focus {
+    color: #01a5e4;
+  }
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: -32px;
+}
+
+@media (min-width: 768px) {
+  .services-list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.services-list__item {
+  margin-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .services-list__item {
+    width: 50%;
+  }
+}
+
+.services-page {
+  padding: 92px 0 249px;
+}
+
 .header-menu {
   list-style: none;
   padding: 0;

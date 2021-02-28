@@ -8,7 +8,12 @@ if (!mobileCheck()) {
 		planAnchor = $('.plan__anchor'),
 		_savedTextBlockHeight = 0;
 
-	$('body').addClass('blocked');
+	var isAnim = $('body').hasClass('__js_is-animation');
+
+	if (isAnim) {
+		$('body').addClass('blocked');
+	}
+
 	TweenMax.set(otherContent, {alpha: 0, webkitFilter:"blur(10px)"});
 	TweenMax.to(planText, 0.8, {opacity: 1, ease: Linear.easing});
 

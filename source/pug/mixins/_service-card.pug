@@ -1,0 +1,12 @@
+mixin service-card(item, cl, tg)
+	- let tag = tg ? tg : 'div';
+	- let cls = cl ? cl + ' ' : '';
+	#{tag}(class= cls + 'service-card')&attributes(attributes)
+		.service-card__image
+			img(src="img/services-page/building.png", width="367", height="347", alt="")
+		.service-card__title
+			a(href= URLS.servicesGroup)
+				if item.text === 'flag'
+					| Автоматизи&shy;ро&shy;ван&shy;ные системы
+				else
+					| #{item.text}
