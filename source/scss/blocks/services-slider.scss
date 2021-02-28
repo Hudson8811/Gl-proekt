@@ -1,8 +1,13 @@
 .services-slider {
 	$self: &;
 
+	padding-top: 8px;
 	position: relative;
 	overflow: hidden;
+
+	@include media(lg) {
+		padding-top: 0;
+	}
 
 	&__container {
 		position: relative;
@@ -36,7 +41,7 @@
 		justify-content: space-between;
 		padding: 0 32px;
 		position: absolute;
-		top: 0;
+		top: 16px;
 		left: 0;
 		z-index: 100;
 

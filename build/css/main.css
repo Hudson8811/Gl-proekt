@@ -1860,33 +1860,25 @@ p {
 }
 
 .plan {
-  height: 100vh;
-  position: absolute;
+  height: auto;
+  position: relative;
   overflow: hidden;
   left: 0;
   top: 0;
   width: 100%;
   box-sizing: border-box;
   z-index: 100;
-  background-color: #ffffff;
+  background-color: #fafafa;
 }
 
 @media (min-width: 992px) {
   .plan {
-    background-color: #fafafa;
-  }
-}
-
-@media screen and (max-width: 999px) {
-  .plan {
-    height: auto;
-    position: relative;
+    height: 100vh;
+    position: absolute;
   }
 }
 
 .plan__wrapper {
-  position: relative;
-  transition: filter 0.7s ease;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -1894,13 +1886,8 @@ p {
   -ms-flex-pack: center;
       justify-content: center;
   min-height: 100%;
-}
-
-@media screen and (max-width: 999px) {
-  .plan__wrapper {
-    -ms-flex-direction: column-reverse;
-        flex-direction: column-reverse;
-  }
+  position: relative;
+  transition: filter 0.7s ease;
 }
 
 .plan__wrapper.inactive {
@@ -1911,14 +1898,9 @@ p {
 }
 
 .plan__wrapper img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-@media (min-width: 992px) {
-  .plan__wrapper img {
-    width: 100%;
-  }
 }
 
 .plan__wrapper svg {
@@ -1953,41 +1935,20 @@ p {
 .plan__title {
   max-width: 938px;
   width: 100%;
-  margin: 0 auto;
-  font-family: "Mulish", "Open Sans", sans-serif;
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  color: #172328;
-  margin-top: 108px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 992px) {
   .plan__title {
-    font-size: 98px;
-    line-height: 110px;
     margin-top: 100px;
   }
 }
 
-.plan__scroll {
-  overflow-x: scroll;
-  margin-top: 20px;
-  position: relative;
-}
-
-@media (min-width: 992px) {
-  .plan__scroll {
-    overflow-x: auto;
-  }
-}
-
 .plan__image {
-  display: inline-block;
   height: 556px;
   position: relative;
-  overflow: hidden;
 }
 
 .plan__image::before, .plan__image::after {
@@ -1995,20 +1956,18 @@ p {
   display: block;
   width: 100%;
   height: 215px;
-  background: linear-gradient(180deg, #FFFFFF 58.85%, rgba(250, 250, 250, 0) 100%);
+  background: linear-gradient(180deg, #fafafa 58.85%, rgba(250, 250, 250, 0) 100%);
   position: absolute;
-  z-index: 1;
+  left: 0;
   pointer-events: none;
 }
 
 .plan__image::before {
   top: -75px;
-  left: 0;
 }
 
 .plan__image::after {
-  bottom: -75px;
-  left: 0;
+  bottom: -100px;
   -ms-transform: rotate(180deg);
       transform: rotate(180deg);
 }
@@ -2016,6 +1975,7 @@ p {
 @media (min-width: 992px) {
   .plan__image {
     height: auto;
+    margin-top: 20px;
   }
 }
 
@@ -2028,8 +1988,7 @@ p {
 }
 
 .plan__anchor {
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: center;
@@ -2065,15 +2024,23 @@ p {
   fill: #ffffff;
 }
 
-@media screen and (max-width: 999px) {
+@media (min-width: 992px) {
   .plan__anchor {
-    display: none;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
 .services-slider {
+  padding-top: 8px;
   position: relative;
   overflow: hidden;
+}
+
+@media (min-width: 992px) {
+  .services-slider {
+    padding-top: 0;
+  }
 }
 
 .services-slider__container {
@@ -2120,7 +2087,7 @@ p {
       justify-content: space-between;
   padding: 0 32px;
   position: absolute;
-  top: 0;
+  top: 16px;
   left: 0;
   z-index: 100;
 }
@@ -2787,6 +2754,8 @@ p {
 @media (min-width: 414px) {
   .projects__top {
     padding-right: 165px;
+    -ms-flex-align: start;
+        align-items: flex-start;
   }
 }
 
@@ -3838,7 +3807,7 @@ p {
 }
 
 .form__grid .form__field--full {
-  width: 100%;
+  width: 100% !important;
 }
 
 .form__grid .form__field--disabled {
@@ -3859,14 +3828,14 @@ p {
 
 @media (min-width: 992px) {
   .form__grid--w50 .form__field {
-    width: calc(42% - 15px);
+    width: calc(42% - 15px) !important;
     margin: 0 7.5px 4px;
   }
 }
 
 @media (min-width: 992px) {
   .form__grid--w50 .form__field:last-child {
-    width: calc(58% - 15px);
+    width: calc(58% - 15px) !important;
   }
 }
 

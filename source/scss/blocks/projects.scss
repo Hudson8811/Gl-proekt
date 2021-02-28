@@ -19,6 +19,7 @@
 
 		@include media(xs) {
 			padding-right: 165px;
+			align-items: flex-start;
 		}
 
 		@include media(lg) {

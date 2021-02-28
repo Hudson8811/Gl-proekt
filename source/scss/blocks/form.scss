@@ -131,7 +131,7 @@
 			}
 
 			&--full {
-				width: 100%;
+				width: 100% !important;
 			}
 
 			&--disabled {
@@ -152,13 +152,13 @@
 
 			.form__field {
 				@include media(lg) {
-					width: calc(42% - 15px);
+					width: calc(42% - 15px) !important;
 					margin: 0 7.5px 4px;
 				}
 
 				&:last-child {
 					@include media(lg) {
-						width: calc(58% - 15px);
+						width: calc(58% - 15px) !important;
 					}
 				}
 			}

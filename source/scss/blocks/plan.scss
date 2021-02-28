@@ -1,31 +1,26 @@
 .plan {
-	height: 100vh;
-	position: absolute;
+	height: auto;
+	position: relative;
 	overflow: hidden;
 	left: 0;
 	top: 0;
 	width: 100%;
 	box-sizing: border-box;
 	z-index: 100;
-	background-color: #fafafa;
+	background-color: $color-athens-gray;
 
-	@media screen and (max-width: 999px) {
-		height: auto;
-		position: relative;
+	@include media(lg) {
+		height: 100vh;
+		position: absolute;
 	}
 
 	&__wrapper {
-		position: relative;
-		transition: filter 0.7s ease;
-
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		min-height: 100%;
-
-		@media screen and (max-width: 999px) {
-			flex-direction: column-reverse;
-		}
+		position: relative;
+		transition: filter 0.7s ease;
 
 		&.inactive {
 			-webkit-filter: blur(7px);
@@ -62,19 +57,44 @@
 	&__title {
 		max-width: 938px;
 		width: 100%;
-		margin: 0 auto;
-		font-family: $font-family--main;
-		font-size: 98px;
-		line-height: 110px;
-		font-weight: 900;
-		letter-spacing: -0.05em;
-		color: $color-dark2;
-		margin-top: 100px;
+		margin-top: 10px;
+		position: relative;
+		z-index: 1;
+
+		@include media(lg) {
+			margin-top: 100px;
+		}
 	}
 
 	&__image {
-		margin-top: 20px;
+		height: 556px;
 		position: relative;
+
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 215px;
+			background: linear-gradient(180deg, $color-athens-gray 58.85%, rgba(250, 250, 250, 0) 100%);
+			position: absolute;
+			left: 0;
+			pointer-events: none;
+		}
+
+		&::before {
+			top: -75px;
+		}
+
+		&::after {
+			bottom: -100px;
+			transform: rotate(180deg);
+		}
+
+		@include media(lg) {
+			height: auto;
+			margin-top: 20px;
+		}
 	}
 
 	&__caption {
@@ -85,7 +105,7 @@
 	}
 
 	&__anchor {
-		display: flex;
+		display: none;
 		align-items: center;
 		justify-content: center;
 		width: 60px;
@@ -106,8 +126,8 @@
 			fill: $color-default-white;
 		}
 
-		@media screen and (max-width: 999px) {
-			display: none;
+		@include media(lg) {
+			display: flex;
 		}
 	}
 }
