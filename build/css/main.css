@@ -4309,7 +4309,6 @@ p {
 
 .service-card {
   position: relative;
-  overflow: hidden;
   max-width: 480px;
   padding-top: 40px;
 }
@@ -4371,7 +4370,12 @@ p {
   top: 47px;
   right: 0;
   width: 175px;
-  padding: 8px;
+}
+
+@media (min-width: 992px) {
+  .service-card__title {
+    right: 38px;
+  }
 }
 
 .service-card__title a {
@@ -4430,8 +4434,18 @@ p {
   }
 }
 
-.services-page {
-  padding: 92px 0 249px;
+.services-page__list {
+  margin: 92px 0 249px;
+}
+
+.services-page__inner {
+  position: relative;
+  border-top: solid 1px transparent;
+  border-bottom: solid 1px transparent;
+}
+
+.services-page .lines .line {
+  background-color: rgba(23, 35, 40, 0.16);
 }
 
 .header-menu {

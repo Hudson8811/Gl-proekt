@@ -10,9 +10,9 @@ block header
 
 block content
 	article.services-page
-		.container
+		.services-page__inner.container
 			h1.visually-hidden Услуги
-			ul.services-list
+			ul.services-page__list.services-list
 				- let count = 1;
 				each item, index in SERVICES_LIST
 					if count > 4
@@ -20,7 +20,9 @@ block content
 					- let modifierClass = count > 2 ? ' service-card--reverse' : '';
 					+service-card(item, 'services-list__item' + modifierClass, 'li')(data-count= item.count)
 					- count++;
-	//- include modules/services
+
+			include modules/lines
+	include modules/services
 block footer
 	include modules/footer
 

@@ -1,7 +1,6 @@
 .service-card {
 	$self: &;
 	position: relative;
-	overflow: hidden;
 	max-width: 480px;
 	padding-top: 40px;
 
@@ -59,8 +58,11 @@
 		top: 47px;
 		right: 0; //38px;
 		width: 175px;
-		padding: 8px;
 		//background-color: red;
+
+		@include media(lg) {
+			right: 38px;
+		}
 
 		a {
 			@include text(18px, 1.27);

@@ -1,3 +1,17 @@
 .services-page {
-	padding: 92px 0 249px;
+	&__list {
+		margin: 92px 0 249px;
+	}
+
+	&__inner {
+		position: relative;
+		border-top: solid 1px transparent;
+		border-bottom: solid 1px transparent;
+	}
+
+	.lines {
+		.line {
+			background-color: rgba($color-dark2, 0.16);
+		}
+	}
 }
