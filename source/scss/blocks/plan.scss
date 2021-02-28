@@ -7,10 +7,11 @@
 	width: 100%;
 	box-sizing: border-box;
 	z-index: 100;
-	background-color: $color-default-white;
+	background-color: #fafafa;
 
-	@include media(lg) {
-		background-color: #fafafa;
+	@media screen and (max-width: 999px) {
+		height: auto;
+		position: relative;
 	}
 
 	&__wrapper {
@@ -22,6 +23,10 @@
 		justify-content: center;
 		min-height: 100%;
 
+		@media screen and (max-width: 999px) {
+			flex-direction: column-reverse;
+		}
+
 		&.inactive {
 			-webkit-filter: blur(7px);
 			-moz-filter: blur(7px);
@@ -31,12 +36,9 @@
 		}
 
 		img {
+			width: 100%;
 			height: 100%;
 			object-fit: cover;
-
-			@include media(lg) {
-				width: 100%;
-			}
 		}
 
 		svg {
@@ -62,62 +64,17 @@
 		width: 100%;
 		margin: 0 auto;
 		font-family: $font-family--main;
-		font-size: 32px;
-		line-height: 40px;
-		font-weight: 700;
+		font-size: 98px;
+		line-height: 110px;
+		font-weight: 900;
 		letter-spacing: -0.05em;
 		color: $color-dark2;
-		margin-top: 108px;
-
-		@include media(lg) {
-			font-size: 98px;
-			line-height: 110px;
-			margin-top: 100px;
-		}
-	}
-
-	&__scroll {
-		overflow-x: scroll;
-		margin-top: 20px;
-		position: relative;
-
-		@include media(lg) {
-			overflow-x: auto;
-		}
+		margin-top: 100px;
 	}
 
 	&__image {
-		display: inline-block;
-		height: 556px;
+		margin-top: 20px;
 		position: relative;
-		overflow: hidden;
-
-		&::before,
-		&::after {
-			content: '';
-			display: block;
-			width: 100%;
-			height: 215px;
-			background: linear-gradient(180deg, #FFFFFF 58.85%, rgba(250, 250, 250, 0) 100%);
-			position: absolute;
-			z-index: 1;
-			pointer-events: none;
-		}
-
-		&::before {
-			top: -75px;
-			left: 0;
-		}
-
-		&::after {
-			bottom: -75px;
-			left: 0;
-			transform: rotate(180deg);
-		}
-
-		@include media(lg) {
-			height: auto;
-		}
 	}
 
 	&__caption {
@@ -147,6 +104,10 @@
 
 		svg {
 			fill: $color-default-white;
+		}
+
+		@media screen and (max-width: 999px) {
+			display: none;
 		}
 	}
 }
