@@ -1,6 +1,9 @@
 mixin service-section(className, title, href, links)
 	.service-section(class=className)
-		a.service-section__title(href=href, target='_blank')!= title
+		a.service-section__title(href=href, target='_blank')
+			span!= title
+			+icon('chevron')(width="16", height="27")
 		.service-section__links
-			each item in links
-				a(href=item.href, target='_blank')!= item.text
+			.service-section__links-wrapper
+				each item in links
+					a(href=item.href, target='_blank')!= item.text

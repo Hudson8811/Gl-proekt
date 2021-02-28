@@ -227,7 +227,7 @@ function mobileCheck() {
 		navigator.userAgent.match(/BlackBerry/i) ||
 		navigator.userAgent.match(/Windows Phone/i) ||
 		navigator.userAgent.match(/Trident/i) ||
-		$(window).width() < 1000
+		$(window).width() < 992
 	) {
 		return true;
 	} else {

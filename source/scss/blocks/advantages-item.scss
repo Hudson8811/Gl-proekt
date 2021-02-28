@@ -1,20 +1,51 @@
 .advantages-item {
+	$self: &;
+
 	display: flex;
+	flex-direction: column;
 	color: $color-default-white;
+
+	@include media(lg) {
+		flex-direction: row;
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+
+		@include media(lg) {
+			max-width: 110px;
+			width: 100%;
+			height: 110px;
+		}
+	}
 
 	&__icon {
 		display: flex;
 		justify-content: center;
-		max-width: 110px;
+		max-width: 70px;
 		width: 100%;
-		height: 110px;
-		margin-right: 20px;
+		height: 70px;
+		margin-right: 5px;
+		margin-bottom: 10px;
+
+		@include media(lg) {
+			max-width: 110px;
+			height: 110px;
+			margin-right: 20px;
+			margin-bottom: 0;
+		}
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	&__title {
 		font-size: 22px;
 		line-height: 28px;
-		font-weight: 900;
+		font-weight: 700;
 		letter-spacing: -0.07em;
 		margin-bottom: 8px;
 	}
@@ -22,5 +53,29 @@
 	&__text {
 		font-size: 14px;
 		line-height: 22px;
+	}
+
+	&__content {
+		#{$self} {
+			&__title {
+				display: none;
+
+				@include media(lg) {
+					display: block;
+				}
+			}
+		}
+
+		&--mobile {
+			#{$self} {
+				&__title {
+					display: block;
+
+					@include media(lg) {
+						display: none;
+					}
+				}
+			}
+		}
 	}
 }

@@ -2,23 +2,40 @@ section.advantages
 	.container.advantages__container
 		include lines
 		.advantages__wrapper
-			.heading.advantages__title Наши  преиму-  щества
-			.advantages__items
-				.advantages-item.advantages__item
-					.advantages-item__icon
-						+icon('advantage-saw')(width="98", height="85")
-					.advantages-item__content
-						.advantages-item__title Собственное  производство
-						.advantages-item__text Изготовление светопрозрачных конструкций всех типов: типовые ЖК, бизнес центры, торговые центры
-				.advantages-item.advantages__item
-					.advantages-item__icon
-						+icon('advantage-rocket')(width="62", height="109")
-					.advantages-item__content
-						.advantages-item__title 13 лет <br>  на рынке
-						.advantages-item__text Работаем с 2007 года. 86 специалистов в штате. 441 реализованный проект
-				.advantages-item.advantages__item
-					.advantages-item__icon
-						+icon('advantage-note')(width="88", height="100")
-					.advantages-item__content
-						.advantages-item__title О наших объектах <br> пишут
-						.advantages-item__text The Village, Grazia, peopletalk, www.archi.ru, hq room
+			.advantages__top
+				.heading.advantages__title Наши  преимущества
+				.advantages__nav.swiper-nav.swiper-nav--white
+					button.slider__btn.slider__btn--prev.advantages-prev
+						+icon("chevron")(width="16", height="30")
+					.swiper-pagination.advantages-pagi
+					button.slider__btn.slider__btn--next.advantages-next
+						+icon("chevron")(width="16", height="30")
+			.advantages__slider.swiper-container.__js_advantages-slider
+				.swiper-wrapper
+					.advantages-item.advantages__item.swiper-slide
+						.advantages-item__top
+							.advantages-item__icon
+								+icon('advantage-saw')
+							.advantages-item__content.advantages-item__content--mobile
+								.advantages-item__title Собственное  производство
+						.advantages-item__content
+							.advantages-item__title Собственное  производство
+							.advantages-item__text Изготовление светопрозрачных конструкций всех типов: типовые ЖК, бизнес центры, торговые центры
+					.advantages-item.advantages__item.swiper-slide
+						.advantages-item__top
+							.advantages-item__icon
+								+icon('advantage-rocket')
+							.advantages-item__content.advantages-item__content--mobile
+								.advantages-item__title 13 лет <br>  на рынке
+						.advantages-item__content
+							.advantages-item__title 13 лет <br>  на рынке
+							.advantages-item__text Работаем с 2007 года. 86 специалистов в штате. 441 реализованный проект
+					.advantages-item.advantages__item.swiper-slide
+						.advantages-item__top
+							.advantages-item__icon
+								+icon('advantage-note')
+							.advantages-item__content.advantages-item__content--mobile
+								.advantages-item__title О наших объектах <br> пишут
+						.advantages-item__content
+							.advantages-item__title О наших объектах <br> пишут
+							.advantages-item__text The Village, Grazia, peopletalk, www.archi.ru, hq room

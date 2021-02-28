@@ -9,32 +9,58 @@
 
 	&__container {
 		position: relative;
-		padding: 148px 15px 190px;
+		padding: 32px 15px 30px;
+
+		@include media(lg) {
+			padding: 148px 15px 190px;
+		}
 	}
 
 	&__top {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 5px;
+
+		@include media(xs) {
+			flex-direction: row;
+		}
 	}
 
 	&__title {
+		margin-bottom: 12px;
 		color: $color-default-white;
-		margin-left: -7px;
+
+		@include media(xs) {
+			margin-bottom: 0;
+		}
+
+		@include media(lg) {
+			margin-left: -7px;
+		}
 	}
 
 	&__nav {
-		padding-top: 30px;
+		@include media(lg) {
+			padding-top: 30px;
+		}
 	}
 
 	&__all {
+		display: block;
 		font-family: $font-family--secondary;
 		font-size: 18px;
 		line-height: 26px;
+		text-align: center;
 		color: $color-default-white;
 		text-decoration: underline;
 		@include transition(color);
+
+		@include media(xs) {
+			display: inline-block;
+			text-align: left;
+		}
 
 		@include hover {
 			color: $color-blue;
@@ -48,8 +74,14 @@
 	}
 
 	&__slider {
-		margin-top: 52px;
+		height: 250px;
+		margin-top: 28px;
 		overflow: visible;
+
+		@include media(lg) {
+			height: 370px;
+			margin-top: 52px;
+		}
 
 		&::before {
 			content: '';
@@ -64,28 +96,20 @@
 		}
 	}
 
-	&__grid {
-		display: flex;
-		justify-content: flex-end;
-	}
-
-	&__group {
-		max-width: 225px;
-		width: 100%;
-		margin-right: 15px;
-	}
-
 	&__item {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 100%;
+		width: 225px;
 		height: 107px;
 		margin-bottom: 15px;
+		margin-top: 0 !important;
 		background-color: rgba($color-default-white, 0.02);
 
 		&--high {
-			height: 230px;
+			@include media(lg) {
+				height: 230px;
+			}
 		}
 	}
 }

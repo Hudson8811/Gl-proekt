@@ -1,34 +1,122 @@
 .advantages {
 	background-color: $color-blue;
 	position: relative;
+	overflow: hidden;
 
 	&__container {
 		position: relative;
-		padding-top: 149px;
-		padding-bottom: 173px;
+		padding-top: 66px;
+		padding-bottom: 65px;
+
+		@include media(lg) {
+			padding-top: 149px;
+			padding-bottom: 173px;
+		}
 	}
 
 	&__wrapper {
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
+
+		@include media(lg) {
+			flex-direction: row;
+		}
+	}
+
+	&__top {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+
+		@include media(xs) {
+			flex-direction: row;
+			align-items: flex-start;
+		}
+
+		@include media(lg) {
+			width: 100%;
+			max-width: 505px;
+		}
 	}
 
 	&__title {
-		max-width: 505px;
-		margin-right: 90px;
-		font-size: 98px;
+		margin-bottom: 12px;
+		font-size: 32px;
+		line-height: 40px;
+		text-align: center;
 		color: $color-default-white;
-		margin-left: -7px;
+		word-break: break-word;
+
+		@include media(xs) {
+			margin-bottom: 0;
+			padding-right: 110px;
+			text-align: left;
+		}
+
+		@include media(lg) {
+			padding-right: 0;
+			margin-right: 90px;
+			margin-left: -7px;
+			font-size: 98px;
+			line-height: 110px;
+		}
 	}
 
-	&__items {
-		padding-top: 36px;
-		margin-right: -39px;
+	&__nav {
+		@include media(xs) {
+			position: absolute;
+			top: -5px;
+			right: 0;
+		}
+
+		@include media(lg) {
+			display: none;
+		}
+	}
+
+	.swiper-pagination-bullet-active {
+		background-color: $color-default-white;
+	}
+
+	.advantages-prev,
+	.advantages-next {
+		&:focus svg {
+			stroke: $color-default-white;
+		}
+	}
+
+	.swiper-wrapper {
+		@include media(lg) {
+			flex-direction: column;
+		}
+	}
+
+	&__slider {
+		width: 100%;
+		padding-top: 45px;
+		overflow: visible;
+
+		@include media(lg) {
+			width: auto;
+			padding-top: 36px;
+		}
 	}
 
 	&__item {
+		width: 268px;
+
+		@include media(lg) {
+			width: 100%;
+			height: auto;
+		}
+
 		+ .advantages__item {
-			margin-top: 96px;
+			@include media(lg) {
+				margin-top: 96px;
+			}
 		}
 	}
 }

@@ -69,9 +69,14 @@
 			border-radius: 0;
 
 			li {
-				padding: 16px 25px 16px 57px;
+				padding: 10px;
 				border-bottom: 3px solid rgba($color-pale-sky, 0.12);
 				font-family: $font-family--secondary;
+				text-overflow: ellipsis;
+
+				@include media(lg) {
+					padding: 16px 25px 16px 57px;
+				}
 			}
 		}
 	}
@@ -102,8 +107,12 @@
 			height: 18px;
 			border: 2px solid $color-gray-bb;
 			border-radius: 50%;
-			margin-right: 8px;
+			margin-right: 11px;
 			box-sizing: border-box;
+
+			@include media(lg) {
+				margin-right: 8px;
+			}
 
 			&::after {
 				content: '';
@@ -131,10 +140,14 @@
 		cursor: pointer;
 
 		span {
-			padding-right: 17px;
+			padding-right: 27px;
 			font-family: $font-family--secondary;
 			font-size: 14px;
 			color: $color-gray-bb;
+
+			@include media(lg) {
+				padding-right: 17px;
+			}
 		}
 
 		input[type='checkbox'] {
