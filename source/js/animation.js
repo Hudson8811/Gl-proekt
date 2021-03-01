@@ -76,7 +76,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 							onComplete: function () {
 								planText.hide();
 								TweenMax.staggerFromTo(planIcons, 0.4, { alpha: 0, scale: 0.5 }, { alpha: 1, scale: 1, delay: 0.1, overwrite: !0, ease: Back.easeOut }, 0.05);
-								setTimeout(function() {lock = 0; step++;}, 500);
+								setTimeout(function() {lock = 0; step++;}, 400);
 							},
 						});
 
