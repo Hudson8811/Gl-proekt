@@ -97,7 +97,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 				default:
 					break;
 			}
-		} else  if (up && lock == 0 && scrollTop == 0){
+		} else  if (up && lock == 0 && scrollTop <= 25){
 			switch (step) {
 				case 2:
 					lock = 1;
@@ -147,7 +147,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 			}
 		}
 
-	}, 250);
+	}, 300);
 
 
 	$(window).scroll(function (event) {
