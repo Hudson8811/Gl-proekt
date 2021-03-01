@@ -1,7 +1,7 @@
-mixin plan-card(className, image, digit, href, title, date)
+mixin plan-card(className, digit, href, title, date)
 	.plan-card(class=className)
 		.plan-card__image
-			img(src='img/plan/' + image, alt='')
+			img(src='img/plan/item-1.jpg', srcset='img/plan/item-1@2x.jpg', width='640', height='426', alt='')
 		.plan-card__content
 			.plan-card__digit= digit
 			a.plan-card__link(href=href, target='_blank')
