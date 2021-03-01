@@ -26,15 +26,8 @@
 
 	&__top {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
 		justify-content: space-between;
 		position: relative;
-
-		@include media(xs) {
-			flex-direction: row;
-			align-items: flex-start;
-		}
 
 		@include media(lg) {
 			width: 100%;
@@ -43,18 +36,15 @@
 	}
 
 	&__title {
-		margin-bottom: 12px;
+		padding-right: 110px;
 		font-size: 32px;
 		line-height: 40px;
-		text-align: center;
 		color: $color-default-white;
 		word-break: break-word;
-
-		@include media(xs) {
-			margin-bottom: 0;
-			padding-right: 110px;
-			text-align: left;
-		}
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		hyphens: auto;
 
 		@include media(lg) {
 			padding-right: 0;
@@ -63,14 +53,18 @@
 			font-size: 98px;
 			line-height: 110px;
 		}
+
+		br {
+			@include media(lg) {
+				display: none;
+			}
+		}
 	}
 
 	&__nav {
-		@include media(xs) {
-			position: absolute;
-			top: -5px;
-			right: 0;
-		}
+		position: absolute;
+		top: -5px;
+		right: 0;
 
 		@include media(lg) {
 			display: none;

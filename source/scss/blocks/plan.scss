@@ -115,7 +115,7 @@
 		border-radius: 50%;
 		background-color: $color-blue;
 		position: absolute;
-		bottom: 30%;
+		bottom: 10%;
 		left: 50%;
 		transform: translateX(-50%);
 		@include transition(background-color);

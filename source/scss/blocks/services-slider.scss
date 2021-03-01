@@ -21,6 +21,7 @@
 
 	&__slider {
 		margin: 0 -28px;
+		z-index: 20;
 	}
 
 	&__wrapper {
@@ -36,7 +37,6 @@
 	&__top {
 		width: 100%;
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
 		padding: 0 32px;
@@ -44,10 +44,6 @@
 		top: 16px;
 		left: 0;
 		z-index: 100;
-
-		@include media(xs) {
-			flex-direction: row;
-		}
 
 		@include media(lg) {
 			max-width: 486px;
@@ -61,7 +57,6 @@
 	&__more {
 		display: block;
 		padding: 6px 24px;
-		margin: 0 auto 10px;
 		background-color: $color-blue;
 		font-family: $font-family--secondary;
 		font-size: 18px;
@@ -70,11 +65,6 @@
 		box-sizing: border-box;
 		@include transition(background-color);
 
-		@include media(xs) {
-			flex-direction: row;
-			margin: 0;
-		}
-
 		@include hover {
 			background-color: rgba($color-blue, 0.7);
 		}
@@ -82,16 +72,11 @@
 
 	&__image {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
 		padding-top: 50px;
 		margin-bottom: 32px;
-
-		@include media(xs) {
-			flex-direction: row;
-		}
 
 		@include media(lg) {
 			width: 50%;
@@ -132,11 +117,7 @@
 		&--mobile {
 			position: relative;
 			width: 57%;
-			padding-top: 20px;
-
-			@include media(xs) {
-				padding-top: 44px;
-			}
+			padding-top: 44px;
 
 			#{$self} {
 				&__digit,
@@ -173,16 +154,13 @@
 	}
 
 	&__title {
-		font-size: 24px;
-		line-height: 28px;
-		text-align: center;
+		font-size: 32px;
+		line-height: 1.125;
 		word-break: break-word;
-
-		@include media(xs) {
-			font-size: 32px;
-			line-height: 1.125;
-			text-align: left;
-		}
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		hyphens: auto;
 
 		@include media(lg) {
 			font-size: 64px;
@@ -192,12 +170,16 @@
 	}
 
 	&__list {
-		display: flex;
-		flex-wrap: wrap;
 		padding-left: 35px;
+		-moz-column-count: 1;
+		-webkit-column-count: 1;
+		column-count: 1;
 
 		@include media(lg) {
 			padding-left: 26px;
+			-moz-column-count: 2;
+			-webkit-column-count: 2;
+			column-count: 2;
 		}
 
 		li {
@@ -212,13 +194,13 @@
 			box-sizing: border-box;
 
 			@include media(lg) {
-				width: 55%;
+				//width: 55%;
 				margin-bottom: 31px;
 			}
 
 			&:nth-child(even) {
 				@include media(lg) {
-					width: 45%;
+					//width: 45%;
 				}
 			}
 
@@ -232,6 +214,10 @@
 				top: 5px;
 				left: 0;
 				background: linear-gradient(152.42deg, #93AFFF 15.44%, #93AFFF 38.1%, #5278FF 66.6%, #3F63E3 82.51%);
+			}
+
+			a {
+				color: $color-dark2;
 			}
 		}
 	}

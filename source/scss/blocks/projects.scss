@@ -14,13 +14,8 @@
 	&__top {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		padding-right: 165px;
 		position: relative;
-
-		@include media(xs) {
-			padding-right: 165px;
-			align-items: flex-start;
-		}
 
 		@include media(lg) {
 			flex-direction: row;
@@ -35,15 +30,8 @@
 	&__title {
 		font-family: $font-family--main;
 		font-weight: 700;
-		margin-bottom: 12px;
-		text-align: center;
 		position: relative;
 		z-index: 2;
-
-		@include media(xs) {
-			margin-bottom: 0;
-			text-align: left;
-		}
 	}
 
 	&__all {
@@ -53,12 +41,7 @@
 		font-size: 18px;
 		color: $color-dark2;
 		text-decoration: underline;
-		order: 1;
 		@include transition(color);
-
-		@include media(xs) {
-			order: 0;
-		}
 
 		@include media(lg) {
 			padding-top: 30px;
@@ -72,11 +55,9 @@
 	}
 
 	&__nav {
-		@include media(xs) {
-			position: absolute;
-			top: 28px;
-			right: 0;
-		}
+		position: absolute;
+		top: 28px;
+		right: 0;
 
 		@include media(lg) {
 			padding-top: 30px;

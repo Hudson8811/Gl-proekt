@@ -239,7 +239,8 @@ function setOverlay(cb) {
 		},
 		speed: 300,
 		loop: true,
-		loopedSlides: 7
+		loopedSlides: 7,
+		autoHeight: true
 	});
 
 	var servicesThumbs = new Swiper('.__js_services-thumbs', {
@@ -378,26 +379,24 @@ function setOverlay(cb) {
 
 	parent.find('.field--switch input').change(function () {
 		if ($(this).prop('checked')) {
-			parent.find('.form__field[data-disabled] .nice-select').addClass('form__field--disabled');
+			parent.find('.form__field[data-disabled] .chosen-container').addClass('form__field--disabled');
 		} else {
-			parent.find('.form__field[data-disabled] .nice-select').removeClass('form__field--disabled');
+			parent.find('.form__field[data-disabled] .chosen-container').removeClass('form__field--disabled');
 		}
 	});
 })();
 
 /* Select */
 (function(){
-	$('.select').niceSelect();
-
-	$('.nice-select .list').hide();
-
-	$(document).click(function (e) {
-		var tar = $('.nice-select');
-		if (!tar.is(e.target) && tar.has(e.target).length === 0 || !tar.hasClass('open')) {
-			tar.find('.list').hide();
-		} else {
-			tar.find('.list').show();
-		}
+	$('.select').chosen({
+		width: '100%',
+		no_results_text: 'Совпадений не найдено',
+		placeholder_text_single: 'Услуга: ',
+	}).on('chosen:showing_dropdown', function (evt, params) {
+		$('.chosen-single span').text('Услуга:');
+		$('.chosen-single div').addClass('rotate');
+	}).on('chosen:hiding_dropdown', function (evt, params) {
+		$('.chosen-single div').removeClass('rotate');
 	});
 
 	var scrollOpt = {
@@ -409,7 +408,7 @@ function setOverlay(cb) {
 		cursorwidth: "2px"
 	};
 
-	$('.nice-select .list').niceScroll(scrollOpt);
+	$('.chosen-results').niceScroll(scrollOpt);
 })();
 
 /* Services accordion */

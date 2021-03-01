@@ -18,23 +18,13 @@
 
 	&__top {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 5px;
-
-		@include media(xs) {
-			flex-direction: row;
-		}
 	}
 
 	&__title {
-		margin-bottom: 12px;
 		color: $color-default-white;
-
-		@include media(xs) {
-			margin-bottom: 0;
-		}
 
 		@include media(lg) {
 			margin-left: -7px;
@@ -48,19 +38,13 @@
 	}
 
 	&__all {
-		display: block;
+		display: inline-block;
 		font-family: $font-family--secondary;
 		font-size: 18px;
 		line-height: 26px;
-		text-align: center;
 		color: $color-default-white;
 		text-decoration: underline;
 		@include transition(color);
-
-		@include media(xs) {
-			display: inline-block;
-			text-align: left;
-		}
 
 		@include hover {
 			color: $color-blue;

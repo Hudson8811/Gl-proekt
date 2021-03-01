@@ -25,22 +25,14 @@
 	}
 
 	&__type {
-		width: 50%;
-
-		@include media(xs) {
-			width: 68%;
-		}
+		width: 68%;
 
 		@include media(lg) {
 			width: 57%;
 		}
 
 		&:last-child {
-			width: 50%;
-
-			@include media(xs) {
-				width: 32%;
-			}
+			width: 32%;
 
 			@include media(lg) {
 				width: 43%;
@@ -66,23 +58,14 @@
 
 			svg {
 				fill: $color-gray-f9;
-				margin: 0 auto 15px;
+				margin: 0 0 38px;
 				@include transition(fill);
-
-				@include media(xs) {
-					margin: 0 0 38px;
-				}
 			}
 
 			span {
 				font-size: 16px;
 				color: $color-gray-f9;
-				text-align: center;
 				@include transition(color);
-
-				@include media(xs) {
-					text-align: left;
-				}
 			}
 		}
 	}
@@ -93,13 +76,8 @@
 		margin: 0 -10px;
 
 		.form__field {
-			width: 100%;
-			margin: 0 0 15px;
-
-			@include media(xs) {
-				width: calc(50% - 20px);
-				margin: 0 10px 15px;
-			}
+			width: calc(50% - 20px);
+			margin: 0 10px 15px;
 
 			@include media(lg) {
 				width: calc(33.3333% - 20px);
@@ -107,11 +85,7 @@
 			}
 
 			&:nth-child(odd) {
-				width: 100%;
-
-				@include media(xs) {
-					width: calc(46% - 20px);
-				}
+				width: calc(46% - 20px);
 
 				@include media(lg) {
 					width: calc(33.3333% - 20px);
@@ -119,11 +93,7 @@
 			}
 
 			&:nth-child(even) {
-				width: 100%;
-
-				@include media(xs) {
-					width: calc(54% - 20px);
-				}
+				width: calc(54% - 20px);
 
 				@include media(lg) {
 					width: calc(33.3333% - 20px);
@@ -136,7 +106,17 @@
 
 			&--disabled {
 				pointer-events: none;
-				color: $color-pale-sky;
+
+				.chosen-single {
+					span {
+						color: $color-pale-sky;
+					}
+
+					div b {
+						background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='23' viewBox='0 0 15 29' stroke-width='3px' stroke='%23677b83' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.5 1L14 14.5L0.5 28' fill='none'/%3e%3c/svg%3e ")
+						no-repeat center;
+					}
+				}
 
 				&::after {
 					border-bottom-color: $color-pale-sky;
