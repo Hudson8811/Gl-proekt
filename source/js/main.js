@@ -229,35 +229,38 @@ function setOverlay(cb) {
 
 /* Services slider */
 (function(){
-	var servicesSlider = new Swiper('.__js_services-slider', {
-		pagination: {
-			el: '.services-slider-pagi'
-		},
-		navigation: {
-			prevEl: '.services-slider-prev',
-			nextEl: '.services-slider-next'
-		},
-		speed: 300,
-		loop: true,
-		loopedSlides: 7
-	});
+	if ($('.__js_services-slider').length > 0 ) {
+		var servicesSlider = new Swiper('.__js_services-slider', {
+			pagination: {
+				el: '.services-slider-pagi'
+			},
+			navigation: {
+				prevEl: '.services-slider-prev',
+				nextEl: '.services-slider-next'
+			},
+			speed: 300,
+			loop: true,
+			loopedSlides: 7
+		});
 
-	var servicesThumbs = new Swiper('.__js_services-thumbs', {
-		slideToClickedSlide: true,
-		loop: true,
-		loopedSlides: 7,
-		slidesPerView: 'auto',
-		spaceBetween: 15,
-		allowTouchMove: false,
-		breakpoints: {
-			992: {
-				spaceBetween: 0
+		var servicesThumbs = new Swiper('.__js_services-thumbs', {
+			slideToClickedSlide: true,
+			loop: true,
+			loopedSlides: 7,
+			slidesPerView: 'auto',
+			spaceBetween: 15,
+			allowTouchMove: false,
+			breakpoints: {
+				992: {
+					spaceBetween: 0
+				}
 			}
-		}
-	});
+		});
 
-	servicesSlider.controller.control = servicesThumbs;
-	servicesThumbs.controller.control = servicesSlider;
+		servicesSlider.controller.control = servicesThumbs;
+		servicesThumbs.controller.control = servicesSlider;
+
+	}
 })();
 
 /* Advantages slider */
