@@ -4310,14 +4310,14 @@ p {
 .service-card {
   position: relative;
   max-width: 480px;
-  padding-top: 40px;
+  padding: 40px 0;
 }
 
 .service-card::before {
   content: attr(data-count);
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 40px;
   font-size: 240px;
   line-height: 0.76;
   color: #677b83;
@@ -4434,8 +4434,64 @@ p {
   }
 }
 
+.services-page__header {
+  margin-top: 49px;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .services-page__header {
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.services-page__header-image {
+  max-width: 422px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .services-page__header-image {
+    width: 50%;
+    margin-right: 32px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .services-page__header-image {
+    margin-right: 54px;
+  }
+}
+
+.services-page__header-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.services-page__heading {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .services-page__heading {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
 .services-page__list {
   margin: 92px 0 249px;
+}
+
+@media (min-width: 992px) {
+  .services-page__header + .services-page__list {
+    margin-top: 164px;
+  }
 }
 
 .services-page__inner {

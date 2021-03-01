@@ -2,13 +2,13 @@
 	$self: &;
 	position: relative;
 	max-width: 480px;
-	padding-top: 40px;
+	padding: 40px 0;
 
 	&::before {
 		content: attr(data-count);
 		position: absolute;
 		right: 0;
-		bottom: 0;
+		bottom: 40px;
 
 		@include text(240px, 0.76, $color-pale-sky);
 		font-weight: 200;

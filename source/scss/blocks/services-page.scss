@@ -1,6 +1,50 @@
 .services-page {
+	&__header {
+		margin-top: 49px;
+		margin-bottom: 50px;
+
+		@include media(md) {
+			display: flex;
+		}
+
+		&-image {
+			max-width: 422px;
+			margin-bottom: 40px;
+
+			@include media(md) {
+				width: 50%;
+				margin-right: 32px;
+				flex-shrink: 0;
+			}
+
+			@include media(xl) {
+				margin-right: 54px;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
+	&__heading {
+		margin: 0;
+
+		@include media(md) {
+			align-self: center;
+		}
+	}
+
 	&__list {
 		margin: 92px 0 249px;
+	}
+
+	&__header + &__list {
+		@include media(lg) {
+			margin-top: 164px;
+		}
 	}
 
 	&__inner {

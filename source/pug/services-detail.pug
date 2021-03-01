@@ -1,0 +1,77 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Услуги детально';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 3.03; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 3; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	article.services-page
+		.services-page__inner.container
+			header.services-page__header
+				.services-page__header-image
+					img(src="img/services-page/building-large.png", width="422", height="570", alt="")
+				h1.services-page__heading.heading.heading--large Фасадное остекление
+			section.services-page__section
+				.services-page__section-column
+					.service-info
+						h2.service-info__heading.heading Рамное
+						ul.service-info__list
+							li.service-info
+								+icon('wood')(width="27", height="32")
+								| Экологичность
+							li.service-info
+								+icon('shield')(width="28", height="31")
+								| Безопасность
+							li.service-info
+								+icon('pen')(width="31", height="31")
+								| Легкость
+							li.service-info
+								+icon('power')(width="32", height="30")
+								| Прочность
+						.service-info__number 01
+
+				.services-page__section-column
+					ul.service-types
+						li.service-types__item
+							img(src="img/services-page/1.png", width="239", height="239", alt="")
+							a(href="#") Классическое остекление
+						li.service-types__item
+							img(src="img/services-page/2.png", width="239", height="239", alt="")
+							a(href="#") Структурное остекление
+						li.service-types__item
+							img(src="img/services-page/3.png", width="239", height="239", alt="")
+							a(href="#") Полуструктурное остекление
+						li.service-types__item
+							img(src="img/services-page/4.png", width="239", height="239", alt="")
+							a(href="#") Модульное остекление
+
+			section.services-page__section
+				.services-page__section-column
+					.service-info
+						h2.service-info__heading.heading Безрамное
+						.service-info__number 02
+
+				.services-page__section-column
+					ul.service-types
+						li.service-types__item
+							img(src="img/services-page/5.png", width="239", height="239", alt="")
+							a(href="#") Спайдерная система со стеклянными ребрами в качестве опоры
+						li.service-types__item
+							img(src="img/services-page/6.png", width="239", height="239", alt="")
+							a(href="#") Спайдерная система с ватами
+
+			section.version-type
+				.version-type__item Холодное исполнение
+				.version-type__item
+					| Теплое исполнение
+					button.version-type__btn(type="button")
+						span.visually-hidden Показать подробнее
+			include modules/lines
+	include modules/services
+block footer
+	include modules/footer
+

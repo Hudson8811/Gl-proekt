@@ -19,8 +19,8 @@
 		certificates: '#',
 		reviews: '#',
 		services: 'services.html',
-		servicesGroup: '#',
-		servicesDetail: '#',
+		servicesGroup: 'services-group.html',
+		servicesDetail: 'services-detail.html',
 		facadeGlazing: '#',
 		projects: '#',
 		materials: '#',
@@ -178,17 +178,28 @@
 	];
 
 	let SERVICES_LIST = [
-		{text: 'Фасадное остекление', count: '01'},
-		{text: 'Внешнее остекление', count: '02'},
-		{text: 'Внутреннее остекление', count: '3'},
-		{text: 'Входные группы', count: '4'},
-		{text: 'Остекление крыши', count: '05'},
-		{text: 'Козырьки и навесы', count: '06'},
-		{text: 'Конструкции из ПВХ профиля', count: '7'},
-		{text: 'Навесные и вентилируемые фасады', count: '8'},
-		{text: 'flag', count: '09'},
-		{text: 'Эксклюзивные изделия из стекла', count: '10'},
-		{text: 'Изделия из нержавеющей стали', count: '11'}
+		{text: 'Фасадное остекление', count: '01', url: URLS.servicesGroup},
+		{text: 'Внешнее остекление', count: '02', url: URLS.servicesGroup},
+		{text: 'Внутреннее остекление', count: '3', url: URLS.servicesGroup},
+		{text: 'Входные группы', count: '4', url: URLS.servicesGroup},
+		{text: 'Остекление крыши', count: '05', url: URLS.servicesGroup},
+		{text: 'Козырьки и навесы', count: '06', url: URLS.servicesGroup},
+		{text: 'Конструкции из ПВХ профиля', count: '7', url: URLS.servicesGroup},
+		{text: 'Навесные и вентилируемые фасады', count: '8', url: URLS.servicesGroup},
+		{text: 'flag', count: '09', url: URLS.servicesGroup},
+		{text: 'Эксклюзивные изделия из стекла', count: '10', url: URLS.servicesGroup},
+		{text: 'Изделия из нержавеющей стали', count: '11', url: URLS.servicesGroup}
+	];
+
+	let SERVICES_LIST_GROUP = [
+		{text: 'Алюминиевые окна', count: '01', url: URLS.servicesDetail},
+		{text: 'Алюминиевые двери', count: '02', url: URLS.servicesDetail},
+		{text: 'Алюминиевые витражи', count: '3', url: URLS.servicesDetail},
+		{text: 'Спайдерное остекление', count: '4', url: URLS.servicesDetail},
+		{text: 'Зимние сады', count: '05', url: URLS.servicesDetail},
+		{text: 'Веранды', count: '06', url: URLS.servicesDetail},
+		{text: 'Террасы', count: '7', url: URLS.servicesDetail},
+		{text: 'Зенитные фонари', count: '8', url: URLS.servicesDetail}
 	];
 
 
