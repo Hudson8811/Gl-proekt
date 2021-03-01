@@ -83,12 +83,12 @@ if (!mobileCheck() && $('.plan').length > 0) {
 					break;
 				case 2:
 					lock = 1;
-					TweenMax.to(planContent, 0.7, {y: -1 * window.innerHeight,
+					TweenMax.to(planContent, 0.8, {y: -1 * window.innerHeight, ease: Power1.easeOut,
 						 onComplete: function () {
 							planContent.hide();
 						}
 					});
-					TweenMax.to(otherContent, 0.7,{y:0, onComplete: function () {
+					TweenMax.to(otherContent, 0.8,{y:0,  ease: Power1.easeOut, onComplete: function () {
 							$('body').removeClass('blocked');
 							lock = 0; step++;
 						}
@@ -136,8 +136,8 @@ if (!mobileCheck() && $('.plan').length > 0) {
 					$('body').addClass('blocked');
 
 					planContent.show();
-					TweenMax.to(otherContent, 0.7,{y:window.innerHeight});
-					TweenMax.to(planContent, 0.7,{y:0, onComplete: function () {
+					TweenMax.to(otherContent, 0.8,{y:window.innerHeight,  ease: Power1.easeOut,});
+					TweenMax.to(planContent, 0.8,{y:0,  ease: Power1.easeOut, onComplete: function () {
 							lock = 0; step--;
 						}
 					});
