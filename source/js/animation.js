@@ -76,19 +76,19 @@ if (!mobileCheck() && $('.plan').length > 0) {
 							onComplete: function () {
 								planText.hide();
 								TweenMax.staggerFromTo(planIcons, 0.4, { alpha: 0, scale: 0.5 }, { alpha: 1, scale: 1, delay: 0.1, overwrite: !0, ease: Back.easeOut }, 0.05);
-								setTimeout(function() {lock = 0; step++;}, 500);
+								setTimeout(function() {lock = 0; step++;}, 400);
 							},
 						});
 
 					break;
 				case 2:
 					lock = 1;
-					TweenMax.to(planContent, 0.7, {y: -1 * window.innerHeight,
+					TweenMax.to(planContent, 0.8, {y: -1 * window.innerHeight, ease: Power1.easeOut,
 						 onComplete: function () {
 							planContent.hide();
 						}
 					});
-					TweenMax.to(otherContent, 0.7,{y:0, onComplete: function () {
+					TweenMax.to(otherContent, 0.8,{y:0,  ease: Power1.easeOut, onComplete: function () {
 							$('body').removeClass('blocked');
 							lock = 0; step++;
 						}
@@ -97,7 +97,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 				default:
 					break;
 			}
-		} else  if (up && lock == 0 && scrollTop == 0){
+		} else  if (up && lock == 0 && scrollTop <= 25){
 			switch (step) {
 				case 2:
 					lock = 1;
@@ -136,8 +136,8 @@ if (!mobileCheck() && $('.plan').length > 0) {
 					$('body').addClass('blocked');
 
 					planContent.show();
-					TweenMax.to(otherContent, 0.7,{y:window.innerHeight});
-					TweenMax.to(planContent, 0.7,{y:0, onComplete: function () {
+					TweenMax.to(otherContent, 0.8,{y:window.innerHeight,  ease: Power1.easeOut,});
+					TweenMax.to(planContent, 0.8,{y:0,  ease: Power1.easeOut, onComplete: function () {
 							lock = 0; step--;
 						}
 					});
@@ -147,7 +147,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 			}
 		}
 
-	}, 1000);
+	}, 300);
 
 
 	$(window).scroll(function (event) {
