@@ -9,7 +9,7 @@ if (!mobileCheck()) {
 		_savedTextBlockHeight = 0;
 
 	$('body').addClass('blocked');
-	TweenMax.set(otherContent, {alpha: 0, webkitFilter:"blur(10px)"});
+	TweenMax.set(otherContent, {y:window.innerHeight});
 	TweenMax.to(planText, 0.8, {opacity: 1, ease: Linear.easing});
 
 	setTimeout(function() {lock = 0; step = 1;}, 1000);
@@ -82,8 +82,12 @@ if (!mobileCheck()) {
 					break;
 				case 2:
 					lock = 1;
-					TweenMax.to(planContent, 0.7,{height:0});
-					TweenMax.to(otherContent, 0.9,{alpha:1, webkitFilter:"blur(0px)", onComplete: function () {
+					TweenMax.to(planContent, 0.7, {y: -1 * window.innerHeight,
+						 onComplete: function () {
+							planContent.hide();
+						}
+					});
+					TweenMax.to(otherContent, 0.7,{y:0, onComplete: function () {
 							$('body').removeClass('blocked');
 							lock = 0; step++;
 						}
@@ -130,9 +134,9 @@ if (!mobileCheck()) {
 					lock = 1;
 					$('body').addClass('blocked');
 
-					TweenMax.to(otherContent, 0.7,{opacity:0, webkitFilter:"blur(10px)"});
-					TweenMax.set(planContent, {height:"100vh"});
-					TweenMax.from(planContent, 0.9,{height:0, onComplete: function () {
+					planContent.show();
+					TweenMax.to(otherContent, 0.7,{y:window.innerHeight});
+					TweenMax.to(planContent, 0.7,{y:0, onComplete: function () {
 							lock = 0; step--;
 						}
 					});
