@@ -1,4 +1,4 @@
-if (!mobileCheck()) {
+if (!mobileCheck() && $('.plan').length > 0) {
 	var lock = 1,
 		step = 0,
 		planText = $('.plan__title'),
