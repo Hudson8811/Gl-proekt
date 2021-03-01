@@ -10,6 +10,16 @@
 	@include media(lg) {
 	}
 
+	&--fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: $color-athens-gray;
+		transform: translateY(100%);
+		@include transition(transform);
+	}
+
 	&__inner {
 		display: flex;
 		flex-wrap: wrap;

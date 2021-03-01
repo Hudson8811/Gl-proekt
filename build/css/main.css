@@ -4558,6 +4558,17 @@ p {
   padding: 26px 0 25px;
 }
 
+.header--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fafafa;
+  -ms-transform: translateY(100%);
+      transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
 .header__inner {
   display: -ms-flexbox;
   display: flex;

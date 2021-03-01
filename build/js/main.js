@@ -129,6 +129,47 @@ function setOverlay(cb) {
 	}
 })();
 
+(function() {
+	var lastScrollTop = 0;
+	var header = $('#header');
+	var offset = header.innerHeight();
+	var isRemoveFixed = false;
+
+	$(window).scroll(function(event) {
+		var st = $(this).scrollTop();
+
+		if (st < lastScrollTop) {
+			if (st !== 0) {
+				header.addClass("header--fixed").css('top', -offset + 'px');
+				body.css('padding-top', offset + 'px');
+				isRemoveFixed = false;
+			} else {
+				header.removeClass("header--fixed").removeAttr('style');
+				body.css('padding-top', 0);
+				isRemoveFixed = true;
+			}
+		} else {
+			if (!isRemoveFixed) {
+				header.css('transform', 'translateY(0)');
+
+				setTimeout(function() {
+					header.removeClass("header--fixed").removeAttr('style');
+					body.css('padding-top', 0);
+				}, DURATION);
+
+				isRemoveFixed = true;
+			}
+
+		}
+
+		lastScrollTop = st;
+	});
+
+	$(window).on('resize', function() {
+		offset = header.innerHeight();
+	});
+})();
+
 
 /* Modal */
 (function(){
