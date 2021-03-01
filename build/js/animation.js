@@ -1,4 +1,4 @@
-if (!mobileCheck()) {
+if (!mobileCheck() && $('.plan').length > 0) {
 	var lock = 1,
 		step = 0,
 		planText = $('.plan__title'),
@@ -6,6 +6,7 @@ if (!mobileCheck()) {
 		planContent = $('.plan'),
 		otherContent = $('.js-content'),
 		planAnchor = $('.plan__anchor'),
+		header = $('.header'),
 		_savedTextBlockHeight = 0;
 
 	$('body').addClass('blocked');
@@ -20,7 +21,7 @@ if (!mobileCheck()) {
 		var planIcons = $('.plan__image > svg');
 		lock = 1;
 		var e,
-			windowHeight = window.innerHeight,
+			windowHeight = window.innerHeight - header.outerHeight(),
 			planTextHeight = planText.outerHeight(),
 			planImageHeight = planImage.outerHeight(),
 			planTextMargin = parseInt(planText.css("margin-top"), 10),
@@ -55,7 +56,7 @@ if (!mobileCheck()) {
 				case 1:
 					lock = 1;
 					var e,
-						windowHeight = window.innerHeight,
+						windowHeight = window.innerHeight - header.outerHeight(),
 						planTextHeight = planText.outerHeight(),
 						planImageHeight = planImage.outerHeight(),
 						planTextMargin = parseInt(planText.css("margin-top"), 10),
