@@ -167,12 +167,22 @@ function setOverlay(cb) {
 	function showPlanDetail() {
 		var parent = $('.plan'),
 			markers = parent.find('.plan__image svg'),
+			canvas = document.querySelector('.plan__image'),
 			anchor = parent.find('.plan__anchor'),
 			caption = parent.find('.plan__caption'),
 			bg = parent.find('.plan__wrapper');
 
-		markers.click(function () {
-			var that = $(this);
+		markers.click(function (e) {
+			var that = $(this),
+					tar = canvas.getBoundingClientRect(),
+
+					newX = ($(window).width() - (((e.clientX - tar.left) - caption.outerWidth() / 2) + caption.outerWidth()) < 0) ?
+						$(window).width() - caption.outerWidth() :
+						((e.clientX - tar.left) - caption.outerWidth() / 2),
+
+					newY = (canvas.clientHeight - ((e.clientY - tar.top) + caption.outerHeight()) < 0) ?
+						canvas.clientHeight - caption.outerHeight() :
+						e.clientY;
 
 			$.getJSON('data/plan.json', function (data) {
 				var content = data.content,
@@ -188,6 +198,12 @@ function setOverlay(cb) {
 
 			markers.fadeOut(300);
 			anchor.fadeOut(300);
+
+			// Set caption position
+			caption.css({
+				'left': newX,
+				'top': newY
+			});
 
 			setTimeout(function () {
 				bg.addClass('inactive');

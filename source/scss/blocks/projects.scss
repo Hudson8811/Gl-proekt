@@ -37,6 +37,8 @@
 		font-weight: 700;
 		margin-bottom: 12px;
 		text-align: center;
+		position: relative;
+		z-index: 2;
 
 		@include media(xs) {
 			margin-bottom: 0;

@@ -15,7 +15,7 @@
 
 		@include media(lg) {
 			padding-top: 0;
-			padding-bottom: 251px;
+			padding-bottom: 206px;
 		}
 	}
 
@@ -106,8 +106,8 @@
 			object-fit: cover;
 
 			@include media(lg) {
-				width: 100%;
-				height: 100%;
+				width: 98%;
+				height: 98%;
 			}
 		}
 	}
@@ -115,7 +115,7 @@
 	&__content {
 		@include media(lg) {
 			width: 50%;
-			padding-top: 68px;
+			padding-top: 21px;
 		}
 
 		#{$self} {
@@ -185,6 +185,8 @@
 		}
 
 		@include media(lg) {
+			font-size: 64px;
+			line-height: 72px;
 			margin-bottom: 70px;
 		}
 	}
