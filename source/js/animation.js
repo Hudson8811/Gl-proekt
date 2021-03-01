@@ -147,7 +147,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 			}
 		}
 
-	}, 500);
+	}, 250);
 
 
 	$(window).scroll(function (event) {
