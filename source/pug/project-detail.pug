@@ -10,7 +10,7 @@ block header
 
 block content
 
-	.project-hero(style="background-image: url(img/projects/item-3.jpg);")
+	.project-hero(style="background-image: url(img/project-detail/hero.png);")
 		.project-hero__container.container
 			include modules/lines
 			h1.project-hero__title ДЕЛОВОЙ КОМПЛЕКС «АРМА»
@@ -41,21 +41,20 @@ block content
 					.project-detail__block-count.project-fotos__count 01
 					h2.project-detail__block-title.project-fotos__title Фото
 				.project-detail__content.project-fotos__content
-					a.project-fotos__item(href="img/projects/item-3.jpg" data-fancybox="project" style="background-image: url(img/projects/item-3.jpg);")
+					a.project-fotos__item(href="img/project-detail/foto-1.jpg" data-fancybox="project" data-caption="Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»" style="background-image: url(img/project-detail/foto-1.jpg);")
 						span.project-fotos__item-title Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»
-					a.project-fotos__item(href="img/projects/item-3.jpg" data-fancybox="project" style="background-image: url(img/projects/item-3.jpg);")
+					a.project-fotos__item(href="img/project-detail/foto-2.jpg" data-fancybox="project" data-caption="Витражи из алюминиевого профиля с применением стемалита в составе стеклопакета" style="background-image: url(img/project-detail/foto-2.jpg);")
+						span.project-fotos__item-title Витражи из алюминиевого профиля с применением стемалита в составе стеклопакета
+					a.project-fotos__item(href="img/project-detail/foto-3.jpg" data-fancybox="project" data-caption="Алюминиевые ограждающие конструкции торцевого фасада здания" style="background-image: url(img/project-detail/foto-3.jpg);")
+						span.project-fotos__item-title Алюминиевые ограждающие конструкции торцевого фасада здания
+					a.project-fotos__item(href="img/project-detail/foto-1.jpg" data-fancybox="project" data-caption="Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»" style="background-image: url(img/project-detail/foto-1.jpg);")
 						span.project-fotos__item-title Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»
-					a.project-fotos__item(href="img/projects/item-3.jpg" data-fancybox="project" style="background-image: url(img/projects/item-3.jpg);")
+					a.project-fotos__item(href="img/project-detail/foto-2.jpg" data-fancybox="project" data-caption="Витражи из алюминиевого профиля с применением стемалита в составе стеклопакета" style="background-image: url(img/project-detail/foto-2.jpg);")
+						span.project-fotos__item-title Витражи из алюминиевого профиля с применением стемалита в составе стеклопакета
+					a.project-fotos__item(href="img/project-detail/foto-3.jpg" data-fancybox="project" data-caption="Алюминиевые ограждающие конструкции торцевого фасада здания" style="background-image: url(img/project-detail/foto-3.jpg);")
+						span.project-fotos__item-title Алюминиевые ограждающие конструкции торцевого фасада здания
+					a.project-fotos__item(href="img/project-detail/foto-1.jpg" data-fancybox="project" data-caption="Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»" style="background-image: url(img/project-detail/foto-1.jpg);")
 						span.project-fotos__item-title Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»
-					a.project-fotos__item(href="img/projects/item-3.jpg" data-fancybox="project" style="background-image: url(img/projects/item-3.jpg);")
-						span.project-fotos__item-title Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»
-					a.project-fotos__item(href="img/projects/item-3.jpg" data-fancybox="project" style="background-image: url(img/projects/item-3.jpg);")
-						span.project-fotos__item-title Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»
-					a.project-fotos__item(href="img/projects/item-3.jpg" data-fancybox="project" style="background-image: url(img/projects/item-3.jpg);")
-						span.project-fotos__item-title Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»
-					a.project-fotos__item(href="img/projects/item-3.jpg" data-fancybox="project" style="background-image: url(img/projects/item-3.jpg);")
-						span.project-fotos__item-title Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»
-
 
 
 			.project-detail__block.project-info
@@ -75,6 +74,16 @@ block content
 				.project-detail__content.project-review__content
 					.project-review__image
 						img(src="img/project-detail/review.jpg" alt="")
+						.project-review__image-name Евгений Коробов
+						.project-review__image-post Какая должность
+
+					.project-review__info
+						.project-review__info-text
+							p Разнообразный и богатый опыт новая модель организационной деятельности представляет собой интересный эксперимент проверки направлений прогрессивного развития. Таким образом укрепление и развитие структуры играет важную роль в формировании дальнейших направлений развития.
+						a.project-review__info-btn(href="img/projects/item-1@2x.jpg" data-fancybox)
+							svg(width='50' height='50' aria-label='dowload icon')
+								use(xlink:href='#dowload')
+							span Смотреть скан
 
 
 	include modules/projects

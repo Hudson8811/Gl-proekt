@@ -31,7 +31,7 @@
 	}
 	&__title{
 		padding: 10px;
-		background: #FFFFFF;
+		background: rgba(255, 255, 255, 0.64);
 		font-weight: 900;
 		font-size: 42px;
 		line-height: 1.05;
@@ -105,7 +105,14 @@
 		position: relative;
 	}
 	&__block{
-		&-top{}
+		padding-bottom: 137px;
+		padding-top: 45px;
+		+.project-detail__block{
+			padding-top: 0;
+		}
+		&-top{
+			margin-bottom: 47px;
+		}
 		&-count{
 			font-weight: 200;
 			font-size: 322px;
@@ -121,7 +128,7 @@
 			font-size: 64px;
 			line-height: 1.12;
 			letter-spacing: -0.04em;
-			color: #000000;
+			margin-top: -76px;
 		}
 	}
 }
@@ -220,7 +227,6 @@
 		p{
 			font-size: 18px;
 			line-height: 1.44;
-			color: #000000;
 			font-family: $font-family--secondary;
 		}
 		> * + *{
@@ -236,6 +242,92 @@
 			max-width: 100%;
 			width: 100%;
 			display: block;
+		}
+	}
+}
+
+.project-review{
+	&__content{
+		display: flex;
+	}
+	&__image{
+		width: 309px;
+		height: 417px;
+		flex-shrink: 0;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		box-sizing: border-box;
+		padding: 30px 16px;
+		img{
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+		}
+		&::after{
+			content: "";
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.16) 100%);
+		}
+		&-name{
+			font-weight: bold;
+			font-size: 25px;
+			line-height: 1;
+			letter-spacing: -0.07em;
+			color: #FFFFFF;
+		}
+		&-post{
+			margin-top: 13px;
+			font-size: 22px;
+			line-height: 1.27;
+			letter-spacing: -0.07em;
+			color: #FFFFFF;
+		}
+	}
+	&__info{
+		margin-left: 35px;
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		&-text{
+			font-family: $font-family--secondary;
+			font-size: 18px;
+			line-height: 26px;
+		}
+		&-btn{
+			margin-top: 35px;
+			display: flex;
+			align-items: center;
+			padding: 15px;
+			background: #01A5E4;
+			text-decoration: none;
+			font-size: 16px;
+			line-height: 20px;
+			color: #FFFFFF;
+			transition: background-color 0.3s ease;
+			svg{
+				flex-shrink: 0;
+			}
+			span{
+				margin: 0 16px;
+			}
+			&:hover{
+				background-color: rgba(1, 165, 228, 0.85);
+			}
 		}
 	}
 }
