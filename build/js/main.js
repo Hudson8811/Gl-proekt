@@ -432,3 +432,74 @@ function setOverlay(cb) {
 		});
 	}
 })();
+
+
+/* Header */
+var lastScrollTop = 0;
+$(window).scroll(function(event) {
+	var offset = $('.header').height() - 10;
+	var st = $(this).scrollTop();
+	if(st == 0) {
+		$('.header').removeClass("active");
+		$('.header').css('z-index', '9999');
+		$('.header').removeClass("hidden");
+	}
+	else {
+		if(st > lastScrollTop) {
+			if($(window).scrollTop() > offset) {
+				if($('.header').hasClass("active")) {
+					$('.header').addClass("active");
+					$('.header').css('z-index', '9999');
+					$('.header').addClass("hidden");
+				}
+				else {
+					$('.header').addClass("hidden");
+				}
+			}
+			else {
+				$('.header').removeClass("active");
+				$('.header').css('z-index', '9999');
+				$('.header').removeClass("hidden");
+			}
+		}
+		else {
+			$('.header').addClass("active");
+			$('.header').css('z-index', '9999');
+			$('.header').removeClass("hidden");
+		}
+	}
+	lastScrollTop = st;
+});
+
+
+/* Gallery */
+(function(){
+
+	var updatefc  = function(instance, current) {
+		var $fc = current.$fc;
+		if ($fc && $fc.length) {
+			current.$slide.css('display', 'block');
+			$.fancybox.setTranslate(current.$content, instance.getFitPos(current));
+			var fcHeight = $fc.outerHeight(true);
+			if (fcHeight) {
+				current.$slide.css('padding-bottom', fcHeight);
+				$.fancybox.setTranslate(current.$content, instance.getFitPos(current));
+			}
+			current.$slide.css('display', '');
+		}
+	}
+
+	$('[data-fancybox="project"]').fancybox({
+		infobar : false,
+		toolbar : false,
+		caption: $.noop,
+		afterLoad : function(instance, current) {
+			current.$content.append(instance.translate(current, '<div class="fc-infobar"><span data-fancybox-index="">2</span>&nbsp;/&nbsp;<span data-fancybox-count="">2</span></div><div class="fc-toolbar">' + current.opts.btnTpl.zoom + current.opts.btnTpl.close + '</div>'));
+			current.$fc = $('<div class="fc-caption">' + current.opts.$orig.data('caption') + '</div>').appendTo(current.$content);
+			updatefc(instance, current);
+		},
+		onUpdate(instance, current) {
+			updatefc(instance, current);
+		}
+	});
+})();

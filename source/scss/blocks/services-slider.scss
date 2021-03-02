@@ -127,7 +127,7 @@
 		&--mobile {
 			position: relative;
 			width: 57%;
-			padding-top: 34px;
+			padding-top: 44px;
 
 			#{$self} {
 				&__digit,
@@ -195,6 +195,7 @@
 			padding-left: 24px;
 			margin-bottom: 30px;
 			font-family: $font-family--secondary;
+			padding-top: 1px;
 			font-size: 14px;
 			line-height: 20px;
 			color: $color-dark2;
@@ -219,9 +220,29 @@
 				height: 6px;
 				border-radius: 50%;
 				position: absolute;
-				top: 5px;
+				top: 6px;
 				left: 0;
 				background: linear-gradient(152.42deg, #93AFFF 15.44%, #93AFFF 38.1%, #5278FF 66.6%, #3F63E3 82.51%);
+				z-index: 2;
+			}
+			&::after {
+				content: '';
+				display: block;
+				width: 18px;
+				height: 18px;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				left: -6px;
+				z-index: 1;
+			}
+			&:hover{
+				&::before {
+					background: #ffffff;
+				}
+				&::after {
+					background: $color-blue;
+				}
 			}
 
 			a {

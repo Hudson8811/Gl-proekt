@@ -10,6 +10,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 		_savedTextBlockHeight = 0;
 
 	$('body').addClass('blocked');
+	$('main').addClass('nopad');
 	TweenMax.set(otherContent, {y:window.innerHeight});
 	TweenMax.to(planText, 0.8, {opacity: 1, ease: Linear.easing});
 
@@ -83,6 +84,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 					break;
 				case 2:
 					lock = 1;
+					header.addClass('hidden');
 					TweenMax.to(planContent, 0.8, {y: -1 * window.innerHeight, ease: Power1.easeOut,
 						 onComplete: function () {
 							planContent.hide();
@@ -135,6 +137,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 					lock = 1;
 					$('body').addClass('blocked');
 
+					header.removeClass('hidden');
 					planContent.show();
 					TweenMax.to(otherContent, 0.8,{y:window.innerHeight,  ease: Power1.easeOut,});
 					TweenMax.to(planContent, 0.8,{y:0,  ease: Power1.easeOut, onComplete: function () {

@@ -1,5 +1,5 @@
 .header {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	width: 100%;
 	left: 0;
@@ -7,6 +7,16 @@
 	$self: &;
 	padding: 26px 0 25px;
 	background: #fafafa;
+
+	&.active {
+		position: fixed;
+		top: 0;
+		transition: top 0.2s linear;
+	}
+	&.hidden{
+		top: -200px;
+		position: fixed;
+	}
 
 	@include media(md) {
 	}

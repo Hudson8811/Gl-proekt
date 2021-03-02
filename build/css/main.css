@@ -474,6 +474,10 @@ body main {
   padding-top: 100px;
 }
 
+body main.nopad {
+  padding-top: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -617,7 +621,13 @@ p {
 
 .container {
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 32px;
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 0 15px;
+  }
 }
 
 @media (min-width: 576px) {
@@ -2240,7 +2250,7 @@ p {
 .services-slider__content--mobile {
   position: relative;
   width: 57%;
-  padding-top: 34px;
+  padding-top: 44px;
 }
 
 .services-slider__content--mobile .services-slider__digit, .services-slider__content--mobile .services-slider__title {
@@ -2317,6 +2327,7 @@ p {
   padding-left: 24px;
   margin-bottom: 30px;
   font-family: "Roboto", "Open Sans", sans-serif;
+  padding-top: 1px;
   font-size: 14px;
   line-height: 20px;
   color: #172328;
@@ -2337,9 +2348,30 @@ p {
   height: 6px;
   border-radius: 50%;
   position: absolute;
-  top: 5px;
+  top: 6px;
   left: 0;
   background: linear-gradient(152.42deg, #93AFFF 15.44%, #93AFFF 38.1%, #5278FF 66.6%, #3F63E3 82.51%);
+  z-index: 2;
+}
+
+.services-slider__list li::after {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: -6px;
+  z-index: 1;
+}
+
+.services-slider__list li:hover::before {
+  background: #ffffff;
+}
+
+.services-slider__list li:hover::after {
+  background: #01a5e4;
 }
 
 .services-slider__list li a {
@@ -3175,7 +3207,7 @@ p {
 
 .clients__container {
   position: relative;
-  padding: 32px 15px 30px;
+  padding: 32px 32px 30px;
 }
 
 @media (min-width: 992px) {
@@ -4248,13 +4280,24 @@ p {
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   left: 0;
   z-index: 101;
   padding: 26px 0 25px;
   background: #fafafa;
+}
+
+.header.active {
+  position: fixed;
+  top: 0;
+  transition: top 0.2s linear;
+}
+
+.header.hidden {
+  top: -200px;
+  position: fixed;
 }
 
 .header__inner {
@@ -4670,7 +4713,7 @@ body.blocked {
 .project-hero__title {
   padding: 10px;
   background: rgba(255, 255, 255, 0.64);
-  font-weight: 900;
+  font-weight: 700;
   font-size: 42px;
   line-height: 1.05;
   letter-spacing: -0.07em;
@@ -4700,7 +4743,7 @@ body.blocked {
 }
 
 .project-hero__address-city {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 22px;
   line-height: 1.27;
   letter-spacing: -0.07em;
@@ -4778,7 +4821,7 @@ body.blocked {
 
 .project-detail__block-title {
   margin: 0;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 64px;
   line-height: 1.12;
   letter-spacing: -0.04em;
@@ -4823,6 +4866,7 @@ body.blocked {
       flex-direction: column;
   -ms-flex-pack: end;
       justify-content: flex-end;
+  overflow: hidden;
 }
 
 @media all and (-ms-high-contrast: none) {
@@ -4833,6 +4877,19 @@ body.blocked {
   }
 }
 
+.project-fotos__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  transition: 0.4s ease;
+}
+
 .project-fotos__item::before {
   content: "";
   width: 100%;
@@ -4840,7 +4897,7 @@ body.blocked {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   display: block;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.44) 100%);
 }
@@ -4884,8 +4941,15 @@ body.blocked {
   line-height: 1.57;
   min-height: 4.71em;
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: 81%;
+}
+
+.project-fotos__item:hover img {
+  width: 110%;
+  height: 110%;
+  left: -5%;
+  top: -5%;
 }
 
 .project-info__content {
@@ -5023,4 +5087,36 @@ body.blocked {
 
 .project-review__info-btn:hover {
   background-color: rgba(1, 165, 228, 0.85);
+}
+
+.fc-infobar,
+.fc-toolbar {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.fc-infobar {
+  left: 0;
+  line-height: 44px;
+  min-width: 44px;
+  text-align: center;
+}
+
+.fc-toolbar {
+  right: 0;
+}
+
+.fc-caption {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 16px;
+  background: #ffffff;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.57;
+  color: #000000;
 }
