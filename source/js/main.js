@@ -516,3 +516,13 @@ $(window).scroll(function(event) {
 		});
 	}
 })();
+
+
+/* Contacts */
+(function(){
+	$('input[name="contact_type"]').on('change',function (){
+		var id = $(this).val();
+		$('.contacts__bottom').removeClass('contacts__bottom--active');
+		$('.contacts__bottom[data-id="'+id+'"]').addClass('contacts__bottom--active');
+	});
+})();
