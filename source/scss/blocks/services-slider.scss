@@ -13,6 +13,7 @@
 		position: relative;
 		padding-top: 71px;
 
+
 		@include media(lg) {
 			padding-top: 0;
 			padding-bottom: 206px;
@@ -22,6 +23,15 @@
 	&__slider {
 		margin: 0 -28px;
 		z-index: 20;
+		overflow: visible;
+	}
+
+	&__item{
+		transition: opacity 0.3s;
+		&:not(.swiper-slide-active){
+			opacity: 0;
+			pointer-events: none;
+		}
 	}
 
 	&__wrapper {
@@ -156,11 +166,6 @@
 	&__title {
 		font-size: 32px;
 		line-height: 1.125;
-		word-break: break-word;
-		-webkit-hyphens: auto;
-		-moz-hyphens: auto;
-		-ms-hyphens: auto;
-		hyphens: auto;
 
 		@include media(lg) {
 			font-size: 64px;
@@ -273,7 +278,7 @@
 		@include hover {
 			.digit,
 			.title {
-				color: $color-dark2;
+				color: $color-blue;
 			}
 		}
 

@@ -40,11 +40,7 @@
 		font-size: 32px;
 		line-height: 40px;
 		color: $color-default-white;
-		word-break: break-word;
-		-webkit-hyphens: auto;
-		-moz-hyphens: auto;
-		-ms-hyphens: auto;
-		hyphens: auto;
+		hyphens: manual;
 
 		@include media(lg) {
 			padding-right: 0;
