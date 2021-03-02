@@ -1,8 +1,12 @@
 .header {
-	position: relative;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	left: 0;
 	z-index: 101;
 	$self: &;
 	padding: 26px 0 25px;
+	background: #fafafa;
 
 	@include media(md) {
 	}

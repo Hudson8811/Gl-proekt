@@ -371,11 +371,19 @@ function setOverlay(cb) {
 
 	parent.find('.form__type input').change(function () {
 		if ($(this).val() === '2' && $(this).prop('checked')) {
-			changedField.hide();
-			parent.find('.form__field--change').addClass('form__field--full');
+			changedField.find('input').prop('disabled',true);
+			TweenMax.to(changedField, 0.2, { width: 0, opacity: 0,  clearProps: "all",  onComplete: function () {
+					changedField.hide();
+					parent.find('.form__field--change').addClass('form__field--full');
+				}
+			});
 		} else {
-			changedField.show();
 			parent.find('.form__field--change').removeClass('form__field--full');
+			changedField.show();
+			TweenMax.from(changedField, 0.2, {width: 0, opacity: 0,onComplete: function () {
+					changedField.find('input').prop('disabled',false);
+				}
+			});
 		}
 	});
 

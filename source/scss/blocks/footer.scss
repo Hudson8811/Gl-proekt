@@ -161,7 +161,7 @@
 
 		a {
 			font-family: $font-family--secondary;
-
+			display: flex;
 			@include text(12px, 1.166, $color-pale-sky);
 			text-decoration: underline;
 
