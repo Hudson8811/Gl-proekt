@@ -14,6 +14,21 @@
 		#{$self}__text {
 			color: $color-default-black;
 		}
+		#{$self}__text {
+			max-width: 280px;
+		}
+
+		#{$self}__icon {
+			@include media(lg) {
+				flex-shrink: 0;
+			}
+		}
+		#{$self}__top {
+			@include media(lg) {
+				padding-left: 20px;
+				margin-right: 20px;
+			}
+		}
 	}
 
 	&__top {

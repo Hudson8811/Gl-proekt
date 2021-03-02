@@ -23,6 +23,10 @@
 		}
 
 		#{$self}__slider {
+			@include media(lg) {
+				max-width: none;
+			}
+
 			&::before {
 				content: "";
 				position: absolute;
@@ -59,7 +63,7 @@
 				margin-top: 0 !important;
 
 				&:nth-child(n + 3) {
-					margin-top: 32px !important;
+					margin-top: 87px !important;
 				}
 			}
 		}
