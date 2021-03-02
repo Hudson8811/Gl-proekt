@@ -4295,12 +4295,12 @@ p {
   z-index: 101;
   padding: 26px 0 25px;
   background: #fafafa;
+  transition: top 0.3s linear;
 }
 
 .header.active {
   position: fixed;
   top: 0;
-  transition: top 0.2s linear;
 }
 
 .header.hidden {
