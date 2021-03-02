@@ -1,0 +1,105 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Project detail';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 4.01; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- let bodyModClass = 'white-mobile'; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+
+	.project-hero
+		img.project-hero__image(src="img/project-detail/hero.png" alt="")
+		.project-hero__container.container
+			include modules/lines
+			h1.project-hero__title ДЕЛОВОЙ КОМПЛЕКС «АРМА»
+			.project-hero__date 2014-2016
+			.project-hero__address
+				.project-hero__address-city Москва
+				.project-hero__address-street ЦАО, Нижний Сусальный переулок, дом 5
+
+			.project-hero__tags
+				.project-hero__tag
+					a(href="") алюминиевые окна
+				.project-hero__tag
+					a(href="") алюминиевые двери
+				.project-hero__tag
+					a(href="") алюминиевые витражи
+				.project-hero__tag
+					a(href="") входные группы
+				.project-hero__tag
+					a(href="") облицовка натуральным камнем
+
+
+	.project-detail
+		.project-detail__container.container
+			include modules/lines
+
+			.project-detail__block.project-fotos
+				.project-detail__block-top.project-fotos__top
+					.project-detail__block-count.project-fotos__count 01
+					h2.project-detail__block-title.project-fotos__title Фото
+				.project-detail__content.project-fotos__content
+					a.project-fotos__item(href="img/project-detail/foto-1.jpg" data-fancybox="project" data-caption="Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»")
+						img(src="img/project-detail/foto-1.jpg" alt="")
+						span.project-fotos__item-title Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»
+					a.project-fotos__item(href="img/project-detail/foto-2.jpg" data-fancybox="project" data-caption="Витражи из алюминиевого профиля с применением стемалита в составе стеклопакета")
+						img(src="img/project-detail/foto-2.jpg" alt="")
+						span.project-fotos__item-title Витражи из алюминиевого профиля с применением стемалита в составе стеклопакета
+					a.project-fotos__item(href="img/project-detail/foto-3.jpg" data-fancybox="project" data-caption="Алюминиевые ограждающие конструкции торцевого фасада здания")
+						img(src="img/project-detail/foto-3.jpg" alt="")
+						span.project-fotos__item-title Алюминиевые ограждающие конструкции торцевого фасада здания
+					a.project-fotos__item(href="img/project-detail/foto-1.jpg" data-fancybox="project" data-caption="Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»")
+						img(src="img/project-detail/foto-1.jpg" alt="")
+						span.project-fotos__item-title Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»
+					a.project-fotos__item(href="img/project-detail/foto-2.jpg" data-fancybox="project" data-caption="Витражи из алюминиевого профиля с применением стемалита в составе стеклопакета")
+						img(src="img/project-detail/foto-2.jpg" alt="")
+						span.project-fotos__item-title Витражи из алюминиевого профиля с применением стемалита в составе стеклопакета
+					a.project-fotos__item(href="img/project-detail/foto-3.jpg" data-fancybox="project" data-caption="Алюминиевые ограждающие конструкции торцевого фасада здания")
+						img(src="img/project-detail/foto-3.jpg" alt="")
+						span.project-fotos__item-title Алюминиевые ограждающие конструкции торцевого фасада здания
+					a.project-fotos__item(href="img/project-detail/foto-1.jpg" data-fancybox="project" data-caption="Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»")
+						img(src="img/project-detail/foto-1.jpg" alt="")
+						span.project-fotos__item-title Фасадные светопрозрачные конструкции для проекта компании «ДОНСТРОЙ»
+
+
+			.project-detail__block.project-info
+				.project-detail__block-top.project-info__top
+					.project-detail__block-count.project-info__count 02
+					h2.project-detail__block-title.project-info__title АРМА: СТРОЕНИЕ 1 И 2
+				.project-detail__content.project-info__content
+					p Архитекторы отнеслись к корпусам аккуратно. Советские аттиковые этажи перебрали – под кровлей образовались помещения для офисов, освещенные в основном мансардными окнами, встроенными в вальмовый абрис крыши. Местами, с внутренней стороны квартала, в пологих вальмовых кровлях образуются вырезы – здесь офисы получают обычные, вертикальные окна. Похожие вырезы во внутренних скатах флигелей-ризалитов образуют на их кровлях небольшие террасы с выходом на кровлю.
+					p Кирпичные стены вычищены пескоструйной технологией и вычинены кирпичом Remmers – вычинка заметна намётанному глазу, позволяя сравнить шершавость подлинника с более регулярной фактурой современного материала, но выделяется не слишком. Кирпич шершавый, но не крошится, хотя и не выглядит слишком лакированным. Два здания тепло-морковного, оранжевого оттенка представляют собой отличные пропилеи для территории, где сохранено многое от исторического завода. Они работают визитной карточкой не только для кластера, но и для технологии сохранения кирпичной архитектуры исторических промзон, «держа» собой восточный фасад переулка.
+					img(src="img/project-detail/content.jpg" alt="")
+
+
+			.project-detail__block.project-review
+				.project-detail__block-top.project-review__top
+					.project-detail__block-count.project-review__count 03
+					h2.project-detail__block-title.project-review__title Отзыв заказчика
+				.project-detail__content.project-review__content
+					.project-review__image
+						img(src="img/project-detail/review.jpg" alt="")
+						.project-review__image-name Евгений Коробов
+						.project-review__image-post Какая должность
+
+					.project-review__info
+						.project-review__info-text
+							p Разнообразный и богатый опыт новая модель организационной деятельности представляет собой интересный эксперимент проверки направлений прогрессивного развития. Таким образом укрепление и развитие структуры играет важную роль в формировании дальнейших направлений развития.
+						a.project-review__info-btn(href="img/projects/item-1@2x.jpg" data-fancybox)
+							svg(width='50' height='50' aria-label='dowload icon')
+								use(xlink:href='#dowload')
+							span Смотреть скан
+
+
+	include modules/projects
+
+
+
+block footer
+	include modules/footer
+
+

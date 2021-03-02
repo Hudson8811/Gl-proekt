@@ -1,0 +1,77 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Contacts';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 10.01; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 10; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	.contacts
+		.contacts__top
+			.contacts__top-container.container
+				include modules/lines
+				.contacts__top-title
+					h1 Контакты
+				.contacts__top-tabs
+					.contacts__top-tab
+						label
+							input(type='radio', name='contact_type', value='1', checked)
+							+icon('company')(width="50", height="50")
+							span Офис
+					.contacts__top-tab
+						label
+							input(type='radio', name='contact_type', value='2')
+							+icon('factory')(width="50", height="50")
+							span Производство
+
+		.contacts__bottom.contacts__bottom--active(data-id="1")
+			.contacts__bottom-container.container
+				include modules/lines
+				.contacts__bottom-left
+					.contacts__bottom-city г. Москва
+					.contacts__bottom-info
+						p ООО «Гласс Проект» <br>ИНН 5036104884
+						p Деловой квартал "Сириус Парк", <br>Каширское шоссе д. 3, корп. 2, стр. 2
+						p +7 (495) 150-34-00 <br>mail@glassproekt.ru
+					.contacts__bottom-social
+						a(href="" target="_blank")
+							+icon('facebook')(width="29", height="29")
+						a(href="" target="_blank")
+							+icon('instagram')(width="29", height="29")
+					a.contacts__bottom-btn(href="")
+						svg(width='50' height='50' aria-label='dowload icon')
+							use(xlink:href='#dowload')
+						span Скачать реквизиты
+
+			.contacts__bottom-map
+				script(type='text/javascript' charset='utf-8' async='' src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A589b0d66967ad1198ed894d39e714f5bba5bcc29e404956935528cc1d8085b0a&width=873&height=720&lang=ru_RU&scroll=true')
+
+	.contacts__bottom(data-id="2")
+			.contacts__bottom-container.container
+				include modules/lines
+				.contacts__bottom-left
+					.contacts__bottom-city г. Омсква
+					.contacts__bottom-info
+						p ООО «Гласс Проект» <br>ИНН 5036104884
+						p Деловой квартал "Сириус Парк", <br>Каширское шоссе д. 3, корп. 2, стр. 2
+						p +7 (495) 150-34-00 <br>mail@glassproekt.ru
+					.contacts__bottom-social
+						a(href="" target="_blank")
+							+icon('facebook')(width="29", height="29")
+						a(href="" target="_blank")
+							+icon('instagram')(width="29", height="29")
+					a.contacts__bottom-btn(href="")
+						svg(width='50' height='50' aria-label='dowload icon')
+							use(xlink:href='#dowload')
+						span Скачать реквизиты
+
+			.contacts__bottom-map
+				script(type='text/javascript' charset='utf-8' async='' src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A589b0d66967ad1198ed894d39e714f5bba5bcc29e404956935528cc1d8085b0a&width=873&height=720&lang=ru_RU&scroll=true')
+
+block footer
+	include modules/footer
+
+

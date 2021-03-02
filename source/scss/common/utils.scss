@@ -93,9 +93,11 @@
 	border: none;
 	cursor: pointer;
 
-	@include hover {
-		svg {
-			stroke: $color-blue;
+	@include media(lg) {
+		&:hover {
+			svg {
+				stroke: $color-blue;
+			}
 		}
 	}
 

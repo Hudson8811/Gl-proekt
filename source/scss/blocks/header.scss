@@ -1,8 +1,22 @@
 .header {
-	position: relative;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 0;
 	z-index: 101;
 	$self: &;
 	padding: 26px 0 25px;
+	background: #fafafa;
+	transition: top 0.3s linear;
+
+	&.active {
+		position: fixed;
+		top: 0;
+	}
+	&.hidden{
+		top: -200px;
+		position: fixed;
+	}
 
 	@include media(md) {
 	}

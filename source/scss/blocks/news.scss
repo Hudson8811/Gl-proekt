@@ -12,26 +12,14 @@
 
 	&__top {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 5px;
 		position: relative;
-
-		@include media(xs) {
-			flex-direction: row;
-		}
 	}
 
 	&__title {
-		margin-bottom: 12px;
-		text-align: center;
-
-		@include media(xs) {
-			max-width: 50%;
-			margin-bottom: 0;
-			text-align: left;
-		}
+		max-width: 50%;
 
 		@include media(lg) {
 			margin-left: -7px;
@@ -40,11 +28,9 @@
 	}
 
 	&__nav {
-		@include media(xs) {
-			position: absolute;
-			top: 18px;
-			right: 0;
-		}
+		position: absolute;
+		top: 18px;
+		right: 0;
 
 		@include media(lg) {
 			padding-top: 14px;
@@ -56,20 +42,14 @@
 	}
 
 	&__all {
-		display: block;
+		display: inline-block;
+		max-width: 50%;
 		font-family: $font-family--secondary;
 		font-size: 18px;
 		line-height: 26px;
 		color: $color-dark2;
-		text-align: center;
 		text-decoration: underline;
 		@include transition(color);
-
-		@include media(xs) {
-			display: inline-block;
-			max-width: 50%;
-			text-align: left;
-		}
 
 		@include media(lg) {
 			max-width: 100%;
@@ -129,7 +109,7 @@
 				margin-bottom: 13px;
 
 				@include media(lg) {
-					margin-bottom: 17px;
+					margin-bottom: 42px;
 				}
 			}
 		}

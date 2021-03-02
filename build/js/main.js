@@ -48,6 +48,8 @@ function setOverlay(cb) {
 	menuOpenBtn.on('click', function() {
 		menu.fadeIn(DURATION);
 		menuCloseBtn.on('click', closeMenu);
+		$('.header').addClass('hidden');
+		$('.header').removeClass('active');
 	});
 
 	dropdownLink.on('click', function(evt) {
@@ -129,85 +131,12 @@ function setOverlay(cb) {
 	}
 })();
 
-/* sticky header */
-(function() {
-	var lastScrollTop = 0;
-	var header = $('#header');
-	var isRemoveFixed = false;
-
-	$(window).scroll(function(event) {
-		var st = $(this).scrollTop();
-		var offset = header.innerHeight();
-
-		if (st < lastScrollTop) {
-			if (st !== 0) {
-				header.addClass("header--fixed").css('top', -offset + 'px');
-				body.css('padding-top', offset + 'px');
-				isRemoveFixed = false;
-			} else {
-				header.removeClass("header--fixed").removeAttr('style');
-				body.css('padding-top', 0);
-				isRemoveFixed = true;
-			}
-		} else {
-			if (!isRemoveFixed) {
-				header.css('transform', 'translateY(0)');
-
-				setTimeout(function() {
-					header.removeClass("header--fixed").removeAttr('style');
-					body.css('padding-top', 0);
-				}, DURATION);
-
-				isRemoveFixed = true;
-			}
-
-		}
-
-		lastScrollTop = st;
-	});
-
-	$(window).on('resize', function() {
-		//offset = header.innerHeight();
-	});
-})();
-
-/* accordion */
-(function () {
-	var btn = $('.__js_accordion-btn');
-
-	btn.on('click', function() {
-		var parent = $(this).parent();
-		parent.siblings().find('.accordion__item-text').slideUp(DURATION);
-		$(this).next().slideDown(DURATION);
-	});
-})();
 
 /* Modal */
 (function(){
 	$(document).ready(function() {
 		$(".fancybox").fancybox();
-
-		$(".__js_service-modal").fancybox({
-			maxWidth: 848,
-			maxHeight: 600,
-			padding: 0,
-			//fitToView: false,
-			width	: '90%',
-			height: '90%',
-			//autoSize: false,
-			//closeClick: false,
-			closeBtn: false,
-			modal: true
-
-		});
-
-		$('.__js_fancybox-close').on('click', function() {
-			$.fancybox.close();
-		});
 	});
-
-
-
 })();
 
 /* Plan markers */
@@ -240,12 +169,22 @@ function setOverlay(cb) {
 	function showPlanDetail() {
 		var parent = $('.plan'),
 			markers = parent.find('.plan__image svg'),
+			canvas = document.querySelector('.plan__image'),
 			anchor = parent.find('.plan__anchor'),
 			caption = parent.find('.plan__caption'),
 			bg = parent.find('.plan__wrapper');
 
-		markers.click(function () {
-			var that = $(this);
+		markers.click(function (e) {
+			var that = $(this),
+					tar = canvas.getBoundingClientRect(),
+
+					newX = ($(window).width() - (((e.clientX - tar.left) - caption.outerWidth() / 2) + caption.outerWidth()) < 0) ?
+						$(window).width() - caption.outerWidth() :
+						((e.clientX - tar.left) - caption.outerWidth() / 2),
+
+					newY = (canvas.clientHeight - ((e.clientY - tar.top) + caption.outerHeight()) < 0) ?
+						canvas.clientHeight - caption.outerHeight() :
+						e.clientY;
 
 			$.getJSON('data/plan.json', function (data) {
 				var content = data.content,
@@ -261,6 +200,12 @@ function setOverlay(cb) {
 
 			markers.fadeOut(300);
 			anchor.fadeOut(300);
+
+			// Set caption position
+			caption.css({
+				'left': newX,
+				'top': newY
+			});
 
 			setTimeout(function () {
 				bg.addClass('inactive');
@@ -286,74 +231,38 @@ function setOverlay(cb) {
 
 /* Services slider */
 (function(){
-	var slider1 = $('.__js_services-slider');
-	var slider2 = $('.__js_services-thumbs');
+	if ($('.__js_services-slider').length > 0 ) {
+		var servicesSlider = new Swiper('.__js_services-slider', {
+			pagination: {
+				el: '.services-slider-pagi'
+			},
+			navigation: {
+				prevEl: '.services-slider-prev',
+				nextEl: '.services-slider-next'
+			},
+			speed: 300,
+			loop: true,
+			loopedSlides: 7,
+			autoHeight: true
+		});
 
-	var servicesSlider = new Swiper('.__js_services-slider', {
-		pagination: {
-			el: '.services-slider-pagi'
-		},
-		navigation: {
-			prevEl: '.services-slider-prev',
-			nextEl: '.services-slider-next'
-		},
-		speed: 300,
-		loop: true,
-		loopedSlides: 7
-	});
-
-	var servicesThumbs = new Swiper('.__js_services-thumbs', {
-		slideToClickedSlide: true,
-		loop: true,
-		loopedSlides: 7,
-		slidesPerView: 'auto',
-		spaceBetween: 15,
-		allowTouchMove: false,
-		breakpoints: {
-			992: {
-				spaceBetween: 0
+		var servicesThumbs = new Swiper('.__js_services-thumbs', {
+			slideToClickedSlide: true,
+			loop: true,
+			loopedSlides: 7,
+			slidesPerView: 'auto',
+			spaceBetween: 15,
+			allowTouchMove: false,
+			breakpoints: {
+				992: {
+					spaceBetween: 0
+				}
 			}
-		}
-	});
+		});
 
-	if (slider1.length && slider2.length) {
 		servicesSlider.controller.control = servicesThumbs;
 		servicesThumbs.controller.control = servicesSlider;
 	}
-})();
-
-/* Application section carousel */
-(function() {
-	var carousel = new Swiper('.__js_application-section-carousel', {
-		slidesPerView: 'auto',
-		spaceBetween: 15,
-		speed: 300,
-		loop: true,
-		pagination: {
-			el: '.application-section__paginate'
-		},
-		navigation: {
-			prevEl: '.slider__btn--prev',
-			nextEl: '.slider__btn--next'
-		},
-	});
-})();
-
-/* We use logo carousel */
-(function() {
-	var carousel = new Swiper('.__js_we-use-carousel', {
-		slidesPerView: 'auto',
-		spaceBetween: 15,
-		speed: 300,
-		loop: true,
-		pagination: {
-			el: '.we-use__paginate'
-		},
-		navigation: {
-			prevEl: '.slider__btn--prev',
-			nextEl: '.slider__btn--next'
-		},
-	});
 })();
 
 /* Advantages slider */
@@ -464,36 +373,42 @@ function setOverlay(cb) {
 
 	parent.find('.form__type input').change(function () {
 		if ($(this).val() === '2' && $(this).prop('checked')) {
-			changedField.hide();
-			parent.find('.form__field--change').addClass('form__field--full');
+			changedField.find('input').prop('disabled',true);
+			TweenMax.to(changedField, 0.2, { width: 0, opacity: 0,  clearProps: "all",  onComplete: function () {
+					changedField.hide();
+					parent.find('.form__field--change').addClass('form__field--full');
+				}
+			});
 		} else {
-			changedField.show();
 			parent.find('.form__field--change').removeClass('form__field--full');
+			changedField.show();
+			TweenMax.from(changedField, 0.2, {width: 0, opacity: 0,onComplete: function () {
+					changedField.find('input').prop('disabled',false);
+				}
+			});
 		}
 	});
 
 	parent.find('.field--switch input').change(function () {
 		if ($(this).prop('checked')) {
-			parent.find('.form__field[data-disabled] .nice-select').addClass('form__field--disabled');
+			parent.find('.form__field[data-disabled] .chosen-container').addClass('form__field--disabled');
 		} else {
-			parent.find('.form__field[data-disabled] .nice-select').removeClass('form__field--disabled');
+			parent.find('.form__field[data-disabled] .chosen-container').removeClass('form__field--disabled');
 		}
 	});
 })();
 
 /* Select */
 (function(){
-	$('.select').niceSelect();
-
-	$('.nice-select .list').hide();
-
-	$(document).click(function (e) {
-		var tar = $('.nice-select');
-		if (!tar.is(e.target) && tar.has(e.target).length === 0 || !tar.hasClass('open')) {
-			tar.find('.list').hide();
-		} else {
-			tar.find('.list').show();
-		}
+	$('.select').chosen({
+		width: '100%',
+		no_results_text: 'Совпадений не найдено',
+		placeholder_text_single: 'Услуга: ',
+	}).on('chosen:showing_dropdown', function (evt, params) {
+		$('.chosen-single span').text('Услуга:');
+		$('.chosen-single div').addClass('rotate');
+	}).on('chosen:hiding_dropdown', function (evt, params) {
+		$('.chosen-single div').removeClass('rotate');
 	});
 
 	var scrollOpt = {
@@ -505,7 +420,7 @@ function setOverlay(cb) {
 		cursorwidth: "2px"
 	};
 
-	$('.nice-select .list').niceScroll(scrollOpt);
+	$('.chosen-results').niceScroll(scrollOpt);
 })();
 
 /* Services accordion */
@@ -518,4 +433,96 @@ function setOverlay(cb) {
 			$(this).toggleClass('open').next().slideToggle(300);
 		});
 	}
+})();
+
+
+/* Header */
+var lastScrollTop = 0;
+$(window).scroll(function(event) {
+	var offset = $('.header').height() - 10;
+	var st = $(this).scrollTop();
+	if(st == 0) {
+		$('.header').removeClass("active");
+		$('.header').css('z-index', '9999');
+		$('.header').removeClass("hidden");
+	}
+	else {
+		if(st > lastScrollTop) {
+			if($(window).scrollTop() > offset && $('.plan').length === 0) {
+				if($('.header').hasClass("active")) {
+					$('.header').addClass("active");
+					$('.header').css('z-index', '9999');
+					$('.header').addClass("hidden");
+				}
+				else {
+					$('.header').addClass("hidden");
+				}
+			}
+			else {
+				$('.header').removeClass("active");
+				$('.header').css('z-index', '9999');
+				if ($('.plan').length > 0) {
+					$('.header').addClass("hidden");
+				} else {
+					$('.header').removeClass("hidden");
+				}
+			}
+		}
+		else {
+			$('.header').addClass("active");
+			$('.header').css('z-index', '9999');
+			$('.header').removeClass("hidden");
+		}
+	}
+	lastScrollTop = st;
+});
+
+/* Gallery */
+(function(){
+	if (!$.fancybox.isMobile ){
+		var updatefc  = function(instance, current) {
+			var $fc = current.$fc;
+			if ($fc && $fc.length) {
+				current.$slide.css('display', 'block');
+				$.fancybox.setTranslate(current.$content, instance.getFitPos(current));
+				var fcHeight = $fc.outerHeight(true);
+				if (fcHeight) {
+					current.$slide.css('padding-bottom', fcHeight);
+					$.fancybox.setTranslate(current.$content, instance.getFitPos(current));
+				}
+				current.$slide.css('display', '');
+			}
+		}
+
+		$('[data-fancybox="project"]').fancybox({
+			infobar : false,
+			toolbar : false,
+			buttons : false,
+			arrows : false,
+			loop : true,
+			caption: $.noop,
+			afterLoad : function(instance, current) {
+				if ( instance.group.length > 1 && current.$content ) {
+					current.$content.append('<a data-fancybox-next class="fancy-button-next" href="javascript:;"><svg width="16" height="29"><use xlink:href="#fancy-arrow-r"></use></svg></a><a data-fancybox-prev class="fancy-button-previous" href="javascript:;"><svg width="16" height="29"><use xlink:href="#fancy-arrow"></use></svg></a>');
+				}
+				current.$content.append('<a data-fancybox-close class="fancy-button-close" href="javascript:;"><svg width="27" height="27"><use xlink:href="#close"></use></svg></a>');
+
+				current.$fc = $('<div class="fc-caption"><span>' + current.opts.$orig.data('caption') + '<span></div>').appendTo(current.$content);
+				updatefc(instance, current);
+			},
+			onUpdate(instance, current) {
+				updatefc(instance, current);
+			}
+		});
+	}
+})();
+
+
+/* Contacts */
+(function(){
+	$('input[name="contact_type"]').on('change',function (){
+		var id = $(this).val();
+		$('.contacts__bottom').removeClass('contacts__bottom--active');
+		$('.contacts__bottom[data-id="'+id+'"]').addClass('contacts__bottom--active');
+	});
 })();

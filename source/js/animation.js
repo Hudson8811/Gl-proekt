@@ -1,4 +1,4 @@
-if (!mobileCheck()) {
+if (!mobileCheck() && $('.plan').length > 0) {
 	var lock = 1,
 		step = 0,
 		planText = $('.plan__title'),
@@ -6,15 +6,17 @@ if (!mobileCheck()) {
 		planContent = $('.plan'),
 		otherContent = $('.js-content'),
 		planAnchor = $('.plan__anchor'),
+		header = $('.header'),
 		_savedTextBlockHeight = 0;
 
 	var isAnim = $('body').hasClass('__js_is-animation');
 
 	if (isAnim) {
 		$('body').addClass('blocked');
+		$('main').addClass('nopad');
 	}
 
-	TweenMax.set(otherContent, {alpha: 0, webkitFilter:"blur(10px)"});
+	TweenMax.set(otherContent, {y:window.innerHeight});
 	TweenMax.to(planText, 0.8, {opacity: 1, ease: Linear.easing});
 
 	setTimeout(function() {lock = 0; step = 1;}, 1000);
@@ -24,8 +26,9 @@ if (!mobileCheck()) {
 		event.preventDefault();
 		var planIcons = $('.plan__image > svg');
 		lock = 1;
+		header.addClass('hidden');
 		var e,
-			windowHeight = window.innerHeight,
+			windowHeight = window.innerHeight - header.outerHeight(),
 			planTextHeight = planText.outerHeight(),
 			planImageHeight = planImage.outerHeight(),
 			planTextMargin = parseInt(planText.css("margin-top"), 10),
@@ -59,8 +62,9 @@ if (!mobileCheck()) {
 			switch (step) {
 				case 1:
 					lock = 1;
+					header.addClass('hidden');
 					var e,
-						windowHeight = window.innerHeight,
+						windowHeight = window.innerHeight - header.outerHeight(),
 						planTextHeight = planText.outerHeight(),
 						planImageHeight = planImage.outerHeight(),
 						planTextMargin = parseInt(planText.css("margin-top"), 10),
@@ -80,15 +84,20 @@ if (!mobileCheck()) {
 							onComplete: function () {
 								planText.hide();
 								TweenMax.staggerFromTo(planIcons, 0.4, { alpha: 0, scale: 0.5 }, { alpha: 1, scale: 1, delay: 0.1, overwrite: !0, ease: Back.easeOut }, 0.05);
-								setTimeout(function() {lock = 0; step++;}, 500);
+								setTimeout(function() {lock = 0; step++;}, 400);
 							},
 						});
 
 					break;
 				case 2:
 					lock = 1;
-					TweenMax.to(planContent, 0.7,{height:0});
-					TweenMax.to(otherContent, 0.9,{alpha:1, webkitFilter:"blur(0px)", onComplete: function () {
+					header.addClass('hidden');
+					TweenMax.to(planContent, 0.8, {y: -1 * window.innerHeight, ease: Power1.easeOut,
+						 onComplete: function () {
+							planContent.hide();
+						}
+					});
+					TweenMax.to(otherContent, 0.8,{y:0,  ease: Power1.easeOut, onComplete: function () {
 							$('body').removeClass('blocked');
 							lock = 0; step++;
 						}
@@ -97,10 +106,11 @@ if (!mobileCheck()) {
 				default:
 					break;
 			}
-		} else  if (up && lock == 0 && scrollTop == 0){
+		} else  if (up && lock == 0 && scrollTop <= 25){
 			switch (step) {
 				case 2:
 					lock = 1;
+					header.removeClass('hidden');
 					var e = _savedTextBlockHeight;
 					TweenMax.fromTo(
 						planImage,
@@ -135,9 +145,10 @@ if (!mobileCheck()) {
 					lock = 1;
 					$('body').addClass('blocked');
 
-					TweenMax.to(otherContent, 0.7,{opacity:0, webkitFilter:"blur(10px)"});
-					TweenMax.set(planContent, {height:"100vh"});
-					TweenMax.from(planContent, 0.9,{height:0, onComplete: function () {
+					header.removeClass('hidden');
+					planContent.show();
+					TweenMax.to(otherContent, 0.8,{y:window.innerHeight,  ease: Power1.easeOut,});
+					TweenMax.to(planContent, 0.8,{y:0,  ease: Power1.easeOut, onComplete: function () {
 							lock = 0; step--;
 						}
 					});
@@ -147,7 +158,7 @@ if (!mobileCheck()) {
 			}
 		}
 
-	}, 1000);
+	}, 300);
 
 
 	$(window).scroll(function (event) {

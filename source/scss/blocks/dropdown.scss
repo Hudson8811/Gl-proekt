@@ -114,10 +114,12 @@
 		}
 
 		a {
+			transition: color 0.2s;
 			@include text(16px, 1.25, $color-default-white);
 			font-weight: 600;
 
 			@include hover {
+				color: #172328;
 			}
 		}
 

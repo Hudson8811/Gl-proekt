@@ -2,6 +2,9 @@
 	margin: 0 auto;
 	padding: 0 32px;
 
+	@include media(lg) {
+		padding: 0 15px;
+	}
 	@each $breakpoint, $maxWidth in $containerMaxWidths {
 		@include media($breakpoint) {
 			max-width: $maxWidth;
