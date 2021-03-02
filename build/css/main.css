@@ -5612,3 +5612,118 @@ body.blocked {
 .contacts__bottom-btn:hover {
   background-color: rgba(1, 165, 228, 0.85);
 }
+
+.wiki .lines {
+  z-index: -1;
+  opacity: 0.33;
+}
+
+.wiki .lines .line {
+  background: #172328;
+  opacity: 0.16;
+}
+
+.wiki__container {
+  position: relative;
+  padding-top: 49px;
+  padding-bottom: 162px;
+}
+
+.wiki__title {
+  margin: 0;
+  font-size: 98px;
+  line-height: 1.12;
+  letter-spacing: -0.05em;
+  font-weight: 900;
+  max-width: 75%;
+  display: block;
+  color: #172328;
+}
+
+.wiki__abc {
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -2px;
+  margin-right: -2px;
+  margin-top: 30px;
+}
+
+.wiki__abc-item {
+  margin: 2px 2px;
+  -ms-flex-preferred-size: 32px;
+      flex-basis: 32px;
+}
+
+.wiki__abc-item a {
+  padding: 4px 10px;
+  font-size: 18px;
+  line-height: 26px;
+  font-family: "Roboto", "Open Sans", sans-serif;
+  color: #677B83;
+  display: block;
+  background: #ffffff;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+}
+
+.wiki__abc-item a:hover {
+  color: #111c20;
+}
+
+.wiki__abc-item--active a {
+  background: #01A5E4;
+  color: #ffffff;
+}
+
+.wiki__abc-item--active a:hover {
+  color: #ffffff;
+}
+
+.wiki__content {
+  margin-top: 62px;
+}
+
+.wiki__letter {
+  padding: 23px 0 16px;
+}
+
+.wiki__letter + .wiki__letter {
+  margin-top: 32px;
+}
+
+.wiki__letter-title {
+  font-weight: 300;
+  font-size: 42px;
+  line-height: 32px;
+  letter-spacing: -0.07em;
+  color: #172328;
+}
+
+.wiki__letter-items {
+  margin-top: 8px;
+}
+
+.wiki__item {
+  color: currentColor;
+  display: block;
+  box-sizing: border-box;
+  padding-right: 118px;
+}
+
+.wiki__item + .wiki__item {
+  margin-top: 24px;
+}
+
+.wiki__item-title {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.27;
+  letter-spacing: -0.07em;
+}
+
+.wiki__item-text {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 22px;
+}
