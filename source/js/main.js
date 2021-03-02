@@ -446,7 +446,7 @@ $(window).scroll(function(event) {
 	}
 	else {
 		if(st > lastScrollTop) {
-			if($(window).scrollTop() > offset) {
+			if($(window).scrollTop() > offset && $('.plan').length === 0) {
 				if($('.header').hasClass("active")) {
 					$('.header').addClass("active");
 					$('.header').css('z-index', '9999');
@@ -459,7 +459,11 @@ $(window).scroll(function(event) {
 			else {
 				$('.header').removeClass("active");
 				$('.header').css('z-index', '9999');
-				$('.header').removeClass("hidden");
+				if ($('.plan').length > 0) {
+					$('.header').addClass("hidden");
+				} else {
+					$('.header').removeClass("hidden");
+				}
 			}
 		}
 		else {
