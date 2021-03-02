@@ -132,6 +132,7 @@ function setOverlay(cb) {
 })();
 
 /* sticky header */
+/*
 (function() {
 	var lastScrollTop = 0;
 	var header = $('#header');
@@ -171,7 +172,7 @@ function setOverlay(cb) {
 	$(window).on('resize', function() {
 		//offset = header.innerHeight();
 	});
-})();
+})();*/
 
 /* accordion */
 (function () {
@@ -335,7 +336,7 @@ function setOverlay(cb) {
 
 		servicesSlider.controller.control = servicesThumbs;
 		servicesThumbs.controller.control = servicesSlider;
-
+	}
 })();
 
 /* Application section carousel */
@@ -349,9 +350,43 @@ function setOverlay(cb) {
 			el: '.application-section__paginate'
 		},
 		navigation: {
+			prevEl: '.slider__btn--prev',
+			nextEl: '.slider__btn--next'
+		},
+	});
+})();
+
+/* We use logo carousel */
+(function() {
+	var carousel = new Swiper('.__js_we-use-carousel', {
+		slidesPerView: 'auto',
+		spaceBetween: 15,
+		speed: 300,
+		loop: true,
+		pagination: {
+			el: '.we-use__paginate'
+		},
+		navigation: {
+			prevEl: '.slider__btn--prev',
+			nextEl: '.slider__btn--next'
+		},
+	});
+})();
+
+/* Advantages slider */
+(function(){
+	var advantagesSlider = undefined;
+
+	if ($('.__js_advantages-slider').length > 0) {
+		$(window).resize(function () {
+			initAdvantagesSlider();
+		});
+	}
+
 	function initAdvantagesSlider() {
 		if (window.matchMedia('(max-width: 991px)').matches && advantagesSlider == undefined) {
 			var advantagesSlider = new Swiper('.__js_advantages-slider', {
+				pagination: {
 					el: '.advantages-pagi'
 				},
 				navigation: {
