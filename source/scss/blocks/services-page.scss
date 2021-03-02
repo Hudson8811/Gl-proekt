@@ -53,6 +53,68 @@
 		border-bottom: solid 1px transparent;
 	}
 
+	&__section {
+		margin-bottom: 70px;
+
+		@include media(md) {
+			display: flex;
+		}
+
+		@include media(lg) {
+			margin-bottom: 116px;
+		}
+
+		&-column {
+			@include media(md) {
+				width: 40%;
+				padding-right: 20px;
+			}
+
+			@include media(lg) {
+				width: 50%;
+			}
+
+			& + & {
+				margin-top: 40px;
+
+				@include media(md) {
+					width: 60%;
+					margin-top: 0;
+					padding-right: 0;
+				}
+
+				@include media(lg) {
+					width: 50%;
+				}
+			}
+		}
+	}
+
+	&__service-types {
+		width: calc(100% + 64px);
+		margin-left: -32px;
+
+		@include media(sm) {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+
+	&__version {
+		width: calc(100% + 64px);
+		margin-left: -32px;
+		//margin-bottom: 2px;
+
+		@include media(sm) {
+			width: 100%;
+			margin-left: 0;
+		}
+
+		@include media(lg) {
+			margin-bottom: 116px;
+		}
+	}
+
 	.lines {
 		.line {
 			background-color: rgba($color-dark2, 0.16);

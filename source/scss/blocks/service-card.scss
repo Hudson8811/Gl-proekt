@@ -1,22 +1,31 @@
 .service-card {
 	$self: &;
-	position: relative;
 	max-width: 480px;
-	padding: 40px 0;
 
-	&::before {
-		content: attr(data-count);
-		position: absolute;
-		right: 0;
-		bottom: 40px;
+	a {
+		position: relative;
+		display: block;
+		padding: 40px 0;
+		@include transition(background-color);
 
-		@include text(240px, 0.76, $color-pale-sky);
-		font-weight: 200;
-		letter-spacing: -0.08em;
-		opacity: 0.04;
+		&::before {
+			content: attr(data-count);
+			position: absolute;
+			right: 0;
+			bottom: 40px;
 
-		@include media(lg) {
-			font-size: 312px;
+			@include text(240px, 0.76, $color-pale-sky);
+			font-weight: 200;
+			letter-spacing: -0.08em;
+			opacity: 0.04;
+
+			@include media(lg) {
+				font-size: 312px;
+			}
+		}
+
+		@include hover {
+			background-color: $color-smoky;
 		}
 	}
 
@@ -58,26 +67,13 @@
 		top: 47px;
 		right: 0; //38px;
 		width: 175px;
-		//background-color: red;
+		@include text(19px, 1.27);
+		font-weight: 900;
+		letter-spacing: -0.07em;
 
 		@include media(lg) {
 			right: 38px;
-		}
-
-		a {
-			@include text(18px, 1.27);
-			font-weight: 900;
-			letter-spacing: -0.07em;
-
-			@include transition(color);
-
-			@include media(lg) {
-				font-size: 22px;
-			}
-
-			@include hover {
-				color: $color-blue;
-			}
+			font-size: 22px;
 		}
 	}
 }

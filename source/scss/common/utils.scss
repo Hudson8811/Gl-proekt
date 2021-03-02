@@ -68,8 +68,16 @@
 	align-items: center;
 
 	&--white {
-		.slider__btn svg {
-			stroke: $color-default-white;
+		.slider__btn {
+			svg {
+				stroke: $color-default-white;
+			}
+
+			@include hover {
+				svg {
+					stroke: $color-dark2;
+				}
+			}
 		}
 	}
 }

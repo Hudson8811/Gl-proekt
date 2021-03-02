@@ -1,6 +1,6 @@
 .container {
 	margin: 0 auto;
-	padding: 0 15px;
+	padding: 0 32px;
 
 	@each $breakpoint, $maxWidth in $containerMaxWidths {
 		@include media($breakpoint) {

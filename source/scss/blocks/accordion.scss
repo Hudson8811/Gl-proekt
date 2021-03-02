@@ -1,0 +1,85 @@
+.accordion {
+	$self: &;
+
+	&__list {
+		@include list-reset;
+		margin-bottom: 44px;
+	}
+
+	&__item {
+		position: relative;
+		padding: 32px 60px 32px 15px;
+		background-color: $color-smoky;
+
+		@include media(sm) {
+			padding: 32px 90px 32px 32px;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 40px;
+			right: 15px;
+			width: 29px;
+			height: 15px;
+			background-repeat: no-repeat;
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='29' height='15' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M28 .5L14.5 14 1 .5' stroke='%23000'/%3e%3c/svg%3e");
+
+			@include media(sm) {
+				right: 44px;
+			}
+		}
+
+		&:nth-child(even) {
+			background-color: $color-smoky2;
+		}
+
+		&-btn {
+			display: block;
+			width: 100%;
+			padding: 0;
+
+			@include text(22px, 1.27);
+			font-weight: 900;
+			letter-spacing: -0.07em;
+			text-align: left;
+
+			border: none;
+			background-color: transparent;
+
+			appearance: none;
+			cursor: pointer;
+
+			@include transition(color);
+
+			@include hover {
+				color: $color-blue;
+			}
+		}
+
+		&-text {
+			display: none;
+
+			width: 57.14%;
+			max-width: 465px;
+			padding-top: 32px;
+			padding-bottom: 8px;
+		}
+	}
+
+	&__more {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		display: inline-block;
+		vertical-align: top;
+		font-family: $font-family--secondary;
+
+		@include text(18px, 1.44, $color-dark2);
+		text-decoration: underline;
+
+		@include hover {
+			text-decoration: none;
+		}
+	}
+}

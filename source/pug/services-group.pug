@@ -13,7 +13,7 @@ block content
 		.services-page__inner.container
 			header.services-page__header
 				.services-page__header-image
-					img(src="img/services-page/building-large.png", width="422", height="570", alt="")
+					img(src="img/services-page/building-large.png", srcset="img/services-page/building-large@2x.png 2x", width="422", height="570", alt="")
 				h1.services-page__heading.heading.heading--large Фасадное остекление
 			ul.services-page__list.services-list
 				- let count = 1;
@@ -21,7 +21,7 @@ block content
 					if count > 4
 						- count = 1;
 					- let modifierClass = count > 2 ? ' service-card--reverse' : '';
-					+service-card(item, 'services-list__item' + modifierClass, 'li')(data-count= item.count)
+					+service-card(item, 'services-list__item' + modifierClass, 'li')
 					- count++;
 
 			include modules/lines

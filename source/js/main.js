@@ -129,14 +129,15 @@ function setOverlay(cb) {
 	}
 })();
 
+/* sticky header */
 (function() {
 	var lastScrollTop = 0;
 	var header = $('#header');
-	var offset = header.innerHeight();
 	var isRemoveFixed = false;
 
 	$(window).scroll(function(event) {
 		var st = $(this).scrollTop();
+		var offset = header.innerHeight();
 
 		if (st < lastScrollTop) {
 			if (st !== 0) {
@@ -166,16 +167,47 @@ function setOverlay(cb) {
 	});
 
 	$(window).on('resize', function() {
-		offset = header.innerHeight();
+		//offset = header.innerHeight();
 	});
 })();
 
+/* accordion */
+(function () {
+	var btn = $('.__js_accordion-btn');
+
+	btn.on('click', function() {
+		var parent = $(this).parent();
+		parent.siblings().find('.accordion__item-text').slideUp(DURATION);
+		$(this).next().slideDown(DURATION);
+	});
+})();
 
 /* Modal */
 (function(){
 	$(document).ready(function() {
 		$(".fancybox").fancybox();
+
+		$(".__js_service-modal").fancybox({
+			maxWidth: 848,
+			maxHeight: 600,
+			padding: 0,
+			//fitToView: false,
+			width	: '90%',
+			height: '90%',
+			//autoSize: false,
+			//closeClick: false,
+			closeBtn: false,
+			modal: true
+
+		});
+
+		$('.__js_fancybox-close').on('click', function() {
+			$.fancybox.close();
+		});
 	});
+
+
+
 })();
 
 /* Plan markers */
@@ -254,6 +286,9 @@ function setOverlay(cb) {
 
 /* Services slider */
 (function(){
+	var slider1 = $('.__js_services-slider');
+	var slider2 = $('.__js_services-thumbs');
+
 	var servicesSlider = new Swiper('.__js_services-slider', {
 		pagination: {
 			el: '.services-slider-pagi'
@@ -281,8 +316,44 @@ function setOverlay(cb) {
 		}
 	});
 
-	servicesSlider.controller.control = servicesThumbs;
-	servicesThumbs.controller.control = servicesSlider;
+	if (slider1.length && slider2.length) {
+		servicesSlider.controller.control = servicesThumbs;
+		servicesThumbs.controller.control = servicesSlider;
+	}
+})();
+
+/* Application section carousel */
+(function() {
+	var carousel = new Swiper('.__js_application-section-carousel', {
+		slidesPerView: 'auto',
+		spaceBetween: 15,
+		speed: 300,
+		loop: true,
+		pagination: {
+			el: '.application-section__paginate'
+		},
+		navigation: {
+			prevEl: '.slider__btn--prev',
+			nextEl: '.slider__btn--next'
+		},
+	});
+})();
+
+/* We use logo carousel */
+(function() {
+	var carousel = new Swiper('.__js_we-use-carousel', {
+		slidesPerView: 'auto',
+		spaceBetween: 15,
+		speed: 300,
+		loop: true,
+		pagination: {
+			el: '.we-use__paginate'
+		},
+		navigation: {
+			prevEl: '.slider__btn--prev',
+			nextEl: '.slider__btn--next'
+		},
+	});
 })();
 
 /* Advantages slider */

@@ -1,0 +1,59 @@
+.service-info {
+	position: relative;
+	padding-top: 116px;
+
+	@include media(lg) {
+		padding-top: 188px;
+	}
+
+	&__heading {
+		margin: 0 0 32px;
+
+		@include media(lg) {
+			margin-bottom: 60px;
+		}
+	}
+
+	&__list {
+		@include list-reset;
+		display: none;
+
+		@include media(md) {
+			display: block;
+		}
+	}
+
+	&__item {
+		position: relative;
+		padding-left: 50px;
+
+		@include text(14px, 2.286, $color-pale-sky);
+
+		& + & {
+			margin-top: 20px;
+		}
+
+		svg {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			fill: $color-pale-sky;
+		}
+	}
+
+	&__number {
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		@include text(222px, 0.76, $color-pale-sky);
+		font-weight: 200;
+		letter-spacing: -0.08em;
+		opacity: 0.04;
+
+		@include media(lg) {
+			font-size: 322px;
+		}
+	}
+}

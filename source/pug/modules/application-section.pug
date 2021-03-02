@@ -1,0 +1,25 @@
+section.application-section
+	.application-section__inner.container
+		header.application-section__header
+			h2.application-section__heading.heading.heading--large Применение
+			.application-section__text Фассадное остекление может разбиваться на частные вариации применения, такие как:
+
+			.application-section__nav.swiper-nav.swiper-nav--white
+				button.slider__btn.slider__btn--prev(type="button", aria-label="prev")
+					+icon("chevron")(width="16", height="30")
+				.application-section__paginate
+				button.slider__btn.slider__btn--next(type="button", aria-label="next")
+					+icon("chevron")(width="16", height="30")
+
+		.application-section__carousel.swiper-container.__js_application-section-carousel
+			.swiper-wrapper
+				.application-section__slide.swiper-slide.application-example
+					.application-example__image
+						img(src="img/application-section-carousel/1.jpg", srcset="img/application-section-carousel/1@2x.jpg 2x", width="600", height="357", alt="")
+					.application-example__count 01
+					.application-example__title Стеклянные козырьки
+				.application-section__slide.swiper-slide.application-example
+					.application-example__image
+						img(src="img/application-section-carousel/1.jpg", srcset="img/application-section-carousel/1@2x.jpg 2x", width="600", height="357", alt="")
+					.application-example__count 02
+					.application-example__title Цельностеклянные козырьки

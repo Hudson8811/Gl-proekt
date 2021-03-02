@@ -1,0 +1,80 @@
+.application-section {
+	padding: 60px 0;
+	background-color: $color-blue;
+	overflow: hidden;
+
+	@include media(lg) {
+		padding: 137px 0 103px;
+	}
+
+	&__inner {
+	}
+
+	&__header {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 32px;
+
+		&::after {
+			content: "";
+			width: 100%;
+		}
+
+		& > * {
+			align-self: baseline;
+		}
+	}
+
+	&__heading {
+		margin: 0;
+		color: $color-default-white;
+	}
+
+	&__text {
+		max-width: 313px;
+		margin-top: 16px;
+		font-family: $font-family--secondary;
+
+		@include text(14px, 1.429, $color-default-white);
+
+		order: 1;
+	}
+
+	&__nav {
+		margin-left: auto;
+	}
+
+	&__paginate {
+		.swiper-pagination-bullet {
+			background-color: rgba($color-default-white, 0.22);
+
+			&-active {
+				background-color: $color-default-white;
+			}
+		}
+	}
+
+	&__carousel {
+		overflow: visible;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			transform: translateX(-100%);
+			width: 100vw;
+			height: 100%;
+			background-color: $color-blue;
+		}
+	}
+
+	&__slide {
+		width: 100%;
+
+		@include media(sm) {
+			width: auto;
+		}
+	}
+}

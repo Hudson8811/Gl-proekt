@@ -1,0 +1,72 @@
+.advantages-garden {
+	&__inner {
+		position: relative;
+		padding-top: 60px;
+		padding-bottom: 32px;
+
+		@include media(lg) {
+			padding-top: 180px;
+			padding-bottom: 160px;
+		}
+	}
+
+	&__heading {
+		margin: 0 0 16px;
+
+		@include media(md) {
+			width: 50%;
+			margin-bottom: 32px;
+		}
+	}
+
+	&__wrapper {
+		@include media(md) {
+			display: flex;
+			flex-direction: row-reverse;
+		}
+	}
+
+	&__column {
+		@include media(md) {
+			width: 50%;
+		}
+
+		& + & {
+			margin-top: 32px;
+
+			@include media(md) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&__list {
+		@include list-reset;
+	}
+
+	&__item {
+		max-width: 310px;
+
+		& + & {
+			margin-top: 24px;
+		}
+	}
+
+	&__text {
+		@include text(14px, 1.571);
+
+		@include media(md) {
+			padding-top: 18px;
+		}
+	}
+
+	.lines {
+		top: 0;
+		bottom: 0;
+		height: auto;
+
+		.line {
+			background-color: rgba($color-dark2, 0.16);
+		}
+	}
+}

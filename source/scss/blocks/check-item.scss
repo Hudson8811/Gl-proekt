@@ -1,0 +1,23 @@
+.check-item {
+	position: relative;
+	min-height: 50px;
+	padding-left: 50px;
+	padding-top: 17px;
+	font-family: $font-family--secondary;
+
+	@include text(14px, 1.429);
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 7px;
+		left: 0;
+		width: 35px;
+		height: 35px;
+		border-radius: 50%;
+		border: solid 1px rgba($color-pale-sky, 0.32);
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.981 11.876a.329.329 0 01-.49.026L.11 6.613a.381.381 0 01-.014-.523L1.811 4.21a.348.348 0 01.503-.014l2.939 2.888c.142.14.363.129.49-.026L11.486.128a.348.348 0 01.502-.039l1.89 1.69a.381.381 0 01.037.522l-7.933 9.575z' fill='%23677B83'/%3e%3c/svg%3e");
+	}
+}

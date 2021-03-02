@@ -1,0 +1,73 @@
+.we-use {
+	&__inner {
+		position: relative;
+		padding-top: 32px;
+		padding-bottom: 100px;
+
+		@include media(lg) {
+			padding-top: 40px;
+			padding-bottom: 207px;
+		}
+	}
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 50px;
+
+		@include media(sm) {
+			flex-direction: row;
+		}
+
+		@include media(lg) {
+			margin-bottom: 100px;
+		}
+
+		& > * {
+			align-self: flex-start;
+		}
+	}
+
+	&__heading {
+		margin: 0;
+
+		@include media(sm) {
+			max-width: 265px;
+		}
+
+		@include media(lg) {
+			max-width: 590px;
+		}
+	}
+
+	&__nav {
+		display: none;
+
+		@include media(sm) {
+			display: flex;
+			margin-left: auto;
+			margin-top: 16px;
+		}
+
+		@include media(xl) {
+			margin-top: 46px;
+		}
+	}
+
+	&__carousel {
+	}
+
+	&__slide {
+		max-width: 226px;
+	}
+
+	.lines {
+		top: 0;
+		bottom: 0;
+		height: auto;
+
+		.line {
+			background-color: rgba($color-dark2, 0.16);
+		}
+	}
+}

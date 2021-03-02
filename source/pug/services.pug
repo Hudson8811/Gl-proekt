@@ -18,7 +18,7 @@ block content
 					if count > 4
 						- count = 1;
 					- let modifierClass = count > 2 ? ' service-card--reverse' : '';
-					+service-card(item, 'services-list__item' + modifierClass, 'li')(data-count= item.count)
+					+service-card(item, 'services-list__item' + modifierClass, 'li')
 					- count++;
 
 			include modules/lines
