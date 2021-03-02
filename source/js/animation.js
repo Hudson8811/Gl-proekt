@@ -9,8 +9,13 @@ if (!mobileCheck() && $('.plan').length > 0) {
 		header = $('.header'),
 		_savedTextBlockHeight = 0;
 
-	$('body').addClass('blocked');
-	$('main').addClass('nopad');
+	var isAnim = $('body').hasClass('__js_is-animation');
+
+	if (isAnim) {
+		$('body').addClass('blocked');
+		$('main').addClass('nopad');
+	}
+
 	TweenMax.set(otherContent, {y:window.innerHeight});
 	TweenMax.to(planText, 0.8, {opacity: 1, ease: Linear.easing});
 
