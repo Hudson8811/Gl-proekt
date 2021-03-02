@@ -1,0 +1,42 @@
+.faq {
+	&__inner {
+		position: relative;
+		padding-top: 64px;
+		padding-bottom: 64px;
+
+		@include media(lg) {
+			padding-top: 42px;
+			padding-bottom: 95px;
+		}
+	}
+
+	&__heading {
+		margin: 0 0 32px;
+
+		@include media(lg) {
+			margin-bottom: 74px;
+		}
+	}
+
+	&__accordion {
+		position: relative;
+		z-index: 2;
+		width: calc(100% + 30px);
+		margin-left: -15px;
+
+		@include media(sm) {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+
+	.lines {
+		top: 0;
+		bottom: 0;
+		height: auto;
+
+		.line {
+			background-color: rgba($color-dark2, 0.16);
+		}
+	}
+}

@@ -1,0 +1,22 @@
+section.we-use
+	.we-use__inner.container
+		header.we-use__header
+			h2.we-use__heading.heading.heading--large Мы используем в работе
+			.we-use__nav.swiper-nav
+				button.slider__btn.slider__btn--prev(type="button", aria-label="prev")
+					+icon("chevron")(width="16", height="30")
+				.we-use__paginate
+				button.slider__btn.slider__btn--next(type="button", aria-label="next")
+					+icon("chevron")(width="16", height="30")
+		.we-use__carousel.swiper-container.__js_we-use-carousel
+			.swiper-wrapper
+				.we-use__slide.swiper-slide
+					img(src="img/we-use-logo/1.png", srcset="img/we-use-logo/1@2x.png 2x", width="226", height="107", alt="")
+				.we-use__slide.swiper-slide
+					img(src="img/we-use-logo/2.png", srcset="img/we-use-logo/2@2x.png 2x", width="226", height="107", alt="")
+				.we-use__slide.swiper-slide
+					img(src="img/we-use-logo/2.png", srcset="img/we-use-logo/2@2x.png 2x", width="226", height="107", alt="")
+				.we-use__slide.swiper-slide
+					img(src="img/we-use-logo/3.png", srcset="img/we-use-logo/3@2x.png 2x", width="226", height="107", alt="")
+
+		include lines

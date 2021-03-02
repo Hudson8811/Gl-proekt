@@ -131,12 +131,85 @@ function setOverlay(cb) {
 	}
 })();
 
+/* sticky header */
+(function() {
+	var lastScrollTop = 0;
+	var header = $('#header');
+	var isRemoveFixed = false;
+
+	$(window).scroll(function(event) {
+		var st = $(this).scrollTop();
+		var offset = header.innerHeight();
+
+		if (st < lastScrollTop) {
+			if (st !== 0) {
+				header.addClass("header--fixed").css('top', -offset + 'px');
+				body.css('padding-top', offset + 'px');
+				isRemoveFixed = false;
+			} else {
+				header.removeClass("header--fixed").removeAttr('style');
+				body.css('padding-top', 0);
+				isRemoveFixed = true;
+			}
+		} else {
+			if (!isRemoveFixed) {
+				header.css('transform', 'translateY(0)');
+
+				setTimeout(function() {
+					header.removeClass("header--fixed").removeAttr('style');
+					body.css('padding-top', 0);
+				}, DURATION);
+
+				isRemoveFixed = true;
+			}
+
+		}
+
+		lastScrollTop = st;
+	});
+
+	$(window).on('resize', function() {
+		//offset = header.innerHeight();
+	});
+})();
+
+/* accordion */
+(function () {
+	var btn = $('.__js_accordion-btn');
+
+	btn.on('click', function() {
+		var parent = $(this).parent();
+		parent.siblings().find('.accordion__item-text').slideUp(DURATION);
+		$(this).next().slideDown(DURATION);
+	});
+})();
 
 /* Modal */
 (function(){
 	$(document).ready(function() {
 		$(".fancybox").fancybox();
+
+		$(".__js_service-modal").fancybox({
+			maxWidth: 848,
+			maxHeight: 600,
+			padding: 0,
+			//fitToView: false,
+			width	: '90%',
+			height: '90%',
+			//autoSize: false,
+			//closeClick: false,
+			closeBtn: false,
+			modal: true
+
+		});
+
+		$('.__js_fancybox-close').on('click', function() {
+			$.fancybox.close();
+		});
 	});
+
+
+
 })();
 
 /* Plan markers */
@@ -262,25 +335,23 @@ function setOverlay(cb) {
 
 		servicesSlider.controller.control = servicesThumbs;
 		servicesThumbs.controller.control = servicesSlider;
-	}
+
 })();
 
-/* Advantages slider */
-(function(){
-	var advantagesSlider = undefined;
-
-	if ($('.__js_advantages-slider').length > 0) {
-		$(window).resize(function () {
-			initAdvantagesSlider();
-		});
-	}
-
-	initAdvantagesSlider();
-
+/* Application section carousel */
+(function() {
+	var carousel = new Swiper('.__js_application-section-carousel', {
+		slidesPerView: 'auto',
+		spaceBetween: 15,
+		speed: 300,
+		loop: true,
+		pagination: {
+			el: '.application-section__paginate'
+		},
+		navigation: {
 	function initAdvantagesSlider() {
 		if (window.matchMedia('(max-width: 991px)').matches && advantagesSlider == undefined) {
 			var advantagesSlider = new Swiper('.__js_advantages-slider', {
-				pagination: {
 					el: '.advantages-pagi'
 				},
 				navigation: {

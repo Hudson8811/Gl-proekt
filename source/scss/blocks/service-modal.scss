@@ -1,0 +1,64 @@
+.service-modal {
+	position: relative;
+	max-width: 848px;
+	background-color: $color-default-white;
+
+	&__inner {
+		padding: 32px;
+
+		@include media(lg) {
+			padding-left: 64px;
+			padding-right: 64px;
+			padding-bottom: 50px;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		top: 20px;
+		display: flex;
+		justify-content: center;
+		right: 32px;
+		width: 32px;
+		height: 32px;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		appearance: none;
+		cursor: pointer;
+		outline: none;
+
+		svg {
+			align-self: center;
+		}
+
+		@include media(lg) {
+			right: 64px;
+		}
+	}
+
+	&__heading {
+		margin: 0 0 32px;
+
+		@include text(22px, 1.27);
+		font-weight: 900;
+		letter-spacing: -0.07em;
+	}
+
+	&__count {
+		@include text(50px, 1, $color-pale-sky);
+		font-weight: 200;
+		opacity: 0.32;
+	}
+
+	&__text {
+		margin-bottom: 44px;
+		font-family: $font-family--secondary;
+		@include text(14px, 1.428);
+	}
+
+	&__list {
+		@include list-reset;
+		margin: 64px 0 32px;
+	}
+}

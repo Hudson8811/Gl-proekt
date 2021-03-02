@@ -1,0 +1,123 @@
+.services-page {
+	&__header {
+		margin-top: 49px;
+		margin-bottom: 50px;
+
+		@include media(md) {
+			display: flex;
+		}
+
+		&-image {
+			max-width: 422px;
+			margin-bottom: 40px;
+
+			@include media(md) {
+				width: 50%;
+				margin-right: 32px;
+				flex-shrink: 0;
+			}
+
+			@include media(xl) {
+				margin-right: 54px;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
+	&__heading {
+		margin: 0;
+
+		@include media(md) {
+			align-self: center;
+		}
+	}
+
+	&__list {
+		margin: 92px 0 249px;
+	}
+
+	&__header + &__list {
+		@include media(lg) {
+			margin-top: 164px;
+		}
+	}
+
+	&__inner {
+		position: relative;
+		border-top: solid 1px transparent;
+		border-bottom: solid 1px transparent;
+	}
+
+	&__section {
+		margin-bottom: 70px;
+
+		@include media(md) {
+			display: flex;
+		}
+
+		@include media(lg) {
+			margin-bottom: 116px;
+		}
+
+		&-column {
+			@include media(md) {
+				width: 40%;
+				padding-right: 20px;
+			}
+
+			@include media(lg) {
+				width: 50%;
+			}
+
+			& + & {
+				margin-top: 40px;
+
+				@include media(md) {
+					width: 60%;
+					margin-top: 0;
+					padding-right: 0;
+				}
+
+				@include media(lg) {
+					width: 50%;
+				}
+			}
+		}
+	}
+
+	&__service-types {
+		width: calc(100% + 64px);
+		margin-left: -32px;
+
+		@include media(sm) {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+
+	&__version {
+		width: calc(100% + 64px);
+		margin-left: -32px;
+		//margin-bottom: 2px;
+
+		@include media(sm) {
+			width: 100%;
+			margin-left: 0;
+		}
+
+		@include media(lg) {
+			margin-bottom: 116px;
+		}
+	}
+
+	.lines {
+		.line {
+			background-color: rgba($color-dark2, 0.16);
+		}
+	}
+}

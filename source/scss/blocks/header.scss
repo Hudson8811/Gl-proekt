@@ -24,13 +24,24 @@
 	@include media(lg) {
 	}
 
+	&--fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: $color-athens-gray;
+		transform: translateY(100%);
+
+		@include transition(transform);
+	}
+
 	&__inner {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		width: 100%;
 		margin: 0 auto;
-		padding: 0 15px;
+		padding: 0 32px;
 
 		& > * {
 			align-self: center;
@@ -51,7 +62,7 @@
 	}
 
 	&__logo {
-		width: 100px;
+		width: 120px;
 		margin-right: 12px;
 
 		@include media(sm) {

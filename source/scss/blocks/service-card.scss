@@ -1,0 +1,79 @@
+.service-card {
+	$self: &;
+	max-width: 480px;
+
+	a {
+		position: relative;
+		display: block;
+		padding: 40px 0;
+		@include transition(background-color);
+
+		&::before {
+			content: attr(data-count);
+			position: absolute;
+			right: 0;
+			bottom: 40px;
+
+			@include text(240px, 0.76, $color-pale-sky);
+			font-weight: 200;
+			letter-spacing: -0.08em;
+			opacity: 0.04;
+
+			@include media(lg) {
+				font-size: 312px;
+			}
+		}
+
+		@include hover {
+			background-color: $color-smoky;
+		}
+	}
+
+	&--reverse {
+		#{$self}__image {
+			margin-right: -30px;
+			margin-left: auto;
+		}
+
+		#{$self}__title {
+			right: auto;
+			left: 0;
+		}
+
+		&::before {
+			right: auto;
+			left: 0;
+		}
+	}
+
+	&__image {
+		width: 80%;
+		max-width: 367px;
+		margin-left: -30px;
+
+		@include media(md) {
+			width: 90%;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__title {
+		position: absolute;
+		top: 47px;
+		right: 0; //38px;
+		width: 175px;
+		@include text(19px, 1.27);
+		font-weight: 900;
+		letter-spacing: -0.07em;
+
+		@include media(lg) {
+			right: 38px;
+			font-size: 22px;
+		}
+	}
+}
