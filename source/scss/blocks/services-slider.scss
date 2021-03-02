@@ -178,13 +178,13 @@
 	}
 
 	&__list {
-		padding-left: 35px;
+		padding-left: 29px;
 		-moz-column-count: 1;
 		-webkit-column-count: 1;
 		column-count: 1;
 
 		@include media(lg) {
-			padding-left: 26px;
+			padding-left: 20px;
 			-moz-column-count: 2;
 			-webkit-column-count: 2;
 			column-count: 2;
@@ -221,7 +221,7 @@
 				border-radius: 50%;
 				position: absolute;
 				top: 6px;
-				left: 0;
+				left: 6px;
 				background: linear-gradient(152.42deg, #93AFFF 15.44%, #93AFFF 38.1%, #5278FF 66.6%, #3F63E3 82.51%);
 				z-index: 2;
 			}
@@ -233,7 +233,7 @@
 				border-radius: 50%;
 				position: absolute;
 				top: 0;
-				left: -6px;
+				left: 0;
 				z-index: 1;
 			}
 			&:hover{
