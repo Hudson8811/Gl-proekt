@@ -48,6 +48,8 @@ function setOverlay(cb) {
 	menuOpenBtn.on('click', function() {
 		menu.fadeIn(DURATION);
 		menuCloseBtn.on('click', closeMenu);
+		$('.header').addClass('hidden');
+		$('.header').removeClass('active');
 	});
 
 	dropdownLink.on('click', function(evt) {
@@ -475,35 +477,42 @@ $(window).scroll(function(event) {
 	lastScrollTop = st;
 });
 
-
 /* Gallery */
 (function(){
-
-	var updatefc  = function(instance, current) {
-		var $fc = current.$fc;
-		if ($fc && $fc.length) {
-			current.$slide.css('display', 'block');
-			$.fancybox.setTranslate(current.$content, instance.getFitPos(current));
-			var fcHeight = $fc.outerHeight(true);
-			if (fcHeight) {
-				current.$slide.css('padding-bottom', fcHeight);
+	if (!$.fancybox.isMobile ){
+		var updatefc  = function(instance, current) {
+			var $fc = current.$fc;
+			if ($fc && $fc.length) {
+				current.$slide.css('display', 'block');
 				$.fancybox.setTranslate(current.$content, instance.getFitPos(current));
+				var fcHeight = $fc.outerHeight(true);
+				if (fcHeight) {
+					current.$slide.css('padding-bottom', fcHeight);
+					$.fancybox.setTranslate(current.$content, instance.getFitPos(current));
+				}
+				current.$slide.css('display', '');
 			}
-			current.$slide.css('display', '');
 		}
-	}
 
-	$('[data-fancybox="project"]').fancybox({
-		infobar : false,
-		toolbar : false,
-		caption: $.noop,
-		afterLoad : function(instance, current) {
-			current.$content.append(instance.translate(current, '<div class="fc-infobar"><span data-fancybox-index="">2</span>&nbsp;/&nbsp;<span data-fancybox-count="">2</span></div><div class="fc-toolbar">' + current.opts.btnTpl.zoom + current.opts.btnTpl.close + '</div>'));
-			current.$fc = $('<div class="fc-caption">' + current.opts.$orig.data('caption') + '</div>').appendTo(current.$content);
-			updatefc(instance, current);
-		},
-		onUpdate(instance, current) {
-			updatefc(instance, current);
-		}
-	});
+		$('[data-fancybox="project"]').fancybox({
+			infobar : false,
+			toolbar : false,
+			buttons : false,
+			arrows : false,
+			loop : true,
+			caption: $.noop,
+			afterLoad : function(instance, current) {
+				if ( instance.group.length > 1 && current.$content ) {
+					current.$content.append('<a data-fancybox-next class="fancy-button-next" href="javascript:;"><svg width="16" height="29"><use xlink:href="#fancy-arrow-r"></use></svg></a><a data-fancybox-prev class="fancy-button-previous" href="javascript:;"><svg width="16" height="29"><use xlink:href="#fancy-arrow"></use></svg></a>');
+				}
+				current.$content.append('<a data-fancybox-close class="fancy-button-close" href="javascript:;"><svg width="27" height="27"><use xlink:href="#close"></use></svg></a>');
+
+				current.$fc = $('<div class="fc-caption"><span>' + current.opts.$orig.data('caption') + '<span></div>').appendTo(current.$content);
+				updatefc(instance, current);
+			},
+			onUpdate(instance, current) {
+				updatefc(instance, current);
+			}
+		});
+	}
 })();

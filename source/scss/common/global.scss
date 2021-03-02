@@ -69,12 +69,22 @@ body {
 	-webkit-locale: auto;
 	white-space: normal;
 
+
 	main {
 		flex-grow: 1;
 		box-sizing: border-box;
 		padding-top: 100px;
-		&.nopad{
-			padding-top: 0;
+	}
+
+	@media screen and (max-width: 767px){
+		&.white-mobile{
+			background: #ffffff;
+			.projects__slider::before{
+				background: #ffffff;
+			}
+			.header{
+				background: #ffffff;
+			}
 		}
 	}
 }

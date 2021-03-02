@@ -21,6 +21,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 		event.preventDefault();
 		var planIcons = $('.plan__image > svg');
 		lock = 1;
+		header.addClass('hidden');
 		var e,
 			windowHeight = window.innerHeight - header.outerHeight(),
 			planTextHeight = planText.outerHeight(),
@@ -56,6 +57,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 			switch (step) {
 				case 1:
 					lock = 1;
+					header.addClass('hidden');
 					var e,
 						windowHeight = window.innerHeight - header.outerHeight(),
 						planTextHeight = planText.outerHeight(),
@@ -103,6 +105,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 			switch (step) {
 				case 2:
 					lock = 1;
+					header.removeClass('hidden');
 					var e = _savedTextBlockHeight;
 					TweenMax.fromTo(
 						planImage,
