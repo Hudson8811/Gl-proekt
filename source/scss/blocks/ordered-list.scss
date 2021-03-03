@@ -1,0 +1,34 @@
+.ordered-list {
+	@include list-reset;
+
+	@include media(sm) {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		margin-top: 35px;
+		font-family: $font-family--secondary;
+
+		@include text(14px, 1.428);
+
+		@include media(sm) {
+			width: 50%;
+			padding-right: 22px;
+		}
+
+		@include media(md) {
+			width: 33.33%;
+		}
+
+		&-count {
+			margin-bottom: 4px;
+			font-family: $font-family--main;
+
+			@include text(50px, 1, $color-pale-sky);
+			letter-spacing: -0.07em;
+			font-weight: 200;
+			opacity: 0.32;
+		}
+	}
+}

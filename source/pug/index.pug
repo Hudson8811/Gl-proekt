@@ -11,12 +11,13 @@ block content
 				li
 					a(href= item.url)= item.text
 					if item.submenu
-						each subitem in item.submenu
-							if subitem.title
-								.subtitle= subitem.title
-							ul
-								each it in subitem.list
-									li
-										a(href= it.url)= it.text
+						.submenu
+							each subitem in item.submenu
+								if subitem.main
+									a(href= subitem.main.url).subtitle= subitem.main.text
+								ul
+									each it in subitem.list
+										li
+											a(href= it.url)= it.text
 
 
