@@ -1,0 +1,16 @@
+.customers {
+	&__container {
+		position: relative;
+		padding-top: 28px;
+		padding-bottom: 50px;
+		@include media(md) {
+			padding-top: 49px;
+			padding-bottom: 143px;
+		}
+	}
+
+	&__title {
+		margin: 0;
+	}
+
+}

@@ -1639,7 +1639,7 @@ p {
   min-height: 540px;
   background-color: #1e2e34;
   display: none;
-  z-index: 102;
+  z-index: 100000;
 }
 
 .menu__inner {
@@ -7331,4 +7331,21 @@ body.blocked {
 
 .certificates__cats {
   margin-top: 30px;
+}
+
+.customers__container {
+  position: relative;
+  padding-top: 28px;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .customers__container {
+    padding-top: 49px;
+    padding-bottom: 143px;
+  }
+}
+
+.customers__title {
+  margin: 0;
 }
