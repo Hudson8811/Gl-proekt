@@ -140,37 +140,6 @@
 	}
 
 	&__cats{
-		display: flex;
-		margin-left: -2px;
-		margin-right: -2px;
 		margin-top: 30px;
-		flex-wrap: wrap;
-		&-item{
-			margin: 2px 2px;
-			a{
-				padding: 4px 10px;
-				font-size: 18px;
-				line-height: 26px;
-				font-family: $font-family--secondary;
-				color: #677B83;
-				display: block;
-				background: #ffffff;
-				text-decoration: none;
-				width: 100%;
-				text-align: center;
-				&:hover{
-					color: $color-dark;
-				}
-			}
-			&--active{
-				a{
-					background: #01A5E4;
-					color: #ffffff;
-					&:hover{
-						color: #ffffff;
-					}
-				}
-			}
-		}
 	}
 }
