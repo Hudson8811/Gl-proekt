@@ -6918,19 +6918,38 @@ body.blocked {
 
 .wiki__container {
   position: relative;
-  padding-top: 49px;
-  padding-bottom: 162px;
+  padding-top: 28px;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .wiki__container {
+    padding-top: 49px;
+    padding-bottom: 162px;
+  }
 }
 
 .wiki__title {
   margin: 0;
-  font-size: 98px;
+  font-size: 70px;
   line-height: 1.12;
   letter-spacing: -0.05em;
   font-weight: 900;
-  max-width: 75%;
   display: block;
   color: #172328;
+}
+
+@media (min-width: 768px) {
+  .wiki__title {
+    font-size: 80px;
+    max-width: 75%;
+  }
+}
+
+@media (min-width: 992px) {
+  .wiki__title {
+    font-size: 98px;
+  }
 }
 
 .wiki__abc {
@@ -6939,6 +6958,15 @@ body.blocked {
   margin-left: -2px;
   margin-right: -2px;
   margin-top: 30px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .wiki__abc {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
 }
 
 .wiki__abc-item {
@@ -6947,8 +6975,20 @@ body.blocked {
       flex-basis: 32px;
 }
 
+@media (min-width: 992px) {
+  .wiki__abc-item {
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+  }
+}
+
+.wiki__abc-item:first-child {
+  -ms-flex-preferred-size: 51px;
+      flex-basis: 51px;
+}
+
 .wiki__abc-item a {
-  padding: 4px 10px;
+  padding: 4px 4px;
   font-size: 18px;
   line-height: 26px;
   font-family: "Roboto", "Open Sans", sans-serif;
@@ -6974,7 +7014,13 @@ body.blocked {
 }
 
 .wiki__content {
-  margin-top: 62px;
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .wiki__content {
+    margin-top: 62px;
+  }
 }
 
 .wiki__letter {
@@ -6997,11 +7043,31 @@ body.blocked {
   margin-top: 8px;
 }
 
+.wiki__letter:hover .wiki__letter-title {
+  color: #01a5e4;
+}
+
 .wiki__item {
   color: currentColor;
   display: block;
   box-sizing: border-box;
-  padding-right: 118px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .wiki__item {
+    padding-right: 118px;
+  }
+  .wiki__item::after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 29px;
+    position: absolute;
+    right: 24px;
+    bottom: 19px;
+    background: url('data:image/svg+xml, <svg width="15" height="29" viewBox="0 0 15 29" stroke="black" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 1L14 14.5L0.5 28" fill="none"/></svg>') center center no-repeat;
+  }
 }
 
 .wiki__item + .wiki__item {
@@ -7019,4 +7085,16 @@ body.blocked {
   margin-top: 16px;
   font-size: 14px;
   line-height: 22px;
+}
+
+.wiki__item:hover::after {
+  background-image: url("data:image/svg+xml,%3Csvg width='15' height='29' viewBox='0 0 15 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 1L14 14.5L0.5 28' stroke='%2301A5E4'/%3E%3C/svg%3E%0A");
+}
+
+.wiki__item:hover .wiki__item-title {
+  color: #01a5e4;
+}
+
+.wiki__item:hover .wiki__item-text {
+  text-decoration-line: underline;
 }
