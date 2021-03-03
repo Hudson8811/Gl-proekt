@@ -4,7 +4,6 @@ block variables
 	- let isHome = false; //- Если true то логотип не будет ссылкой
 	- let currentPage = 2.04; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
-	- let bodyModClass = 'gray';
 
 block header
 	include modules/header
@@ -13,7 +12,7 @@ block content
 	.customers.line-page
 		.customers__container.container
 			include modules/lines
-			h1.customers__title.page-title Отзывы
+			h1.customers__title.page-title Клиенты
 
 
 

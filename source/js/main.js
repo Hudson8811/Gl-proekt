@@ -547,7 +547,6 @@ var lastScrollTop = 0;
 $(window).scroll(function(event) {
 	var offset = $('.header').outerHeight();
 	var st = $(this).scrollTop();
-	console.log(offset);
 	if(st == 0) {
 		$('.header').removeClass("active");
 		$('.header').css('z-index', '9999');
@@ -631,5 +630,26 @@ $(window).scroll(function(event) {
 		var id = $(this).val();
 		$('.contacts__bottom').removeClass('contacts__bottom--active');
 		$('.contacts__bottom[data-id="'+id+'"]').addClass('contacts__bottom--active');
+	});
+})();
+
+
+/* Office */
+(function(){
+	var updatefc  = function(instance, current) {
+		var $fc = current.$fc;
+		if ($fc && $fc.length) {
+			current.$slide.css('display', 'block');
+			$.fancybox.setTranslate(current.$content, instance.getFitPos(current));
+			var fcHeight = $fc.outerHeight(true);
+			if (fcHeight) {
+				current.$slide.css('padding-bottom', fcHeight);
+				$.fancybox.setTranslate(current.$content, instance.getFitPos(current));
+			}
+			current.$slide.css('display', '');
+		}
+	}
+	$('.office-staf [data-fancybox]').fancybox({
+		modal: true
 	});
 })();

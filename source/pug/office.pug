@@ -1,0 +1,163 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Office';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 2.03; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	.office.line-page
+		.office-top
+			.office-top__container.container
+				include modules/lines
+				.office-top__left
+					h1.office-top__title.page-title Офис
+					.office-top__text Мы – команда экспертов в  проектировании, архитекторов и конструкторов решающая задачи заказчика
+			.office-top__right
+				img(src="img/office/video.jpg")
+				.office-top__play
+
+		.office-bottom
+			.office-bottom__container.container
+				.office-bottom__block.office-staf.office-staf--big
+					.office-bottom__block-top
+						.office-bottom__block-count 01
+						h2.office-bottom__block-title Менеджеры <br>проектов
+					.office-bottom__content.office-staf__content
+						.office-staf__item
+							a.office-staf__item-inner(href="javascript:;" data-fancybox data-src="#mng1")
+								img(src="img/office/staf-4.jpg" alt="")
+								.office-staf__item-content
+									.office-staf__item-name Евгений Коробов
+									.office-staf__item-post Какая должность
+						.office-staf__item
+							a.office-staf__item-inner(href="javascript:;" data-fancybox data-src="#mng1")
+								img(src="img/office/staf-3.jpg" alt="")
+								.office-staf__item-content
+									.office-staf__item-name Решетов Андрей
+									.office-staf__item-post Какая должность
+						.office-staf__item
+							a.office-staf__item-inner(href="javascript:;" data-fancybox data-src="#mng1")
+								img(src="img/office/staf-1.jpg" alt="")
+								.office-staf__item-content
+									.office-staf__item-name Рамиль Фамилия
+									.office-staf__item-post Какая должность
+						.office-staf__item
+							a.office-staf__item-inner(href="javascript:;" data-fancybox data-src="#mng1")
+								img(src="img/office/staf-2.jpg" alt="")
+								.office-staf__item-content
+									.office-staf__item-name Евгений Коробов
+									.office-staf__item-post Какая должность
+						.office-staf__item
+							a.office-staf__item-inner(href="javascript:;" data-fancybox data-src="#mng1")
+								img(src="img/office/staf-1.jpg" alt="")
+								.office-staf__item-content
+									.office-staf__item-name Юлиан
+									.office-staf__item-post Какая должность
+						.office-staf__item
+							.office-staf__item-inner
+								.office-staf__item-content
+									.office-staf__item-name Твое место?
+									.office-staf__item-post В поисках работы?
+
+
+				.office-bottom__block.office-staf
+					.office-bottom__block-top
+						.office-bottom__block-count 02
+						h2.office-bottom__block-title Инжинеры
+					.office-bottom__content.office-staf__content
+						.office-staf__item
+							a.office-staf__item-inner(href="javascript:;" data-fancybox data-src="#mng1")
+								img(src="img/office/staf-1.jpg" alt="")
+								.office-staf__item-content
+									.office-staf__item-name Евгений Коробов
+									.office-staf__item-post Какая должность
+						.office-staf__item
+							a.office-staf__item-inner(href="javascript:;" data-fancybox data-src="#mng1")
+								img(src="img/office/staf-2.jpg" alt="")
+								.office-staf__item-content
+									.office-staf__item-name Евгений Коробов
+									.office-staf__item-post Какая должность
+
+
+				.office-bottom__block.office-staf
+					.office-bottom__block-top
+						.office-bottom__block-count 03
+						h2.office-bottom__block-title Руководители <br>компании
+					.office-bottom__content.office-staf__content
+						.office-staf__item
+							a.office-staf__item-inner(href="javascript:;" data-fancybox data-src="#mng1")
+								img(src="img/office/staf-1.jpg" alt="")
+								.office-staf__item-content
+									.office-staf__item-name Евгений Коробов
+									.office-staf__item-post Какая должность
+						.office-staf__item
+							a.office-staf__item-inner(href="javascript:;" data-fancybox data-src="#mng1")
+								img(src="img/office/staf-2.jpg" alt="")
+								.office-staf__item-content
+									.office-staf__item-name Евгений Коробов
+									.office-staf__item-post Какая должность
+						.office-staf__item
+							a.office-staf__item-inner(href="javascript:;" data-fancybox data-src="#mng1")
+								img(src="img/office/staf-3.jpg" alt="")
+								.office-staf__item-content
+									.office-staf__item-name Евгений Коробов
+									.office-staf__item-post Какая должность
+						.office-staf__item
+							a.office-staf__item-inner(href="javascript:;" data-fancybox data-src="#mng1")
+								img(src="img/office/staf-2.jpg" alt="")
+								.office-staf__item-content
+									.office-staf__item-name Евгений Коробов
+									.office-staf__item-post Какая должность
+						.office-staf__item
+							a.office-staf__item-inner(href="javascript:;" data-fancybox data-src="#mng1")
+								img(src="img/office/staf-3.jpg" alt="")
+								.office-staf__item-content
+									.office-staf__item-name Евгений Коробов
+									.office-staf__item-post Какая должность
+						.office-staf__item
+							a.office-staf__item-inner(href="javascript:;" data-fancybox data-src="#mng1")
+								img(src="img/office/staf-1.jpg" alt="")
+								.office-staf__item-content
+									.office-staf__item-name Евгений Коробов
+									.office-staf__item-post Какая должность
+
+
+				.office-bottom__block.office-office
+					.office-bottom__block-top
+						.office-bottom__block-count 04
+						h2.office-bottom__block-title Офис
+					.office-bottom__content.office-office__content
+						img(src="img/office/office.jpg" alt="")
+
+				include modules/lines
+
+
+	#mng1.office-modal
+		a.office-modal__close(data-fancybox-close='' href='javascript:;')
+			svg(width='27' height='27')
+				use(xlink:href='#close')
+
+		.office-modal__flex
+			.office-modal__left
+				img(src="img/office/staf-4.jpg" alt="")
+				.office-modal__left-name Евгений Коробов
+				.office-modal__left-post Какая должность
+			.office-modal__right
+				.office-modal__title Заголовок модального окна
+				.office-modal__count 01
+				.office-modal__text Подача автомобиля в четко <br>согласованное время и место
+				ul.office-modal__list
+					li Разнообразный и богатый опыт новая
+					li модель организационной деятельности представляет собой
+					li интересный эксперимент проверки направлений прогрессивного развития.
+					li Разнообразный и богатый опыт новая
+					li модель организационной деятельности представляет собой
+
+block footer
+	include modules/footer
+
+
