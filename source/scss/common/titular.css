@@ -5,17 +5,23 @@ ul {
 
 li {
 	line-height: 1;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
+}
+.submenu {
+	margin-top: 10px;
 }
 
-ul ul {
-	padding-left: 20px !important;
+.submenu ul {
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.submenu .subtitle + ul {
+	margin-left: 40px;
 }
 
 .subtitle {
-	margin: 7px 0 5px;
-	padding-left: 20px;
-	font-weight: 900;
+	margin: 7px 0 10px 20px;
 }
 
 a {
