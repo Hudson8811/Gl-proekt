@@ -1,0 +1,21 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Certificates';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 2.05; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	.certificates.line-page
+		.certificates__container.container
+			include modules/lines
+				h1.certificates__title.page-title
+
+
+block footer
+	include modules/footer
+
+

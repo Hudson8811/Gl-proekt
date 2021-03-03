@@ -1,12 +1,4 @@
 .contacts{
-	.lines{
-		z-index: -1;
-		opacity: 0.33;
-		.line{
-			background: #172328;
-			opacity: 0.16;
-		}
-	}
 	&__top{
 		&-container{
 			padding-top: 28px;
@@ -27,17 +19,7 @@
 			}
 			h1{
 				margin: 0;
-				font-weight: 700;
-				font-size: 40px;
-				line-height: 1.12;
-				letter-spacing: -0.05em;
 				margin-left: -0.08em;
-				@include media(md){
-					font-size: 60px;
-				}
-				@include media(lg){
-					font-size: 98px;
-				}
 			}
 		}
 		&-tabs{
