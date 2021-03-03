@@ -545,8 +545,9 @@ function setOverlay(cb) {
 /* Header */
 var lastScrollTop = 0;
 $(window).scroll(function(event) {
-	var offset = $('.header').height() - 10;
+	var offset = $('.header').outerHeight();
 	var st = $(this).scrollTop();
+	console.log(offset);
 	if(st == 0) {
 		$('.header').removeClass("active");
 		$('.header').css('z-index', '9999');
@@ -554,7 +555,7 @@ $(window).scroll(function(event) {
 	}
 	else {
 		if(st > lastScrollTop) {
-			if($(window).scrollTop() > offset && $('.plan').length === 0) {
+			if($(window).scrollTop() > offset && !$(body).hasClass('blocked')) {
 				if($('.header').hasClass("active")) {
 					$('.header').addClass("active");
 					$('.header').css('z-index', '9999');

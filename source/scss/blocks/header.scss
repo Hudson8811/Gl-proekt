@@ -7,11 +7,11 @@
 	$self: &;
 	padding: 26px 0 25px;
 	background: #fafafa;
-	transition: top 0.3s linear;
 
 	&.active {
 		position: fixed;
 		top: 0;
+		transition: top 0.3s linear;
 	}
 	&.hidden{
 		top: -200px;
