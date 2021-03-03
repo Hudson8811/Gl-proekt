@@ -4,6 +4,7 @@ block variables
 	- let isHome = false; //- Если true то логотип не будет ссылкой
 	- let currentPage = 2.06; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- let bodyModClass = 'gray';
 
 block header
 	include modules/header
@@ -12,7 +13,62 @@ block content
 	.reviews.line-page
 		.reviews__container.container
 			include modules/lines
-				h1.reviews__title.page-title
+			h1.reviews__title.page-title Отзывы
+
+			.reviews__flex
+				.reviews__left
+					.reviews__item
+						.reviews__item-inner
+							.reviews__item-content
+							img(src="img/review/review.png" alt="")
+							a.reviews__item-btn(href="")
+								svg(width='26' height='26' aria-label='dowload icon')
+									use(xlink:href='#dowload-small')
+								span Открыть pdf
+					.reviews__item
+						.reviews__item-inner
+							.reviews__item-content
+							img(src="img/review/review.png" alt="")
+							a.reviews__item-btn(href="")
+								svg(width='26' height='26' aria-label='dowload icon')
+									use(xlink:href='#dowload-small')
+								span Открыть pdf
+					.reviews__item
+						.reviews__item-inner
+							.reviews__item-content
+							img(src="img/review/review.png" alt="")
+							a.reviews__item-btn(href="")
+								svg(width='26' height='26' aria-label='dowload icon')
+									use(xlink:href='#dowload-small')
+								span Открыть pdf
+					.reviews__item
+						.reviews__item-inner
+							.reviews__item-content
+							img(src="img/review/review.png" alt="")
+							a.reviews__item-btn(href="")
+								svg(width='26' height='26' aria-label='dowload icon')
+									use(xlink:href='#dowload-small')
+								span Открыть pdf
+					.reviews__item
+						.reviews__item-inner
+							.reviews__item-content
+							img(src="img/review/review.png" alt="")
+							a.reviews__item-btn(href="")
+								svg(width='26' height='26' aria-label='dowload icon')
+									use(xlink:href='#dowload-small')
+								span Открыть pdf
+					.reviews__item
+						.reviews__item-inner
+							.reviews__item-content
+							img(src="img/review/review.png" alt="")
+							a.reviews__item-btn(href="")
+								svg(width='26' height='26' aria-label='dowload icon')
+									use(xlink:href='#dowload-small')
+								span Открыть pdf
+
+
+				.reviews__right
+					img(src="img/review/review.png" alt="")
 
 
 block footer

@@ -474,6 +474,18 @@ body main {
   padding-top: 100px;
 }
 
+body.gray {
+  background: #F1F1F2;
+}
+
+body.gray .projects__slider::before {
+  background: #F1F1F2;
+}
+
+body.gray .header {
+  background: #F1F1F2;
+}
+
 @media screen and (max-width: 767px) {
   body.white-mobile {
     background: #ffffff;
@@ -7080,4 +7092,240 @@ body.blocked {
 
 .wiki__item:hover .wiki__item-text {
   text-decoration-line: underline;
+}
+
+.reviews__container {
+  position: relative;
+  padding-top: 28px;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .reviews__container {
+    padding-top: 49px;
+    padding-bottom: 113px;
+  }
+}
+
+.reviews__title {
+  margin: 0;
+}
+
+.reviews__flex {
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 64px;
+  -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .reviews__flex {
+    -ms-flex-direction: row;
+        flex-direction: row;
+  }
+}
+
+.reviews__flex--certs {
+  margin-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .reviews__flex--certs {
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+  }
+}
+
+@media (min-width: 768px) {
+  .reviews__flex--certs .reviews__item {
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+  }
+}
+
+@media (min-width: 768px) {
+  .reviews__flex--certs .reviews__item:nth-child(even) {
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+  }
+}
+
+.reviews__left {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .reviews__left {
+    width: 50%;
+  }
+}
+
+.reviews__item {
+  width: 50%;
+  margin-top: 16px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+}
+
+.reviews__item:nth-child(even) {
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .reviews__item:nth-child(even) {
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+  }
+}
+
+@media (min-width: 768px) {
+  .reviews__item {
+    margin-top: 0;
+    margin-bottom: 32px;
+  }
+}
+
+@media (min-width: 992px) {
+  .reviews__item {
+    margin-bottom: 52px;
+  }
+}
+
+.reviews__item-inner {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  width: calc(100% - 8px);
+}
+
+@media (min-width: 768px) {
+  .reviews__item-inner {
+    width: 166px;
+    max-width: 90%;
+  }
+}
+
+.reviews__item-inner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.reviews__item-content {
+  padding-bottom: 149%;
+  width: 100%;
+}
+
+.reviews__item-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  padding: 5px 11px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  background: #01A5E4;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 22px;
+  color: #FFFFFF;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  font-family: "Roboto", "Open Sans", sans-serif;
+}
+
+.reviews__item-btn svg {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.reviews__item-btn span {
+  margin: 0 10px;
+  white-space: nowrap;
+}
+
+.reviews__item-btn:hover {
+  background-color: rgba(1, 165, 228, 0.85);
+}
+
+@media (min-width: 768px) {
+  .reviews__right {
+    width: 50%;
+  }
+}
+
+.reviews__right img {
+  display: block;
+  width: 100%;
+}
+
+.certificates__container {
+  position: relative;
+  padding-top: 28px;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .certificates__container {
+    padding-top: 49px;
+    padding-bottom: 113px;
+  }
+}
+
+.certificates__title {
+  margin: 0;
+}
+
+.certificates__cats {
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -2px;
+  margin-right: -2px;
+  margin-top: 30px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.certificates__cats-item {
+  margin: 2px 2px;
+}
+
+.certificates__cats-item a {
+  padding: 4px 10px;
+  font-size: 18px;
+  line-height: 26px;
+  font-family: "Roboto", "Open Sans", sans-serif;
+  color: #677B83;
+  display: block;
+  background: #ffffff;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+}
+
+.certificates__cats-item a:hover {
+  color: #111c20;
+}
+
+.certificates__cats-item--active a {
+  background: #01A5E4;
+  color: #ffffff;
+}
+
+.certificates__cats-item--active a:hover {
+  color: #ffffff;
 }

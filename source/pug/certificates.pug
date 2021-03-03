@@ -5,6 +5,7 @@ block variables
 	- let currentPage = 2.05; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
 
+
 block header
 	include modules/header
 
@@ -12,8 +13,70 @@ block content
 	.certificates.line-page
 		.certificates__container.container
 			include modules/lines
-				h1.certificates__title.page-title
+			h1.certificates__title.page-title Сертификаты
 
+			.certificates__cats
+				.certificates__cats-item.certificates__cats-item--active
+					a(href="") Свидетельства
+				.certificates__cats-item
+					a(href="") Разрешения и допуски
+				.certificates__cats-item
+					a(href="") Сертификаты соответствия
+
+			.reviews__flex.reviews__flex--certs
+				.reviews__left
+					.reviews__item
+						.reviews__item-inner
+							.reviews__item-content
+							img(src="img/review/cert.jpg" alt="")
+							a.reviews__item-btn(href="")
+								svg(width='26' height='26' aria-label='dowload icon')
+									use(xlink:href='#dowload-small')
+								span Открыть pdf
+					.reviews__item
+						.reviews__item-inner
+							.reviews__item-content
+							img(src="img/review/cert.jpg" alt="")
+							a.reviews__item-btn(href="")
+								svg(width='26' height='26' aria-label='dowload icon')
+									use(xlink:href='#dowload-small')
+								span Открыть pdf
+					.reviews__item
+						.reviews__item-inner
+							.reviews__item-content
+							img(src="img/review/cert.jpg" alt="")
+							a.reviews__item-btn(href="")
+								svg(width='26' height='26' aria-label='dowload icon')
+									use(xlink:href='#dowload-small')
+								span Открыть pdf
+					.reviews__item
+						.reviews__item-inner
+							.reviews__item-content
+							img(src="img/review/cert.jpg" alt="")
+							a.reviews__item-btn(href="")
+								svg(width='26' height='26' aria-label='dowload icon')
+									use(xlink:href='#dowload-small')
+								span Открыть pdf
+					.reviews__item
+						.reviews__item-inner
+							.reviews__item-content
+							img(src="img/review/cert.jpg" alt="")
+							a.reviews__item-btn(href="")
+								svg(width='26' height='26' aria-label='dowload icon')
+									use(xlink:href='#dowload-small')
+								span Открыть pdf
+					.reviews__item
+						.reviews__item-inner
+							.reviews__item-content
+							img(src="img/review/cert.jpg" alt="")
+							a.reviews__item-btn(href="")
+								svg(width='26' height='26' aria-label='dowload icon')
+									use(xlink:href='#dowload-small')
+								span Открыть pdf
+
+
+				.reviews__right
+					img(src="img/review/cert.jpg" alt="")
 
 block footer
 	include modules/footer
