@@ -1,0 +1,33 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Production';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 2.02; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	.production.line-page
+		.production-top
+			.production-top__container.container
+				include modules/lines
+				.production-top__left
+					h1.production-top__title.page-title Производство
+					.production-top__text
+						p Производство расположено в ближайшем Подмосковье, что позволяет быть конкурентоспособными на рынке, предлагая высокое качество и оптимальную цену.
+						p Для изготовления алюминиевых конструкций используются современные оборудование производства Германии, Италии и Турции, основными из которых являются:
+			.production-top__right
+				img(src="img/production/main.jpg")
+
+		.production-bottom
+			.production-bottom__container.container
+				include modules/lines
+
+
+
+block footer
+	include modules/footer
+
+

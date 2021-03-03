@@ -417,6 +417,7 @@ function setOverlay(cb) {
 		},
 		speed: 300,
 		slidesPerView: 'auto',
+		watchSlidesVisibility: true,
 		spaceBetween: 15,
 		loop: true,
 		breakpoints: {
@@ -440,6 +441,7 @@ function setOverlay(cb) {
 		speed: 300,
 		slidesPerView: 'auto',
 		slidesPerColumn: 2,
+		watchSlidesVisibility: true,
 		spaceBetween: 15,
 		slidesPerColumnFill: 'column',
 		breakpoints: {
@@ -463,6 +465,7 @@ function setOverlay(cb) {
 		speed: 300,
 		slidesPerView: 'auto',
 		spaceBetween: 18,
+		watchSlidesVisibility: true,
 		loop: true,
 		breakpoints: {
 			992: {
