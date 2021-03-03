@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
-  <title>Glass Proekt | Услуги</title>
+  <title>Glass Proekt | Certificates</title>
 </head>
 
 <body class="webpage">
@@ -242,11 +242,11 @@
         <a class="header__email" href="mailto:email@glassproekt.ru">email@glassproekt.ru</a>
       </div>
       <ul class="header__menu header-menu">
-        <li class="header-menu__item">
+        <li class="header-menu__item header-menu__item--current">
           <a class="header-menu__link" href="#">О компании</a>
         </li>
-        <li class="header-menu__item header-menu__item--current">
-          <a class="header-menu__link">Услуги</a>
+        <li class="header-menu__item">
+          <a class="header-menu__link" href="services.html">Услуги</a>
         </li>
         <li class="header-menu__item">
           <a class="header-menu__link" href="#">Проекты</a>
@@ -273,7 +273,7 @@
       </header>
       <nav class="menu__nav navigation">
         <ul class="navigation__list">
-          <li class="navigation__item">
+          <li class="navigation__item navigation__item--current">
             <a class="navigation__link  __js_dropdown-link" data-target="#about" href="#">О компании</a>
             <div class="navigation__dropdown dropdown  dropdown--simple" id="about">
               <button class="dropdown__back __js_back-to-menu" type="button">
@@ -297,8 +297,8 @@
                     <li class="dropdown__item">
                       <a href="customers.html">Клиенты</a>
                     </li>
-                    <li class="dropdown__item">
-                      <a href="certificates.html">Сертификаты</a>
+                    <li class="dropdown__item dropdown__item--current">
+                      <a>Сертификаты</a>
                     </li>
                     <li class="dropdown__item">
                       <a href="reviews.html">Отзывы</a>
@@ -308,8 +308,8 @@
               </div>
             </div>
           </li>
-          <li class="navigation__item navigation__item--current">
-            <a class="navigation__link  __js_dropdown-link" data-target="#services">Услуги</a>
+          <li class="navigation__item">
+            <a class="navigation__link  __js_dropdown-link" data-target="#services" href="services.html">Услуги</a>
             <div class="navigation__dropdown dropdown" id="services">
               <button class="dropdown__back __js_back-to-menu" type="button">
                 <svg width="32" height="32">
@@ -523,110 +523,8 @@
     </div>
   </section>
   <main>
-    <article class="services-page">
-      <div class="services-page__inner container">
-        <h1 class="visually-hidden">Услуги</h1>
-        <ul class="services-page__list services-list">
-          <li class="services-list__item service-card">
-            <a href="services-group.html" data-count="01">
-              <div class="service-card__image">
-                <img src="img/services-page/building.png" srcset="img/services-page/building@2x.png 2x" width="367" height="347" alt="" />
-              </div>
-              <div class="service-card__title">Фасадное остекление
-              </div>
-            </a>
-          </li>
-          <li class="services-list__item service-card">
-            <a href="services-group.html" data-count="02">
-              <div class="service-card__image">
-                <img src="img/services-page/building.png" srcset="img/services-page/building@2x.png 2x" width="367" height="347" alt="" />
-              </div>
-              <div class="service-card__title">Внешнее остекление
-              </div>
-            </a>
-          </li>
-          <li class="services-list__item service-card--reverse service-card">
-            <a href="services-group.html" data-count="3">
-              <div class="service-card__image">
-                <img src="img/services-page/building.png" srcset="img/services-page/building@2x.png 2x" width="367" height="347" alt="" />
-              </div>
-              <div class="service-card__title">Внутреннее остекление
-              </div>
-            </a>
-          </li>
-          <li class="services-list__item service-card--reverse service-card">
-            <a href="services-group.html" data-count="4">
-              <div class="service-card__image">
-                <img src="img/services-page/building.png" srcset="img/services-page/building@2x.png 2x" width="367" height="347" alt="" />
-              </div>
-              <div class="service-card__title">Входные группы
-              </div>
-            </a>
-          </li>
-          <li class="services-list__item service-card">
-            <a href="services-group.html" data-count="05">
-              <div class="service-card__image">
-                <img src="img/services-page/building.png" srcset="img/services-page/building@2x.png 2x" width="367" height="347" alt="" />
-              </div>
-              <div class="service-card__title">Остекление крыши
-              </div>
-            </a>
-          </li>
-          <li class="services-list__item service-card">
-            <a href="services-group.html" data-count="06">
-              <div class="service-card__image">
-                <img src="img/services-page/building.png" srcset="img/services-page/building@2x.png 2x" width="367" height="347" alt="" />
-              </div>
-              <div class="service-card__title">Козырьки и навесы
-              </div>
-            </a>
-          </li>
-          <li class="services-list__item service-card--reverse service-card">
-            <a href="services-group.html" data-count="7">
-              <div class="service-card__image">
-                <img src="img/services-page/building.png" srcset="img/services-page/building@2x.png 2x" width="367" height="347" alt="" />
-              </div>
-              <div class="service-card__title">Конструкции из ПВХ профиля
-              </div>
-            </a>
-          </li>
-          <li class="services-list__item service-card--reverse service-card">
-            <a href="services-group.html" data-count="8">
-              <div class="service-card__image">
-                <img src="img/services-page/building.png" srcset="img/services-page/building@2x.png 2x" width="367" height="347" alt="" />
-              </div>
-              <div class="service-card__title">Навесные и вентилируемые фасады
-              </div>
-            </a>
-          </li>
-          <li class="services-list__item service-card">
-            <a href="services-group.html" data-count="09">
-              <div class="service-card__image">
-                <img src="img/services-page/building.png" srcset="img/services-page/building@2x.png 2x" width="367" height="347" alt="" />
-              </div>
-              <div class="service-card__title">Автоматизирован&shy;ные системы
-              </div>
-            </a>
-          </li>
-          <li class="services-list__item service-card">
-            <a href="services-group.html" data-count="10">
-              <div class="service-card__image">
-                <img src="img/services-page/building.png" srcset="img/services-page/building@2x.png 2x" width="367" height="347" alt="" />
-              </div>
-              <div class="service-card__title">Эксклюзивные изделия из стекла
-              </div>
-            </a>
-          </li>
-          <li class="services-list__item service-card--reverse service-card">
-            <a href="services-group.html" data-count="11">
-              <div class="service-card__image">
-                <img src="img/services-page/building.png" srcset="img/services-page/building@2x.png 2x" width="367" height="347" alt="" />
-              </div>
-              <div class="service-card__title">Изделия из нержавеющей стали
-              </div>
-            </a>
-          </li>
-        </ul>
+    <div class="certificates line-page">
+      <div class="certificates__container container">
         <div class="lines">
           <div class="line"></div>
           <div class="line"></div>
@@ -634,176 +532,99 @@
           <div class="line"></div>
           <div class="line"></div>
         </div>
-      </div>
-    </article>
-    <section class="services">
-      <div class="container services__container">
-        <div class="lines">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+        <h1 class="certificates__title page-title">Сертификаты</h1>
+        <div class="certificates__cats cats-row">
+          <div class="cats-row-item cats-row-item--active">
+            <a href="">Свидетельства</a>
+          </div>
+          <div class="cats-row-item">
+            <a href="">Разрешения и допуски</a>
+          </div>
+          <div class="cats-row-item">
+            <a href="">Сертификаты соответствия</a>
+          </div>
         </div>
-        <div class="heading heading--small services__title">Услуги</div>
-        <div class="services__wrapper">
-          <div class="service-section services__item">
-            <a class="service-section__title" href="#" target="_blank">
-              <span>Фасадное
-                <br>остекление
-              </span>
-              <svg width="16" height="27">
-                <use xlink:href="#chevron"></use>
-              </svg>
-            </a>
-            <div class="service-section__links">
-              <div class="service-section__links-wrapper">
-                <a href="#" target="_blank">Остекление фасадов</a>
-                <a href="#" target="_blank">Остекление зданий</a>
-                <a href="#" target="_blank">Остекление бизнес центров</a>
-                <a href="#" target="_blank">Остекление автосалонов</a>
-                <a href="#" target="_blank">Остекление жилых комплексов</a>
-                <a href="#" target="_blank">Фальш остекление</a>
+        <div class="reviews__flex reviews__flex--certs">
+          <div class="reviews__left">
+            <div class="reviews__item">
+              <div class="reviews__item-inner">
+                <div class="reviews__item-content"></div>
+                <img src="img/review/cert.jpg" alt="">
+                <a class="reviews__item-btn" href="">
+                  <svg width="26" height="26" aria-label="dowload icon">
+                    <use xlink:href="#dowload-small"></use>
+                  </svg>
+                  <span>Открыть pdf</span>
+                </a>
+              </div>
+            </div>
+            <div class="reviews__item">
+              <div class="reviews__item-inner">
+                <div class="reviews__item-content"></div>
+                <img src="img/review/cert.jpg" alt="">
+                <a class="reviews__item-btn" href="">
+                  <svg width="26" height="26" aria-label="dowload icon">
+                    <use xlink:href="#dowload-small"></use>
+                  </svg>
+                  <span>Открыть pdf</span>
+                </a>
+              </div>
+            </div>
+            <div class="reviews__item">
+              <div class="reviews__item-inner">
+                <div class="reviews__item-content"></div>
+                <img src="img/review/cert.jpg" alt="">
+                <a class="reviews__item-btn" href="">
+                  <svg width="26" height="26" aria-label="dowload icon">
+                    <use xlink:href="#dowload-small"></use>
+                  </svg>
+                  <span>Открыть pdf</span>
+                </a>
+              </div>
+            </div>
+            <div class="reviews__item">
+              <div class="reviews__item-inner">
+                <div class="reviews__item-content"></div>
+                <img src="img/review/cert.jpg" alt="">
+                <a class="reviews__item-btn" href="">
+                  <svg width="26" height="26" aria-label="dowload icon">
+                    <use xlink:href="#dowload-small"></use>
+                  </svg>
+                  <span>Открыть pdf</span>
+                </a>
+              </div>
+            </div>
+            <div class="reviews__item">
+              <div class="reviews__item-inner">
+                <div class="reviews__item-content"></div>
+                <img src="img/review/cert.jpg" alt="">
+                <a class="reviews__item-btn" href="">
+                  <svg width="26" height="26" aria-label="dowload icon">
+                    <use xlink:href="#dowload-small"></use>
+                  </svg>
+                  <span>Открыть pdf</span>
+                </a>
+              </div>
+            </div>
+            <div class="reviews__item">
+              <div class="reviews__item-inner">
+                <div class="reviews__item-content"></div>
+                <img src="img/review/cert.jpg" alt="">
+                <a class="reviews__item-btn" href="">
+                  <svg width="26" height="26" aria-label="dowload icon">
+                    <use xlink:href="#dowload-small"></use>
+                  </svg>
+                  <span>Открыть pdf</span>
+                </a>
               </div>
             </div>
           </div>
-          <div class="service-section services__item">
-            <a class="service-section__title" href="#" target="_blank">
-              <span>Внешнее
-                <br>остекление
-              </span>
-              <svg width="16" height="27">
-                <use xlink:href="#chevron"></use>
-              </svg>
-            </a>
-            <div class="service-section__links">
-              <div class="service-section__links-wrapper">
-                <a href="#" target="_blank">Алюминиевые витражи</a>
-                <a href="#" target="_blank">Спайдерное остекление</a>
-                <a href="#" target="_blank">Козырьки и навесы</a>
-                <a href="#" target="_blank">Алюминиевые окнаи</a>
-                <a href="#" target="_blank">Входные группыыш</a>
-                <a href="#" target="_blank">Алюминиевые двери</a>
-                <a href="#" target="_blank">Зимние сады</a>
-                <a href="#" target="_blank">Зенитные фонари</a>
-                <a href="#" target="_blank">Стеклянные крыши</a>
-              </div>
-            </div>
-          </div>
-          <div class="service-section services__item">
-            <a class="service-section__title" href="#" target="_blank">
-              <span>Внутреннее
-                <br>остекление
-              </span>
-              <svg width="16" height="27">
-                <use xlink:href="#chevron"></use>
-              </svg>
-            </a>
-            <div class="service-section__links">
-              <div class="service-section__links-wrapper">
-                <a href="#" target="_blank">Стеклянные двери</a>
-                <a href="#" target="_blank">Стеклянные перегородки</a>
-                <a href="#" target="_blank">Офисные перегородки</a>
-                <a href="#" target="_blank">Цельностеклянные перегородки</a>
-                <a href="#" target="_blank">Алюминиевые перегородки</a>
-                <a href="#" target="_blank">Мобильные перегородки</a>
-                <a href="#" target="_blank">Душевые перегородки</a>
-                <a href="#" target="_blank">Сантехнические перегородки</a>
-              </div>
-            </div>
-          </div>
-          <div class="service-section services__item">
-            <a class="service-section__title" href="#" target="_blank">
-              <span>Навесные,
-                <br>вентили&shy;руе&shy;мые фасады
-              </span>
-              <svg width="16" height="27">
-                <use xlink:href="#chevron"></use>
-              </svg>
-            </a>
-            <div class="service-section__links">
-              <div class="service-section__links-wrapper">
-                <a href="#" target="_blank">НВФ клинкерной плиткой</a>
-                <a href="#" target="_blank">НВФ натуральным камнем</a>
-                <a href="#" target="_blank">НВФ композитным материалом</a>
-                <a href="#" target="_blank">НВФ металлическими кассетами</a>
-                <a href="#" target="_blank">НВФ керамогранитом</a>
-              </div>
-            </div>
-          </div>
-          <div class="service-section services__item">
-            <a class="service-section__title" href="#" target="_blank">
-              <span>Авто&shy;ма&shy;ти&shy;зи&shy;ро&shy;ва&shy;нные
-                <br>системы
-              </span>
-              <svg width="16" height="27">
-                <use xlink:href="#chevron"></use>
-              </svg>
-            </a>
-            <div class="service-section__links">
-              <div class="service-section__links-wrapper">
-                <a href="#" target="_blank">Проветривание и дымоудаление</a>
-                <a href="#" target="_blank">Автоматические входные группы</a>
-                <a href="#" target="_blank">Роллетные системы</a>
-                <a href="#" target="_blank">Секционные ворота</a>
-              </div>
-            </div>
-          </div>
-          <div class="service-section services__item">
-            <a class="service-section__title" href="#" target="_blank">
-              <span>Эксклюзивные
-                <br>изделия из стекла
-              </span>
-              <svg width="16" height="27">
-                <use xlink:href="#chevron"></use>
-              </svg>
-            </a>
-            <div class="service-section__links">
-              <div class="service-section__links-wrapper">
-                <a href="#" target="_blank">Стеклянные ограждения</a>
-                <a href="#" target="_blank">Стеклянные лестницы</a>
-                <a href="#" target="_blank">Стеклянные полы</a>
-                <a href="#" target="_blank">Смарт-стекло</a>
-                <a href="#" target="_blank">Зеркала на заказ</a>
-                <a href="#" target="_blank">Панно из зеркал</a>
-              </div>
-            </div>
-          </div>
-          <div class="service-section services__item">
-            <a class="service-section__title" href="#" target="_blank">
-              <span>Изделия из
-                <br>нержавеющей стали
-              </span>
-              <svg width="16" height="27">
-                <use xlink:href="#chevron"></use>
-              </svg>
-            </a>
-            <div class="service-section__links">
-              <div class="service-section__links-wrapper">
-                <a href="#" target="_blank">Ограждение лестниц</a>
-                <a href="#" target="_blank">Эксклюзивные изделия</a>
-              </div>
-            </div>
-          </div>
-          <div class="service-section services__item">
-            <a class="service-section__title" href="#" target="_blank">
-              <span>Конструкции из ПВХ
-                <br>профиля
-              </span>
-              <svg width="16" height="27">
-                <use xlink:href="#chevron"></use>
-              </svg>
-            </a>
-            <div class="service-section__links">
-              <div class="service-section__links-wrapper">
-                <a href="#" target="_blank">Окна из ПВХ профиля</a>
-                <a href="#" target="_blank">Двери из ПВХ профиля</a>
-              </div>
-            </div>
+          <div class="reviews__right">
+            <img src="img/review/cert.jpg" alt="">
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </main>
   <footer class="footer">
     <div class="footer__inner container">

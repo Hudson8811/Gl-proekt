@@ -1,12 +1,4 @@
 .wiki {
-	.lines {
-		z-index: -1;
-		opacity: 0.33;
-		.line {
-			background: #172328;
-			opacity: 0.16;
-		}
-	}
 	&__container{
 		position: relative;
 		padding-top: 28px;
@@ -19,18 +11,10 @@
 
 	&__title{
 		margin: 0;
-		font-size: 70px;
-		line-height: 1.12;
-		letter-spacing: -0.05em;
 		font-weight: 900;
 		display: block;
-		color: #172328;
 		@include media(md){
-			font-size: 80px;
 			max-width: 75%;
-		}
-		@include media(lg){
-			font-size: 98px;
 		}
 	}
 
