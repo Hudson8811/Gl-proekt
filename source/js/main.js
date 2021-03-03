@@ -656,3 +656,48 @@ $(window).scroll(function(event) {
 		modal: true
 	});
 })();
+
+
+/* Review */
+(function(){
+	$('.reviews__item img[data-bigimg]').on('click',function (){
+		var bigimage = $(this).data('bigimg');
+		if ($(window).width() >= 768){
+			$('.reviews__right img').prop('src',bigimage);
+		} else {
+			$.fancybox.open([
+				{
+					src  : bigimage
+				}
+			]);
+		}
+	});
+
+	$('.certificates__cats a').on('click',function (){
+		event.preventDefault();
+		$(this).parent().toggleClass('cats-row-item--active');
+		var types = [];
+		$('.certificates__cats').find('.cats-row-item--active a').each(function (){
+			var type = $(this).data('type');
+			types.push(type);
+		});
+
+		console.log($.inArray(1,types));
+		console.log($.inArray(2,types));
+		console.log($.inArray(3,types));
+		if (types.length){
+			$('.reviews__item').each(function (){
+				if ($.inArray($(this).data('type'),types) === -1){
+					$(this).addClass('reviews__item--hide');
+				} else {
+					$(this).removeClass('reviews__item--hide');
+				}
+			});
+		} else {
+			$('.reviews__item').removeClass('reviews__item--hide');
+		}
+	});
+
+
+
+})();

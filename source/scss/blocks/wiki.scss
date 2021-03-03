@@ -36,7 +36,7 @@
 			&:first-child{
 				flex-basis: 51px;
 			}
-			a{
+			a,span{
 				padding: 4px 4px;
 				font-size: 18px;
 				line-height: 26px;
@@ -47,9 +47,15 @@
 				text-decoration: none;
 				width: 100%;
 				text-align: center;
+			}
+			a{
 				&:hover{
 					color: $color-dark;
 				}
+			}
+			span{
+				cursor: default;
+				opacity: 0.32;
 			}
 			&--active{
 				a{

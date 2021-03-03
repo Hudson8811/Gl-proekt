@@ -7325,7 +7325,7 @@ body.blocked {
       flex-basis: 51px;
 }
 
-.wiki__abc-item a {
+.wiki__abc-item a, .wiki__abc-item span {
   padding: 4px 4px;
   font-size: 18px;
   line-height: 26px;
@@ -7340,6 +7340,11 @@ body.blocked {
 
 .wiki__abc-item a:hover {
   color: #111c20;
+}
+
+.wiki__abc-item span {
+  cursor: default;
+  opacity: 0.32;
 }
 
 .wiki__abc-item--active a {
@@ -7487,50 +7492,37 @@ body.blocked {
   }
 }
 
-@media (min-width: 768px) {
-  .reviews__flex--certs .reviews__item:nth-child(even) {
-    -ms-flex-pack: end;
-        justify-content: flex-end;
-  }
-}
-
 .reviews__left {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  margin-left: -8px;
+  margin-right: -8px;
 }
 
 @media (min-width: 768px) {
   .reviews__left {
     width: 50%;
+    margin: 0;
   }
 }
 
 .reviews__item {
   width: 50%;
-  margin-top: 16px;
+  margin-bottom: 16px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: start;
       justify-content: flex-start;
-}
-
-.reviews__item:nth-child(even) {
-  -ms-flex-pack: end;
-      justify-content: flex-end;
-}
-
-@media (min-width: 768px) {
-  .reviews__item:nth-child(even) {
-    -ms-flex-pack: start;
-        justify-content: flex-start;
-  }
+  padding: 0 8px;
 }
 
 @media (min-width: 768px) {
   .reviews__item {
-    margin-top: 0;
+    padding: 0;
     margin-bottom: 32px;
   }
 }
@@ -7545,7 +7537,7 @@ body.blocked {
   position: relative;
   overflow: hidden;
   max-width: 100%;
-  width: calc(100% - 8px);
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -7563,6 +7555,16 @@ body.blocked {
   height: 100%;
   object-fit: cover;
   object-position: center center;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.reviews__item-inner img:hover {
+  width: 106%;
+  height: 106%;
+  top: -3%;
+  left: -3%;
 }
 
 .reviews__item-content {
@@ -7571,6 +7573,7 @@ body.blocked {
 }
 
 .reviews__item-btn {
+  z-index: 3;
   position: absolute;
   left: 50%;
   bottom: 16px;
@@ -7605,15 +7608,27 @@ body.blocked {
   background-color: rgba(1, 165, 228, 0.85);
 }
 
+.reviews__item--hide {
+  display: none;
+}
+
+.reviews__right {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .reviews__right {
     width: 50%;
+    display: block;
   }
 }
 
 .reviews__right img {
   display: block;
   width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .certificates__container {
