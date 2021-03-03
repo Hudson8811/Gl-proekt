@@ -1,0 +1,154 @@
+.single-page {
+	overflow: hidden;
+
+	&__inner {
+		position: relative;
+		padding-top: 50px;
+		padding-bottom: 80px;
+
+		@include media(lg) {
+			padding-bottom: 178px;
+		}
+	}
+
+	&__header {
+		margin-bottom: 48px;
+
+		@include media(lg) {
+			display: flex;
+			margin-bottom: 65px;
+		}
+
+		&-left {
+			@include media(lg) {
+				width: 50%;
+				padding-right: 40px;
+				flex-shrink: 0;
+			}
+			@include media(xl) {
+				width: 75.625%;
+				padding-right: 66px;
+			}
+		}
+
+		&-right {
+			margin-bottom: 32px;
+
+			img {
+				@include image-block;
+			}
+
+			@include media(lg) {
+				margin-bottom: 0;
+				order: 1;
+
+				img {
+					width: auto;
+				}
+			}
+		}
+
+		&-text {
+			margin-bottom: 32px;
+
+			@include text(14px, 1.571);
+		}
+	}
+
+	&__heading {
+		margin: 0 0 24px;
+	}
+
+	&__section {
+		overflow: hidden;
+
+		&--short {
+			max-width: 720px;
+		}
+
+		& + & {
+			margin-top: 48px;
+
+			@include media(lg) {
+				margin-top: 80px;
+			}
+		}
+
+		& + &--mt {
+			@include media(lg) {
+				margin-top: 76px;
+			}
+		}
+
+		&-heading {
+			margin: 0 0 32px;
+
+			@include text(22px, 1.27);
+			font-weight: 700;
+			letter-spacing: -0.07em;
+
+			&--large {
+				@include text(32px, 1.04);
+				text-transform: uppercase;
+
+				@include media(lg) {
+					font-size: 42px;
+				}
+			}
+		}
+
+		&-text {
+			p {
+				margin: 0;
+
+				@include text(14px, 1.571);
+			}
+
+			p + p,
+			p + h2,
+			p + h3,
+			p + h4,
+			p + h5,
+			p + h6 {
+				margin-top: 26px;
+			}
+
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				margin: 0;
+				@include text(22px, 1.27);
+				font-weight: 700;
+				letter-spacing: -0.07em;
+			}
+
+			a {
+				color: $color-blue;
+				text-decoration: none;
+
+				@include hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.ordered-list {
+			margin-top: -20px;
+		}
+	}
+
+	&__list {
+		@include media(sm) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			li {
+				width: calc(50% - 3px);
+				padding-right: 50px;
+			}
+		}
+	}
+}

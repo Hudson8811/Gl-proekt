@@ -12,6 +12,10 @@
 		letter-spacing: -0.05em;
 	}
 
+	&--upper {
+		text-transform: uppercase;
+	}
+
 	@include media(md) {
 		font-size: 40px;
 
