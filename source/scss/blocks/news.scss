@@ -74,7 +74,7 @@
 			margin-top: 32px;
 		}
 
-		&::before {
+		/*&::before {
 			content: '';
 			display: block;
 			width: 200%;
@@ -84,7 +84,7 @@
 			left: -200%;
 			top: 0;
 			z-index: 10;
-		}
+		}*/
 	}
 
 	&__slide {
@@ -96,6 +96,21 @@
 			max-width: 480px;
 			height: 650px;
 			padding: 15px 33px 9px 16px;
+		}
+
+		opacity: 0;
+		user-select: none;
+		pointer-events: none;
+		transition: 0.3s opacity;
+		&.swiper-slide-visible{
+			opacity: 1;
+			user-select: auto;
+			pointer-events: auto;
+			~ .swiper-slide{
+				opacity: 1;
+				user-select: auto;
+				pointer-events: auto;
+			}
 		}
 
 		.preview-card {

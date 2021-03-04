@@ -346,6 +346,7 @@ function setOverlay(cb) {
 		spaceBetween: 15,
 		speed: 300,
 		loop: true,
+		watchSlidesVisibility: true,
 		pagination: {
 			el: '.application-section__paginate'
 		},
@@ -417,6 +418,7 @@ function setOverlay(cb) {
 		},
 		speed: 300,
 		slidesPerView: 'auto',
+		watchSlidesVisibility: true,
 		spaceBetween: 15,
 		loop: true,
 		breakpoints: {
@@ -440,6 +442,7 @@ function setOverlay(cb) {
 		speed: 300,
 		slidesPerView: 'auto',
 		slidesPerColumn: 2,
+		watchSlidesVisibility: true,
 		spaceBetween: 15,
 		slidesPerColumnFill: 'column',
 		breakpoints: {
@@ -463,6 +466,7 @@ function setOverlay(cb) {
 		speed: 300,
 		slidesPerView: 'auto',
 		spaceBetween: 18,
+		watchSlidesVisibility: true,
 		loop: true,
 		breakpoints: {
 			992: {
@@ -652,4 +656,87 @@ $(window).scroll(function(event) {
 	$('.office-staf [data-fancybox]').fancybox({
 		modal: true
 	});
+})();
+
+
+/* Review */
+(function(){
+	$('.reviews__item img[data-bigimg]').on('click',function (){
+		var bigimage = $(this).data('bigimg');
+		if ($(window).width() >= 768){
+			$('.reviews__right img').prop('src',bigimage);
+		} else {
+			$.fancybox.open([
+				{
+					src  : bigimage
+				}
+			]);
+		}
+	});
+
+	$('.certificates__cats a').on('click',function (){
+		event.preventDefault();
+		$(this).parent().toggleClass('cats-row-item--active');
+		var types = [];
+		$('.certificates__cats').find('.cats-row-item--active a').each(function (){
+			var type = $(this).data('type');
+			types.push(type);
+		});
+
+		console.log($.inArray(1,types));
+		console.log($.inArray(2,types));
+		console.log($.inArray(3,types));
+		if (types.length){
+			$('.reviews__item').each(function (){
+				if ($.inArray($(this).data('type'),types) === -1){
+					$(this).addClass('reviews__item--hide');
+				} else {
+					$(this).removeClass('reviews__item--hide');
+				}
+			});
+		} else {
+			$('.reviews__item').removeClass('reviews__item--hide');
+		}
+	});
+})();
+
+/* Production */
+(function(){
+	if ($('.__js_staff-slider').length){
+		var staffSlider = new Swiper('.__js_staff-slider', {
+			pagination: {
+				el: '.production-staff__pagi'
+			},
+			navigation: {
+				prevEl: '.production-staff__prev',
+				nextEl: '.production-staff__next'
+			},
+			speed: 300,
+			slidesPerView: 1,
+			spaceBetween: 18,
+			watchSlidesVisibility: true,
+			loop: true,
+			autoHeight: true,
+			breakpoints: {
+				992: {
+					spaceBetween: 10,
+				}
+			}
+		});
+	}
+	if ($('.__js_supp-slider').length){
+		var suppSlider = new Swiper('.__js_supp-slider', {
+			speed: 300,
+			slidesPerView: 3,
+			watchSlidesVisibility: true,
+			spaceBetween: 0,
+			breakpoints: {
+				992: {
+					slidesPerView: 4,
+				}
+			}
+		});
+	}
+
+
 })();

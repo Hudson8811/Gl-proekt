@@ -77,7 +77,7 @@
 			border-left: 1px solid $color-gray-e5;
 		}
 
-		&::before {
+		/*&::before {
 			content: '';
 			display: block;
 			width: 200%;
@@ -87,12 +87,26 @@
 			left: calc(-200% - 1px);
 			top: 0;
 			z-index: 10;
-		}
+		}*/
 	}
 
 	&__slide {
 		max-width: 257px;
 		height: 357px;
+		opacity: 0;
+		user-select: none;
+		pointer-events: none;
+		transition: 0.3s opacity;
+		&.swiper-slide-visible{
+			opacity: 1;
+			user-select: auto;
+			pointer-events: auto;
+			~ .swiper-slide{
+				opacity: 1;
+				user-select: auto;
+				pointer-events: auto;
+			}
+		}
 
 		@include media(lg) {
 			max-width: 480px;

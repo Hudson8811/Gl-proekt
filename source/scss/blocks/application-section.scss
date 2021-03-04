@@ -56,7 +56,7 @@
 
 	&__carousel {
 		overflow: visible;
-
+		/*
 		&::before {
 			content: "";
 			position: absolute;
@@ -67,7 +67,7 @@
 			width: 100vw;
 			height: 100%;
 			background-color: $color-blue;
-		}
+		}*/
 	}
 
 	&__slide {
@@ -75,6 +75,21 @@
 
 		@include media(sm) {
 			width: auto;
+		}
+
+		opacity: 0;
+		user-select: none;
+		pointer-events: none;
+		transition: 0.3s opacity;
+		&.swiper-slide-visible{
+			opacity: 1;
+			user-select: auto;
+			pointer-events: auto;
+			~ .swiper-slide{
+				opacity: 1;
+				user-select: auto;
+				pointer-events: auto;
+			}
 		}
 	}
 }

@@ -16,10 +16,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
-  <title>Glass Proekt | Главная</title>
+  <title>Glass Proekt | Production</title>
 </head>
 
-<body class="webpage  __js_is-animation">
+<body class="webpage">
   <div style="display: none">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>
@@ -234,7 +234,7 @@
   </div>
   <header class="header" id="header">
     <div class="header__inner">
-      <a class="header__logo logo">
+      <a class="header__logo logo" href="home.html">
         <img src="img/logo.svg" width="121" height="44" alt="Логотип Glass Proekt" />
       </a>
       <div class="header__contacts">
@@ -242,7 +242,7 @@
         <a class="header__email" href="mailto:email@glassproekt.ru">email@glassproekt.ru</a>
       </div>
       <ul class="header__menu header-menu">
-        <li class="header-menu__item">
+        <li class="header-menu__item header-menu__item--current">
           <a class="header-menu__link" href="#">О компании</a>
         </li>
         <li class="header-menu__item">
@@ -261,7 +261,7 @@
     <div class="menu__inner">
       <!--.menu__bg-->
       <header class="menu__header">
-        <a class="menu__logo logo">
+        <a class="menu__logo logo" href="home.html">
           <img src="img/logo.svg" width="121" height="44" alt="Логотип Glass Proekt" />
         </a>
         <button class="menu__close __js_menu-close" type="button">
@@ -273,7 +273,7 @@
       </header>
       <nav class="menu__nav navigation">
         <ul class="navigation__list">
-          <li class="navigation__item">
+          <li class="navigation__item navigation__item--current">
             <a class="navigation__link  __js_dropdown-link" data-target="#about" href="#">О компании</a>
             <div class="navigation__dropdown dropdown  dropdown--simple" id="about">
               <button class="dropdown__back __js_back-to-menu" type="button">
@@ -288,8 +288,8 @@
                     <li class="dropdown__item">
                       <a href="#">О компании</a>
                     </li>
-                    <li class="dropdown__item">
-                      <a href="production.html">Производство</a>
+                    <li class="dropdown__item dropdown__item--current">
+                      <a>Производство</a>
                     </li>
                     <li class="dropdown__item">
                       <a href="office.html">Офис</a>
@@ -523,384 +523,9 @@
     </div>
   </section>
   <main>
-    <!-- Plan-->
-    <section class="plan">
-      <div class="plan__wrapper">
-        <div class="container">
-          <div class="heading heading--large plan__title">Светопрозрачные конструкции</div>
-        </div>
-        <div class="plan__image">
-          <img src="img/plan.jpg" srcset="img/plan@2x.jpg" width="1440" height="811" alt="">
-        </div>
-      </div>
-      <a class="plan__anchor" href="javascript:;">
-        <svg width="12" height="25">
-          <use xlink:href="#arrow-down"></use>
-        </svg>
-      </a>
-      <div class="plan-card plan__caption">
-        <div class="plan-card__image">
-          <img src="img/plan/item-1.jpg" srcset="img/plan/item-1@2x.jpg" width="640" height="426" alt="" />
-        </div>
-        <div class="plan-card__content">
-          <div class="plan-card__digit">07</div>
-          <a class="plan-card__link" href="#" target="_blank">
-            <span>Зимний сад в коттедже под Москвой</span>
-            <svg width="15" height="29">
-              <use xlink:href="#chevron"></use>
-            </svg>
-          </a>
-          <div class="plan-card__date">Проект 2019 года</div>
-        </div>
-      </div>
-    </section>
-    <div class="js-content">
-      <section class="services-slider">
-        <div class="container services-slider__container">
-          <div class="services-slider__slider swiper-container __js_services-slider">
-            <div class="swiper-wrapper">
-              <div class="services-slider__item swiper-slide">
-                <div class="services-slider__wrapper">
-                  <div class="services-slider__image">
-                    <img src="img/services-slider/item-1.png" srcset="img/services-slider/item-1@2x.png" width="480" height="648" alt="">
-                    <div class="services-slider__content services-slider__content--mobile">
-                      <div class="services-slider__digit">01</div>
-                      <div class="heading services-slider__title">Фасадное остекление</div>
-                    </div>
-                  </div>
-                  <div class="services-slider__content">
-                    <div class="services-slider__digit">01</div>
-                    <div class="heading services-slider__title">Фасадное остекление</div>
-                    <ul class="services-slider__list">
-                      <li>
-                        <a href="#" target="_blank">Остекление фасадов</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Остекление зданий</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Остекление бизнес центров</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Остекление автосалонов</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Остекление жилых комплексов</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Фальш остекление</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="services-slider__item swiper-slide">
-                <div class="services-slider__wrapper">
-                  <div class="services-slider__image">
-                    <img src="img/services-slider/item-1.png" srcset="img/services-slider/item-1@2x.png" width="480" height="648" alt="">
-                    <div class="services-slider__content services-slider__content--mobile">
-                      <div class="services-slider__digit">02</div>
-                      <div class="heading services-slider__title">Внешнее остекление</div>
-                    </div>
-                  </div>
-                  <div class="services-slider__content">
-                    <div class="services-slider__digit">02</div>
-                    <div class="heading services-slider__title">Внешнее остекление</div>
-                    <ul class="services-slider__list">
-                      <li>
-                        <a href="#" target="_blank">Алюминиевые витражи</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Спайдерное остекление</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Козырьки и навесы</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Алюминиевые окна</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Входные группы</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Алюминиевые двери</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Зимние сады</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Зенитные фонари</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Стеклянные крыши</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="services-slider__item swiper-slide">
-                <div class="services-slider__wrapper">
-                  <div class="services-slider__image">
-                    <img src="img/services-slider/item-1.png" srcset="img/services-slider/item-1@2x.png" width="480" height="648" alt="">
-                    <div class="services-slider__content services-slider__content--mobile">
-                      <div class="services-slider__digit">03</div>
-                      <div class="heading services-slider__title">Внутреннее остекление</div>
-                    </div>
-                  </div>
-                  <div class="services-slider__content">
-                    <div class="services-slider__digit">03</div>
-                    <div class="heading services-slider__title">Внутреннее остекление</div>
-                    <ul class="services-slider__list">
-                      <li>
-                        <a href="#" target="_blank">Стеклянные двери</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Стеклянные перегородки</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Офисные перегородки</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Цельностеклянные перегородки</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Алюминиевые перегородки</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Мобильные перегородки</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Душевые перегородки</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Сантехнические перегородки</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="services-slider__item swiper-slide">
-                <div class="services-slider__wrapper">
-                  <div class="services-slider__image">
-                    <img src="img/services-slider/item-1.png" srcset="img/services-slider/item-1@2x.png" width="480" height="648" alt="">
-                    <div class="services-slider__content services-slider__content--mobile">
-                      <div class="services-slider__digit">04</div>
-                      <div class="heading services-slider__title">Навесные, вентили&shy;руе&shy;мые фасады</div>
-                    </div>
-                  </div>
-                  <div class="services-slider__content">
-                    <div class="services-slider__digit">04</div>
-                    <div class="heading services-slider__title">Навесные, вентили&shy;руе&shy;мые фасады</div>
-                    <ul class="services-slider__list">
-                      <li>
-                        <a href="#" target="_blank">НВФ клинкерной плиткой</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">НВФ натуральным камнем</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">НВФ композитным материалом</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">НВФ металлическими кассетами</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">НВФ керамогранитом</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="services-slider__item swiper-slide">
-                <div class="services-slider__wrapper">
-                  <div class="services-slider__image">
-                    <img src="img/services-slider/item-1.png" srcset="img/services-slider/item-1@2x.png" width="480" height="648" alt="">
-                    <div class="services-slider__content services-slider__content--mobile">
-                      <div class="services-slider__digit">05</div>
-                      <div class="heading services-slider__title">Авто&shy;ма&shy;ти&shy;зи&shy;ро&shy;ва&shy;нные системы</div>
-                    </div>
-                  </div>
-                  <div class="services-slider__content">
-                    <div class="services-slider__digit">05</div>
-                    <div class="heading services-slider__title">Авто&shy;ма&shy;ти&shy;зи&shy;ро&shy;ва&shy;нные системы</div>
-                    <ul class="services-slider__list">
-                      <li>
-                        <a href="#" target="_blank">Проветривание и дымоудаление</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Автоматические входные группы</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Роллетные системы</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Секционные ворота</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="services-slider__item swiper-slide">
-                <div class="services-slider__wrapper">
-                  <div class="services-slider__image">
-                    <img src="img/services-slider/item-1.png" srcset="img/services-slider/item-1@2x.png" width="480" height="648" alt="">
-                    <div class="services-slider__content services-slider__content--mobile">
-                      <div class="services-slider__digit">06</div>
-                      <div class="heading services-slider__title">Эксклю&shy;зив&shy;ные изделия из стекла</div>
-                    </div>
-                  </div>
-                  <div class="services-slider__content">
-                    <div class="services-slider__digit">06</div>
-                    <div class="heading services-slider__title">Эксклю&shy;зив&shy;ные изделия из стекла</div>
-                    <ul class="services-slider__list">
-                      <li>
-                        <a href="#" target="_blank">Стеклянные ограждения</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Стеклянные лестницы</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Стеклянные полы</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Смарт-стекло</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Зеркала на заказ</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Панно из зеркал</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="services-slider__item swiper-slide">
-                <div class="services-slider__wrapper">
-                  <div class="services-slider__image">
-                    <img src="img/services-slider/item-1.png" srcset="img/services-slider/item-1@2x.png" width="480" height="648" alt="">
-                    <div class="services-slider__content services-slider__content--mobile">
-                      <div class="services-slider__digit">07</div>
-                      <div class="heading services-slider__title">Изделия из нержа&shy;вею&shy;щей стали</div>
-                    </div>
-                  </div>
-                  <div class="services-slider__content">
-                    <div class="services-slider__digit">07</div>
-                    <div class="heading services-slider__title">Изделия из нержа&shy;вею&shy;щей стали</div>
-                    <ul class="services-slider__list">
-                      <li>
-                        <a href="#" target="_blank">Ограждение лестниц</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Эксклюзивные изделия</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="services-slider__item swiper-slide">
-                <div class="services-slider__wrapper">
-                  <div class="services-slider__image">
-                    <img src="img/services-slider/item-1.png" srcset="img/services-slider/item-1@2x.png" width="480" height="648" alt="">
-                    <div class="services-slider__content services-slider__content--mobile">
-                      <div class="services-slider__digit">08</div>
-                      <div class="heading services-slider__title">Конструк&shy;ции из ПВХ профиля</div>
-                    </div>
-                  </div>
-                  <div class="services-slider__content">
-                    <div class="services-slider__digit">08</div>
-                    <div class="heading services-slider__title">Конструк&shy;ции из ПВХ профиля</div>
-                    <ul class="services-slider__list">
-                      <li>
-                        <a href="#" target="_blank">Окна из ПВХ профиля</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Двери из ПВХ профиля</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="services-slider__top">
-            <a class="services-slider__more" href="#" target="_blank">Услуги</a>
-            <div class="services-slider__nav swiper-nav">
-              <button class="slider__btn slider__btn--prev services-slider-prev">
-                <svg width="16" height="30">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </button>
-              <div class="swiper-pagination services-slider-pagi"></div>
-              <button class="slider__btn slider__btn--next services-slider-next">
-                <svg width="16" height="30">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="services-slider__thumbs swiper-container __js_services-thumbs">
-            <div class="swiper-wrapper">
-              <div class="services-slider__thumb swiper-slide">
-                <div class="services-slider__thumb-wrapper">
-                  <p class="digit">01</p>
-                  <p class="title">Фасадное
-                    <br> остекление
-                  </p>
-                </div>
-              </div>
-              <div class="services-slider__thumb swiper-slide">
-                <div class="services-slider__thumb-wrapper">
-                  <p class="digit">02</p>
-                  <p class="title">Внешнее
-                    <br> остекление
-                  </p>
-                </div>
-              </div>
-              <div class="services-slider__thumb swiper-slide">
-                <div class="services-slider__thumb-wrapper">
-                  <p class="digit">03</p>
-                  <p class="title">Внутреннее
-                    <br> остекление
-                  </p>
-                </div>
-              </div>
-              <div class="services-slider__thumb swiper-slide">
-                <div class="services-slider__thumb-wrapper">
-                  <p class="digit">04</p>
-                  <p class="title">Навесные, вентилируемые фасады</p>
-                </div>
-              </div>
-              <div class="services-slider__thumb swiper-slide">
-                <div class="services-slider__thumb-wrapper">
-                  <p class="digit">05</p>
-                  <p class="title">Автоматизированные системы</p>
-                </div>
-              </div>
-              <div class="services-slider__thumb swiper-slide">
-                <div class="services-slider__thumb-wrapper">
-                  <p class="digit">06</p>
-                  <p class="title">Эксклюзивные изделия из стекла</p>
-                </div>
-              </div>
-              <div class="services-slider__thumb swiper-slide">
-                <div class="services-slider__thumb-wrapper">
-                  <p class="digit">07</p>
-                  <p class="title">Изделия из нержавеющей стали</p>
-                </div>
-              </div>
-              <div class="services-slider__thumb swiper-slide">
-                <div class="services-slider__thumb-wrapper">
-                  <p class="digit">08</p>
-                  <p class="title">Конструкции из ПВХ профиля</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="advantages">
-        <div class="container advantages__container">
+    <div class="production line-page">
+      <div class="production-top">
+        <div class="production-top__container container">
           <div class="lines">
             <div class="line"></div>
             <div class="line"></div>
@@ -908,925 +533,273 @@
             <div class="line"></div>
             <div class="line"></div>
           </div>
-          <div class="advantages__wrapper">
-            <div class="advantages__top">
-              <div class="heading advantages__title">Наши
-                <br> преи&shy;му&shy;щест&shy;ва
+          <div class="production-top__left">
+            <h1 class="production-top__title page-title">Производство</h1>
+            <div class="production-top__text">
+              <p>Производство расположено в ближайшем Подмосковье, что позволяет быть конкурентоспособными на рынке, предлагая высокое качество и оптимальную цену.</p>
+              <p>Для изготовления алюминиевых конструкций используются современные оборудование производства Германии, Италии и Турции, основными из которых являются:</p>
+            </div>
+          </div>
+        </div>
+        <div class="production-top__right">
+          <img src="img/production/main.jpg">
+        </div>
+      </div>
+      <div class="production-bottom">
+        <div class="production-bottom__container container">
+          <div class="lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="production-types">
+            <div class="production-types__item">
+              <div class="production-types__item-inner">
+                <img src="img/production/prod-1.jpg" alt="">
+                <div class="production-types__item-content">
+                  <div class="production-types__item-name">Отрезные
+                    <br>станки
+                  </div>
+                  <div class="production-types__item-post">Одноголовочный и двухголовочный станок для алюминиевого профиля</div>
+                </div>
               </div>
-              <div class="advantages__nav swiper-nav swiper-nav--white">
-                <button class="slider__btn slider__btn--prev advantages-prev">
+            </div>
+            <div class="production-types__item">
+              <div class="production-types__item-inner">
+                <img src="img/production/prod-2.jpg" alt="">
+                <div class="production-types__item-content">
+                  <div class="production-types__item-name">Прессовое и вырубное оборудование</div>
+                  <div class="production-types__item-post">Одноголовочный и двухголовочный станок для алюминиевого профиля</div>
+                </div>
+              </div>
+            </div>
+            <div class="production-types__item">
+              <div class="production-types__item-inner">
+                <img src="img/production/prod-3.jpg" alt="">
+                <div class="production-types__item-content">
+                  <div class="production-types__item-name">Копировально-фрезерные станки</div>
+                  <div class="production-types__item-post">Для алюминиевых окон и дверей</div>
+                </div>
+              </div>
+            </div>
+            <div class="production-types__item">
+              <div class="production-types__item-inner">
+                <img src="img/production/prod-4.jpg" alt="">
+                <div class="production-types__item-content">
+                  <div class="production-types__item-name">Углообжимные
+                    <br>станки
+                  </div>
+                  <div class="production-types__item-post">Для сборки алюминиевых рам методом пресования с закладным элементом</div>
+                </div>
+              </div>
+            </div>
+            <div class="production-types__item">
+              <div class="production-types__item-inner">
+                <img src="img/production/prod-5.jpg" alt="">
+                <div class="production-types__item-content">
+                  <div class="production-types__item-name">Сварочный
+                    <br>участок
+                  </div>
+                  <div class="production-types__item-post">Углеродистой и нержавеющей стали</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="production-mounth">
+            <div class="production-mounth__title">Производительность / месяц</div>
+            <div class="production-mounth__content">
+              <div class="production-mounth__item">
+                <div class="production-mounth__item-count">5&nbsp;000<span>м2</span>
+                </div>
+                <div class="production-mounth__item-text">Алюминиевые фассадные системы</div>
+              </div>
+              <div class="production-mounth__item">
+                <div class="production-mounth__item-count">1&nbsp;000<span>м2</span>
+                </div>
+                <div class="production-mounth__item-text">Алюминиевые дверные системы</div>
+              </div>
+              <div class="production-mounth__item">
+                <div class="production-mounth__item-count">30<span>тонн</span>
+                </div>
+                <div class="production-mounth__item-text">Стальные и несущие конструкции</div>
+              </div>
+            </div>
+          </div>
+          <div class="production-staff">
+            <div class="production-staff__top">
+              <div class="production-staff__title">Сотрудники</div>
+              <div class="production-staff__nav swiper-nav">
+                <button class="slider__btn slider__btn--prev production-staff__prev">
                   <svg width="16" height="30">
                     <use xlink:href="#chevron"></use>
                   </svg>
                 </button>
-                <div class="swiper-pagination advantages-pagi"></div>
-                <button class="slider__btn slider__btn--next advantages-next">
+                <div class="production-staff__pagi"></div>
+                <button class="slider__btn slider__btn--next production-staff__next">
                   <svg width="16" height="30">
                     <use xlink:href="#chevron"></use>
                   </svg>
                 </button>
               </div>
             </div>
-            <div class="advantages__slider swiper-container __js_advantages-slider">
+            <div class="production-staff__slider swiper-container __js_staff-slider">
               <div class="swiper-wrapper">
-                <div class="advantages-item advantages__item swiper-slide">
-                  <div class="advantages-item__top">
-                    <div class="advantages-item__icon">
-                      <svg>
-                        <use xlink:href="#advantage-saw"></use>
-                      </svg>
-                    </div>
-                    <div class="advantages-item__content advantages-item__content--mobile">
-                      <div class="advantages-item__title">Собственное производство</div>
-                    </div>
-                  </div>
-                  <div class="advantages-item__content">
-                    <div class="advantages-item__title">Собственное производство</div>
-                    <div class="advantages-item__text">Изготовление светопрозрачных конструкций всех типов: типовые ЖК, бизнес центры, торговые центры</div>
-                  </div>
+                <div class="production-staff__slide swiper-slide">
+                  <img src="img/production/staf.jpg">
                 </div>
-                <div class="advantages-item advantages__item swiper-slide">
-                  <div class="advantages-item__top">
-                    <div class="advantages-item__icon">
-                      <svg>
-                        <use xlink:href="#advantage-rocket"></use>
-                      </svg>
-                    </div>
-                    <div class="advantages-item__content advantages-item__content--mobile">
-                      <div class="advantages-item__title">13 лет
-                        <br> на рынке
-                      </div>
-                    </div>
-                  </div>
-                  <div class="advantages-item__content">
-                    <div class="advantages-item__title">13 лет
-                      <br> на рынке
-                    </div>
-                    <div class="advantages-item__text">Работаем с 2007 года. 86 специалистов в штате. 441 реализованный проект</div>
-                  </div>
+                <div class="production-staff__slide swiper-slide">
+                  <img src="img/production/staf.jpg">
                 </div>
-                <div class="advantages-item advantages__item swiper-slide">
-                  <div class="advantages-item__top">
-                    <div class="advantages-item__icon">
-                      <svg>
-                        <use xlink:href="#advantage-note"></use>
-                      </svg>
-                    </div>
-                    <div class="advantages-item__content advantages-item__content--mobile">
-                      <div class="advantages-item__title">О наших объектах
-                        <br> пишут
-                      </div>
-                    </div>
-                  </div>
-                  <div class="advantages-item__content">
-                    <div class="advantages-item__title">О наших объектах
-                      <br> пишут
-                    </div>
-                    <div class="advantages-item__text">The Village, Grazia, peopletalk, www.archi.ru, hq room</div>
-                  </div>
+                <div class="production-staff__slide swiper-slide">
+                  <img src="img/production/staf.jpg">
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section class="projects">
-        <div class="container projects__container">
-          <div class="projects__top">
-            <div class="heading heading--large projects__title">Проекты</div>
-            <a class="projects__all" href="#" target="_blank">Показано 3 из 441</a>
-            <div class="projects__nav swiper-nav">
-              <button class="slider__btn slider__btn--prev projects-prev">
-                <svg width="16" height="30">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </button>
-              <div class="projects-pagi"></div>
-              <button class="slider__btn slider__btn--next projects-next">
-                <svg width="16" height="30">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </button>
+      </div>
+    </div>
+    <div class="production-supp">
+      <div class="production-supp__container container">
+        <div class="lines">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <div class="production-supp__top">
+          <div class="heading heading--large production-supp__title">Наши поставщики</div>
+          <div class="production-supp__text">Работаем с европейскими и российскими профильными системами</div>
+        </div>
+        <div class="production-supp__slider swiper-container __js_supp-slider">
+          <div class="swiper-wrapper">
+            <div class="production-supp__item swiper-slide">
+              <div class="production-supp__item-inner" style="background-color:#272B33;">
+                <img src="img/production/supp-1.png" alt="">
+              </div>
             </div>
-          </div>
-          <div class="projects__slider swiper-container __js_projects-slider">
-            <div class="swiper-wrapper">
-              <div class="projects__slide preview-card swiper-slide">
-                <div class="preview-card__image">
-                  <div class="preview-card__bg-digit">01</div>
-                  <img src="img/projects/item-1.jpg" srcset="img/projects/item-1@2x.jpg" width="640" height="426" alt="">
-                </div>
-                <div class="preview-card__content">
-                  <div class="preview-card__bottom">
-                    <div class="preview-card__digit">01</div>
-                    <div class="preview-card__bottom-wrapper">
-                      <div class="preview-card__title">Внутреннее
-                        <br> остекление
-                      </div>
-                      <a class="preview-card__link" href="#" target="_blank">
-                        <svg>
-                          <use xlink:href="#arrow-down"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+            <div class="production-supp__item swiper-slide">
+              <div class="production-supp__item-inner" style="background-color:#033C78;">
+                <img src="img/production/supp-2.png" alt="">
               </div>
-              <div class="projects__slide preview-card swiper-slide">
-                <div class="preview-card__image">
-                  <div class="preview-card__bg-digit">02</div>
-                  <img src="img/projects/item-2.jpg" srcset="img/projects/item-2@2x.jpg" width="640" height="426" alt="">
-                </div>
-                <div class="preview-card__content">
-                  <div class="preview-card__bottom">
-                    <div class="preview-card__digit">02</div>
-                    <div class="preview-card__bottom-wrapper">
-                      <div class="preview-card__title">Фасадное
-                        <br> остекление
-                      </div>
-                      <a class="preview-card__link" href="#" target="_blank">
-                        <svg>
-                          <use xlink:href="#arrow-down"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+            </div>
+            <div class="production-supp__item swiper-slide">
+              <div class="production-supp__item-inner">
+                <img src="img/production/supp-3.png" alt="">
               </div>
-              <div class="projects__slide preview-card swiper-slide">
-                <div class="preview-card__image">
-                  <div class="preview-card__bg-digit">03</div>
-                  <img src="img/plan/item-1.jpg" srcset="img/plan/item-1@2x.jpg" width="640" height="426" alt="">
-                </div>
-                <div class="preview-card__content">
-                  <div class="preview-card__bottom">
-                    <div class="preview-card__digit">03</div>
-                    <div class="preview-card__bottom-wrapper">
-                      <div class="preview-card__title">Внешнее
-                        <br> остекление
-                      </div>
-                      <a class="preview-card__link" href="#" target="_blank">
-                        <svg>
-                          <use xlink:href="#arrow-down"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+            </div>
+            <div class="production-supp__item swiper-slide">
+              <div class="production-supp__item-inner" style="background-color:#00198b;">
+                <img src="img/production/supp-4.png" alt="">
               </div>
-              <div class="projects__slide preview-card swiper-slide">
-                <div class="preview-card__image">
-                  <div class="preview-card__bg-digit">04</div>
-                  <img src="img/projects/item-1.jpg" srcset="img/projects/item-1@2x.jpg" width="640" height="426" alt="">
-                </div>
-                <div class="preview-card__content">
-                  <div class="preview-card__bottom">
-                    <div class="preview-card__digit">04</div>
-                    <div class="preview-card__bottom-wrapper">
-                      <div class="preview-card__title">Внутреннее
-                        <br> остекление
-                      </div>
-                      <a class="preview-card__link" href="#" target="_blank">
-                        <svg>
-                          <use xlink:href="#arrow-down"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="projects__slide preview-card swiper-slide">
-                <div class="preview-card__image">
-                  <div class="preview-card__bg-digit">05</div>
-                  <img src="img/projects/item-2.jpg" srcset="img/projects/item-2@2x.jpg" width="640" height="426" alt="">
-                </div>
-                <div class="preview-card__content">
-                  <div class="preview-card__bottom">
-                    <div class="preview-card__digit">05</div>
-                    <div class="preview-card__bottom-wrapper">
-                      <div class="preview-card__title">Фасадное
-                        <br> остекление
-                      </div>
-                      <a class="preview-card__link" href="#" target="_blank">
-                        <svg>
-                          <use xlink:href="#arrow-down"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="projects__slide preview-card swiper-slide">
-                <div class="preview-card__image">
-                  <div class="preview-card__bg-digit">06</div>
-                  <img src="img/plan/item-1.jpg" srcset="img/plan/item-1@2x.jpg" width="640" height="426" alt="">
-                </div>
-                <div class="preview-card__content">
-                  <div class="preview-card__bottom">
-                    <div class="preview-card__digit">06</div>
-                    <div class="preview-card__bottom-wrapper">
-                      <div class="preview-card__title">Внешнее
-                        <br> остекление
-                      </div>
-                      <a class="preview-card__link" href="#" target="_blank">
-                        <svg>
-                          <use xlink:href="#arrow-down"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+            </div>
+            <div class="production-supp__item swiper-slide">
+              <div class="production-supp__item-inner">
+                <img src="img/production/supp-5.png" alt="">
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section class="clients">
-        <div class="container clients__container">
-          <div class="lines">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <div class="clients__top">
-            <div class="heading heading--large clients__title">Клиенты</div>
-            <div class="clients__nav swiper-nav swiper-nav--white">
-              <button class="slider__btn slider__btn--prev clients-prev">
-                <svg width="16" height="30">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </button>
-              <div class="clients-pagi"></div>
-              <button class="slider__btn slider__btn--next clients-next">
-                <svg width="16" height="30">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <a class="clients__all" href="#" target="_blank">Тут все <span>500</span> довольных клиентов.</a>
-          <div class="clients__slider swiper-container __js_clients-slider">
-            <div class="swiper-wrapper">
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/krost.png" srcset="img/clients/krost@2x.png" width="93" height="28" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/lsr.png" srcset="img/clients/lsr@2x.png" width="82" height="33" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/big-city.png" srcset="img/clients/big-city@2x.png" width="157" height="26" alt="">
-              </div>
-              <div class="clients__item clients__item--high swiper-slide">
-                <img src="img/clients/aeroflot.png" srcset="img/clients/aeroflot@2x.png" width="146" height="71" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/pfs.png" srcset="img/clients/pfs@2x.png" width="178" height="26" alt="">
-              </div>
-              <div class="clients__item clients__item--high swiper-slide">
-                <img src="img/clients/mnr.png" srcset="img/clients/mnr@2x.png" width="112" height="86" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/chkalov.png" srcset="img/clients/chkalov@2x.png" width="112" height="24" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/renaissance.png" srcset="img/clients/renaissance@2x.png" width="132" height="26" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/s7.png" srcset="img/clients/s7@2x.png" width="96" height="31" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/gazprom.png" srcset="img/clients/gazprom@2x.png" width="98" height="48" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/tatneft.png" srcset="img/clients/tatneft@2x.png" width="120" height="33" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/auchan.png" srcset="img/clients/auchan@2x.png" width="88" height="27" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/domodedovo.png" srcset="img/clients/domodedovo@2x.png" width="174" height="31" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/krost.png" srcset="img/clients/krost@2x.png" width="93" height="28" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/lsr.png" srcset="img/clients/lsr@2x.png" width="82" height="33" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/big-city.png" srcset="img/clients/big-city@2x.png" width="157" height="26" alt="">
-              </div>
-              <div class="clients__item clients__item--high swiper-slide">
-                <img src="img/clients/aeroflot.png" srcset="img/clients/aeroflot@2x.png" width="146" height="71" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/pfs.png" srcset="img/clients/pfs@2x.png" width="178" height="26" alt="">
-              </div>
-              <div class="clients__item clients__item--high swiper-slide">
-                <img src="img/clients/mnr.png" srcset="img/clients/mnr@2x.png" width="112" height="86" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/chkalov.png" srcset="img/clients/chkalov@2x.png" width="112" height="24" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/renaissance.png" srcset="img/clients/renaissance@2x.png" width="132" height="26" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/s7.png" srcset="img/clients/s7@2x.png" width="96" height="31" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/gazprom.png" srcset="img/clients/gazprom@2x.png" width="98" height="48" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/tatneft.png" srcset="img/clients/tatneft@2x.png" width="120" height="33" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/auchan.png" srcset="img/clients/auchan@2x.png" width="88" height="27" alt="">
-              </div>
-              <div class="clients__item swiper-slide">
-                <img src="img/clients/domodedovo.png" srcset="img/clients/domodedovo@2x.png" width="174" height="31" alt="">
-              </div>
-            </div>
+      </div>
+    </div>
+    <div class="production-contacts line-page">
+      <div class="production-contacts__container container">
+        <div class="lines">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <div class="production-contacts__left">
+          <div class="production-contacts__title">Адрес производства</div>
+          <div class="production-contacts__city">г. Москва</div>
+          <div class="production-contacts__info">
+            <p>Деловой квартал "Сириус Парк",
+              <br>Каширское шоссе д. 3, корп. 2, стр. 2
+            </p>
+            <p>+7 (495) 150-34-00
+              <br>mail@glassproekt.ru
+            </p>
           </div>
         </div>
-      </section>
-      <section class="news">
-        <div class="container news__container">
-          <div class="news__top">
-            <div class="heading heading--large news__title">Новости</div>
-            <div class="news__nav swiper-nav">
-              <button class="slider__btn slider__btn--prev news-prev">
-                <svg width="16" height="30">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </button>
-              <div class="news-pagi"></div>
-              <button class="slider__btn slider__btn--next news-next">
-                <svg width="16" height="30">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <a class="news__all" href="#" target="_blank">Тут все <span>21</span> новости</a>
-          <div class="news__slider swiper-container __js_news-slider">
-            <div class="swiper-wrapper">
-              <div class="news__slide preview-card preview-card--with-tags swiper-slide">
-                <div class="preview-card__image">
-                  <img src="img/news/item-1.jpg" srcset="img/news/item-1@2x.jpg" width="667" height="444" alt="">
-                </div>
-                <div class="preview-card__content">
-                  <div class="preview-card__top">
-                    <div class="preview-card__tags">
-                      <div class="preview-card__tag"># Выступления</div>
-                      <div class="preview-card__tag"># Экспертное мнение</div>
-                    </div>
-                    <div class="preview-card__date">31.03.2017</div>
-                  </div>
-                  <div class="preview-card__bottom">
-                    <div class="preview-card__digit">01</div>
-                    <div class="preview-card__bottom-wrapper">
-                      <div class="preview-card__title">Строительство нуждается в стандартизации применения алюминия</div>
-                      <a class="preview-card__link" href="#" target="_blank">
-                        <svg width="12" height="25">
-                          <use xlink:href="#arrow-down"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="news__slide preview-card preview-card--with-tags swiper-slide">
-                <div class="preview-card__image">
-                  <img src="img/news/item-2.jpg" srcset="img/news/item-2@2x.jpg" width="444" height="666" alt="">
-                </div>
-                <div class="preview-card__content">
-                  <div class="preview-card__top">
-                    <div class="preview-card__tags">
-                      <div class="preview-card__tag"># Выступления</div>
-                      <div class="preview-card__tag"># Экспертное мнение</div>
-                    </div>
-                    <div class="preview-card__date">31.03.2017</div>
-                  </div>
-                  <div class="preview-card__bottom">
-                    <div class="preview-card__digit">02</div>
-                    <div class="preview-card__bottom-wrapper">
-                      <div class="preview-card__title">Строительство нуждается в стандартизации применения алюминия</div>
-                      <a class="preview-card__link" href="#" target="_blank">
-                        <svg width="12" height="25">
-                          <use xlink:href="#arrow-down"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="news__slide preview-card preview-card--with-tags swiper-slide">
-                <div class="preview-card__image">
-                  <img src="img/news/item-3.jpg" srcset="img/news/item-3@2x.jpg" width="667" height="444" alt="">
-                </div>
-                <div class="preview-card__content">
-                  <div class="preview-card__top">
-                    <div class="preview-card__tags">
-                      <div class="preview-card__tag"># Выступления</div>
-                      <div class="preview-card__tag"># Экспертное мнение</div>
-                    </div>
-                    <div class="preview-card__date">31.03.2017</div>
-                  </div>
-                  <div class="preview-card__bottom">
-                    <div class="preview-card__digit">03</div>
-                    <div class="preview-card__bottom-wrapper">
-                      <div class="preview-card__title">Строительство нуждается в стандартизации применения алюминия</div>
-                      <a class="preview-card__link" href="#" target="_blank">
-                        <svg width="12" height="25">
-                          <use xlink:href="#arrow-down"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="news__slide preview-card preview-card--with-tags swiper-slide">
-                <div class="preview-card__image">
-                  <img src="img/news/item-1.jpg" srcset="img/news/item-1@2x.jpg" width="667" height="444" alt="">
-                </div>
-                <div class="preview-card__content">
-                  <div class="preview-card__top">
-                    <div class="preview-card__tags">
-                      <div class="preview-card__tag"># Выступления</div>
-                      <div class="preview-card__tag"># Экспертное мнение</div>
-                    </div>
-                    <div class="preview-card__date">31.03.2017</div>
-                  </div>
-                  <div class="preview-card__bottom">
-                    <div class="preview-card__digit">01</div>
-                    <div class="preview-card__bottom-wrapper">
-                      <div class="preview-card__title">Строительство нуждается в стандартизации применения алюминия</div>
-                      <a class="preview-card__link" href="#" target="_blank">
-                        <svg width="12" height="25">
-                          <use xlink:href="#arrow-down"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="news__slide preview-card preview-card--with-tags swiper-slide">
-                <div class="preview-card__image">
-                  <img src="img/news/item-2.jpg" srcset="img/news/item-2@2x.jpg" width="444" height="666" alt="">
-                </div>
-                <div class="preview-card__content">
-                  <div class="preview-card__top">
-                    <div class="preview-card__tags">
-                      <div class="preview-card__tag"># Выступления</div>
-                      <div class="preview-card__tag"># Экспертное мнение</div>
-                    </div>
-                    <div class="preview-card__date">31.03.2017</div>
-                  </div>
-                  <div class="preview-card__bottom">
-                    <div class="preview-card__digit">02</div>
-                    <div class="preview-card__bottom-wrapper">
-                      <div class="preview-card__title">Строительство нуждается в стандартизации применения алюминия</div>
-                      <a class="preview-card__link" href="#" target="_blank">
-                        <svg width="12" height="25">
-                          <use xlink:href="#arrow-down"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="news__slide preview-card preview-card--with-tags swiper-slide">
-                <div class="preview-card__image">
-                  <img src="img/news/item-3.jpg" srcset="img/news/item-3@2x.jpg" width="667" height="444" alt="">
-                </div>
-                <div class="preview-card__content">
-                  <div class="preview-card__top">
-                    <div class="preview-card__tags">
-                      <div class="preview-card__tag"># Выступления</div>
-                      <div class="preview-card__tag"># Экспертное мнение</div>
-                    </div>
-                    <div class="preview-card__date">31.03.2017</div>
-                  </div>
-                  <div class="preview-card__bottom">
-                    <div class="preview-card__digit">03</div>
-                    <div class="preview-card__bottom-wrapper">
-                      <div class="preview-card__title">Строительство нуждается в стандартизации применения алюминия</div>
-                      <a class="preview-card__link" href="#" target="_blank">
-                        <svg width="12" height="25">
-                          <use xlink:href="#arrow-down"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="about">
-        <div class="container about__container">
-          <div class="heading about__title">О компании</div>
-          <div class="about__wrapper">
-            <div class="about__image">
-              <img src="img/about.jpg" srcset="img/about@2x.jpg" width="667" height="445" alt="">
-            </div>
-            <div class="about__content">
-              <div class="about__subtitle">Светопрозрачные конструкции</div>
-              <div class="about__desc">
-                Светопрозрачные конструкции в наше время активно используются при строительстве самых разных объектов. Они позволяют сделать здание теплее, защитить от лишних шумов, а также улучшить внешний вид постройки. Именно поэтому на многих фасадах различных зданий,
-                в офисах и частных домах предпочитают использовать светопрозрачные конструкции.
-              </div>
-              <a class="button about__btn" href="#" target="_blank">
-                <span>Подробнее</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="feedback">
-        <div class="container feedback__container">
-          <div class="feedback__left">
-            <div class="feedback__icon">
-              <img src="img/letter.png" srcset="img/letter@2x.png" width="141" height="152" alt="">
-            </div>
-            <div class="heading feedback__title">Обсудим
-              <br> Ваш проект
-            </div>
-            <div class="feedback__tell-us">Расскажите о проекте и задайте
-              <br> вопросы, мы скоро ответим
-            </div>
-            <a class="feedback__phone" href="tel:+74951503400">+7(495)150-34-00</a>
-            <a class="feedback__mail" href="mailto:mail@glassproekt.ru">mail@glassproekt.ru</a>
-            <!-- Social-->
-            <ul class="feedback__social social">
-              <li class="social__item">
-                <a class="social__link" href="#" target="_blank">
-                  <svg width="29" height="29" aria-label="facebook icon">
-                    <use xlink:href="#facebook"></use>
-                  </svg>
-                  <span class="visually-hidden">facebook</span>
-                </a>
-              </li>
-              <li class="social__item">
-                <a class="social__link" href="#" target="_blank">
-                  <svg width="29" height="29" aria-label="instagram icon">
-                    <use xlink:href="#instagram"></use>
-                  </svg>
-                  <span class="visually-hidden">instagram</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="feedback__form">
-          <form class="form" action="" method="POST">
-            <div class="form__wrapper">
-              <div class="form__types">
-                <div class="form__type">
-                  <label>
-                    <input type="radio" name="order_type" value="1" checked>
-                    <svg width="33" height="33">
-                      <use xlink:href="#corporation"></use>
-                    </svg>
-                    <span>Корпоративный заказ</span>
-                  </label>
-                </div>
-                <div class="form__type">
-                  <label>
-                    <input type="radio" name="order_type" value="2">
-                    <svg width="27" height="32">
-                      <use xlink:href="#person"></use>
-                    </svg>
-                    <span>Частный заказ</span>
-                  </label>
-                </div>
-              </div>
-              <div class="form__grid">
-                <label class="field form__field">
-                  <input type="text" name="name" placeholder="Имя">
-                </label>
-                <label class="field form__field">
-                  <input type="text" name="phone" placeholder="Телефон">
-                </label>
-                <label class="field form__field">
-                  <input type="email" name="email" placeholder="Почта">
-                </label>
-                <label class="field form__field" data-change>
-                  <input type="text" name="position" placeholder="Должность">
-                </label>
-                <label class="field form__field" data-change>
-                  <input type="text" name="company" placeholder="Компания">
-                </label>
-                <label class="field form__field form__field--change">
-                  <input type="text" name="city" placeholder="Город">
-                </label>
-              </div>
-              <div class="form__grid form__grid--w50">
-                <label class="field form__field">
-                  <input type="text" name="build_date" placeholder="Дата строительства:">
-                </label>
-                <div class="field form__field" data-disabled>
-                  <select class="select" name="service">
-                    <option value="1">Услуга номер один</option>
-                    <option value="2">Услуга номер два</option>
-                    <option value="3">Услуга номер три</option>
-                    <option value="4">Услуга номер 4</option>
-                    <option value="5">Услуга номер 5</option>
-                    <option value="6">Услуга номер 6</option>
-                    <option value="7">Услуга номер 7</option>
-                    <option value="8">Услуга номер 8</option>
-                    <option value="9">Услуга номер 9</option>
-                  </select>
-                </div>
-              </div>
-              <label class="field form__field form__field--textarea">
-                <textarea name="question" placeholder="Вопрос"></textarea>
-              </label>
-              <div class="form__radio-group">
-                <label class="field field--radio">
-                  <input type="radio" name="customer" checked>
-                  <div class="inner"></div>
-                  <span>Ген. подрядчик</span>
-                </label>
-                <label class="field field--radio">
-                  <input type="radio" name="customer">
-                  <div class="inner"></div>
-                  <span>Подрядчик (тендер)</span>
-                </label>
-                <label class="field field--radio">
-                  <input type="radio" name="customer">
-                  <div class="inner"></div>
-                  <span>Собственник объекта</span>
-                </label>
-              </div>
-              <div class="form__switch">
-                <label class="field field--switch">
-                  <span>Объект под ключ</span>
-                  <input type="checkbox" name="object">
-                  <div class="inner"></div>
-                </label>
-              </div>
-            </div>
-            <div class="form__nav">
-              <label class="form__nav-btn form__nav-btn--file">
-                <input type="file" name="file">
-                <svg width="27" height="29">
-                  <use xlink:href="#clip"></use>
-                </svg>
-                <span>Прикрепить файл</span>
-              </label>
-              <label class="form__nav-btn">
-                <input type="submit">
-                <svg width="27" height="27">
-                  <use xlink:href="#send"></use>
-                </svg>
-                <span>Отправить</span>
-              </label>
-            </div>
-          </form>
-        </div>
-      </section>
-      <section class="services">
-        <div class="container services__container">
-          <div class="lines">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <div class="heading heading--small services__title">Услуги</div>
-          <div class="services__wrapper">
-            <div class="service-section services__item">
-              <a class="service-section__title" href="#" target="_blank">
-                <span>Фасадное
-                  <br>остекление
-                </span>
-                <svg width="16" height="27">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </a>
-              <div class="service-section__links">
-                <div class="service-section__links-wrapper">
-                  <a href="#" target="_blank">Остекление фасадов</a>
-                  <a href="#" target="_blank">Остекление зданий</a>
-                  <a href="#" target="_blank">Остекление бизнес центров</a>
-                  <a href="#" target="_blank">Остекление автосалонов</a>
-                  <a href="#" target="_blank">Остекление жилых комплексов</a>
-                  <a href="#" target="_blank">Фальш остекление</a>
-                </div>
-              </div>
-            </div>
-            <div class="service-section services__item">
-              <a class="service-section__title" href="#" target="_blank">
-                <span>Внешнее
-                  <br>остекление
-                </span>
-                <svg width="16" height="27">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </a>
-              <div class="service-section__links">
-                <div class="service-section__links-wrapper">
-                  <a href="#" target="_blank">Алюминиевые витражи</a>
-                  <a href="#" target="_blank">Спайдерное остекление</a>
-                  <a href="#" target="_blank">Козырьки и навесы</a>
-                  <a href="#" target="_blank">Алюминиевые окнаи</a>
-                  <a href="#" target="_blank">Входные группыыш</a>
-                  <a href="#" target="_blank">Алюминиевые двери</a>
-                  <a href="#" target="_blank">Зимние сады</a>
-                  <a href="#" target="_blank">Зенитные фонари</a>
-                  <a href="#" target="_blank">Стеклянные крыши</a>
-                </div>
-              </div>
-            </div>
-            <div class="service-section services__item">
-              <a class="service-section__title" href="#" target="_blank">
-                <span>Внутреннее
-                  <br>остекление
-                </span>
-                <svg width="16" height="27">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </a>
-              <div class="service-section__links">
-                <div class="service-section__links-wrapper">
-                  <a href="#" target="_blank">Стеклянные двери</a>
-                  <a href="#" target="_blank">Стеклянные перегородки</a>
-                  <a href="#" target="_blank">Офисные перегородки</a>
-                  <a href="#" target="_blank">Цельностеклянные перегородки</a>
-                  <a href="#" target="_blank">Алюминиевые перегородки</a>
-                  <a href="#" target="_blank">Мобильные перегородки</a>
-                  <a href="#" target="_blank">Душевые перегородки</a>
-                  <a href="#" target="_blank">Сантехнические перегородки</a>
-                </div>
-              </div>
-            </div>
-            <div class="service-section services__item">
-              <a class="service-section__title" href="#" target="_blank">
-                <span>Навесные,
-                  <br>вентили&shy;руе&shy;мые фасады
-                </span>
-                <svg width="16" height="27">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </a>
-              <div class="service-section__links">
-                <div class="service-section__links-wrapper">
-                  <a href="#" target="_blank">НВФ клинкерной плиткой</a>
-                  <a href="#" target="_blank">НВФ натуральным камнем</a>
-                  <a href="#" target="_blank">НВФ композитным материалом</a>
-                  <a href="#" target="_blank">НВФ металлическими кассетами</a>
-                  <a href="#" target="_blank">НВФ керамогранитом</a>
-                </div>
-              </div>
-            </div>
-            <div class="service-section services__item">
-              <a class="service-section__title" href="#" target="_blank">
-                <span>Авто&shy;ма&shy;ти&shy;зи&shy;ро&shy;ва&shy;нные
-                  <br>системы
-                </span>
-                <svg width="16" height="27">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </a>
-              <div class="service-section__links">
-                <div class="service-section__links-wrapper">
-                  <a href="#" target="_blank">Проветривание и дымоудаление</a>
-                  <a href="#" target="_blank">Автоматические входные группы</a>
-                  <a href="#" target="_blank">Роллетные системы</a>
-                  <a href="#" target="_blank">Секционные ворота</a>
-                </div>
-              </div>
-            </div>
-            <div class="service-section services__item">
-              <a class="service-section__title" href="#" target="_blank">
-                <span>Эксклюзивные
-                  <br>изделия из стекла
-                </span>
-                <svg width="16" height="27">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </a>
-              <div class="service-section__links">
-                <div class="service-section__links-wrapper">
-                  <a href="#" target="_blank">Стеклянные ограждения</a>
-                  <a href="#" target="_blank">Стеклянные лестницы</a>
-                  <a href="#" target="_blank">Стеклянные полы</a>
-                  <a href="#" target="_blank">Смарт-стекло</a>
-                  <a href="#" target="_blank">Зеркала на заказ</a>
-                  <a href="#" target="_blank">Панно из зеркал</a>
-                </div>
-              </div>
-            </div>
-            <div class="service-section services__item">
-              <a class="service-section__title" href="#" target="_blank">
-                <span>Изделия из
-                  <br>нержавеющей стали
-                </span>
-                <svg width="16" height="27">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </a>
-              <div class="service-section__links">
-                <div class="service-section__links-wrapper">
-                  <a href="#" target="_blank">Ограждение лестниц</a>
-                  <a href="#" target="_blank">Эксклюзивные изделия</a>
-                </div>
-              </div>
-            </div>
-            <div class="service-section services__item">
-              <a class="service-section__title" href="#" target="_blank">
-                <span>Конструкции из ПВХ
-                  <br>профиля
-                </span>
-                <svg width="16" height="27">
-                  <use xlink:href="#chevron"></use>
-                </svg>
-              </a>
-              <div class="service-section__links">
-                <div class="service-section__links-wrapper">
-                  <a href="#" target="_blank">Окна из ПВХ профиля</a>
-                  <a href="#" target="_blank">Двери из ПВХ профиля</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <footer class="footer">
-        <div class="footer__inner container">
-          <div class="footer__title heading heading--small">О компании</div>
-          <div class="footer__wrapper">
-            <div class="footer__col">
-              <a class="footer__link" href="#">О Компании</a>
-              <a class="footer__link" href="production.html">Производство</a>
-            </div>
-            <div class="footer__col">
-              <a class="footer__link" href="office.html">Офис</a>
-              <a class="footer__link" href="customers.html">Клиенты</a>
-            </div>
-            <div class="footer__col">
-              <a class="footer__link" href="certificates.html">Сертификаты</a>
-              <a class="footer__link" href="reviews.html">Отзывы</a>
-            </div>
-            <div class="footer__col">
-              <a class="footer__link" href="#">Проекты</a>
-              <a class="footer__link" href="#">Новости</a>
-            </div>
-          </div>
-          <div class="footer__wrapper">
-            <div class="footer__col">
-              <a class="footer__link" href="#">Партнерская программа</a>
-              <a class="footer__link" href="#">Материалы</a>
-            </div>
-            <div class="footer__col">
-              <a class="footer__link" href="#">Поставщики</a>
-              <a class="footer__link" href="wiki.html">WIKI-база знаний</a>
-            </div>
-            <div class="footer__col">
-              <a class="footer__link" href="contacts.html">Контакты</a>
-            </div>
-            <div class="footer__col">
-              <!-- Social-->
-              <ul class="footer__social social">
-                <li class="social__item">
-                  <a class="social__link" href="#" target="_blank">
-                    <svg width="29" height="29" aria-label="facebook icon">
-                      <use xlink:href="#facebook"></use>
-                    </svg>
-                    <span class="visually-hidden">facebook</span>
-                  </a>
-                </li>
-                <li class="social__item">
-                  <a class="social__link" href="#" target="_blank">
-                    <svg width="29" height="29" aria-label="instagram icon">
-                      <use xlink:href="#instagram"></use>
-                    </svg>
-                    <span class="visually-hidden">instagram</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="footer__wrapper footer__wrapper--bottom">
-            <div class="footer__copy">© 2007 – 2020 ООО «Гласс Проект»; ОГРН 110507400256; ИНН 1105074002560</div>
-            <a class="footer__privacy" href="#">Политика конфиденциальности</a>
-            <div class="footer__developer">
-              <a href="#">Developed by
-                <svg width="38" height="12">
-                  <use xlink:href="#bofer"></use>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      </div>
+      <div class="production-contacts__map">
+        <script type="text/javascript" charset="utf-8" async="" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A589b0d66967ad1198ed894d39e714f5bba5bcc29e404956935528cc1d8085b0a&amp;width=873&amp;height=720&amp;lang=ru_RU&amp;scroll=true"></script>
+      </div>
     </div>
   </main>
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__title heading heading--small">О компании</div>
+      <div class="footer__wrapper">
+        <div class="footer__col">
+          <a class="footer__link" href="#">О Компании</a>
+          <a class="footer__link" href="production.html">Производство</a>
+        </div>
+        <div class="footer__col">
+          <a class="footer__link" href="office.html">Офис</a>
+          <a class="footer__link" href="customers.html">Клиенты</a>
+        </div>
+        <div class="footer__col">
+          <a class="footer__link" href="certificates.html">Сертификаты</a>
+          <a class="footer__link" href="reviews.html">Отзывы</a>
+        </div>
+        <div class="footer__col">
+          <a class="footer__link" href="#">Проекты</a>
+          <a class="footer__link" href="#">Новости</a>
+        </div>
+      </div>
+      <div class="footer__wrapper">
+        <div class="footer__col">
+          <a class="footer__link" href="#">Партнерская программа</a>
+          <a class="footer__link" href="#">Материалы</a>
+        </div>
+        <div class="footer__col">
+          <a class="footer__link" href="#">Поставщики</a>
+          <a class="footer__link" href="wiki.html">WIKI-база знаний</a>
+        </div>
+        <div class="footer__col">
+          <a class="footer__link" href="contacts.html">Контакты</a>
+        </div>
+        <div class="footer__col">
+          <!-- Social-->
+          <ul class="footer__social social">
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank">
+                <svg width="29" height="29" aria-label="facebook icon">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+                <span class="visually-hidden">facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank">
+                <svg width="29" height="29" aria-label="instagram icon">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+                <span class="visually-hidden">instagram</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__wrapper footer__wrapper--bottom">
+        <div class="footer__copy">© 2007 – 2020 ООО «Гласс Проект»; ОГРН 110507400256; ИНН 1105074002560</div>
+        <a class="footer__privacy" href="#">Политика конфиденциальности</a>
+        <div class="footer__developer">
+          <a href="#">Developed by
+            <svg width="38" height="12">
+              <use xlink:href="#bofer"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
   <section class="popup popup--thanks" id="thanks" style="display: none">
     <div class="popup__title">Thanks!</div>
   </section>

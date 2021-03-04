@@ -29,34 +29,28 @@
 				@include media(md){
 					justify-content: flex-end;
 				}
-				&:nth-child(even){
-					@include media(md){
-						justify-content: flex-end;
-					}
-				}
 			}
 		}
 	}
 	&__left{
 		display: flex;
 		flex-wrap: wrap;
+		align-items: flex-start;
+		margin-left: -8px;
+		margin-right: -8px;
 		@include media(md){
 			width: 50%;
+			margin: 0;
 		}
 	}
 	&__item{
 		width: 50%;
-		margin-top: 16px;
+		margin-bottom: 16px;
 		display: flex;
 		justify-content: flex-start;
-		&:nth-child(even){
-			justify-content: flex-end;
-			@include media(md){
-				justify-content: flex-start;
-			}
-		}
+		padding: 0 8px;
 		@include media(md){
-			margin-top: 0;
+			padding: 0;
 			margin-bottom: 32px;
 		}
 		@include media(lg){
@@ -66,7 +60,7 @@
 			position: relative;
 			overflow: hidden;
 			max-width: 100%;
-			width: calc(100% - 8px);
+			width: 100%;
 			@include media(md){
 				width: 166px;
 				max-width: 90%;
@@ -79,6 +73,15 @@
 				height: 100%;
 				object-fit: cover;
 				object-position: center center;
+				cursor: pointer;
+				transition: 0.2s;
+				z-index: 1;
+				&:hover{
+					width: 106%;
+					height: 106%;
+					top: -3%;
+					left: -3%;
+				}
 			}
 		}
 		&-content{
@@ -86,6 +89,7 @@
 			width: 100%;
 		}
 		&-btn{
+			z-index: 3;
 			position: absolute;
 			left: 50%;
 			bottom: 16px;
@@ -112,14 +116,22 @@
 				background-color: rgba(1, 165, 228, 0.85);
 			}
 		}
+
+		&--hide{
+			display: none;
+		}
 	}
 	&__right{
+		display: none;
 		@include media(md){
 			width: 50%;
+			display: block;
 		}
 		img{
 			display: block;
 			width: 100%;
+			position: sticky;
+			top: 0;
 		}
 	}
 }

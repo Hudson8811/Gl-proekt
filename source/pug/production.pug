@@ -1,0 +1,141 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Production';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 2.02; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	.production.line-page
+		.production-top
+			.production-top__container.container
+				include modules/lines
+				.production-top__left
+					h1.production-top__title.page-title Производство
+					.production-top__text
+						p Производство расположено в ближайшем Подмосковье, что позволяет быть конкурентоспособными на рынке, предлагая высокое качество и оптимальную цену.
+						p Для изготовления алюминиевых конструкций используются современные оборудование производства Германии, Италии и Турции, основными из которых являются:
+			.production-top__right
+				img(src="img/production/main.jpg")
+
+		.production-bottom
+			.production-bottom__container.container
+				include modules/lines
+
+				.production-types
+					.production-types__item
+						.production-types__item-inner
+							img(src="img/production/prod-1.jpg" alt="")
+							.production-types__item-content
+								.production-types__item-name Отрезные <br>станки
+								.production-types__item-post Одноголовочный и двухголовочный станок для алюминиевого профиля
+					.production-types__item
+						.production-types__item-inner
+							img(src="img/production/prod-2.jpg" alt="")
+							.production-types__item-content
+								.production-types__item-name Прессовое и вырубное оборудование
+								.production-types__item-post Одноголовочный и двухголовочный станок для алюминиевого профиля
+					.production-types__item
+						.production-types__item-inner
+							img(src="img/production/prod-3.jpg" alt="")
+							.production-types__item-content
+								.production-types__item-name Копировально-фрезерные станки
+								.production-types__item-post Для алюминиевых окон и дверей
+					.production-types__item
+						.production-types__item-inner
+							img(src="img/production/prod-4.jpg" alt="")
+							.production-types__item-content
+								.production-types__item-name Углообжимные <br>станки
+								.production-types__item-post Для сборки алюминиевых рам методом пресования с закладным элементом
+					.production-types__item
+						.production-types__item-inner
+							img(src="img/production/prod-5.jpg" alt="")
+							.production-types__item-content
+								.production-types__item-name Сварочный <br>участок
+								.production-types__item-post Углеродистой и нержавеющей стали
+
+
+				.production-mounth
+					.production-mounth__title Производительность / месяц
+					.production-mounth__content
+						.production-mounth__item
+							.production-mounth__item-count
+								| 5&nbsp;000
+								span м2
+							.production-mounth__item-text Алюминиевые фассадные системы
+						.production-mounth__item
+							.production-mounth__item-count
+								| 1&nbsp;000
+								span м2
+							.production-mounth__item-text Алюминиевые дверные системы
+						.production-mounth__item
+							.production-mounth__item-count
+								| 30
+								span тонн
+							.production-mounth__item-text Стальные и несущие конструкции
+
+
+				.production-staff
+					.production-staff__top
+						.production-staff__title Сотрудники
+						.production-staff__nav.swiper-nav
+							button.slider__btn.slider__btn--prev.production-staff__prev
+								+icon("chevron")(width="16", height="30")
+							.production-staff__pagi
+							button.slider__btn.slider__btn--next.production-staff__next
+								+icon("chevron")(width="16", height="30")
+
+					.production-staff__slider.swiper-container.__js_staff-slider
+						.swiper-wrapper
+							.production-staff__slide.swiper-slide
+								img(src="img/production/staf.jpg")
+							.production-staff__slide.swiper-slide
+								img(src="img/production/staf.jpg")
+							.production-staff__slide.swiper-slide
+								img(src="img/production/staf.jpg")
+
+
+	.production-supp
+		.production-supp__container.container
+			include modules/lines
+			.production-supp__top
+				.heading.heading--large.production-supp__title Наши поставщики
+				.production-supp__text Работаем с европейскими и российскими профильными системами
+			.production-supp__slider.swiper-container.__js_supp-slider
+				.swiper-wrapper
+					.production-supp__item.swiper-slide
+						.production-supp__item-inner(style="background-color:#272B33;")
+							img(src='img/production/supp-1.png' alt='')
+					.production-supp__item.swiper-slide
+						.production-supp__item-inner(style="background-color:#033C78;")
+							img(src='img/production/supp-2.png' alt='')
+					.production-supp__item.swiper-slide
+						.production-supp__item-inner
+							img(src='img/production/supp-3.png' alt='')
+					.production-supp__item.swiper-slide
+						.production-supp__item-inner(style="background-color:#00198b;")
+							img(src='img/production/supp-4.png' alt='')
+					.production-supp__item.swiper-slide
+						.production-supp__item-inner
+							img(src='img/production/supp-5.png' alt='')
+
+	.production-contacts.line-page
+		.production-contacts__container.container
+			include modules/lines
+			.production-contacts__left
+				.production-contacts__title Адрес производства
+				.production-contacts__city г. Москва
+				.production-contacts__info
+					p Деловой квартал "Сириус Парк", <br>Каширское шоссе д. 3, корп. 2, стр. 2
+					p +7 (495) 150-34-00 <br>mail@glassproekt.ru
+		.production-contacts__map
+			script(type='text/javascript' charset='utf-8' async='' src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A589b0d66967ad1198ed894d39e714f5bba5bcc29e404956935528cc1d8085b0a&width=873&height=720&lang=ru_RU&scroll=true')
+
+
+block footer
+	include modules/footer
+
+
