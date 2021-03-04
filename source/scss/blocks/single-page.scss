@@ -12,7 +12,23 @@
 	}
 
 	&__header {
+		$header: &;
 		margin-bottom: 48px;
+
+		&--fix-height {
+			@include media(lg) {
+				max-height: 450px;
+				margin-bottom: 100px;
+
+				#{$header}-left {
+					width: 50%;
+					padding-right: 20px;
+				}
+				#{$header}-text {
+					width: 88%;
+				}
+			}
+		}
 
 		@include media(lg) {
 			display: flex;
@@ -52,6 +68,13 @@
 			margin-bottom: 32px;
 
 			@include text(14px, 1.571);
+
+			p {
+				margin: 0;
+			}
+			p + p {
+				margin-top: 25px;
+			}
 		}
 	}
 
@@ -59,25 +82,19 @@
 		margin: 0 0 24px;
 	}
 
+	&__subheading {
+		margin: -5px 0 32px;
+
+		@include text(22px, 1.27);
+		font-weight: 700;
+		letter-spacing: -0.07em;
+	}
+
 	&__section {
 		overflow: hidden;
 
 		&--short {
 			max-width: 720px;
-		}
-
-		& + & {
-			margin-top: 48px;
-
-			@include media(lg) {
-				margin-top: 80px;
-			}
-		}
-
-		& + &--mt {
-			@include media(lg) {
-				margin-top: 76px;
-			}
 		}
 
 		&-heading {
@@ -148,6 +165,94 @@
 			li {
 				width: calc(50% - 3px);
 				padding-right: 50px;
+			}
+		}
+	}
+
+	&__block {
+		position: relative;
+		padding-top: 136px;
+
+		@include media(xl) {
+			padding-top: 180px;
+		}
+
+		&--shifted {
+			@include media(lg) {
+				width: 50%;
+				margin-left: auto;
+			}
+		}
+
+		&-heading {
+			position: relative;
+			margin: 0 0 36px;
+
+			@include media(xl) {
+				min-width: 585px;
+			}
+
+			&::before {
+				content: attr(data-count);
+				position: absolute;
+				left: 0;
+				bottom: 20%;
+
+				@include text(240px, 0.76, $color-pale-sky);
+				font-weight: 200;
+				letter-spacing: -0.08em;
+				opacity: 0.04;
+
+				@include media(xl) {
+					font-size: 312px;
+					bottom: 42%;
+				}
+			}
+		}
+
+		&-subheading {
+			margin: 0 0 32px;
+
+			@include text(22px, 1.27);
+			font-weight: 700;
+			letter-spacing: -0.07em;
+		}
+	}
+
+	* + &__section,
+	* + &__block {
+		margin-top: 48px;
+
+		@include media(lg) {
+			margin-top: 80px;
+		}
+	}
+
+	* + &__section--mt {
+		@include media(lg) {
+			margin-top: 76px;
+		}
+	}
+
+	&__partners {
+		@include list-reset;
+		display: flex;
+		flex-wrap: wrap;
+
+		li {
+			width: 50%;
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+
+			@include media(md) {
+				width: 33.33%;
+			}
+
+			@include media(lg) {
+				width: 25%;
 			}
 		}
 	}

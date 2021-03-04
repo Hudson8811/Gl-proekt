@@ -1,0 +1,61 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Партнерская программа';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 8.01; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 8; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	article.single-page
+		.single-page__inner.container
+			header.single-page__header.single-page__header--fix-height
+				.single-page__header-right
+					img(src="img/partner-program.jpg", srcset="img/partner-program@2x.jpg 2x", width="720", height="449", alt="")
+				.single-page__header-left.single-page__header-left--short
+					h1.single-page__heading.heading Партнерская программа
+					.single-page__subheading для проектных организаций, архитекторов и дизайнеров интерьера!
+					.single-page__header-text
+						p ООО «Гласс Проект» – динамично развивающаяся компания, работающая на рынке строительства и производства светопрозрачных конструкций с 2007 года. С момента создания наши специалисты неустанно трудятся над совершенствованием используемых технологий и подходов проектирования, воплощая в стекле и металле самые разнообразные архитектурные решения. За это время мы реализовали более 130 конструкторских решений и проектов с дизайнерскими и архитектурными бюро. Мы постоянно расширяем это сотрудничество и приглашаем партнеров для создания взаимовыгодных колабораций.
+
+						p Мы приглашаем к сотрудничеству проектные организации, дизайнеров интерьеров и архитекторов, готовых активно участвовать и грамотно реализовывать свои проекты. Даём эксклюзивные условия, и гарантируем ответственную реализацию каждого этапа совместного проекта. Наш опыт работы позволяет осуществлять качественный контроль и оперативность в решении даже самых маленьких задач и вопросов. Мы уважаем и с большой радостью принимаем энергичные, талантливые и творческие команды, чтобы воплощать проекты совместными усилиями. Потому что такое сотрудничество расширяет возможности обеих сторон.
+			.single-page__main
+				section.single-page__block.single-page__block--shifted
+					h2.single-page__block-heading.heading(data-count="01") Что Вы получите, работая с нами:
+
+					p Архитекторы [отнеслись к корпусам аккуратно]. Советские аттиковые этажи перебрали – под кровлей образовались помещения для офисов, освещенные в основном мансардными окнами, встроенными в вальмовый абрис крыши. Местами, с внутренней стороны квартала, в пологих вальмовых кровлях образуются вырезы – здесь офисы получают обычные, вертикальные окна. Похожие вырезы во внутренних скатах флигелей-ризалитов образуют на их кровлях небольшие террасы с выходом на кровлю.
+
+				section.single-page__section.single-page__section--short
+					h2.single-page__section-heading Для проектных организаций, <br>архитекторов и дизайнеров интерьера!
+
+					ul.ordered-list
+						each text, index in LIST
+							- let num = index + 1 < 10 ? '0' + (index + 1) : (index + 1);
+							li.ordered-list__item
+								.ordered-list__item-count= num
+								| #{text}
+
+
+				section.single-page__block
+					h2.single-page__block-heading.heading(data-count="02") Партнеры
+					.single-page__block-subheading Архитекторы
+					ul.single-page__partners
+						- let i = 1;
+						while i <= 26
+							li
+								img(src="img/partners-logo/" + i + ".png", srcset="img/partners-logo/" + i + "@2x.png 2x", width="226", height="107", alt="")
+							- i++;
+				section.single-page__section
+					h2.single-page__section-heading Ниже не нумерованный список
+
+					ul.single-page__list
+						each text in LIST_2
+							li.check-item= text
+
+				include modules/lines
+
+	include modules/projects
+block footer
+	include modules/footer
