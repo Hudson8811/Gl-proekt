@@ -346,6 +346,7 @@ function setOverlay(cb) {
 		spaceBetween: 15,
 		speed: 300,
 		loop: true,
+		watchSlidesVisibility: true,
 		pagination: {
 			el: '.application-section__paginate'
 		},
@@ -697,7 +698,45 @@ $(window).scroll(function(event) {
 			$('.reviews__item').removeClass('reviews__item--hide');
 		}
 	});
+})();
 
+/* Production */
+(function(){
+	if ($('.__js_staff-slider').length){
+		var staffSlider = new Swiper('.__js_staff-slider', {
+			pagination: {
+				el: '.production-staff__pagi'
+			},
+			navigation: {
+				prevEl: '.production-staff__prev',
+				nextEl: '.production-staff__next'
+			},
+			speed: 300,
+			slidesPerView: 1,
+			spaceBetween: 18,
+			watchSlidesVisibility: true,
+			loop: true,
+			autoHeight: true,
+			breakpoints: {
+				992: {
+					spaceBetween: 10,
+				}
+			}
+		});
+	}
+	if ($('.__js_supp-slider').length){
+		var suppSlider = new Swiper('.__js_supp-slider', {
+			speed: 300,
+			slidesPerView: 3,
+			watchSlidesVisibility: true,
+			spaceBetween: 0,
+			breakpoints: {
+				992: {
+					slidesPerView: 4,
+				}
+			}
+		});
+	}
 
 
 })();
