@@ -24,7 +24,8 @@
 		servicesHide: 'service-hide.html',
 		facadeGlazing: '#',
 		projects: '#',
-		materials: '#',
+		materials: 'materials.html',
+		materialsGroup: 'materials-group.html',
 		suppliers: '#',
 		news: '#',
 		partnerProgram: 'partner-program.html',
@@ -57,7 +58,14 @@
 			}
 		]},
 		{text: 'Проекты', url: URLS.projects, currentPage: 4.01, currentSection: 4, submenu: null},
-		{text: 'Материалы', url: URLS.materials, currentPage: 5.01, currentSection: 5, submenu: null},
+		{text: 'Материалы', url: URLS.materials, currentPage: 5.01, currentSection: 5, submenu: [
+			{
+				main: null,
+				list: [
+					{text: 'Группа материалов', url: URLS.materialsGroup, currentPage: 5.02, currentSection: 5}
+				]
+			}
+		]},
 		{text: 'Поставщики', url: URLS.suppliers, currentPage: 6.01, currentSection: 6, submenu: null},
 		{text: 'Новости', url: URLS.news, currentPage: 7.01, currentSection: 7, submenu: null},
 		{text: 'Партнерская программа', url: URLS.partnerProgram, currentPage: 8.01, currentSection: 8, submenu: null},
