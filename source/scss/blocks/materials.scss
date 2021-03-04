@@ -2,6 +2,7 @@
 	overflow: hidden;
 
 	&__inner {
+		position: relative;
 		padding-top: 50px;
 		padding-bottom: 80px;
 
@@ -20,11 +21,23 @@
 		}
 	}
 
-	&__block + &__block {
+	&__block {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__block + &__block,
+	&__group + &__group {
 		margin-top: 32px;
 
 		@include media(lg) {
 			margin-top: 64px;
+		}
+	}
+
+	.lines {
+		.line {
+			background-color: rgba($color-dark2, 0.16);
 		}
 	}
 }
