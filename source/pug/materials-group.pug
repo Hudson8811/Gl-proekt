@@ -1,0 +1,54 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Группа материалов';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 5.02; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 5; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	.materials
+		.materials__inner.container
+			h1.materials__heading.heading.heading--large Стекло
+
+			section.materials__group.materials-group(data-count="01")
+				h2.materials-group__heading.heading AGC Glass Europe
+				.materials-group__logo
+					img(src="img/materials/logo-1.png", srcset="img/materials/logo-1@2x.png", width="226", height="107", alt="")
+				.materials-group__text
+					p AGC Glass Europe предлагает многочисленные варианты применения стекла в архитектуре для изготовления алюминиевых витражей, которые являются безопасными для окружающей среды, обладают эстетичным видом и, кроме прочего, являются простыми в изготовлении.
+					p Одно и то же стекло может выполнять различные функции.
+				.materials-group__subheading Компания AGC Glass Europe предлагает огромный выбор марок стекла:
+				ul.materials-group__list
+					each text in MATERIALS_GROUP_LIST
+						li.check-item= text
+
+			section.materials__group.materials-group(data-count="02")
+				h2.materials-group__heading.heading AGC Glass Europe
+				.materials-group__logo
+					img(src="img/materials/logo-2.png", srcset="img/materials/logo-2@2x.png", width="226", height="107", alt="")
+				.materials-group__text
+					p AGC Glass Europe предлагает многочисленные варианты применения стекла в архитектуре для изготовления алюминиевых витражей, которые являются безопасными для окружающей среды, обладают эстетичным видом и, кроме прочего, являются простыми в изготовлении.
+					p Одно и то же стекло может выполнять различные функции.
+				.materials-group__subheading Компания AGC Glass Europe предлагает огромный выбор марок стекла:
+				ul.materials-group__list
+					each text in MATERIALS_GROUP_LIST
+						li.check-item= text
+
+			section.materials__group.materials-group(data-count="03")
+				h2.materials-group__heading.heading AGC Glass Europe
+				.materials-group__logo
+					img(src="img/materials/logo-3.png", srcset="img/materials/logo-3@2x.png", width="226", height="107", alt="")
+				.materials-group__text AGC Glass Europe производит и перерабатывает флоат стекло для использования в строительстве (внешнее остекление и декоративное интерьерное остекление), автомобильной промышленности, солнечной энергетике и специализированных отраслях. Штаб-квартира компании находится в Брюсселе (Бельгия), а компания является европейским подразделением AGC Glass – крупнейшего мирового производителя флоат стекла. Слоган компании «Glass unlimited – Стекло без границ» отражает обширные перспективы. Штат компании AGC Glass Europe в настоящее время составляет 13.500 человек.
+				.materials-group__bottom
+					b Официальный сайт:
+					a(href="http://www.agc-glass.eu", target="_blank") http://www.agc-glass.eu
+
+
+			include modules/lines
+
+	include modules/services
+block footer
+	include modules/footer

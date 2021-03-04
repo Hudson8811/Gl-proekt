@@ -1,0 +1,77 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Материалы';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 5.01; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 5; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	.materials
+		.materials__inner.container
+			h1.materials__heading.heading.heading--large Материалы
+
+			section.materials__block.material
+				a.material__inner(href= URLS.materialsGroup)
+					.material__aside
+						.material__image
+							img(src="img/materials/1.jpg", srcset="img/materials/1@2x.jpg 2x", width="720", height="449", alt="")
+						span.material__btn.arrow-btn
+							+icon('arrow-down')
+					.material__content(data-count="01")
+						h2.material__heading.heading Стекло
+						.material__text Стекло широко применяется в строительстве. Это в первую очередь окна, двери, перегородки, витражи и фасады. Представляем Вам стекло от лидеров в производстве стекла и изделий из стекла для строительства.
+
+			section.materials__block.material.material--reverse
+				a.material__inner(href= URLS.materialsGroup)
+					.material__aside
+						.material__image
+							img(src="img/materials/2.jpg", srcset="img/materials/2@2x.jpg 2x", width="720", height="449", alt="")
+						span.material__btn.arrow-btn
+							+icon('arrow-down')
+					.material__content(data-count="02")
+						h2.material__heading.heading Алюминиевый профиль
+						.material__text В строительстве сейчас очень широко используется профиль из алюминия. Алюминиевый профиль это уникатьное сочетание прочности, легкости. Представляем Вам обзор профилей из алюминия от лидеров в этой сфере производства.
+
+			section.materials__block.material
+				a.material__inner(href= URLS.materialsGroup)
+					.material__aside
+						.material__image
+							img(src="img/materials/3.jpg", srcset="img/materials/3@2x.jpg 2x", width="720", height="449", alt="")
+						span.material__btn.arrow-btn
+							+icon('arrow-down')
+					.material__content(data-count="03")
+						h2.material__heading.heading ПВХ профиль
+						.material__text Пластиковые окна и двери - альтернатива деревянным конструкциям. На сайте представлена продукция иностранных и российских лидеров в сфере производства ПВХ профиля.
+
+			section.materials__block.material.material--reverse
+				a.material__inner(href= URLS.materialsGroup)
+					.material__aside
+						.material__image
+							img(src="img/materials/4.jpg", srcset="img/materials/4@2x.jpg 2x", width="720", height="449", alt="")
+						span.material__btn.arrow-btn
+							+icon('arrow-down')
+					.material__content(data-count="04")
+						h2.material__heading.heading Фурнитура
+						.material__text Фурнитура для окон, дверей, фасадов и т.д. от лидеров в этой сфере представлена в этом разделе. Здесь содержится описание и фото наиболее популярных и практичных изделий. Ознакомившись с этими материалами, Вы сможете легко определиться в выборе производителя фурнитуры для своего проекта.
+
+			section.materials__block.material
+				a.material__inner(href= URLS.materialsGroup)
+					.material__aside
+						.material__image
+							img(src="img/materials/5.jpg", srcset="img/materials/5@2x.jpg 2x", width="720", height="449", alt="")
+						span.material__btn.arrow-btn
+							+icon('arrow-down')
+					.material__content(data-count="05")
+						h2.material__heading.heading Современные технологии
+						.material__text Производство стекла и его обработка быстро развивающая сфера, в которую вкладываются огромные инвестиции. Стекло - материал, который сегодня приобретает те свойства и характеристики, о которых раньше и нельзя было мечтать благодаря современным технологиям производства и обработки.
+
+
+
+			include modules/lines
+
+	include modules/services
+block footer
+	include modules/footer

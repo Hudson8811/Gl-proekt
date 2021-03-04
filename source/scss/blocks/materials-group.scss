@@ -1,0 +1,89 @@
+.materials-group {
+	position: relative;
+	padding-top: 145px;
+
+	&::before {
+		content: attr(data-count);
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		@include text(240px, 0.76, $color-pale-sky);
+		font-weight: 200;
+		letter-spacing: -0.08em;
+		opacity: 0.04;
+
+		@include media(xl) {
+			font-size: 312px;
+		}
+	}
+
+	&__heading {
+		margin: 0 0 32px;
+	}
+
+	&__subheading {
+		margin: 0 0 32px;
+
+		@include text(22px, 1.27);
+		font-weight: 700;
+		letter-spacing: -0.07em;
+	}
+
+	&__logo {
+		position: absolute;
+		left: 0;
+		top: 30px;
+	}
+
+	&__text {
+		max-width: 720px;
+		margin-bottom: 32px;
+		font-family: $font-family--secondary;
+
+		@include text(16, 1.44);
+
+		@include media(lg) {
+			font-size: 18px;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	&__list {
+		@include list-reset;
+
+		@include media(sm) {
+			display: flex;
+			flex-wrap: wrap;
+
+			li {
+				width: 50%;
+			}
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 64px;
+
+		@include text(22px, 1.27);
+		font-weight: 700;
+		letter-spacing: -0.07em;
+
+		b {
+			margin-right: 12px;
+		}
+
+		a {
+			color: $color-blue;
+
+			@include hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
