@@ -3,14 +3,97 @@
 		position: relative;
 		padding-top: 28px;
 		padding-bottom: 50px;
+
 		@include media(md) {
+			display: flex;
+			flex-wrap: wrap;
 			padding-top: 49px;
 			padding-bottom: 143px;
 		}
 	}
 
 	&__title {
-		margin: 0;
+		width: 100%;
+		margin: 0 0 32px;
 	}
 
+	&__aside {
+		@include media(md) {
+			width: 50%;
+			padding-right: 32px;
+		}
+	}
+
+	&__menu {
+		@include list-reset;
+
+		@include media(md) {
+			position: sticky;
+			top: 100px;
+		}
+	}
+
+	&__item {
+		margin-bottom: 4px;
+		padding: 4px 0;
+
+		a {
+			@include text(16px, 1.44, $color-pale-sky);
+			letter-spacing: -0.07em;
+			font-weight: 700;
+
+			@include transition(all);
+
+			@include media(lg) {
+				font-size: 18px;
+			}
+
+			@include hover {
+				color: $color-blue;
+			}
+		}
+
+		&--active {
+			a {
+				font-size: 30px;
+				color: $color-blue;
+				pointer-events: none;
+			}
+		}
+	}
+
+	&__main {
+		padding-top: 50px;
+
+		@include media(md) {
+			width: 50%;
+		}
+	}
+
+	&__section {
+		margin-bottom: 64px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&-title {
+			margin: 0 0 32px;
+
+			@include text(22px, 1.27);
+			font-weight: 700;
+			letter-spacing: -0.07em;
+		}
+
+		&-logotips {
+			display: flex;
+			flex-wrap: wrap;
+
+			img {
+				display: block;
+				width: 50%;
+				height: auto;
+			}
+		}
+	}
 }
