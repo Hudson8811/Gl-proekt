@@ -1,0 +1,47 @@
+.facts {
+	@include list-reset;
+
+	@include media(sm) {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		margin-bottom: 32px;
+
+		@include media(sm) {
+			width: 50%;
+		}
+
+		@include media(lg) {
+			width: 25%;
+			margin-bottom: 0;
+		}
+
+		&-num {
+			margin-bottom: 27px;
+
+			@include text(64px, 1, $color-dark2);
+			letter-spacing: -0.07em;
+			font-weight: 200;
+		}
+
+		&-text {
+			max-width: 370px;
+			padding-right: 20px;
+
+			@include text(22px, 1.27, $color-pale-sky);
+			letter-spacing: -0.07em;
+			font-weight: 700;
+		}
+
+		img {
+			display: block;
+			margin-top: 10px;
+		}
+	}
+
+	&__btn {
+		margin-top: 43px;
+	}
+}

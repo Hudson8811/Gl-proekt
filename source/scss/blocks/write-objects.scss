@@ -1,0 +1,53 @@
+.write-objects {
+	&__inner {
+		position: relative;
+		padding-top: 64px;
+		padding-bottom: 64px;
+
+		@include media(lg) {
+			padding-top: 157px;
+			padding-bottom: 180px;
+		}
+	}
+
+	&__heading {
+		margin: 0 0 32px;
+
+		@include text(22px, 1.27);
+		font-weight: 700;
+		letter-spacing: -0.07em;
+	}
+
+	&__list {
+		@include list-reset;
+
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -14px;
+		margin-top: -16px;
+
+		@include media(md) {
+			max-width: 707px;
+		}
+	}
+
+	&__item {
+		width: calc(50% - 14px);
+		margin-left: 14px;
+		margin-top: 16px;
+
+		@include media(md) {
+			width: calc(33.33% - 14px);
+		}
+
+		img {
+			@include image-block;
+		}
+	}
+
+	.lines {
+		.line {
+			background-color: rgba($color-dark2, 0.16);
+		}
+	}
+}

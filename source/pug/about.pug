@@ -1,0 +1,53 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | О компании';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 2.01; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	article.about-page
+		.about-page__inner.container
+			h1.about-page__heading.heading.heading--large О компании
+			.about-page__text
+				p Наша компания изготавливает светопрозрачные конструкции для всех типов зданий и сооружений: от элитных бизнес‑центров и крупных торгово‑развлекательных центров до типовых жилых домов.
+
+				p Мы работаем с 2007 года и предлагаем нашим клиентам надёжные, проверенные решения, базирующиеся как на собственном, так и на мировом опыте быстро развивающейся высокотехнологичной строительной отрасли.
+
+			section.about-page__facts
+				h2.about-page__facts-heading.heading Тысячи людей каждый день приходят в здания построенные с нашим участием
+
+				ul.about-page__facts-list.facts
+					li.facts__item
+						.facts__item-num 196.5
+						.facts__item-text Общая площадь реализованных проектов
+					li.facts__item
+						.facts__item-num 481
+						.facts__item-text Реализованный проект за 13 лет деятельности
+					li.facts__item
+						.facts__item-num 86
+						.facts__item-text Сотрудников различных специальностей
+					li.facts__item
+						img(src="img/about/armchair.svg", width="41", height="47", alt="")
+						a.facts__btn.btn(href= URLS.office) Офис
+
+			section.about-page__growth
+				h2.about-page__growth-heading.heading Рост объемов
+				.about-page__growth-subheading реализованных проектов компании “Гласс Проект”
+				.about-page__growth-image
+					img(src="img/about/graph.png", srcset="img/about/graph@2x.png 2x", width="927", height="458", alt="График роста реализованных проектов по годам")
+				.about-page__growth-bottom
+					img(src="img/about/circular-saw.svg", width="45", height="45", alt="")
+					a.about-page__growth-btn.btn(href= URLS.production) Производство
+
+
+			include modules/lines
+	include modules/about-objects
+	include modules/write-objects
+	include modules/services
+
+block footer
+	include modules/footer

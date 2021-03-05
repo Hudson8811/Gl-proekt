@@ -1,0 +1,11 @@
+section.write-objects
+	.write-objects__inner.container
+		h2.write-objects__heading Про наши объекты пишут
+		ul.write-objects__list
+			-let i = 1;
+			while i <= 5
+				li.write-objects__item
+					img(src="img/about/write-" + i +".png", srcset="img/about/write-" + i + "@2x.png 2x", width="226", height="107", alt="")
+				- i++;
+
+		include lines

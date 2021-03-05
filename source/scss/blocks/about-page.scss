@@ -1,0 +1,125 @@
+.about-page {
+	&__inner {
+		position: relative;
+		padding-top: 48px;
+		padding-bottom: 48px;
+
+		@include media(lg) {
+			padding-bottom: 109px;
+		}
+	}
+
+	&__heading {
+		margin: 0 0 51px;
+	}
+
+	&__text {
+		max-width: 720px;
+		margin-bottom: 80px;
+		font-family: $font-family--secondary;
+
+		@include text(16px, 1.44);
+
+		@include media(lg) {
+			margin-bottom: 146px;
+			font-size: 18px;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		p + p {
+			margin-top: 28px;
+		}
+	}
+
+	&__facts {
+		margin-bottom: 100px;
+
+		@include media(lg) {
+			margin-bottom: 268px;
+		}
+
+		&-heading {
+			margin: 0 0 42px;
+
+			@include media(lg) {
+				max-width: 670px;
+				margin-bottom: 62px;
+			}
+
+			@include media(xl) {
+				max-width: none;
+				min-width: 1062px;
+			}
+		}
+		&-list {
+		}
+	}
+
+	&__growth {
+		position: relative;
+
+		&-heading {
+			margin: 0 0 20px;
+		}
+
+		&-subheading {
+			max-width: 275px;
+
+			@include text(18px, 1.27, $color-pale-sky);
+			letter-spacing: -0.07em;
+			font-weight: 700;
+
+			@include media(xl) {
+				font-size: 22px;
+			}
+		}
+
+		&-image {
+			@include media(sm) {
+				margin-top: -50px;
+			}
+
+			@include media(xl) {
+				margin-top: -86px;
+				padding-left: 10px;
+			}
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+
+		&-bottom {
+			margin-top: 32px;
+
+			@include media(sm) {
+				position: absolute;
+				bottom: 16px;
+				right: 0;
+				z-index: 1;
+			}
+
+			@include media(lg) {
+				right: 87px;
+			}
+
+			img {
+				display: block;
+			}
+		}
+
+		&-btn {
+			margin-top: 44px;
+		}
+	}
+
+	.lines {
+		.line {
+			background-color: rgba($color-dark2, 0.16);
+		}
+	}
+}
