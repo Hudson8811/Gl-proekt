@@ -1,0 +1,117 @@
+.about-objects {
+	$self: &;
+
+	background-color: $color-dark2;
+
+	&__inner {
+		position: relative;
+		padding-top: 64px;
+		padding-bottom: 64px;
+
+		@include media(lg) {
+			padding-bottom: 155px;
+		}
+	}
+
+	&__heading {
+		margin: 0 0 16px;
+		color: $color-default-white;
+	}
+
+	&__subheading {
+		margin-bottom: 32px;
+		font-family: $font-family--secondary;
+
+		@include text(18px, 1.44, $color-default-white);
+	}
+
+	&__grid {
+		display: flex;
+		flex-direction: column;
+
+		@include media(md) {
+			max-width: 700px;
+			flex-direction: row;
+		}
+	}
+
+	&__col {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+
+		@include media(md) {
+			align-self: flex-start;
+		}
+
+		&--small {
+			order: -1;
+
+			@include media(md) {
+				//width: 226px;
+				width: calc(33.33% - 14px);
+				margin-left: 14px;
+				flex-shrink: 0;
+				order: 0;
+			}
+		}
+	}
+
+	&__item {
+		margin-bottom: 32px;
+		font-family: $font-family--secondary;
+
+		@include text(18px, 1.44, $color-default-white);
+
+		img {
+			@include image-block;
+		}
+
+		@include media(md) {
+			margin-bottom: 0;
+		}
+
+		&--half {
+			width: calc(50% - 7px);
+
+			@include media(md) {
+				margin-bottom: 32px;
+			}
+		}
+
+		&--half + &--half {
+			margin-left: 14px;
+		}
+
+		&--filled {
+			display: flex;
+			padding: 16px;
+			background-color: $color-blue;
+
+			@include media(md) {
+				display: block;
+			}
+
+			img {
+				max-width: 194px;
+				width: 44%;
+				align-self: flex-start;
+
+				@include media(md) {
+					width: 100%;
+				}
+			}
+
+			#{$self}__item-text {
+				margin-left: 24px;
+				color: $color-default-white;
+				flex-grow: 1;
+
+				@include media(md) {
+					margin-left: 0;
+					margin-top: 54px;
+				}
+			}
+		}
+	}
+}

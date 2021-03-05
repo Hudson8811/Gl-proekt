@@ -1,6 +1,6 @@
 extends templates/main
 block variables
-	- let pageTitle = TITLE_PART + ' | Customers';
+	- let pageTitle = TITLE_PART + ' | Клиенты';
 	- let isHome = false; //- Если true то логотип не будет ссылкой
 	- let currentPage = 2.04; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
@@ -126,7 +126,8 @@ block content
 
 
 
-
+	include modules/projects
+	include modules/services
 
 block footer
 	include modules/footer

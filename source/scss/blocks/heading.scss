@@ -1,5 +1,5 @@
 .heading {
-	@include text(32px, 1.125);
+	@include text(32px, 1.125, $color-dark2);
 	font-weight: 700;
 	letter-spacing: -0.04em;
 
