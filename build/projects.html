@@ -526,7 +526,16 @@
     <article class="projects-page">
       <div class="projects-page__inner container">
         <h1 class="projects-page__heading heading heading--large">Проекты</h1>
-        <!-- фильтр-->
+        <div class="projects-page__filter filter">
+          <button class="filter__item filter__item--active" type="button" data-filter="*">Все проекты</button>
+          <button class="filter__item" type="button" data-filter=".__js_2">Бизнес-центры</button>
+          <button class="filter__item" type="button" data-filter=".__js_3">Торгово-развлекательные центры</button>
+          <button class="filter__item" type="button" data-filter=".__js_4">Жилые комплексы</button>
+          <button class="filter__item" type="button" data-filter=".__js_5">Коттеджные поселки</button>
+          <button class="filter__item" type="button" data-filter=".__js_6">Гос. объекты</button>
+          <button class="filter__item" type="button" data-filter=".__js_7">Промышленные объекты</button>
+          <button class="filter__item" type="button" data-filter=".__js_8">Общественные пространства</button>
+        </div>
         <section class="projects-page__search advanced-search">
           <h2 class="advanced-search__heading">Расширенный поиск</h2>
           <ul class="advanced-search__list">
@@ -598,8 +607,8 @@
             </li>
           </ul>
         </section>
-        <ul class="projects-page__list">
-          <li class="projects-page__item preview-card">
+        <ul class="projects-page__list __js_projects-filter">
+          <li class="projects-page__item preview-card __js_1">
             <div class="preview-card__image">
               <img src="img/projects-page/1.jpg" srcset="img/projects-page/1@2x.jpg 2x" width="469" height="651" alt="">
             </div>
@@ -619,7 +628,7 @@
               </div>
             </div>
           </li>
-          <li class="projects-page__item preview-card">
+          <li class="projects-page__item preview-card __js_2">
             <div class="preview-card__image">
               <img src="img/projects-page/2.jpg" srcset="img/projects-page/2@2x.jpg 2x" width="469" height="651" alt="">
             </div>
@@ -639,7 +648,7 @@
               </div>
             </div>
           </li>
-          <li class="projects-page__item preview-card">
+          <li class="projects-page__item preview-card __js_3">
             <div class="preview-card__image">
               <img src="img/projects-page/3.jpg" srcset="img/projects-page/3@2x.jpg 2x" width="469" height="651" alt="">
             </div>
@@ -659,7 +668,7 @@
               </div>
             </div>
           </li>
-          <li class="projects-page__item preview-card">
+          <li class="projects-page__item preview-card __js_4">
             <div class="preview-card__image">
               <img src="img/projects-page/4.jpg" srcset="img/projects-page/4@2x.jpg 2x" width="469" height="651" alt="">
             </div>
@@ -679,7 +688,7 @@
               </div>
             </div>
           </li>
-          <li class="projects-page__item preview-card">
+          <li class="projects-page__item preview-card __js_5">
             <div class="preview-card__image">
               <img src="img/projects-page/5.jpg" srcset="img/projects-page/5@2x.jpg 2x" width="469" height="651" alt="">
             </div>
@@ -699,7 +708,7 @@
               </div>
             </div>
           </li>
-          <li class="projects-page__item preview-card">
+          <li class="projects-page__item preview-card __js_6">
             <div class="preview-card__image">
               <img src="img/projects-page/6.jpg" srcset="img/projects-page/6@2x.jpg 2x" width="469" height="651" alt="">
             </div>
@@ -719,7 +728,7 @@
               </div>
             </div>
           </li>
-          <li class="projects-page__item preview-card">
+          <li class="projects-page__item preview-card __js_7">
             <div class="preview-card__image">
               <img src="img/projects-page/7.jpg" srcset="img/projects-page/7@2x.jpg 2x" width="469" height="651" alt="">
             </div>
@@ -739,7 +748,7 @@
               </div>
             </div>
           </li>
-          <li class="projects-page__item preview-card">
+          <li class="projects-page__item preview-card __js_8">
             <div class="preview-card__image">
               <img src="img/projects-page/8.jpg" srcset="img/projects-page/8@2x.jpg 2x" width="469" height="651" alt="">
             </div>
@@ -1010,7 +1019,7 @@
     <div class="popup__title">Thanks!</div>
   </section>
   <script src="js/jquery-3.5.1.min.js"></script>
-  <script src="js/jquery.fancybox.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/jquery.pagepiling.js"></script>
   <script src="js/isotope.pkgd.min.js"></script>
   <script src="js/packery-mode.pkgd.min.js"></script>

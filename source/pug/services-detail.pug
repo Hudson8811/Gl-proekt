@@ -108,8 +108,14 @@ block content
 				.version-type__item Холодное исполнение
 				.version-type__item
 					| Теплое исполнение
-					button.version-type__btn(type="button")
-						span.visually-hidden Показать подробнее
+					.version-type__item-info
+						button.version-type__btn.__js_show-bubble(type="button", data-target="#bubble-1")
+							span.visually-hidden Показать подробнее
+						.version-type__bubble.bubble#bubble-1
+							button.bubble__close(type="button")
+								+icon('close')(width="20", height="20")
+							.bubble__title Классическое остекление
+							.bubble__text Пояснительный текст при ховере - пара строк. Пояснительный текст...
 			include modules/lines
 
 	include modules/application-section

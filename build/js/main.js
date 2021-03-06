@@ -214,12 +214,38 @@ function setOverlay(cb) {
 /* accordion */
 (function () {
 	var btn = $('.__js_accordion-btn');
+	var activeClass = 'accordion__item--active';
 
 	btn.on('click', function() {
 		var parent = $(this).parent();
-		parent.siblings().find('.accordion__item-text').slideUp(DURATION);
-		$(this).next().slideDown(DURATION);
+
+		if (parent.hasClass(activeClass)) {
+			$(this).next().slideUp(DURATION);
+			parent.removeClass(activeClass);
+		} else {
+			parent.addClass(activeClass).siblings().removeClass(activeClass).find('.accordion__item-text').slideUp(DURATION);
+			$(this).next().slideDown(DURATION);
+		}
+
 	});
+})();
+
+/* show bubble */
+(function() {
+	var showBubbleBtn = $('.__js_show-bubble');
+	var bubbleClass = 'bubble--active';
+
+	showBubbleBtn.on('click', function(evt) {
+		evt.stopPropagation();
+		var target = $(this).attr('data-target');
+
+		$(target).fadeIn(DURATION).addClass(bubbleClass);
+
+		body.one('click', function() {
+			$(target).fadeOut(DURATION);
+		});
+	});
+
 })();
 
 /* Modal */
@@ -228,16 +254,8 @@ function setOverlay(cb) {
 		$(".fancybox").fancybox();
 
 		$(".__js_service-modal").fancybox({
-			maxWidth: 848,
-			maxHeight: 600,
-			padding: 0,
-			//fitToView: false,
-			width	: '90%',
-			height: '90%',
-			//autoSize: false,
-			//closeClick: false,
-			closeBtn: false,
-			modal: true
+			smallBtn: false,
+			toolbar: false
 
 		});
 
@@ -721,7 +739,9 @@ $(window).scroll(function(event) {
 		}
 	}
 	$('.office-staf [data-fancybox]').fancybox({
-		modal: true
+		//modal: true
+		toolbar: false,
+		smallBtn: false
 	});
 })();
 
@@ -806,6 +826,10 @@ $(window).scroll(function(event) {
 	}
 })();
 
+(function () {
+
+})();
+
 /* Packery init */
 (function(){
 	var select = $('.__js_filter-select');
@@ -818,6 +842,13 @@ $(window).scroll(function(event) {
 		layoutMode: 'packery',
 		packery: {
 			gutter: 0
+		},
+	});
+	var projectsFilter = $('.__js_projects-filter').isotope({
+		itemSelector: '.projects-page__item',
+		layoutMode: 'packery',
+		packery: {
+			gutter: 10
 		},
 	});
 

@@ -15,7 +15,7 @@
 			padding: 32px 90px 32px 32px;
 		}
 
-		&::before {
+		/*&::before {
 			content: "";
 			position: absolute;
 			top: 40px;
@@ -28,7 +28,7 @@
 			@include media(sm) {
 				right: 44px;
 			}
-		}
+		}*/
 
 		&:nth-child(even) {
 			background-color: $color-smoky2;
@@ -51,6 +51,21 @@
 			cursor: pointer;
 
 			@include transition(color);
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 40px;
+				right: 15px;
+				width: 29px;
+				height: 15px;
+				background-repeat: no-repeat;
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='29' height='15' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M28 .5L14.5 14 1 .5' stroke='%23000'/%3e%3c/svg%3e");
+
+				@include media(sm) {
+					right: 44px;
+				}
+			}
 
 			@include hover {
 				color: $color-blue;

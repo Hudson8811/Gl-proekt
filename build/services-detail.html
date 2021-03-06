@@ -676,9 +676,20 @@
         <section class="services-page__version version-type">
           <div class="version-type__item">Холодное исполнение</div>
           <div class="version-type__item">Теплое исполнение
-            <button class="version-type__btn" type="button">
-              <span class="visually-hidden">Показать подробнее</span>
-            </button>
+            <div class="version-type__item-info">
+              <button class="version-type__btn __js_show-bubble" type="button" data-target="#bubble-1">
+                <span class="visually-hidden">Показать подробнее</span>
+              </button>
+              <div class="version-type__bubble bubble" id="bubble-1">
+                <button class="bubble__close" type="button">
+                  <svg width="20" height="20">
+                    <use xlink:href="#close"></use>
+                  </svg>
+                </button>
+                <div class="bubble__title">Классическое остекление</div>
+                <div class="bubble__text">Пояснительный текст при ховере - пара строк. Пояснительный текст...</div>
+              </div>
+            </div>
           </div>
         </section>
         <div class="lines">
@@ -1178,7 +1189,7 @@
         <h2 class="faq__heading heading heading--large">Популярные вопросы</h2>
         <div class="faq__accordion accordion">
           <ul class="accordion__list">
-            <li class="accordion__item">
+            <li class="accordion__item accordion__item--active">
               <button class="accordion__item-btn __js_accordion-btn" type="button">Какой срок службы вентилируемого фасада?</button>
               <div class="accordion__item-text" style="display: block;">Изготовление светопрозрачных конструкций всех типов: типовые ЖК, бизнес центры, торговые центры</div>
             </li>
@@ -1612,7 +1623,7 @@
     <div class="popup__title">Thanks!</div>
   </section>
   <script src="js/jquery-3.5.1.min.js"></script>
-  <script src="js/jquery.fancybox.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/jquery.pagepiling.js"></script>
   <script src="js/isotope.pkgd.min.js"></script>
   <script src="js/packery-mode.pkgd.min.js"></script>

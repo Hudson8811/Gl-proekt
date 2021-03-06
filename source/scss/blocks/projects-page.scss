@@ -13,6 +13,10 @@
 		margin: 0 0 32px;
 	}
 
+	&__filter {
+		margin-bottom: 16px;
+	}
+
 	&__search {
 		margin-bottom: 32px;
 	}
@@ -49,6 +53,11 @@
 
 			.preview-card__image {
 				padding-top: 0;
+
+				&::before,
+				&::after {
+					margin-top: 0;
+				}
 			}
 		}
 	}
