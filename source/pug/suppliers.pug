@@ -1,0 +1,38 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | О компании';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 2.01; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	article.suppliers
+		.suppliers__inner.container
+			h1.suppliers__heading.heading.heading--large Поставщики
+
+			each item, index in SUPPLIERS_SECTION_HEADINGS
+				section.suppliers__section(id="suppliers-" + index)
+					header.suppliers__section-header
+						h2.suppliers__section-heading= item
+						.suppliers__nav.swiper-nav
+							button.slider__btn.slider__btn--prev.suppliers-prev
+								+icon("chevron")(width="16", height="30")
+							.suppliers__paginate
+							button.slider__btn.slider__btn--next.suppliers-next
+								+icon("chevron")(width="16", height="30")
+
+					.suppliers__section-carousel.swiper-container.__js_suppliers-carousel
+						.swiper-wrapper
+							each num in ['1', '2', '9', '7', '3', '5', '8']
+								.suppliers__slide.swiper-slide
+									img(src="img/suppliers/" + num + ".png", srcset="img/suppliers/" + num + "@2x.png 2x", width="226", height="107", alt="")
+
+			include modules/lines
+
+	include modules/services
+
+block footer
+	include modules/footer
