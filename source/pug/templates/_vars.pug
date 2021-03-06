@@ -23,7 +23,8 @@
 		servicesDetail: 'services-detail.html',
 		servicesHide: 'service-hide.html',
 		facadeGlazing: '#',
-		projects: '#',
+		projects: 'projects.html',
+		projectDetail: 'project-detail.html',
 		materials: 'materials.html',
 		materialsGroup: 'materials-group.html',
 		suppliers: 'suppliers.html',
@@ -57,7 +58,14 @@
 				]
 			}
 		]},
-		{text: 'Проекты', url: URLS.projects, currentPage: 4.01, currentSection: 4, submenu: null},
+		{text: 'Проекты', url: URLS.projects, currentPage: 4.01, currentSection: 4, submenu: [
+			{
+				main: null,
+				list: [
+					{text: 'Проект детально', url: URLS.projectDetail, currentPage: 4.02, currentSection: 4}
+				]
+			}
+		]},
 		{text: 'Материалы', url: URLS.materials, currentPage: 5.01, currentSection: 5, submenu: [
 			{
 				main: null,
@@ -263,6 +271,20 @@
 		'Поставщики подсистем навесного вентилируемого фасада',
 		'Поставщики автоматики',
 		'Поставщики расходных материалов'
+	];
+
+	let ADVANCED_SEARCH_FIELDS = [
+		'Остекление фасадов',
+		'Внешнее остекление',
+		'Внутреннее остекление',
+		'Входные группы',
+		'Навесные вентилируемые фасады',
+		'Остекление крыши',
+		'Конструкции из ПВХ профиля',
+		'Козырьки и навесы',
+		'Автоматизированные системы',
+		'Эксклюзивные изделия из стекла',
+		'Изделия из нержавеющей стали'
 	];
 
 

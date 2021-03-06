@@ -1,0 +1,44 @@
+.advanced-search {
+	padding: 42px 16px;
+	background-color: rgba($color-pale-sky, 0.04);
+
+	&__heading {
+		margin: 0 0 32px;
+
+		@include text(18px, 1.27, $color-dark);
+		font-weight: 700;
+		letter-spacing: -0.07em;
+
+		@include media(xl) {
+			font-size: 22px;
+		}
+	}
+
+	&__list {
+		@include list-reset;
+
+		@include media(sm) {
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: -16px;
+			margin-left: -24px;
+		}
+	}
+
+	&__item {
+		margin-top: 16px;
+
+		@include media(sm) {
+			width: calc(50% - 24px);
+			margin-left: 24px;
+		}
+
+		@include media(md) {
+			width: calc(33.33% - 24px);
+		}
+
+		@include media(lg) {
+			width: calc(25% - 24px);
+		}
+	}
+}

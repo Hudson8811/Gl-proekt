@@ -45,7 +45,7 @@
 
 		&::before,
 		&::after {
-			content: '';
+			content: "";
 			display: block;
 			margin-top: 50px;
 			position: absolute;
@@ -58,12 +58,20 @@
 		}
 
 		&::before {
-			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.16) 100%);
+			background: linear-gradient(
+				180deg,
+				rgba(0, 0, 0, 0) 0%,
+				rgba(0, 0, 0, 0.16) 100%
+			);
 		}
 
 		&::after {
 			opacity: 0;
-			background: linear-gradient(180deg, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0.72) 100%);
+			background: linear-gradient(
+				180deg,
+				rgba(0, 0, 0, 0.54) 0%,
+				rgba(0, 0, 0, 0.72) 100%
+			);
 			@include transition(opacity);
 		}
 
