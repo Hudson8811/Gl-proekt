@@ -6,8 +6,8 @@
 	width: 100%;
 	cursor: text;
 
-	input[type='text'],
-	input[type='email'],
+	input[type="text"],
+	input[type="email"],
 	textarea,
 	.select,
 	.chosen-container {
@@ -90,7 +90,7 @@
 
 				b {
 					background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='23' viewBox='0 0 15 29' stroke-width='3px' stroke='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.5 1L14 14.5L0.5 28' fill='none'/%3e%3c/svg%3e ")
-					no-repeat center;
+						no-repeat center;
 					transform: rotate(90deg);
 				}
 			}
@@ -127,7 +127,7 @@
 		width: auto;
 		cursor: pointer;
 
-		input[type='radio'] {
+		input[type="radio"] {
 			display: none;
 
 			&:checked + .inner {
@@ -155,7 +155,7 @@
 			}
 
 			&::after {
-				content: '';
+				content: "";
 				display: block;
 				width: 8px;
 				height: 8px;
@@ -190,7 +190,7 @@
 			}
 		}
 
-		input[type='checkbox'] {
+		input[type="checkbox"] {
 			display: none;
 
 			&:checked + .inner {
@@ -214,7 +214,7 @@
 			@include transition(background-color);
 
 			&::after {
-				content: '';
+				content: "";
 				display: block;
 				width: 20px;
 				height: 20px;
@@ -223,6 +223,51 @@
 				box-shadow: 0 0 1px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.23);
 				transform: translateX(-3px);
 				@include transition(all);
+			}
+		}
+	}
+
+	&--checkbox {
+		label {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			padding-left: 26px;
+			line-height: 1.428;
+			font-family: $font-family--secondary;
+			cursor: pointer;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 18px;
+				height: 18px;
+				border: solid 1px $color-gray-e5;
+				background-color: $color-gray-e5;
+
+				@include transition(border-color);
+			}
+		}
+
+		input:focus + label,
+		&:hover label {
+			&::before {
+				border-color: darken($color-gray-e5, 20%);
+			}
+		}
+
+		input:checked + label {
+			&::after {
+				content: "";
+				position: absolute;
+				top: 4px;
+				left: 3px;
+				width: 12px;
+				height: 10px;
+				background-repeat: no-repeat;
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4.512 9.5a.548.548 0 01-.403.18.548.548 0 01-.403-.18L.489 6.024a.976.976 0 010-1.305l.403-.435a.81.81 0 011.208 0l2.009 2.17L9.536.59a.81.81 0 011.209 0l.403.435a.976.976 0 010 1.305L4.512 9.5z' fill='%2301A5E4'/%3e%3c/svg%3e");
 			}
 		}
 	}

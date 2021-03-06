@@ -1,0 +1,51 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Проекты';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 4.01; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 4; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	article.projects-page
+		.projects-page__inner.container
+			h1.projects-page__heading.heading.heading--large Проекты
+
+			.projects-page__filter.filter
+				each val, key in { 1: 'Все проекты', 2: 'Бизнес-центры', 3: 'Торгово-развлекательные центры', 4: 'Жилые комплексы', 5: 'Коттеджные поселки', 6: 'Гос. объекты', 7: 'Промышленные объекты', 8: 'Общественные пространства'}
+					- let filterVal = val === 'Все проекты' ? '*' : '.__js_' + key;
+					- let activeClass = val === 'Все проекты' ? ' filter__item--active' : '';
+					button(class="filter__item" + activeClass, type="button", data-filter= filterVal)= val
+
+			section.projects-page__search.advanced-search
+				h2.advanced-search__heading Расширенный поиск
+
+				ul.advanced-search__list
+					each text, index in ADVANCED_SEARCH_FIELDS
+						li.advanced-search__item
+							.field.field--checkbox
+								input.visually-hidden(id="checkbox-" + index, type="checkbox", name="checkbox-" + index, checked)
+								label(for="checkbox-" + index)= text
+
+			ul.projects-page__list.__js_projects-filter
+				each num in ['1', '2', '3', '4', '5', '6', '7', '8']
+					li.projects-page__item.preview-card(class="__js_" + num)
+						.preview-card__image
+							//-.preview-card__bg-digit 01
+							img(src='img/projects-page/' + num + '.jpg', srcset='img/projects-page/' + num + '@2x.jpg 2x', width='469', height='651', alt='')
+						.preview-card__content
+							.preview-card__bottom
+								.preview-card__digit 01
+								.preview-card__bottom-wrapper
+									.preview-card__title Внутреннее <br> остекление
+									a.preview-card__link(href= URLS.projectDetail, target='_blank')
+										+icon('arrow-down')
+
+
+			include modules/lines
+
+	include modules/services
+block footer
+	include modules/footer

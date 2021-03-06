@@ -1,9 +1,10 @@
 .version-type {
 	counter-reset: version;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
-	background-color: $color-default-white;
-	padding-bottom: 2px;
+	background-color: rgba($color-pale-sky, 0.08);
+	border-bottom: solid 2px $color-default-white;
 
 	@include media(lg) {
 		padding-bottom: 0;
@@ -11,16 +12,13 @@
 
 	&__item {
 		position: relative;
-
 		width: calc(50% - 1px);
-
 		padding: 32px 24px 24px;
 		counter-increment: version;
 
 		@include text(13px, 1.27);
 		font-weight: 900;
 		letter-spacing: -0.07em;
-		background-color: rgba($color-pale-sky, 0.08);
 
 		@include media(lg) {
 			width: 50%;
@@ -42,12 +40,15 @@
 				margin-bottom: 24px;
 			}
 		}
+
+		&-info {
+			position: absolute;
+			top: 32px;
+			right: 24px;
+		}
 	}
 
 	&__btn {
-		position: absolute;
-		top: 32px;
-		right: 24px;
 		display: block;
 		width: 35px;
 		height: 35px;
@@ -64,5 +65,12 @@
 		@include media(lg) {
 			top: 42px;
 		}
+	}
+
+	&__bubble {
+		position: absolute;
+		left: -32px;
+		top: 50%;
+		transform: translateX(-100%) translateY(-50%);
 	}
 }

@@ -2,6 +2,11 @@
 	position: relative;
 	padding-top: 116px;
 
+	@include media(md) {
+		position: sticky;
+		top: 100px;
+	}
+
 	@include media(lg) {
 		padding-top: 188px;
 	}

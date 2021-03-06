@@ -4,29 +4,29 @@
 	&__item {
 		$item: &;
 
-		display: flex;
-		//padding-top: 24px;
-		//padding-bottom: 18px;
+		&-inner {
+			display: flex;
 
-		@include transition(background-color);
+			@include transition(background-color);
 
-		@include hover {
-			background-color: $color-pale-sky;
-
-			#{$item}-title {
-				color: $color-default-white;
+			&:focus {
+				outline: none;
 			}
-			#{$item}-text {
-				opacity: 1;
-				color: $color-default-white;
-			}
-			#{$item}-btn {
-				opacity: 1;
-			}
-		}
 
-		&:active {
-			opacity: 1;
+			&:hover {
+				background-color: $color-pale-sky;
+
+				#{$item}-title {
+					color: $color-default-white;
+				}
+				#{$item}-text {
+					opacity: 1;
+					color: $color-default-white;
+				}
+				#{$item}-btn {
+					opacity: 1;
+				}
+			}
 		}
 
 		@include media(lg) {

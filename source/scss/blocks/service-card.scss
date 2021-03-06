@@ -30,6 +30,12 @@
 	}
 
 	&--reverse {
+		a {
+			&::before {
+				right: auto;
+				left: 0;
+			}
+		}
 		#{$self}__image {
 			margin-right: -30px;
 			margin-left: auto;
