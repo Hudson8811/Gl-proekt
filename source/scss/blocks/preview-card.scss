@@ -9,6 +9,7 @@
 	margin-bottom: 10px;
 	box-sizing: border-box;
 	position: relative;
+	overflow: hidden;
 
 	@include media(lg) {
 		padding: 36px 33px 36px 26px;
@@ -104,6 +105,7 @@
 
 	&__tags {
 		display: flex;
+		flex-wrap: wrap;
 	}
 
 	&__tag,
@@ -111,21 +113,18 @@
 		padding: 2px 6px;
 		font-family: $font-family--secondary;
 		font-size: 11px;
+		margin-bottom: 3px;
 
 		@include media(lg) {
 			font-size: 18px;
 			padding: 3px 10px;
+			margin-bottom: 7px;
 		}
 	}
 
 	&__tag {
 		background-color: $color-blue;
 		color: $color-default-white;
-		margin-bottom: 3px;
-
-		@include media(lg) {
-			margin-bottom: 7px;
-		}
 
 		&:not(:last-child) {
 			margin-right: 8.5px;
@@ -170,6 +169,16 @@
 			font-size: 22px;
 			line-height: 28px;
 		}
+	}
+
+	&__text {
+		max-width: 88%;
+		margin-top: 16px;
+		font-size: 14px;
+		line-height: 22px;
+		color: $color-default-white;
+		max-height: 86px;
+		overflow: hidden;
 	}
 
 	&__link {

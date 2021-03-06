@@ -1,0 +1,133 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | News';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 7.01; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 7; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+
+block header
+	include modules/header
+
+block content
+	.news-page
+		.news-page__container.container
+			.news-page__lines.lines
+				.line
+				.line
+				.line
+				.line
+				.line
+			h1.news-page__title.page-title Новости
+
+			// Filter
+			.news-page__filter.filter.news-page__filter
+				each val, key in { 1: 'Все', 2: 'Проекты', 3: 'Выступления', 4: 'Выставки', 5: 'Пресс-релизы', 6: 'СМИ', 7: 'Экспертное мнение'}
+					- let filterVal = val === 'Все' ? '*' : '.__js_' + key;
+					- let activeClass = val === 'Все' ? ' filter__item--active' : '';
+					button(class="filter__item" + activeClass, type="button", data-filter= filterVal)= val
+			.news-page__grid.__js_news-filter
+				.news-page__item.preview-card.preview-card--with-tags.__js_3.__js_7
+					.preview-card__image
+						img(src='img/news/item-4.jpg', srcset='img/news/item-4@2x.jpg', width='958', height='490', alt='')
+					.preview-card__content
+						.preview-card__top
+							.preview-card__tags
+								.preview-card__tag # Выступления
+								.preview-card__tag # Экспертное мнение
+								.preview-card__date 31.03.2017
+						.preview-card__bottom
+							.preview-card__digit 01
+							.preview-card__title Строительство нуждается в <br> стандартизации применения алюминия
+							.preview-card__bottom-wrapper
+								.preview-card__text Алюминиевая Ассоциация выступила с инициативой стандартизации нормативных документов, регулирующих вопросы применения
+																	|  алюминия и алюминиевых сплавов в строительстве, сообщает metalinfo.ru. Для выполнения этой задачи будут созданы
+																	|  экспертные рабочие группы под руководством профильных компаний.
+								a.preview-card__link(href='#', target='_blank')
+									+icon('arrow-down')(width="12", height="25")
+				.news-page__item.news-page__item--w50.preview-card.preview-card--with-tags.__js_3.__js_7
+					.preview-card__image
+						img(src='img/news/item-5.jpg', srcset='img/news/item-5@2x.jpg', width='635', height='423', alt='')
+					.preview-card__content
+						.preview-card__top
+							.preview-card__tags
+								.preview-card__tag # Выступления
+								.preview-card__tag # Экспертное мнение
+								.preview-card__date 31.03.2017
+						.preview-card__bottom
+							.preview-card__digit 02
+							.preview-card__bottom-wrapper
+								.preview-card__title Строительство нуждается в <br> стандартизации применения
+								a.preview-card__link(href='#', target='_blank')
+									+icon('arrow-down')(width="12", height="25")
+				.news-page__item.news-page__item--w50.preview-card.preview-card--with-tags.__js_3.__js_7
+					.preview-card__image
+						img(src='img/news/item-6.jpg', srcset='img/news/item-6@2x.jpg', width='423', height='634', alt='')
+					.preview-card__content
+						.preview-card__top
+							.preview-card__tags
+								.preview-card__tag # Выступления
+								.preview-card__tag # Экспертное мнение
+								.preview-card__date 31.03.2017
+						.preview-card__bottom
+							.preview-card__digit 03
+							.preview-card__bottom-wrapper
+								.preview-card__title Строительство нуждается в <br> стандартизации применения
+								a.preview-card__link(href='#', target='_blank')
+									+icon('arrow-down')(width="12", height="25")
+				.news-page__item.preview-card.preview-card--with-tags.__js_3.__js_7
+					.preview-card__image
+						img(src='img/news/item-7.jpg', srcset='img/news/item-7@2x.jpg', width='958', height='638', alt='')
+					.preview-card__content
+						.preview-card__top
+							.preview-card__tags
+								.preview-card__tag # Выступления
+								.preview-card__tag # Экспертное мнение
+								.preview-card__date 31.03.2017
+						.preview-card__bottom
+							.preview-card__digit 04
+							.preview-card__title Строительство нуждается в <br> стандартизации применения алюминия
+							.preview-card__bottom-wrapper
+								.preview-card__text Алюминиевая Ассоциация выступила с инициативой стандартизации нормативных документов, регулирующих вопросы применения
+									|  алюминия и алюминиевых сплавов в строительстве, сообщает metalinfo.ru. Для выполнения этой задачи будут созданы
+									|  экспертные рабочие группы под руководством профильных компаний.
+								a.preview-card__link(href='#', target='_blank')
+									+icon('arrow-down')(width="12", height="25")
+				.news-page__item.news-page__item--w50.preview-card.preview-card--with-tags.__js_3.__js_7
+					.preview-card__image
+						img(src='img/news/item-8.jpg', srcset='img/news/item-8@2x.jpg', width='423', height='634', alt='')
+					.preview-card__content
+						.preview-card__top
+							.preview-card__tags
+								.preview-card__tag # Выступления
+								.preview-card__tag # Экспертное мнение
+								.preview-card__date 31.03.2017
+						.preview-card__bottom
+							.preview-card__digit 05
+							.preview-card__bottom-wrapper
+								.preview-card__title Строительство нуждается в <br> стандартизации применения
+								a.preview-card__link(href='#', target='_blank')
+									+icon('arrow-down')(width="12", height="25")
+				.news-page__item.news-page__item--w50.preview-card.preview-card--with-tags.__js_3.__js_7
+					.preview-card__image
+						img(src='img/news/item-9.jpg', srcset='img/news/item-9@2x.jpg', width='423', height='634', alt='')
+					.preview-card__content
+						.preview-card__top
+							.preview-card__tags
+								.preview-card__tag # Выступления
+								.preview-card__tag # Экспертное мнение
+								.preview-card__date 31.03.2017
+						.preview-card__bottom
+							.preview-card__digit 06
+							.preview-card__bottom-wrapper
+								.preview-card__title Строительство нуждается в <br> стандартизации применения
+								a.preview-card__link(href='#', target='_blank')
+									+icon('arrow-down')(width="12", height="25")
+
+		include modules/services
+
+
+block footer
+	include modules/footer
+
+

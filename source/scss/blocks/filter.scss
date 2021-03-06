@@ -1,0 +1,32 @@
+.filter {
+	$self: &;
+
+	position: relative;
+
+	&__item {
+		padding: 4px 10px;
+		background-color: $color-default-white;
+		font-family: $font-family--secondary;
+		font-size: 18px;
+		line-height: 26px;
+		color: $color-dark2;
+		border: none;
+		cursor: pointer;
+		margin-bottom: 5px;
+		@include transition(all);
+
+		@include hover {
+			background-color: $color-blue;
+			color: $color-default-white;
+		}
+
+		&:not(:last-child) {
+			margin-right: 1px;
+		}
+
+		&--active {
+			background-color: $color-blue;
+			color: $color-default-white;
+		}
+	}
+}
