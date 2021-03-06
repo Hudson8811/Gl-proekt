@@ -1,0 +1,68 @@
+.suppliers {
+	&__inner {
+		position: relative;
+		padding-top: 50px;
+		padding-bottom: 50px;
+
+		@include media(lg) {
+			padding-bottom: 93px;
+		}
+	}
+
+	&__heading {
+		margin: 0 0 32px;
+
+		@include media(xl) {
+			margin-bottom: 51px;
+		}
+	}
+
+	&__section {
+		margin-bottom: 20px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&-header {
+			margin-bottom: 32px;
+
+			@include media(md) {
+				display: flex;
+				justify-content: space-between;
+
+				& > * {
+					align-self: center;
+				}
+			}
+		}
+
+		&-heading {
+			margin-bottom: 16px;
+
+			@include text(18px, 1.27);
+			font-weight: 700;
+			letter-spacing: -0.07em;
+
+			@include media(md) {
+				margin-bottom: 0;
+			}
+
+			@include media(xl) {
+				font-size: 22px;
+			}
+		}
+	}
+
+	&__nav {
+		@include media(md) {
+			margin-left: 20px;
+		}
+	}
+
+	.lines {
+		.line {
+			background-color: rgba($color-dark2, 0.16);
+		}
+	}
+}

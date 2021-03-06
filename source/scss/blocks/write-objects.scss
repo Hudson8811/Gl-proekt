@@ -6,12 +6,12 @@
 
 		@include media(lg) {
 			padding-top: 157px;
-			padding-bottom: 180px;
+			padding-bottom: 184px;
 		}
 	}
 
 	&__heading {
-		margin: 0 0 32px;
+		margin: 0 0 40px;
 
 		@include text(22px, 1.27);
 		font-weight: 700;
