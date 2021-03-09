@@ -61,11 +61,9 @@ function getScrollbarWidth() {
 	});
 
 	menuOpenBtn.on('click', function() {
-		body.addClass('webpage--hidden').css('margin-right', getScrollbarWidth() + 'px');
+		body.addClass('webpage--hidden');
 		menu.fadeIn(DURATION);
 		menuCloseBtn.on('click', closeMenu);
-		$('.header').addClass('hidden');
-		$('.header').removeClass('active');
 	});
 
 	dropdownLink.on('click', function(evt) {
@@ -121,7 +119,7 @@ function getScrollbarWidth() {
 	});
 
 	function closeMenu() {
-		body.removeClass('webpage--hidden').css('margin-right', 0);
+		body.removeClass('webpage--hidden');
 		menu.fadeOut(DURATION);
 		menuCloseBtn.off('click', closeMenu);
 		$('.dropdown').fadeOut(DURATION);

@@ -7621,6 +7621,11 @@ p {
 
 .webpage {
   background-color: #fafafa;
+  transition: margin-right 0.3s ease;
+}
+
+.webpage--hidden {
+  overflow: hidden !important;
 }
 
 body.blocked {
