@@ -1,4 +1,4 @@
-form.form(action='', method='POST')
+form.form(action='#', method='POST')
 	.form__wrapper
 		.form__types
 			.form__type
@@ -43,21 +43,21 @@ form.form(action='', method='POST')
 		.form__radio-group
 			label.field.field--radio
 				input(type='radio', name='customer', checked)
-				.inner
+				span.inner
 				span Ген. подрядчик
 			label.field.field--radio
 				input(type='radio', name='customer')
-				.inner
+				span.inner
 				span Подрядчик (тендер)
 			label.field.field--radio
 				input(type='radio', name='customer')
-				.inner
+				span.inner
 				span Собственник объекта
 		.form__switch
 			label.field.field--switch
 				span Объект под ключ
 				input(type='checkbox', name='object')
-				.inner
+				span.inner
 	.form__nav
 		label.form__nav-btn.form__nav-btn--file
 			input(type='file', name='file')
