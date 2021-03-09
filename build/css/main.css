@@ -1658,6 +1658,7 @@ p {
   bottom: 0;
   min-height: 540px;
   background-color: #1e2e34;
+  box-shadow: 0 200px 0 0 #1e2e34;
   display: none;
   z-index: 100000;
 }
