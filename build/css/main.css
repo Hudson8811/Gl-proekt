@@ -1952,6 +1952,7 @@ p {
 
 .service-modal {
   position: relative;
+  width: 100%;
   max-width: 848px;
   background-color: #ffffff;
 }
@@ -2024,6 +2025,13 @@ p {
   color: #000000;
 }
 
+.service-modal__image img {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
 .service-modal__list {
   list-style: none;
   padding: 0;
@@ -2033,7 +2041,7 @@ p {
 
 .bubble {
   position: relative;
-  width: 84.54vw;
+  width: 80vw;
   max-width: 396px;
   min-width: 290px;
   padding: 32px 48px 32px 32px;
@@ -3040,6 +3048,15 @@ p {
     -ms-flex-direction: row !important;
         flex-direction: row !important;
   }
+}
+
+.advantages--simple .swiper-pagination-bullet-active {
+  background-color: #01a5e4 !important;
+}
+
+.advantages--simple .advantages-prev:focus svg,
+.advantages--simple .advantages-next:focus svg {
+  stroke: #172328 !important;
 }
 
 .advantages--simple .lines .line {
@@ -4989,10 +5006,16 @@ p {
 
 .version-type__bubble {
   position: absolute;
-  left: -32px;
+  left: -12px;
   top: 50%;
   -ms-transform: translateX(-100%) translateY(-50%);
       transform: translateX(-100%) translateY(-50%);
+}
+
+@media (min-width: 576px) {
+  .version-type__bubble {
+    left: -32px;
+  }
 }
 
 .application-example__image img {
@@ -5336,6 +5359,10 @@ p {
 				right: 44px;
 			}
 		}*/
+}
+
+.accordion__item--hide {
+  display: none;
 }
 
 @media (min-width: 576px) {
@@ -7621,7 +7648,6 @@ p {
 
 .webpage {
   background-color: #fafafa;
-  transition: margin-right 0.3s ease;
 }
 
 .webpage--hidden {
@@ -8943,11 +8969,11 @@ body.blocked {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  background: #01A5E4;
+  background: #01a5e4;
   text-decoration: none;
   font-size: 12px;
   line-height: 22px;
-  color: #FFFFFF;
+  color: #ffffff;
   transition: background-color 0.3s ease;
   font-weight: 500;
   font-family: "Roboto", "Open Sans", sans-serif;
@@ -8987,7 +9013,7 @@ body.blocked {
   width: 100%;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 100px;
 }
 
 .certificates__container {

@@ -5,8 +5,6 @@
 	&--hidden {
 		overflow: hidden !important;
 	}
-
-	@include transition(margin-right);
 }
 
 body.blocked {

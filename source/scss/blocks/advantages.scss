@@ -75,6 +75,17 @@
 			}
 		}
 
+		.swiper-pagination-bullet-active {
+			background-color: $color-blue !important;
+		}
+
+		.advantages-prev,
+		.advantages-next {
+			&:focus svg {
+				stroke: $color-dark2 !important;
+			}
+		}
+
 		.lines {
 			.line {
 				background-color: rgba($color-dark2, 0.16);
