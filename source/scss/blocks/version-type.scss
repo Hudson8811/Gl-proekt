@@ -69,8 +69,12 @@
 
 	&__bubble {
 		position: absolute;
-		left: -32px;
+		left: -12px;
 		top: 50%;
 		transform: translateX(-100%) translateY(-50%);
+
+		@include media(sm) {
+			left: -32px;
+		}
 	}
 }

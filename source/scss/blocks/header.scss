@@ -4,6 +4,7 @@
 	width: 100%;
 	left: 0;
 	z-index: 101;
+
 	$self: &;
 	padding: 26px 0 25px;
 	background: #fafafa;
@@ -13,7 +14,7 @@
 		top: 0;
 		transition: top 0.3s linear;
 	}
-	&.hidden{
+	&.hidden {
 		top: -200px;
 		position: fixed;
 	}
@@ -28,6 +29,7 @@
 		position: fixed;
 		top: 0;
 		left: 0;
+		z-index: 100;
 		width: 100%;
 		background-color: $color-athens-gray;
 		transform: translateY(100%);

@@ -1,5 +1,6 @@
 .service-modal {
 	position: relative;
+	width: 100%;
 	max-width: 848px;
 	background-color: $color-default-white;
 
@@ -55,6 +56,15 @@
 		margin-bottom: 44px;
 		font-family: $font-family--secondary;
 		@include text(14px, 1.428);
+	}
+
+	&__image {
+		img {
+			display: inline-block;
+			vertical-align: top;
+			max-width: 100%;
+			height: auto;
+		}
 	}
 
 	&__list {

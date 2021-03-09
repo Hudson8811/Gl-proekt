@@ -143,7 +143,8 @@ gulp.task('copy', function() {
   return gulp.src([
     'source/fonts/**/*.{woff,woff2}',
     'source/js/**',
-    'source/video/**'
+    'source/video/**',
+    'source/download/**'
     ],{
       base: 'source'
     })
