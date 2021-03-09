@@ -1951,6 +1951,7 @@ p {
 
 .service-modal {
   position: relative;
+  width: 100%;
   max-width: 848px;
   background-color: #ffffff;
 }
@@ -2023,6 +2024,13 @@ p {
   color: #000000;
 }
 
+.service-modal__image img {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
 .service-modal__list {
   list-style: none;
   padding: 0;
@@ -2032,7 +2040,7 @@ p {
 
 .bubble {
   position: relative;
-  width: 84.54vw;
+  width: 80vw;
   max-width: 396px;
   min-width: 290px;
   padding: 32px 48px 32px 32px;
@@ -4988,10 +4996,16 @@ p {
 
 .version-type__bubble {
   position: absolute;
-  left: -32px;
+  left: -12px;
   top: 50%;
   -ms-transform: translateX(-100%) translateY(-50%);
       transform: translateX(-100%) translateY(-50%);
+}
+
+@media (min-width: 576px) {
+  .version-type__bubble {
+    left: -32px;
+  }
 }
 
 .application-example__image img {

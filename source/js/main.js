@@ -872,5 +872,6 @@ $(window).scroll(function(event) {
 
 		$(this).addClass(filterActiveClass).siblings().removeClass(filterActiveClass);
 		newsFilter.isotope({ filter: filterValue });
+		projectsFilter.isotope({ filter: filterValue });
 	});
 })();
