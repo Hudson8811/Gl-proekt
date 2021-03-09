@@ -1,6 +1,12 @@
 .webpage {
 	$self: &;
 	background-color: $color-athens-gray;
+
+	&--hidden {
+		overflow: hidden !important;
+	}
+
+	@include transition(margin-right);
 }
 
 body.blocked {
