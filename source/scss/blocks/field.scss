@@ -9,8 +9,7 @@
 	input[type="text"],
 	input[type="email"],
 	textarea,
-	.select,
-	.chosen-container {
+	.select {
 		display: block;
 		width: 100%;
 		padding: 26px 15px 26px 0;
@@ -39,86 +38,6 @@
 
 	textarea {
 		resize: none;
-	}
-
-	.chosen-container {
-		cursor: pointer;
-		padding: 0;
-
-		.chosen-drop {
-			width: 100%;
-			background-color: $color-dark2;
-			border-radius: 0;
-			border: none;
-
-			.chosen-results li {
-				padding: 10px;
-				border-bottom: 3px solid rgba($color-pale-sky, 0.12);
-				font-family: $font-family--secondary;
-				text-overflow: ellipsis;
-				color: $color-gray-bb;
-
-				@include media(lg) {
-					padding: 16px 25px 16px 57px;
-				}
-
-				&.no-results {
-					background: transparent;
-				}
-			}
-		}
-
-		&-single {
-			.chosen-search {
-				position: absolute;
-				top: -50px;
-				left: 50px;
-
-				input[type="text"] {
-					background: none;
-					border: none;
-				}
-			}
-
-			.chosen-single div {
-				width: 56px;
-				@include transition(transform);
-
-				&.rotate {
-					transform: rotate(180deg);
-				}
-
-				b {
-					background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='23' viewBox='0 0 15 29' stroke-width='3px' stroke='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.5 1L14 14.5L0.5 28' fill='none'/%3e%3c/svg%3e ")
-						no-repeat center;
-					transform: rotate(90deg);
-				}
-			}
-		}
-
-		&-active.chosen-with-drop {
-			background-color: $color-dark2;
-
-			.chosen-single {
-				border: none;
-				background: none;
-				box-shadow: none;
-			}
-		}
-	}
-
-	.chosen-single {
-		height: auto;
-		padding: 23px 15px 23px 0;
-		background: transparent;
-		border: none;
-		border-radius: 0;
-		color: $color-gray-bb;
-		box-shadow: none;
-
-		.current {
-			@include transition(color);
-		}
 	}
 
 	&--radio {

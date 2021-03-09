@@ -586,16 +586,37 @@ function setOverlay(cb) {
 
 	parent.find('.field--switch input').change(function () {
 		if ($(this).prop('checked')) {
-			parent.find('.form__field[data-disabled] .chosen-container').addClass('form__field--disabled');
+			parent.find('.form__field[data-disabled] .select2-selection--single').addClass('form__field--disabled');
+			$('.select2-selection__rendered').text('Услуга:');
+			$('#select_service').val(null);
 		} else {
-			parent.find('.form__field[data-disabled] .chosen-container').removeClass('form__field--disabled');
+			parent.find('.form__field[data-disabled] .select2-selection--single').removeClass('form__field--disabled');
 		}
 	});
 })();
 
 /* Select */
 (function(){
-	$('.select').chosen({
+	var scrollOpt = {
+		autohidemode: false,
+		horizrailenabled:false,
+		cursorcolor: "#01A5E4",
+		cursorborder: "1px solid #01A5E4",
+		cursorborderradius: "8px",
+		cursorwidth: "2px"
+	};
+
+	$('#select_service').select2({
+		dropdownPosition: 'below'
+	}).on('select2:open', function () {
+		$('.select2-results__options').niceScroll(scrollOpt);
+		$('.select2-selection__rendered').text('Услуга:');
+		$('.select2-selection__arrow b').addClass('rotate');
+	}).on('select2:close', function () {
+		$('.select2-selection__arrow b').removeClass('rotate');
+	});
+
+	/*$('.select').chosen({
 		width: '100%',
 		no_results_text: 'Совпадений не найдено',
 		placeholder_text_single: 'Услуга: ',
@@ -615,7 +636,7 @@ function setOverlay(cb) {
 		cursorwidth: "2px"
 	};
 
-	$('.chosen-results').niceScroll(scrollOpt);
+	$('.chosen-results').niceScroll(scrollOpt);*/
 })();
 
 /* Services accordion */

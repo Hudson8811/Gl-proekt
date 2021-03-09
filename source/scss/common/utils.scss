@@ -113,3 +113,109 @@
 		}
 	}
 }
+
+// Custom select
+.select2 {
+	width: 100% !important;
+	cursor: pointer;
+	padding: 0;
+
+	&-active.chosen-with-drop {
+		background-color: $color-dark2;
+
+		.chosen-single {
+			border: none;
+			background: none;
+			box-shadow: none;
+		}
+	}
+}
+
+.select2-dropdown {
+	width: 100%;
+	background-color: $color-dark2;
+	border-radius: 0;
+	border: none;
+
+	.select2-search {
+		position: absolute;
+		top: -55px;
+		left: 53px;
+		background: none;
+		border: none;
+
+		&__field {
+			border: 0;
+		}
+
+		&--dropdown .select2-search__field {
+			border: 0;
+			color: $color-default-white;
+		}
+	}
+
+	.select2-results__options li {
+		padding: 10px;
+		border-bottom: 3px solid rgba($color-pale-sky, 0.12);
+		font-family: $font-family--secondary;
+		text-overflow: ellipsis;
+		color: $color-gray-bb;
+
+		@include media(lg) {
+			padding: 13px 25px 13px 57px;
+		}
+
+		&.select2-results__option--selected {
+			background: transparent;
+			color: $color-gray-bb;
+			pointer-events: none;
+		}
+	}
+}
+
+.select2-container--open {
+	background-color: #172328;
+}
+
+.select2-container--default .select2-selection--single {
+	height: auto;
+	padding: 21px 15px 21px 0;
+	background: transparent;
+	border: none;
+	border-bottom: 3px solid rgba(103, 123, 131, 0.12);
+	border-radius: 0;
+	color: $color-gray-bb;
+	box-shadow: none;
+
+	.select2-selection__rendered {
+		color: $color-gray-bb;
+		padding-left: 0;
+		padding-right: 40px;
+	}
+
+	.select2-selection__arrow {
+		width: 34px;
+		top: 46%;
+		right: 21px;
+		transform: translateY(-50%);
+
+		b {
+			width: 100%;
+			height: 30px;
+			background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='23' viewBox='0 0 15 29' stroke-width='3px' stroke='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.5 1L14 14.5L0.5 28' fill='none'/%3e%3c/svg%3e ")
+			no-repeat center;
+			transform: rotate(90deg);
+			border-style: none;
+			border-width: 0;
+			top: 0;
+			left: 0;
+			margin-left: 0;
+			margin-top: 0;
+			@include transition(transform);
+
+			&.rotate {
+				transform: rotate(270deg);
+			}
+		}
+	}
+}

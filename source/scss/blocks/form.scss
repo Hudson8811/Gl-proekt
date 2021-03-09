@@ -107,20 +107,17 @@
 			&--disabled {
 				pointer-events: none;
 
-				.chosen-single {
-					span {
-						color: $color-pale-sky;
-					}
-
-					div b {
-						background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='23' viewBox='0 0 15 29' stroke-width='3px' stroke='%23677b83' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.5 1L14 14.5L0.5 28' fill='none'/%3e%3c/svg%3e ")
-						no-repeat center;
-					}
+				.select2 {
+					cursor: default;
 				}
 
-				&::after {
-					border-bottom-color: $color-pale-sky;
-					border-right-color: $color-pale-sky;
+				.select2-selection__rendered {
+					color: $color-pale-sky;
+				}
+
+				.select2-selection__arrow b {
+					background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='23' viewBox='0 0 15 29' stroke-width='3px' stroke='%23677b83' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.5 1L14 14.5L0.5 28' fill='none'/%3e%3c/svg%3e ")
+					no-repeat center;
 				}
 			}
 		}

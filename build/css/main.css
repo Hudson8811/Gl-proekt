@@ -1,7 +1,7 @@
 @import url(swiper-bundle.css);
 @import url(jquery.fancybox.css);
 @import url(nice-select.css);
-@import url(chosen.min.css);
+@import url(select2.min.css);
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
@@ -657,6 +657,115 @@ p {
       transform: rotate(180deg);
 }
 
+.select2 {
+  width: 100% !important;
+  cursor: pointer;
+  padding: 0;
+}
+
+.select2-active.chosen-with-drop {
+  background-color: #172328;
+}
+
+.select2-active.chosen-with-drop .chosen-single {
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.select2-dropdown {
+  width: 100%;
+  background-color: #172328;
+  border-radius: 0;
+  border: none;
+}
+
+.select2-dropdown .select2-search {
+  position: absolute;
+  top: -55px;
+  left: 53px;
+  background: none;
+  border: none;
+}
+
+.select2-dropdown .select2-search__field {
+  border: 0;
+}
+
+.select2-dropdown .select2-search--dropdown .select2-search__field {
+  border: 0;
+  color: #ffffff;
+}
+
+.select2-dropdown .select2-results__options li {
+  padding: 10px;
+  border-bottom: 3px solid rgba(103, 123, 131, 0.12);
+  font-family: "Roboto", "Open Sans", sans-serif;
+  text-overflow: ellipsis;
+  color: #bbbbbb;
+}
+
+@media (min-width: 992px) {
+  .select2-dropdown .select2-results__options li {
+    padding: 13px 25px 13px 57px;
+  }
+}
+
+.select2-dropdown .select2-results__options li.select2-results__option--selected {
+  background: transparent;
+  color: #bbbbbb;
+  pointer-events: none;
+}
+
+.select2-container--open {
+  background-color: #172328;
+}
+
+.select2-container--default .select2-selection--single {
+  height: auto;
+  padding: 21px 15px 21px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid rgba(103, 123, 131, 0.12);
+  border-radius: 0;
+  color: #bbbbbb;
+  box-shadow: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #bbbbbb;
+  padding-left: 0;
+  padding-right: 40px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  width: 34px;
+  top: 46%;
+  right: 21px;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  width: 100%;
+  height: 30px;
+  background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='23' viewBox='0 0 15 29' stroke-width='3px' stroke='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.5 1L14 14.5L0.5 28' fill='none'/%3e%3c/svg%3e ") no-repeat center;
+  -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+  border-style: none;
+  border-width: 0;
+  top: 0;
+  left: 0;
+  margin-left: 0;
+  margin-top: 0;
+  transition: transform 0.3s ease;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b.rotate {
+  -ms-transform: rotate(270deg);
+      transform: rotate(270deg);
+}
+
 .container {
   margin: 0 auto;
   padding: 0 32px;
@@ -987,8 +1096,7 @@ p {
 .field input[type="text"],
 .field input[type="email"],
 .field textarea,
-.field .select,
-.field .chosen-container {
+.field .select {
   display: block;
   width: 100%;
   padding: 26px 15px 26px 0;
@@ -1002,7 +1110,7 @@ p {
   color: #000000;
 }
 
-.field input[type="text"]:-ms-input-placeholder, .field input[type="email"]:-ms-input-placeholder, .field textarea:-ms-input-placeholder, .field .select:-ms-input-placeholder, .field .chosen-container:-ms-input-placeholder {
+.field input[type="text"]:-ms-input-placeholder, .field input[type="email"]:-ms-input-placeholder, .field textarea:-ms-input-placeholder, .field .select:-ms-input-placeholder {
   font-size: 14px;
   line-height: 1;
   color: #000000;
@@ -1014,8 +1122,7 @@ p {
 .field input[type="text"]::placeholder,
 .field input[type="email"]::placeholder,
 .field textarea::placeholder,
-.field .select::placeholder,
-.field .chosen-container::placeholder {
+.field .select::placeholder {
   font-size: 14px;
   line-height: 1;
   color: #000000;
@@ -1027,107 +1134,24 @@ p {
 .field input[type="text"]:focus,
 .field input[type="email"]:focus,
 .field textarea:focus,
-.field .select:focus,
-.field .chosen-container:focus {
+.field .select:focus {
   color: #f9f9f9;
   background-color: #172328;
 }
 
-.field input[type="text"]:focus:-ms-input-placeholder, .field input[type="email"]:focus:-ms-input-placeholder, .field textarea:focus:-ms-input-placeholder, .field .select:focus:-ms-input-placeholder, .field .chosen-container:focus:-ms-input-placeholder {
+.field input[type="text"]:focus:-ms-input-placeholder, .field input[type="email"]:focus:-ms-input-placeholder, .field textarea:focus:-ms-input-placeholder, .field .select:focus:-ms-input-placeholder {
   opacity: 0;
 }
 
 .field input[type="text"]:focus::placeholder,
 .field input[type="email"]:focus::placeholder,
 .field textarea:focus::placeholder,
-.field .select:focus::placeholder,
-.field .chosen-container:focus::placeholder {
+.field .select:focus::placeholder {
   opacity: 0;
 }
 
 .field textarea {
   resize: none;
-}
-
-.field .chosen-container {
-  cursor: pointer;
-  padding: 0;
-}
-
-.field .chosen-container .chosen-drop {
-  width: 100%;
-  background-color: #172328;
-  border-radius: 0;
-  border: none;
-}
-
-.field .chosen-container .chosen-drop .chosen-results li {
-  padding: 10px;
-  border-bottom: 3px solid rgba(103, 123, 131, 0.12);
-  font-family: "Roboto", "Open Sans", sans-serif;
-  text-overflow: ellipsis;
-  color: #bbbbbb;
-}
-
-@media (min-width: 992px) {
-  .field .chosen-container .chosen-drop .chosen-results li {
-    padding: 16px 25px 16px 57px;
-  }
-}
-
-.field .chosen-container .chosen-drop .chosen-results li.no-results {
-  background: transparent;
-}
-
-.field .chosen-container-single .chosen-search {
-  position: absolute;
-  top: -50px;
-  left: 50px;
-}
-
-.field .chosen-container-single .chosen-search input[type="text"] {
-  background: none;
-  border: none;
-}
-
-.field .chosen-container-single .chosen-single div {
-  width: 56px;
-  transition: transform 0.3s ease;
-}
-
-.field .chosen-container-single .chosen-single div.rotate {
-  -ms-transform: rotate(180deg);
-      transform: rotate(180deg);
-}
-
-.field .chosen-container-single .chosen-single div b {
-  background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='23' viewBox='0 0 15 29' stroke-width='3px' stroke='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.5 1L14 14.5L0.5 28' fill='none'/%3e%3c/svg%3e ") no-repeat center;
-  -ms-transform: rotate(90deg);
-      transform: rotate(90deg);
-}
-
-.field .chosen-container-active.chosen-with-drop {
-  background-color: #172328;
-}
-
-.field .chosen-container-active.chosen-with-drop .chosen-single {
-  border: none;
-  background: none;
-  box-shadow: none;
-}
-
-.field .chosen-single {
-  height: auto;
-  padding: 23px 15px 23px 0;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  color: #bbbbbb;
-  box-shadow: none;
-}
-
-.field .chosen-single .current {
-  transition: color 0.3s ease;
 }
 
 .field--radio {
@@ -4211,17 +4235,16 @@ p {
   pointer-events: none;
 }
 
-.form__grid .form__field--disabled .chosen-single span {
+.form__grid .form__field--disabled .select2 {
+  cursor: default;
+}
+
+.form__grid .form__field--disabled .select2-selection__rendered {
   color: #677b83;
 }
 
-.form__grid .form__field--disabled .chosen-single div b {
+.form__grid .form__field--disabled .select2-selection__arrow b {
   background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='23' viewBox='0 0 15 29' stroke-width='3px' stroke='%23677b83' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.5 1L14 14.5L0.5 28' fill='none'/%3e%3c/svg%3e ") no-repeat center;
-}
-
-.form__grid .form__field--disabled::after {
-  border-bottom-color: #677b83;
-  border-right-color: #677b83;
 }
 
 @media (min-width: 992px) {
