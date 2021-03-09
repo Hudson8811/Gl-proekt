@@ -1,71 +1,71 @@
-.reviews{
-	&__container{
+.reviews {
+	&__container {
 		position: relative;
 		padding-top: 28px;
 		padding-bottom: 50px;
-		@include media(md){
+		@include media(md) {
 			padding-top: 49px;
 			padding-bottom: 113px;
 		}
 	}
-	&__title{
+	&__title {
 		margin: 0;
 	}
 
-	&__flex{
+	&__flex {
 		display: flex;
 		margin-top: 64px;
 		flex-direction: column-reverse;
-		@include media(md){
+		@include media(md) {
 			flex-direction: row;
 		}
 
-		&--certs{
+		&--certs {
 			margin-top: 32px;
-			@include media(md){
+			@include media(md) {
 				flex-direction: row-reverse;
 			}
-			.reviews__item{
-				@include media(md){
+			.reviews__item {
+				@include media(md) {
 					justify-content: flex-end;
 				}
 			}
 		}
 	}
-	&__left{
+	&__left {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: flex-start;
 		margin-left: -8px;
 		margin-right: -8px;
-		@include media(md){
+		@include media(md) {
 			width: 50%;
 			margin: 0;
 		}
 	}
-	&__item{
+	&__item {
 		width: 50%;
 		margin-bottom: 16px;
 		display: flex;
 		justify-content: flex-start;
 		padding: 0 8px;
-		@include media(md){
+		@include media(md) {
 			padding: 0;
 			margin-bottom: 32px;
 		}
-		@include media(lg){
+		@include media(lg) {
 			margin-bottom: 52px;
 		}
-		&-inner{
+		&-inner {
 			position: relative;
 			overflow: hidden;
 			max-width: 100%;
 			width: 100%;
-			@include media(md){
+			@include media(md) {
 				width: 166px;
 				max-width: 90%;
 			}
-			img{
+			img {
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -76,7 +76,7 @@
 				cursor: pointer;
 				transition: 0.2s;
 				z-index: 1;
-				&:hover{
+				&:hover {
 					width: 106%;
 					height: 106%;
 					top: -3%;
@@ -84,11 +84,11 @@
 				}
 			}
 		}
-		&-content{
+		&-content {
 			padding-bottom: 149%;
 			width: 100%;
 		}
-		&-btn{
+		&-btn {
 			z-index: 3;
 			position: absolute;
 			left: 50%;
@@ -97,41 +97,41 @@
 			padding: 5px 11px;
 			display: flex;
 			align-items: center;
-			background: #01A5E4;
+			background: #01a5e4;
 			text-decoration: none;
 			font-size: 12px;
 			line-height: 22px;
-			color: #FFFFFF;
+			color: #ffffff;
 			transition: background-color 0.3s ease;
 			font-weight: 500;
 			font-family: $font-family--secondary;
-			svg{
+			svg {
 				flex-shrink: 0;
 			}
-			span{
+			span {
 				margin: 0 10px;
 				white-space: nowrap;
 			}
-			&:hover{
+			&:hover {
 				background-color: rgba(1, 165, 228, 0.85);
 			}
 		}
 
-		&--hide{
+		&--hide {
 			display: none;
 		}
 	}
-	&__right{
+	&__right {
 		display: none;
-		@include media(md){
+		@include media(md) {
 			width: 50%;
 			display: block;
 		}
-		img{
+		img {
 			display: block;
 			width: 100%;
 			position: sticky;
-			top: 0;
+			top: 100px;
 		}
 	}
 }
@@ -151,7 +151,7 @@
 		margin: 0;
 	}
 
-	&__cats{
+	&__cats {
 		margin-top: 30px;
 	}
 }

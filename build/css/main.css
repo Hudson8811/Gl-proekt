@@ -3050,6 +3050,15 @@ p {
   }
 }
 
+.advantages--simple .swiper-pagination-bullet-active {
+  background-color: #01a5e4 !important;
+}
+
+.advantages--simple .advantages-prev:focus svg,
+.advantages--simple .advantages-next:focus svg {
+  stroke: #172328 !important;
+}
+
 .advantages--simple .lines .line {
   background-color: rgba(23, 35, 40, 0.16);
 }
@@ -5352,6 +5361,10 @@ p {
 		}*/
 }
 
+.accordion__item--hide {
+  display: none;
+}
+
 @media (min-width: 576px) {
   .accordion__item {
     padding: 32px 90px 32px 32px;
@@ -7635,7 +7648,6 @@ p {
 
 .webpage {
   background-color: #fafafa;
-  transition: margin-right 0.3s ease;
 }
 
 .webpage--hidden {
@@ -8957,11 +8969,11 @@ body.blocked {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  background: #01A5E4;
+  background: #01a5e4;
   text-decoration: none;
   font-size: 12px;
   line-height: 22px;
-  color: #FFFFFF;
+  color: #ffffff;
   transition: background-color 0.3s ease;
   font-weight: 500;
   font-family: "Roboto", "Open Sans", sans-serif;
@@ -9001,7 +9013,7 @@ body.blocked {
   width: 100%;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 100px;
 }
 
 .certificates__container {

@@ -86,6 +86,7 @@ function getScrollbarWidth() {
 
 	menuLink.on('mouseover focus', function() {
 		$('.dropdown').hide();
+
 		/*if(activeDropdownId !== '#' + $(this).attr('data-target')) {
 			$('.dropdown').hide();
 		}*/
@@ -210,6 +211,9 @@ function getScrollbarWidth() {
 (function () {
 	var btn = $('.__js_accordion-btn');
 	var activeClass = 'accordion__item--active';
+	var accordionItem = $('.accordion__item');
+	var hideClass = 'accordion__item--hide';
+	var moreBtn = $('.__js_faq-more')
 
 	btn.on('click', function() {
 		var parent = $(this).parent();
@@ -223,6 +227,12 @@ function getScrollbarWidth() {
 		}
 
 	});
+
+	moreBtn.on('click', function(evt) {
+		evt.preventDefault();
+		accordionItem.removeClass(hideClass);
+		$(this).remove();
+	})
 })();
 
 /* show bubble */
@@ -459,6 +469,8 @@ function getScrollbarWidth() {
 	var advantagesSlider = undefined;
 
 	if ($('.__js_advantages-slider').length > 0) {
+		initAdvantagesSlider();
+
 		$(window).resize(function () {
 			initAdvantagesSlider();
 		});
