@@ -11,6 +11,21 @@ function setOverlay(cb) {
 	return overlay;
 }
 
+function getScrollbarWidth() {
+	var block = $('<div>').css({'height':'50px','width':'50px'});
+	var indicator = $('<div>').css({'height':'200px'});
+
+	$('body').append(block.append(indicator));
+
+	var w1 = $('div', block).innerWidth();
+	block.css('overflow-y', 'scroll');
+
+	var w2 = $('div', block).innerWidth();
+	$(block).remove();
+
+	return (w1 - w2);
+}
+
 /* site menu */
 (function () {
 	var menu = $('.__js_menu');
@@ -46,6 +61,7 @@ function setOverlay(cb) {
 	});
 
 	menuOpenBtn.on('click', function() {
+		body.addClass('webpage--hidden').css('margin-right', getScrollbarWidth() + 'px');
 		menu.fadeIn(DURATION);
 		menuCloseBtn.on('click', closeMenu);
 		$('.header').addClass('hidden');
@@ -69,26 +85,7 @@ function setOverlay(cb) {
 			backToMenuBtn.off('click', closeDropdown);
 		}
 	});
-/*
-	dropdownLink.on('mouseover focus', function() {
-		if (windowWidth >= mobileBreakpoint && isMoved) {
-			$('.dropdown').hide();
-			var targetId = $(this).attr('data-target');
-			var dropdown = $(targetId);
-			dropdown.fadeIn(DURATION);
-			dropdown.on('mouseover', function () {}, function (){
-				$('.menu__nav').on('mouseover', function (){
-					hideDropdown();
-					$('.menu__nav').off();
-				});
-				dropdown.off();
-			});
-		}
-		function hideDropdown() {
-			dropdown.fadeOut(DURATION);
-		}
-	});
-*/
+
 	menuLink.on('mouseover focus', function() {
 		$('.dropdown').hide();
 		/*if(activeDropdownId !== '#' + $(this).attr('data-target')) {
@@ -122,12 +119,12 @@ function setOverlay(cb) {
 			//thisLink.removeClass('__js_active');
 		}
 	});
+
 	function closeMenu() {
+		body.removeClass('webpage--hidden').css('margin-right', 0);
 		menu.fadeOut(DURATION);
 		menuCloseBtn.off('click', closeMenu);
-		//body.css('overflow', 'auto');
 		$('.dropdown').fadeOut(DURATION);
-		//menuLink.removeClass('__js_active');
 	}
 })();
 
@@ -169,8 +166,8 @@ function setOverlay(cb) {
 })();
 
 /* sticky header */
-/*
-(function() {
+
+/*(function() {
 	var lastScrollTop = 0;
 	var header = $('#header');
 	var isRemoveFixed = false;

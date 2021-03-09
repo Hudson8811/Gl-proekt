@@ -1,6 +1,10 @@
 .webpage {
 	$self: &;
 	background-color: $color-athens-gray;
+
+	&--hidden {
+		//overflow: hidden !important;
+	}
 }
 
 body.blocked {
