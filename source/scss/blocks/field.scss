@@ -58,7 +58,7 @@
 			}
 		}
 
-		.inner {
+		span.inner {
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -67,6 +67,7 @@
 			border: 2px solid $color-gray-bb;
 			border-radius: 50%;
 			margin-right: 11px;
+			padding-right: 0;
 			box-sizing: border-box;
 
 			@include media(lg) {
@@ -122,11 +123,12 @@
 			}
 		}
 
-		.inner {
+		span.inner {
 			display: flex;
 			align-items: center;
 			width: 35px;
 			height: 14px;
+			padding-right: 0;
 			background-color: $color-gray-99;
 			border-radius: 8px;
 			cursor: pointer;

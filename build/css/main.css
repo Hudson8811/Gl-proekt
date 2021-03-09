@@ -1175,7 +1175,7 @@ p {
   opacity: 1;
 }
 
-.field--radio .inner {
+.field--radio span.inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -1187,16 +1187,17 @@ p {
   border: 2px solid #bbbbbb;
   border-radius: 50%;
   margin-right: 11px;
+  padding-right: 0;
   box-sizing: border-box;
 }
 
 @media (min-width: 992px) {
-  .field--radio .inner {
+  .field--radio span.inner {
     margin-right: 8px;
   }
 }
 
-.field--radio .inner::after {
+.field--radio span.inner::after {
   content: "";
   display: block;
   width: 8px;
@@ -1249,20 +1250,21 @@ p {
   background-color: #3ba1d9;
 }
 
-.field--switch .inner {
+.field--switch span.inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
       align-items: center;
   width: 35px;
   height: 14px;
+  padding-right: 0;
   background-color: #999999;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.field--switch .inner::after {
+.field--switch span.inner::after {
   content: "";
   display: block;
   width: 20px;
