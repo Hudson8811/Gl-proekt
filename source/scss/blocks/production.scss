@@ -1,7 +1,8 @@
 .production {
-	&-top{
+	&-top {
 		position: relative;
 		overflow: hidden;
+
 		&__container {
 			position: relative;
 			padding-top: 28px;
@@ -11,44 +12,54 @@
 				padding-bottom: 64px;
 			}
 		}
+
 		&__title {
 			margin: 0;
-			@include media(md){
+
+			@include media(md) {
 				font-size: 40px;
 			}
-			@include media(lg){
+
+			@include media(lg) {
 				font-size: 64px;
 				margin-top: 51px;
 			}
 		}
-		&__text{
+
+		&__text {
 			font-family: $font-family--secondary;
 			font-size: 18px;
 			line-height: 1.44;
 			margin-top: 38px;
-			> p + p{
+
+			> p + p {
 				margin-top: 1.44em;
 			}
 		}
-		&__left{
+
+		&__left {
 			box-sizing: border-box;
 			position: relative;
 			z-index: 1;
-			@include media(md){
+
+			@include media(md) {
 				width: 50%;
 				min-height: 400px;
 				box-sizing: border-box;
 				padding-right: 31px;
 			}
-			@include media(lg){
+
+			@include media(lg) {
 				min-height: 405px;
 			}
 		}
-		&__right{
+
+		&__right {
 			width: 100%;
 			box-sizing: border-box;
 			position: relative;
-			@include media(md){
+
+			@include media(md) {
 				width: 50%;
 				height: 400px;
 				position: absolute;
@@ -56,10 +67,12 @@
 				right: 0;
 				top: 55px;
 			}
-			@include media(lg){
+
+			@include media(lg) {
 				height: 449px;
 			}
-			img{
+
+			img {
 				display: block;
 				width: 100%;
 				height: 100%;
@@ -68,46 +81,49 @@
 		}
 	}
 
-
-	&-bottom{
+	&-bottom {
 		overflow-x: hidden;
+
 		&__container {
 			position: relative;
 			padding-top: 48px;
+
 			@include media(md) {
 				padding-top: 0px;
 			}
 		}
 	}
 
-
-
-
-	&-types{
+	&-types {
 		display: flex;
 		flex-wrap: wrap;
 		margin-left: -8px;
 		margin-right: -8px;
 		margin-top: -8px;
 		padding-bottom: 50px;
-		&__item{
+
+		&__item {
 			width: 100%;
 			box-sizing: border-box;
 			padding: 8px;
-			@include media(md){
+
+			@include media(md) {
 				width: 50%;
 			}
-			@include media(lg){
+
+			@include media(lg) {
 				width: 33.3333%;
 			}
-			&-inner{
+
+			&-inner {
 				position: relative;
 				display: block;
 				padding-bottom: 134.9%;
-				background: #677B83;
+				background: #677b83;
 				width: 100%;
 				overflow: hidden;
-				&::before{
+
+				&::before {
 					content: "";
 					width: 100%;
 					height: 100%;
@@ -116,9 +132,14 @@
 					left: 0;
 					top: 0;
 					z-index: 2;
-					background: linear-gradient(0deg, rgba(0, 0, 0, 0.64) 0%, rgba(0, 0, 0, 0) 100%);
+					background: linear-gradient(
+						0deg,
+						rgba(0, 0, 0, 0.64) 0%,
+						rgba(0, 0, 0, 0) 100%
+					);
 				}
-				img{
+
+				img {
 					display: block;
 					width: 100%;
 					height: 100%;
@@ -130,8 +151,9 @@
 					z-index: 1;
 					transition: 0.3s;
 				}
-				&:hover{
-					img{
+
+				&:hover {
+					img {
 						width: 110%;
 						height: 110%;
 						left: -5%;
@@ -139,7 +161,8 @@
 					}
 				}
 			}
-			&-content{
+
+			&-content {
 				width: 100%;
 				height: 100%;
 				display: flex;
@@ -153,69 +176,80 @@
 				box-sizing: border-box;
 				padding: 11px;
 			}
-			&-name{
+
+			&-name {
 				font-weight: bold;
 				font-size: 22px;
 				line-height: 28px;
 				letter-spacing: -0.07em;
-				color: #FFFFFF;
+				color: #ffffff;
 				min-height: 56px;
 			}
-			&-post{
+			&-post {
 				margin-top: 7px;
 				font-size: 14px;
 				line-height: 1.57;
-				color: #FFFFFF;
+				color: #ffffff;
 				min-height: 55px;
 			}
 		}
 	}
 
-
-	&-mounth{
+	&-mounth {
 		padding: 25px 0 30px;
+
 		@include media(md) {
 			padding: 50px 0 40px;
 		}
-		&__title{
+
+		&__title {
 			font-weight: 700;
 			font-size: 32px;
 			line-height: 1.05;
 			letter-spacing: -0.07em;
+
 			@include media(md) {
 				font-size: 40px;
 			}
+
 			@include media(lg) {
 				font-size: 42px;
 			}
 		}
-		&__content{
+
+		&__content {
 			margin-top: 12px;
 			display: flex;
 			width: 100%;
 			flex-wrap: wrap;
+
 			@include media(md) {
 				margin-top: 60px;
 			}
-			@include media(lg){
+
+			@include media(lg) {
 				width: 75%;
 			}
 		}
-		&__item{
+
+		&__item {
 			width: 100%;
 			margin-top: 48px;
+
 			@include media(md) {
 				width: 33.333%;
 				margin-top: 0;
 			}
-			&-count{
+
+			&-count {
 				font-weight: 200;
 				font-size: 64px;
 				line-height: 0.5;
 				letter-spacing: -0.07em;
 				display: flex;
 				align-items: baseline;
-				span{
+
+				span {
 					font-size: 12px;
 					line-height: 14px;
 					text-decoration-line: underline;
@@ -224,14 +258,16 @@
 					font-family: $font-family--secondary;
 				}
 			}
-			&-text{
+
+			&-text {
 				font-weight: 700;
 				font-size: 22px;
 				line-height: 1.27;
 				letter-spacing: -0.07em;
-				color: #677B83;
+				color: #677b83;
 				margin-top: 18px;
 				max-width: 90%;
+
 				@include media(md) {
 					max-width: 183px;
 					margin-top: 32px;
@@ -240,23 +276,28 @@
 		}
 	}
 
-	&-staff{
+	&-staff {
 		padding: 30px 0 50px;
+
 		@include media(md) {
 			padding: 40px 0 100px;
 		}
+
 		@include media(lg) {
 			padding: 40px 0 164px;
 		}
+
 		&__top {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
 			margin-bottom: 28px;
 			position: relative;
+
 			@include media(md) {
 				margin-bottom: 48px;
 			}
+
 			@include media(lg) {
 				margin-bottom: 52px;
 			}
@@ -268,9 +309,11 @@
 			font-size: 32px;
 			line-height: 1.12;
 			letter-spacing: -0.04em;
+
 			@include media(md) {
 				font-size: 40px;
 			}
+
 			@include media(lg) {
 				max-width: 75%;
 				font-size: 64px;
@@ -303,8 +346,9 @@
 				pointer-events: auto;
 			}
 
-			img{
+			img {
 				width: 100%;
+				height: auto;
 				display: block;
 			}
 		}
@@ -342,7 +386,7 @@
 				margin-left: -7px;
 			}
 		}
-		&__text{
+		&__text {
 			color: $color-default-white;
 			font-size: 18px;
 			line-height: 26px;
@@ -360,23 +404,23 @@
 			user-select: none;
 			pointer-events: none;
 			transition: 0.3s opacity;
-			&.swiper-slide-visible{
+			&.swiper-slide-visible {
 				opacity: 1;
 				user-select: auto;
 				pointer-events: auto;
-				~ .swiper-slide{
+				~ .swiper-slide {
 					opacity: 1;
 					user-select: auto;
 					pointer-events: auto;
 				}
 			}
 
-			&-inner{
+			&-inner {
 				width: calc(100% - 14px);
 				padding-bottom: calc(100% - 14px);
 				background: #ffffff;
 				position: relative;
-				img{
+				img {
 					position: absolute;
 					max-width: 95%;
 					max-height: 95%;
@@ -389,27 +433,26 @@
 		}
 	}
 
-
-	&-contacts{
+	&-contacts {
 		display: block;
 		position: relative;
 		overflow-x: hidden;
 		width: 100%;
-		@include media(md){
+		@include media(md) {
 			min-height: 700px;
 		}
-		@include media(lg){
+		@include media(lg) {
 			min-height: 900px;
 		}
-		&__container{
+		&__container {
 			position: relative;
 			display: flex;
 			width: 100%;
 		}
-		&__map{
+		&__map {
 			width: 100%;
 			height: 400px;
-			@include media(md){
+			@include media(md) {
 				position: absolute;
 				left: 50%;
 				width: 50%;
@@ -417,57 +460,56 @@
 				height: 100%;
 				min-height: 100%;
 			}
-			> *{
+			> * {
 				width: 100% !important;
 				height: 100% !important;
 			}
 		}
 
-		&__left{
+		&__left {
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
 			padding-bottom: 45px;
 			padding-top: 48px;
-			@include media(md){
+			@include media(md) {
 				width: 50%;
 				padding-top: 125px;
 			}
-			@include media(lg){
+			@include media(lg) {
 				min-height: 700px;
 				padding-top: 145px;
 			}
 		}
-		&__title{
+		&__title {
 			margin-bottom: 18px;
 			font-weight: 700;
 			font-size: 32px;
 			line-height: 1.12;
 			letter-spacing: -0.04em;
 			color: #172328;
-			@include media(md){
+			@include media(md) {
 				font-size: 40px;
 			}
-			@include media(lg){
+			@include media(lg) {
 				font-size: 64px;
 			}
 		}
-		&__city{
+		&__city {
 			font-weight: 700;
 			font-size: 22px;
 			line-height: 1.27;
 			letter-spacing: -0.07em;
 		}
-		&__info{
+		&__info {
 			margin-top: 16px;
-			> p{
+			> p {
 				font-size: 14px;
 				line-height: 22px;
-				+p{
+				+ p {
 					margin-top: 32px;
 				}
 			}
 		}
 	}
-
 }

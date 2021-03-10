@@ -773,8 +773,10 @@ $(window).scroll(function(event) {
 (function(){
 	$('.reviews__item img[data-bigimg]').on('click',function (){
 		var bigimage = $(this).data('bigimg');
+		var bigimage2x = $(this).data('bigimg-2x');
+
 		if ($(window).width() >= 768){
-			$('.reviews__right img').prop('src',bigimage);
+			$('.reviews__right img').prop('src', bigimage).prop('srcset', bigimage2x);
 		} else {
 			$.fancybox.open([
 				{
@@ -784,7 +786,7 @@ $(window).scroll(function(event) {
 		}
 	});
 
-	$('.certificates__cats a').on('click',function (){
+	$('.certificates__cats a').on('click',function (event){
 		event.preventDefault();
 		$(this).parent().toggleClass('cats-row-item--active');
 		var types = [];
@@ -793,9 +795,10 @@ $(window).scroll(function(event) {
 			types.push(type);
 		});
 
-		console.log($.inArray(1,types));
-		console.log($.inArray(2,types));
-		console.log($.inArray(3,types));
+		//console.log($.inArray(1,types));
+		//console.log($.inArray(2,types));
+		//console.log($.inArray(3,types));
+
 		if (types.length){
 			$('.reviews__item').each(function (){
 				if ($.inArray($(this).data('type'),types) === -1){

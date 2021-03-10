@@ -1,12 +1,25 @@
 .application-example {
 	&__image {
+		display: block;
+		overflow: hidden;
+
 		img {
 			max-width: 100%;
 			height: auto;
+
+			@include transition(transform);
+		}
+
+		@include hover {
+			img {
+				transform: scale(1.1);
+			}
 		}
 	}
 
 	&__count {
+		position: relative;
+		z-index: 1;
 		margin-top: -32px;
 		margin-bottom: 24px;
 		margin-left: 16px;

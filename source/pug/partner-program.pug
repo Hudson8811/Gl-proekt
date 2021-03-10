@@ -35,9 +35,7 @@ block content
 							- let num = index + 1 < 10 ? '0' + (index + 1) : (index + 1);
 							li.ordered-list__item
 								.ordered-list__item-count= num
-								| #{text}
-
-
+								| !{text}
 				section.single-page__block
 					h2.single-page__block-heading.heading(data-count="02") Партнеры
 					.single-page__block-subheading Архитекторы
