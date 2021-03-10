@@ -622,28 +622,6 @@ function getScrollbarWidth() {
 	}).on('select2:close', function () {
 		$('.select2-selection__arrow b').removeClass('rotate');
 	});
-
-	/*$('.select').chosen({
-		width: '100%',
-		no_results_text: 'Совпадений не найдено',
-		placeholder_text_single: 'Услуга: ',
-	}).on('chosen:showing_dropdown', function (evt, params) {
-		$('.chosen-single span').text('Услуга:');
-		$('.chosen-single div').addClass('rotate');
-	}).on('chosen:hiding_dropdown', function (evt, params) {
-		$('.chosen-single div').removeClass('rotate');
-	});
-
-	var scrollOpt = {
-		autohidemode: false,
-		horizrailenabled:false,
-		cursorcolor: "#01A5E4",
-		cursorborder: "1px solid #01A5E4",
-		cursorborderradius: "8px",
-		cursorwidth: "2px"
-	};
-
-	$('.chosen-results').niceScroll(scrollOpt);*/
 })();
 
 /* Services accordion */
