@@ -37,12 +37,12 @@ $color-base: $color-default-black; // основной цвет текста, и
 //--------------   $font-family, $file-name, $weight, $style: normal
 
 //
-$fonts: "Roboto" "Roboto-Regular" 400 normal, "Roboto" "Roboto-Black" 900 normal,
-	"Mulish" "Mulish-ExtraLight" 200 normal, "Mulish" "Mulish-Regular" 400 normal,
-	"Mulish" "Mulish-SemiBold" 600 normal, "Mulish" "Mulish-Bold" 700 normal,
-	"Mulish" "Mulish-Black" 900 normal;
+$fonts: "Roboto" "Roboto-Regular" 400 normal, "Roboto" "Roboto-Black" 900 normal;
+//"Mulish" "Mulish-ExtraLight" 200 normal, "Mulish" "Mulish-Regular" 400 normal,
+//"Mulish" "Mulish-SemiBold" 600 normal, "Mulish" "Mulish-Bold" 700 normal,
+//"Mulish" "Mulish-Black" 900 normal;
 
-$font-family--main: "Mulish", "Open Sans", sans-serif;
+$font-family--main: "Open Sans", sans-serif;
 $font-family--secondary: "Roboto", "Open Sans", sans-serif;
 
 $font-size-base: 14px;

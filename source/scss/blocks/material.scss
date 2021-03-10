@@ -10,17 +10,19 @@
 		#{$self}__inner {
 		}
 
-		#{$self}__aside {
-			right: auto;
-			left: -240px;
-		}
+		@include media(lg) {
+			#{$self}__aside {
+				right: auto;
+				left: -240px;
+			}
 
-		#{$self}__content {
-			padding-left: 480px;
-			padding-right: 20px;
+			#{$self}__content {
+				padding-left: 480px;
+				padding-right: 20px;
 
-			&::before {
-				left: 480px;
+				&::before {
+					left: 480px;
+				}
 			}
 		}
 
@@ -46,6 +48,10 @@
 		}
 
 		@include hover {
+			#{$self}__heading {
+				text-decoration: underline;
+			}
+
 			#{$self}__image {
 				img {
 					transform: scale(1.1);
