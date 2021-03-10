@@ -478,7 +478,7 @@ function getScrollbarWidth() {
 
 	function initAdvantagesSlider() {
 		if (window.matchMedia('(max-width: 991px)').matches && advantagesSlider == undefined) {
-			var advantagesSlider = new Swiper('.__js_advantages-slider', {
+			advantagesSlider = new Swiper('.__js_advantages-slider', {
 				pagination: {
 					el: '.advantages-pagi'
 				},
