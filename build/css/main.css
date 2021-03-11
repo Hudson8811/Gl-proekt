@@ -9436,6 +9436,24 @@ body.blocked {
   padding: 8px;
 }
 
+.office-staf__item--link .office-staf__item-inner:focus {
+  outline: none;
+}
+
+.office-staf__item--link .office-staf__item-inner:focus .office-staf__item-name {
+  text-decoration: underline;
+}
+
+.office-staf__item--link .office-staf__item-inner:active {
+  opacity: 0.7;
+}
+
+@media (min-width: 992px) {
+  .office-staf__item--link .office-staf__item-inner:hover .office-staf__item-name, .office-staf__item--link .office-staf__item-inner:focus .office-staf__item-name {
+    text-decoration: underline;
+  }
+}
+
 @media (min-width: 768px) {
   .office-staf__item {
     width: 50%;
