@@ -55,9 +55,12 @@
 
 		&--active {
 			a {
-				font-size: 30px;
 				color: $color-blue;
 				pointer-events: none;
+
+				@include media(md) {
+					font-size: 30px;
+				}
 			}
 		}
 	}
