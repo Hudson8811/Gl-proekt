@@ -38,7 +38,9 @@
 			object-fit: cover;
 
 			@include media(lg) {
-				object-fit: fill;
+				position: absolute;
+				top: 0;
+				left: 0;
 			}
 		}
 
@@ -47,6 +49,8 @@
 			border-radius: 50%;
 			position: absolute;
 			cursor: pointer;
+			left: 50%;
+			top: 50%;
 
 			@include hover {
 				.outer {

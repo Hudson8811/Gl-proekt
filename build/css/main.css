@@ -2260,7 +2260,9 @@ p {
 
 @media (min-width: 992px) {
   .plan__wrapper img {
-    object-fit: fill;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -2269,6 +2271,8 @@ p {
   border-radius: 50%;
   position: absolute;
   cursor: pointer;
+  left: 50%;
+  top: 50%;
 }
 
 .plan__wrapper svg:focus {

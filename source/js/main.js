@@ -286,6 +286,20 @@ function getScrollbarWidth() {
 	addMarker();
 
 	function addMarker() {
+		var planH = $('.plan__image').innerHeight();
+		var planW = $('.plan__image').innerWidth();
+		var planHW = planW/planH;
+		var idealHW = 16/9;
+		var topM = 0;
+		var leftM = 0;
+
+		if (idealHW < planHW){
+			topM = Math.abs(idealHW - planHW);
+		} else {
+			leftM = Math.abs(idealHW - planHW);
+		}
+
+
 		$.getJSON('data/plan.json', function (data) {
 			var parent = $('.plan'),
 				tar = parent.find('.plan__image'),
@@ -295,13 +309,36 @@ function getScrollbarWidth() {
 				var top = elem.top,
 					left = elem.left;
 
-				$('<svg data-index="' + index + '" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scale(0);"><circle class="outer" cx="17" cy="17" r="17" fill="#677B83"/><circle cx="17" cy="17" r="5.1" fill="#F9F9F9"/></svg>').css({
-					top: top + '%',
-					left: left + '%'
+				$('<svg data-index="' + index + '" width="34" height="34" data-left="'+left+'" data-top="'+top+'"  viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scale(0);"><circle class="outer" cx="17" cy="17" r="17" fill="#677B83"/><circle cx="17" cy="17" r="5.1" fill="#F9F9F9"/></svg>').css({
+					'margin-top': (top * idealHW + top*topM ) + 'vh',
+					'margin-left': (left * idealHW + left*leftM) + 'vw'
 				}).appendTo(tar);
 			});
 		});
 	}
+
+	$(window).resize(function (){
+		var planH = $('.plan__image').innerHeight();
+		var planW = $('.plan__image').innerWidth();
+		var planHW = planW/planH;
+		var idealHW = 16/9;
+		var topM = 0;
+		var leftM = 0;
+
+		if (idealHW < planHW){
+			topM = Math.abs(idealHW - planHW);
+		} else {
+			leftM = Math.abs(idealHW - planHW);
+		}
+		$('.plan__image svg').each(function (){
+			var top = $(this).data('top');
+			var left = $(this).data('left');
+			$(this).css({
+				'margin-top': (top * idealHW + top*topM ) + 'vh',
+				'margin-left': (left * idealHW + left*leftM) + 'vw'
+			})
+		});
+	});
 
 	function showPlanDetail() {
 		var parent = $('.plan'),
