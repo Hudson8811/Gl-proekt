@@ -5003,8 +5003,27 @@ p {
   }
 }
 
+.application-example:focus {
+  outline: none;
+}
+
+.application-example:focus .application-example__image img {
+  -ms-transform: scale(1.1);
+      transform: scale(1.1);
+}
+
+.application-example:active {
+  opacity: 0.7;
+}
+
+@media (min-width: 992px) {
+  .application-example:hover .application-example__image img, .application-example:focus .application-example__image img {
+    -ms-transform: scale(1.1);
+        transform: scale(1.1);
+  }
+}
+
 .application-example__image {
-  display: block;
   overflow: hidden;
 }
 
@@ -5012,26 +5031,6 @@ p {
   max-width: 100%;
   height: auto;
   transition: transform 0.3s ease;
-}
-
-.application-example__image:focus {
-  outline: none;
-}
-
-.application-example__image:focus img {
-  -ms-transform: scale(1.1);
-      transform: scale(1.1);
-}
-
-.application-example__image:active {
-  opacity: 0.7;
-}
-
-@media (min-width: 992px) {
-  .application-example__image:hover img, .application-example__image:focus img {
-    -ms-transform: scale(1.1);
-        transform: scale(1.1);
-  }
 }
 
 .application-example__count {
