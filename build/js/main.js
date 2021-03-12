@@ -289,15 +289,10 @@ function getScrollbarWidth() {
 		var planH = $('.plan__image').innerHeight();
 		var planW = $('.plan__image').innerWidth();
 		var planHW = planW/planH;
-		var idealHW = 16/9;
-		var topM = 0;
-		var leftM = 0;
+		var idealHW = 3806/1738;
+		var vhM = 0;
+		var topH = 0;
 
-		if (idealHW < planHW){
-			topM = Math.abs(idealHW - planHW);
-		} else {
-			leftM = Math.abs(idealHW - planHW);
-		}
 
 
 		$.getJSON('data/plan.json', function (data) {
@@ -306,13 +301,26 @@ function getScrollbarWidth() {
 				coords = data.coords;
 
 			coords.forEach(function (elem, index) {
+				console.log(elem);
 				var top = elem.top,
 					left = elem.left;
-
-				$('<svg data-index="' + index + '" width="34" height="34" data-left="'+left+'" data-top="'+top+'"  viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scale(0);"><circle class="outer" cx="17" cy="17" r="17" fill="#677B83"/><circle cx="17" cy="17" r="5.1" fill="#F9F9F9"/></svg>').css({
-					'margin-top': (top * idealHW + top*topM ) + 'vh',
-					'margin-left': (left * idealHW + left*leftM) + 'vw'
-				}).appendTo(tar);
+				var top2 = elem.top2,
+					left2 = elem.left2;
+				if (idealHW < planHW){
+					vhM = $(window).width()/100;
+					topH = 50/vhM;
+					$('<svg data-index="' + index + '" width="34" height="34" data-left="'+left+'" data-top="'+top+'" data-left2="'+left2+'" data-top2="'+top2+'"  viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scale(0);"><circle class="outer" cx="17" cy="17" r="17" fill="#677B83"/><circle cx="17" cy="17" r="5.1" fill="#F9F9F9"/></svg>').css({
+						'margin-top': (top2-topH)+'vw',
+						'margin-left': (left2-topH)+'vw'
+					}).appendTo(tar);
+				} else {
+					vhM = $(window).height()/100;
+					topH = 50/vhM;
+					$('<svg data-index="' + index + '" width="34" height="34" data-left="'+left+'" data-top="'+top+'" data-left2="'+left2+'" data-top2="'+top2+'"  viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scale(0);"><circle class="outer" cx="17" cy="17" r="17" fill="#677B83"/><circle cx="17" cy="17" r="5.1" fill="#F9F9F9"/></svg>').css({
+						'margin-top':  (top-topH)+'vh',
+						'margin-left': (left-topH)+'vh'
+					}).appendTo(tar);
+				}
 			});
 		});
 	}
@@ -321,22 +329,32 @@ function getScrollbarWidth() {
 		var planH = $('.plan__image').innerHeight();
 		var planW = $('.plan__image').innerWidth();
 		var planHW = planW/planH;
-		var idealHW = 16/9;
-		var topM = 0;
-		var leftM = 0;
+		var idealHW = 3806/1738;
+		var vhM = 0;
+		var topH = 0;
 
-		if (idealHW < planHW){
-			topM = Math.abs(idealHW - planHW);
-		} else {
-			leftM = Math.abs(idealHW - planHW);
-		}
-		$('.plan__image svg').each(function (){
+			$('.plan__image svg').each(function (){
 			var top = $(this).data('top');
 			var left = $(this).data('left');
-			$(this).css({
-				'margin-top': (top * idealHW + top*topM ) + 'vh',
-				'margin-left': (left * idealHW + left*leftM) + 'vw'
-			})
+
+			if (idealHW < planHW){
+				vhM = $(window).width()/100;
+				topH = 50/vhM;
+				top = $(this).data('top2');
+				left = $(this).data('left2');
+				$(this).css({
+					'margin-top': (top-topH)+'vw',
+					'margin-left': (left-topH)+'vw'
+				})
+			} else {
+				vhM = $(window).height()/100;
+				topH = 50/vhM;
+				$(this).css({
+					'margin-top':  (top-topH)+'vh',
+					'margin-left': (left-topH)+'vh'
+				})
+			}
+
 		});
 	});
 
