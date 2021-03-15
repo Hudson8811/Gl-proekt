@@ -222,9 +222,21 @@
 		}
 
 		&__item {
+			$item: &;
+
 			width: 100%;
 			box-sizing: border-box;
 			padding: 8px;
+
+			&--link {
+				#{$item}-inner {
+					@include hover {
+						#{$item}-name {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
 
 			@include media(md) {
 				width: 50%;

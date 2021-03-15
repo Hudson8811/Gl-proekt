@@ -1,6 +1,15 @@
 .application-example {
+	$self: &;
+
+	@include hover {
+		#{$self}__image {
+			img {
+				transform: scale(1.1);
+			}
+		}
+	}
+
 	&__image {
-		display: block;
 		overflow: hidden;
 
 		img {
@@ -8,12 +17,6 @@
 			height: auto;
 
 			@include transition(transform);
-		}
-
-		@include hover {
-			img {
-				transform: scale(1.1);
-			}
 		}
 	}
 

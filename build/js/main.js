@@ -139,27 +139,30 @@ function getScrollbarWidth() {
 	});
 
 	menuItems.click(function(e) {
+		e.preventDefault();
 		var href = $(this).attr('href'),
 			offsetTop = href === '#' ? 0 : $(href).offset().top - 99;
 		$('html, body').stop().animate({
 			scrollTop: offsetTop
 		}, 800);
-		e.preventDefault();
+		$(this).parent().addClass('customers__item--active').siblings().removeClass('customers__item--active');
 	});
 
 	$(window).on('scroll', function() {
-		var fromTop = $(this).scrollTop() + 100;
-		var cur = scrollItems.map(function() {
-			if ($(this).offset().top < fromTop)
-				return this;
-		});
+		if (windowWidth >= 768) {
+			var fromTop = $(this).scrollTop() + 100;
+			var cur = scrollItems.map(function() {
+				if ($(this).offset().top < fromTop)
+					return this;
+			});
 
-		cur = cur[cur.length - 1];
-		var id = cur && cur.length ? cur[0].id : '';
+			cur = cur[cur.length - 1];
+			var id = cur && cur.length ? cur[0].id : '';
 
-		if (lastId !== id) {
-			lastId = id;
-			menuItems.parent().removeClass('customers__item--active').end().filter('[href="#' + id + '"]').parent().addClass('customers__item--active');
+			if (lastId !== id) {
+				lastId = id;
+				menuItems.parent().removeClass('customers__item--active').end().filter('[href="#' + id + '"]').parent().addClass('customers__item--active');
+			}
 		}
 	});
 })();
@@ -283,22 +286,77 @@ function getScrollbarWidth() {
 	addMarker();
 
 	function addMarker() {
+		var planH = $('.plan__image').innerHeight();
+		var planW = $('.plan__image').innerWidth();
+		var planHW = planW/planH;
+		var idealHW = 3806/1738;
+		var vhM = 0;
+		var topH = 0;
+
+
+
 		$.getJSON('data/plan.json', function (data) {
 			var parent = $('.plan'),
 				tar = parent.find('.plan__image'),
 				coords = data.coords;
 
 			coords.forEach(function (elem, index) {
+				console.log(elem);
 				var top = elem.top,
 					left = elem.left;
-
-				$('<svg data-index="' + index + '" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scale(0);"><circle class="outer" cx="17" cy="17" r="17" fill="#677B83"/><circle cx="17" cy="17" r="5.1" fill="#F9F9F9"/></svg>').css({
-					top: top + '%',
-					left: left + '%'
-				}).appendTo(tar);
+				var top2 = elem.top2,
+					left2 = elem.left2;
+				if (idealHW < planHW){
+					vhM = $(window).width()/100;
+					topH = 50/vhM;
+					$('<svg data-index="' + index + '" width="34" height="34" data-left="'+left+'" data-top="'+top+'" data-left2="'+left2+'" data-top2="'+top2+'"  viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scale(0);"><circle class="outer" cx="17" cy="17" r="17" fill="#677B83"/><circle cx="17" cy="17" r="5.1" fill="#F9F9F9"/></svg>').css({
+						'margin-top': (top2-topH)+'vw',
+						'margin-left': (left2-topH)+'vw'
+					}).appendTo(tar);
+				} else {
+					vhM = $(window).height()/100;
+					topH = 50/vhM;
+					$('<svg data-index="' + index + '" width="34" height="34" data-left="'+left+'" data-top="'+top+'" data-left2="'+left2+'" data-top2="'+top2+'"  viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scale(0);"><circle class="outer" cx="17" cy="17" r="17" fill="#677B83"/><circle cx="17" cy="17" r="5.1" fill="#F9F9F9"/></svg>').css({
+						'margin-top':  (top-topH)+'vh',
+						'margin-left': (left-topH)+'vh'
+					}).appendTo(tar);
+				}
 			});
 		});
 	}
+
+	$(window).resize(function (){
+		var planH = $('.plan__image').innerHeight();
+		var planW = $('.plan__image').innerWidth();
+		var planHW = planW/planH;
+		var idealHW = 3806/1738;
+		var vhM = 0;
+		var topH = 0;
+
+			$('.plan__image svg').each(function (){
+			var top = $(this).data('top');
+			var left = $(this).data('left');
+
+			if (idealHW < planHW){
+				vhM = $(window).width()/100;
+				topH = 50/vhM;
+				top = $(this).data('top2');
+				left = $(this).data('left2');
+				$(this).css({
+					'margin-top': (top-topH)+'vw',
+					'margin-left': (left-topH)+'vw'
+				})
+			} else {
+				vhM = $(window).height()/100;
+				topH = 50/vhM;
+				$(this).css({
+					'margin-top':  (top-topH)+'vh',
+					'margin-left': (left-topH)+'vh'
+				})
+			}
+
+		});
+	});
 
 	function showPlanDetail() {
 		var parent = $('.plan'),
@@ -858,46 +916,65 @@ $(window).scroll(function(event) {
 
 /* Packery init */
 (function(){
-	var select = $('.__js_filter-select');
-	var filterItem = $('.filter__item');
-	var filterItemAll = $('.filter__item[data-filter="*"]');
-	var filterActiveClass = 'filter__item--active';
+	$(window).on('load', function() {
+		var select = $('.__js_filter-select');
+		var filterItem = $('.filter__item');
+		var filterItemAll = $('.filter__item[data-filter="*"]');
+		var filterActiveClass = 'filter__item--active';
 
-	var newsFilter = $('.__js_news-filter').isotope({
-		itemSelector: '.news-page__item',
-		layoutMode: 'packery',
-		packery: {
-			gutter: 0
-		},
-	});
-	var projectsFilter = $('.__js_projects-filter').isotope({
-		itemSelector: '.projects-page__item',
-		layoutMode: 'packery',
-		packery: {
-			gutter: 10
-		},
-	});
+		var newsFilter = $('.__js_news-filter').isotope({
+			itemSelector: '.news-page__item',
+			layoutMode: 'packery',
+			packery: {
+				gutter: 0
+			},
+		});
+		var projectsFilter = $('.__js_projects-filter').isotope({
+			itemSelector: '.projects-page__item',
+			layoutMode: 'packery',
+			packery: {
+				gutter: 10
+			},
+		});
 
-	select.on('change', function () {
-		var value = select.val();
-		var filterValue = value !== '*' ? '.__js_' + value : value;
+		select.on('change', function () {
+			var value = select.val();
+			var filterValue = value !== '*' ? '.__js_' + value : value;
 
-		if (value !== '*') {
-			var filterValue = '.__js_' + value;
-			filterItem.removeClass(filterActiveClass);
-		} else {
-			filterItemAll.addClass(filterActiveClass);
-			var filterValue = value;
+			if (value !== '*') {
+				var filterValue = '.__js_' + value;
+				filterItem.removeClass(filterActiveClass);
+			} else {
+				filterItemAll.addClass(filterActiveClass);
+				var filterValue = value;
+			}
+
+			grid.isotope({ filter: filterValue });
+		});
+
+		filterItem.on('click', function() {
+			var filterValue = $(this).attr('data-filter');
+
+			$(this).addClass(filterActiveClass).siblings().removeClass(filterActiveClass);
+			newsFilter.isotope({ filter: filterValue });
+			projectsFilter.isotope({ filter: filterValue });
+		});
+
+		$('.__js_news-tag').on('click', function(evt) {
+			evt.preventDefault();
+			var filterValue = $(this).attr('data-filter');
+			$('.filter__item[data-filter="' + filterValue + '"]').addClass(filterActiveClass).siblings().removeClass(filterActiveClass);
+			newsFilter.isotope({ filter: filterValue });
+		});
+
+
+		var subPageURL = decodeURIComponent(window.location.search.substring(1));
+
+		if (subPageURL.indexOf('filter') !== -1) {
+			var num = subPageURL.slice(subPageURL.indexOf('=') + 1);
+			$('.filter__item[data-filter=".__js_' + num + '"]').addClass(filterActiveClass).siblings().removeClass(filterActiveClass);
+			newsFilter.isotope({ filter: '.__js_' + num });
 		}
-
-		grid.isotope({ filter: filterValue });
 	});
 
-	filterItem.on('click', function() {
-		var filterValue = $(this).attr('data-filter');
-
-		$(this).addClass(filterActiveClass).siblings().removeClass(filterActiveClass);
-		newsFilter.isotope({ filter: filterValue });
-		projectsFilter.isotope({ filter: filterValue });
-	});
 })();
