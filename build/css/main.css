@@ -2263,6 +2263,9 @@ p {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
 
@@ -2297,6 +2300,14 @@ p {
   transition: fill 0.3s ease;
 }
 
+.plan__dots {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
 .plan__title {
   max-width: 938px;
   width: 100%;
@@ -2305,14 +2316,26 @@ p {
 }
 
 .plan__image {
-  height: 556px;
+  /*height: 556px;*/
   position: relative;
+  width: 130%;
+  margin-left: -15%;
 }
 
 @media (min-width: 992px) {
   .plan__image {
-    height: calc(100vh - 100px);
-    margin-top: 0;
+    max-height: none;
+    height: auto;
+    width: 120%;
+    margin-left: -10%;
+    margin-top: -42px;
+  }
+}
+
+@media (min-width: 1560px) {
+  .plan__image {
+    width: 108%;
+    margin-left: -4%;
   }
 }
 
@@ -2341,6 +2364,17 @@ p {
   bottom: -100px;
   -ms-transform: rotate(180deg);
       transform: rotate(180deg);
+}
+
+@media (min-width: 992px) {
+  .plan__image::before {
+    padding-top: 54.15861%;
+    display: block;
+    content: "";
+    position: static;
+    background: none;
+    width: 100%;
+  }
 }
 
 .plan__caption {

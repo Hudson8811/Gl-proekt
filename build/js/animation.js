@@ -24,7 +24,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 
 	$('.plan__anchor').on('click',function (){
 		event.preventDefault();
-		var planIcons = $('.plan__image > svg');
+		var planIcons = $('.plan__dots > svg');
 		lock = 1;
 		var e,
 			windowHeight = window.innerHeight - header.outerHeight(),
@@ -56,7 +56,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 
 	eventDelay(window, 'mousewheel', function (down, up) {
 		var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-		var planIcons = $('.plan__image > svg');
+		var planIcons = $('.plan__dots > svg');
 		if (down && lock == 0 && scrollTop == 0){
 			switch (step) {
 				case 1:
