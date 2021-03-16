@@ -84,10 +84,8 @@
 	}
 
 	&__image {
-		/*height: 556px;*/
+		height: 556px;
 		position: relative;
-		width: 130%;
-		margin-left: -15%;
 
 		@include media(lg) {
 			max-height: none;
