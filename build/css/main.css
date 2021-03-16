@@ -2332,6 +2332,13 @@ p {
   }
 }
 
+@media (min-width: 1560px) {
+  .plan__image {
+    width: 104%;
+    margin-left: -2%;
+  }
+}
+
 .plan__image::before, .plan__image::after {
   content: '';
   display: block;

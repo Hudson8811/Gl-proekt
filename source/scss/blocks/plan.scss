@@ -96,6 +96,10 @@
 			margin-left: 0;
 			margin-top: -42px;
 		}
+		@include media(xxl) {
+			width: 104%;
+			margin-left: -2%;
+		}
 
 
 		&::before,
