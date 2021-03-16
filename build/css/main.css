@@ -2368,7 +2368,7 @@ p {
 
 @media (min-width: 992px) {
   .plan__image::before {
-    padding-top: 54.15861%;
+    padding-top: 45%;
     display: block;
     content: "";
     position: static;
