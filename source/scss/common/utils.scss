@@ -73,11 +73,11 @@
 				stroke: $color-default-white;
 			}
 
-			@include hover {
+			/*@include hover {
 				svg {
 					stroke: $color-dark2;
 				}
-			}
+			}*/
 		}
 	}
 }

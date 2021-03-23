@@ -40,7 +40,6 @@
 
 		@include media(lg) {
 			flex-direction: row;
-			align-items: center;
 		}
 	}
 
@@ -110,7 +109,7 @@
 	&__content {
 		@include media(lg) {
 			width: 50%;
-			padding-top: 21px;
+			padding-top: 140px;
 		}
 
 		#{$self} {
@@ -359,7 +358,7 @@
 			font-weight: 700;
 			letter-spacing: -0.07em;
 			color: rgba($color-dark2, 0.16);
-			word-break: break-word;
+			hyphens: manual;
 
 			@include media(lg) {
 				font-size: 22px;

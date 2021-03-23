@@ -12,19 +12,27 @@
 			&:focus {
 				outline: none;
 			}
+			#{$item}-text {
+				opacity: 1;
+				color: $color-default-black;
+			}
+			#{$item}-btn {
+				opacity: 1;
+			}
+			@include media(md) {
+				&:hover {
+					background-color: $color-pale-sky;
 
-			&:hover {
-				background-color: $color-pale-sky;
-
-				#{$item}-title {
-					color: $color-default-white;
-				}
-				#{$item}-text {
-					opacity: 1;
-					color: $color-default-white;
-				}
-				#{$item}-btn {
-					opacity: 1;
+					#{$item}-title {
+						color: $color-default-white;
+					}
+					#{$item}-text {
+						opacity: 1;
+						color: $color-default-white;
+					}
+					#{$item}-btn {
+						opacity: 1;
+					}
 				}
 			}
 		}

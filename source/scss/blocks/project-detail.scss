@@ -342,6 +342,10 @@
 			position: relative;
 			z-index: 3;
 			width: 81%;
+			display: none;
+			@include media(md) {
+				display: block;
+			}
 		}
 
 		&:hover {

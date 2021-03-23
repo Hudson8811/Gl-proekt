@@ -281,7 +281,7 @@ function getScrollbarWidth() {
 
 	setTimeout(function () {
 		showPlanDetail();
-	}, 700);
+	}, 400);
 
 	addMarker();
 

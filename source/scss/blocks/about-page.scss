@@ -95,6 +95,7 @@
 
 		&-bottom {
 			margin-top: 32px;
+			display: flex;
 
 			@include media(sm) {
 				position: absolute;
@@ -110,10 +111,21 @@
 			img {
 				display: block;
 			}
+
+			@include media(md) {
+				display: block;
+			}
 		}
 
 		&-btn {
-			margin-top: 44px;
+			margin-top: 0;
+			margin-left: 30px;
+			line-height: 29px;
+			@include media(md) {
+				line-height: 28px;
+				margin-top: 44px;
+				margin-left: 0;
+			}
 		}
 	}
 
