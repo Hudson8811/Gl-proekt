@@ -1630,8 +1630,8 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   bottom: 0;
+  width: 100vw;
   min-height: 540px;
   background-color: #1e2e34;
   box-shadow: 0 200px 0 0 #1e2e34;
@@ -7354,7 +7354,7 @@ p {
 .header {
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 100vw;
   left: 0;
   z-index: 101;
   padding: 26px 0 25px;
@@ -7384,6 +7384,20 @@ p {
   transition: transform 0.3s ease;
 }
 
+.header--menu-opened {
+  z-index: 100001;
+  background-color: transparent;
+}
+
+.header--menu-opened .header__contacts,
+.header--menu-opened .header__menu {
+  opacity: 0;
+}
+
+.header--menu-opened.hidden {
+  top: 0;
+}
+
 .header__inner {
   display: -ms-flexbox;
   display: flex;
@@ -7404,7 +7418,7 @@ p {
 
 @media (min-width: 1200px) {
   .header__inner {
-    max-width: 1342px;
+    max-width: 1360px;
   }
 }
 

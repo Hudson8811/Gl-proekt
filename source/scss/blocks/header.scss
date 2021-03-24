@@ -1,7 +1,7 @@
 .header {
 	position: absolute;
 	top: 0;
-	width: 100%;
+	width: 100vw;
 	left: 0;
 	z-index: 101;
 
@@ -14,6 +14,7 @@
 		top: 0;
 		transition: top 0.3s linear;
 	}
+
 	&.hidden {
 		top: -200px;
 		position: fixed;
@@ -35,6 +36,20 @@
 		transform: translateY(100%);
 
 		@include transition(transform);
+	}
+
+	&--menu-opened {
+		z-index: 100001;
+		background-color: transparent;
+
+		#{$self}__contacts,
+		#{$self}__menu {
+			opacity: 0;
+		}
+
+		&.hidden {
+			top: 0;
+		}
 	}
 
 	&__inner {
@@ -59,7 +74,7 @@
 		}
 
 		@include media(xl) {
-			max-width: 1342px;
+			max-width: 1360px;
 		}
 	}
 
