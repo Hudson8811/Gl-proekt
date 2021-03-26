@@ -78,8 +78,6 @@
 			top: 0;
 			z-index: 10;
 		}*/
-
-
 	}
 
 	&__item {
@@ -102,15 +100,23 @@
 		user-select: none;
 		pointer-events: none;
 		transition: 0.3s opacity;
-		&.swiper-slide-visible{
+		&.swiper-slide-visible {
 			opacity: 1;
 			user-select: auto;
 			pointer-events: auto;
-			~ .swiper-slide{
+			~ .swiper-slide {
 				opacity: 1;
 				user-select: auto;
 				pointer-events: auto;
 			}
+		}
+	}
+
+	.swiper-pagination-bullets {
+		margin: 0 16px !important;
+
+		@include media(md) {
+			margin: 0 39px !important;
 		}
 	}
 }

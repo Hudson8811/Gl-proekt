@@ -427,6 +427,17 @@ body {
   white-space: normal;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000002;
+  width: 82px;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
 body main {
   -ms-flex-positive: 1;
       flex-grow: 1;
@@ -435,15 +446,15 @@ body main {
 }
 
 body.gray {
-  background: #F1F1F2;
+  background: #f1f1f2;
 }
 
 body.gray .projects__slider::before {
-  background: #F1F1F2;
+  background: #f1f1f2;
 }
 
 body.gray .header {
-  background: #F1F1F2;
+  background: #f1f1f2;
 }
 
 @media screen and (max-width: 767px) {
@@ -2635,7 +2646,14 @@ p {
       justify-content: space-between;
   width: 100%;
   padding-top: 50px;
+  padding-left: 20px;
   margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .services-slider__image {
+    padding-left: 14px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -2643,6 +2661,7 @@ p {
     width: 50%;
     display: block;
     padding-top: 0;
+    padding-left: 4px;
     margin-bottom: 0;
   }
 }
@@ -2772,7 +2791,7 @@ p {
 }
 
 .services-slider__list li::before {
-  content: '';
+  content: "";
   display: block;
   width: 6px;
   height: 6px;
@@ -2780,12 +2799,12 @@ p {
   position: absolute;
   top: 6px;
   left: 6px;
-  background: linear-gradient(152.42deg, #93AFFF 15.44%, #93AFFF 38.1%, #5278FF 66.6%, #3F63E3 82.51%);
+  background: linear-gradient(152.42deg, #93afff 15.44%, #93afff 38.1%, #5278ff 66.6%, #3f63e3 82.51%);
   z-index: 2;
 }
 
 .services-slider__list li::after {
-  content: '';
+  content: "";
   display: block;
   width: 18px;
   height: 18px;
@@ -2826,7 +2845,7 @@ p {
 }
 
 .services-slider__thumbs::before {
-  content: '';
+  content: "";
   display: block;
   width: 200%;
   height: 100%;
@@ -2887,7 +2906,7 @@ p {
 }
 
 .services-slider__thumb::before {
-  content: '';
+  content: "";
   display: none;
   width: 1px;
   height: 100%;
@@ -2904,7 +2923,7 @@ p {
 }
 
 .services-slider__thumb::after {
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 10px;
@@ -3913,6 +3932,16 @@ p {
       -ms-user-select: auto;
           user-select: auto;
   pointer-events: auto;
+}
+
+.clients .swiper-pagination-bullets {
+  margin: 0 16px !important;
+}
+
+@media (min-width: 768px) {
+  .clients .swiper-pagination-bullets {
+    margin: 0 39px !important;
+  }
 }
 
 .news {
