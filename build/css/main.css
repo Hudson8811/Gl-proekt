@@ -1343,15 +1343,19 @@ p {
 .menu-toggle::before, .menu-toggle::after {
   content: "";
   position: absolute;
-  width: 19px;
+  width: 25px;
   height: 4px;
   background-color: #000000;
+  -ms-transform: scale(0.76, 1);
+      transform: scale(0.76, 1);
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .menu-toggle::before {
   top: 19px;
   left: 0;
+  -ms-transform-origin: 0 50%;
+      transform-origin: 0 50%;
 }
 
 @media (min-width: 576px) {
@@ -1363,6 +1367,8 @@ p {
 .menu-toggle::after {
   bottom: 19px;
   right: 0;
+  -ms-transform-origin: 100% 50%;
+      transform-origin: 100% 50%;
 }
 
 @media (min-width: 576px) {
@@ -1371,19 +1377,63 @@ p {
   }
 }
 
+.menu-toggle--active::before, .menu-toggle--active::after {
+  -ms-transform: scale(1, 1);
+      transform: scale(1, 1);
+  background-color: #ffffff;
+}
+
+.menu-toggle--active::before {
+  animation: open-before 0.6s ease;
+  animation-fill-mode: forwards;
+  -ms-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+}
+
+.menu-toggle--active::after {
+  animation: open-after 0.6s ease;
+  animation-fill-mode: forwards;
+  -ms-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+}
+
+.menu-toggle--close::before, .menu-toggle--close::after {
+  -ms-transform: scale(1, 1);
+      transform: scale(1, 1);
+  background-color: #ffffff;
+}
+
+.menu-toggle--close::before {
+  animation: open-before-reverse 0.6s ease;
+  animation-fill-mode: forwards;
+  -ms-transform: translateY(-50%) rotate(-45deg) scale(1, 1);
+      transform: translateY(-50%) rotate(-45deg) scale(1, 1);
+  -ms-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+}
+
+.menu-toggle--close::after {
+  animation: open-after-reverse 0.6s ease;
+  animation-fill-mode: forwards;
+  -ms-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+  -ms-transform: translateY(50%) rotate(45deg) scale(1, 1);
+      transform: translateY(50%) rotate(45deg) scale(1, 1);
+}
+
 .menu-toggle:focus {
   outline: none;
 }
 
 .menu-toggle:focus::before {
-  -ms-transform: translateX(3px);
-      transform: translateX(3px);
+  -ms-transform: scale(1, 1);
+      transform: scale(1, 1);
   background-color: #01a5e4;
 }
 
 .menu-toggle:focus::after {
-  -ms-transform: translateX(-3px);
-      transform: translateX(-3px);
+  -ms-transform: scale(1, 1);
+      transform: scale(1, 1);
   background-color: #01a5e4;
 }
 
@@ -1393,14 +1443,72 @@ p {
 
 @media (min-width: 992px) {
   .menu-toggle:hover::before, .menu-toggle:focus::before {
-    -ms-transform: translateX(3px);
-        transform: translateX(3px);
+    -ms-transform: scale(1, 1);
+        transform: scale(1, 1);
     background-color: #01a5e4;
   }
   .menu-toggle:hover::after, .menu-toggle:focus::after {
-    -ms-transform: translateX(-3px);
-        transform: translateX(-3px);
+    -ms-transform: scale(1, 1);
+        transform: scale(1, 1);
     background-color: #01a5e4;
+  }
+}
+
+@keyframes open-before {
+  0% {
+    top: 19px;
+  }
+  50% {
+    top: 50%;
+    transform: translateY(-50%) scale(1, 1);
+  }
+  100% {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg) scale(1, 1);
+  }
+}
+
+@keyframes open-before-reverse {
+  0% {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg) scale(1, 1);
+  }
+  50% {
+    top: 50%;
+    transform: translateY(-50%) rotate(0) scale(1, 1);
+  }
+  100% {
+    top: 19px;
+    transform: translateY(0) rotate(0) scale(1, 1);
+  }
+}
+
+@keyframes open-after {
+  0% {
+    bottom: 19px;
+  }
+  50% {
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+  100% {
+    bottom: 50%;
+    transform: translateY(50%) rotate(45deg) scale(1, 1);
+  }
+}
+
+@keyframes open-after-reverse {
+  0% {
+    bottom: 50%;
+    transform: translateY(50%) rotate(45deg) scale(1, 1);
+  }
+  50% {
+    bottom: 50%;
+    transform: translateY(50%) rotate(0) scale(1, 1);
+  }
+  100% {
+    bottom: 19px;
+    transform: translateY(0) rotate(0) scale(1, 1);
   }
 }
 

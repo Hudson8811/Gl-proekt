@@ -62,11 +62,21 @@ function getScrollbarWidth() {
 	});
 
 	menuOpenBtn.on('click', function() {
+		if ($(this).hasClass('menu-toggle--active')) {
+			$(this).addClass('menu-toggle--close');
+			$(this).removeClass('menu-toggle--active');
+
+			setTimeout(function() {
+				menuOpenBtn.removeClass('menu-toggle--close');
+			}, 600)
+		} else {
+			$(this).addClass('menu-toggle--active');
+		}
+
 		if(isOpened) {
 			body.removeClass('webpage--hidden');
 			menu.fadeOut(DURATION);
 			$('.dropdown').fadeOut(DURATION);
-
 
 			$('.header').removeClass('header--menu-opened');
 			isOpened = false;
