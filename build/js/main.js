@@ -147,16 +147,13 @@ function getScrollbarWidth() {
 		}
 	});
 
-	function closeMenu() {
+	/*function closeMenu() {
 		body.removeClass('webpage--hidden');
 		menu.fadeOut(DURATION);
 		menuCloseBtn.off('click', closeMenu);
 		$('.dropdown').fadeOut(DURATION);
-
-		/* */
 		$('.header').removeClass('header--menu-opened');
-		/* */
-	}
+	}*/
 })();
 
 (function() {
@@ -675,6 +672,8 @@ function getScrollbarWidth() {
 
 /* Header */
 var lastScrollTop = 0;
+var noScrollShift = 50;
+
 $(window).scroll(function(event) {
 
 	var offset = $('.header').outerHeight();

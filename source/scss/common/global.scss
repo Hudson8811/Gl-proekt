@@ -69,7 +69,7 @@ body {
 	-webkit-locale: auto;
 	white-space: normal;
 
-	&::before {
+	/*&::before {
 		content: "";
 		position: fixed;
 		left: 0;
@@ -78,7 +78,7 @@ body {
 		z-index: 1000002;
 		width: 82px;
 		background-color: rgba(red, 0.5);
-	}
+	}*/
 
 	main {
 		flex-grow: 1;
