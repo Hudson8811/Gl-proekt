@@ -272,7 +272,6 @@ function getScrollbarWidth() {
 (function() {
 	var items = $('.service-types__item');
 
-
 	$(window).on('scroll', function() {
 		if(windowWidth < mobileBreakpoint) {
 			var scroll = $(window).scrollTop();
@@ -296,6 +295,45 @@ function getScrollbarWidth() {
 			items.removeClass('hover');
 		}
 	})
+})();
+
+/* 16. Animation of statistics */
+(function() {
+	var facts = $('.facts');
+	var numbers = $('.__js_number');
+	var animationIsDone = false;
+	var scroll = $(window).scrollTop() + $(window).height();
+
+	if ($('*').is('.facts')) {
+		var offset = facts.offset().top;
+
+		if (!animationIsDone && scroll >= offset + 200) {
+			animateNumbers();
+		}
+
+		$(window).on('scroll', function() {
+			scroll = $(window).scrollTop() + $(window).height();
+
+			if (!animationIsDone && scroll >= offset + 200) {
+				animateNumbers();
+			}
+		});
+	}
+
+	function animateNumbers() {
+		numbers.each(function() {
+			var endValue = parseInt($(this).attr('data-end-value'), 10);
+
+			$(this).easy_number_animate({
+				start_value: 0,
+				end_value: endValue,
+				duration: 1500
+			});
+
+		});
+
+		animationIsDone = true;
+	}
 })();
 
 /* show bubble */
