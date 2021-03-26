@@ -267,6 +267,37 @@ function getScrollbarWidth() {
 	})
 })();
 
+/* */
+
+(function() {
+	var items = $('.service-types__item');
+
+
+	$(window).on('scroll', function() {
+		if(windowWidth < mobileBreakpoint) {
+			var scroll = $(window).scrollTop();
+
+			items.each(function(){
+				var offset = $(this).offset().top;
+				var height = $(this).outerHeight();
+
+				if (scroll + 100 >= offset && scroll < offset + height - 100) {
+					$(this).addClass('hover');
+				} else  {
+					$(this).removeClass('hover');
+				}
+			});
+
+		}
+	});
+
+	$(window).on('resize', function() {
+		if(windowWidth >= mobileBreakpoint) {
+			items.removeClass('hover');
+		}
+	})
+})();
+
 /* show bubble */
 (function() {
 	var showBubbleBtn = $('.__js_show-bubble');
@@ -672,7 +703,6 @@ function getScrollbarWidth() {
 
 /* Header */
 var lastScrollTop = 0;
-var noScrollShift = 50;
 
 $(window).scroll(function(event) {
 

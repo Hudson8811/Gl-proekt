@@ -4962,6 +4962,23 @@ p {
   margin: 0;
 }
 
+.service-types__item.hover .service-types__item-inner {
+  background-color: #677b83;
+}
+
+.service-types__item.hover .service-types__item-title {
+  color: #ffffff;
+}
+
+.service-types__item.hover .service-types__item-text {
+  opacity: 1;
+  color: #ffffff;
+}
+
+.service-types__item.hover .service-types__item-btn {
+  opacity: 1;
+}
+
 .service-types__item-inner {
   display: -ms-flexbox;
   display: flex;

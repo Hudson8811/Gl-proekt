@@ -4,6 +4,23 @@
 	&__item {
 		$item: &;
 
+		&.hover {
+			#{$item}-inner {
+				background-color: $color-pale-sky;
+			}
+
+			#{$item}-title {
+				color: $color-default-white;
+			}
+			#{$item}-text {
+				opacity: 1;
+				color: $color-default-white;
+			}
+			#{$item}-btn {
+				opacity: 1;
+			}
+		}
+
 		&-inner {
 			display: flex;
 
@@ -19,6 +36,7 @@
 			#{$item}-btn {
 				opacity: 1;
 			}
+
 			@include media(md) {
 				&:hover {
 					background-color: $color-pale-sky;
