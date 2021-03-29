@@ -741,9 +741,10 @@ function getScrollbarWidth() {
 
 /* Header */
 var lastScrollTop = 0;
+var lastScrollTopMargin = 300;
+var lastSaved = 0;
 
 $(window).scroll(function(event) {
-
 	var offset = $('.header').outerHeight();
 	var st = $(this).scrollTop();
 	if(st == 0) {
@@ -753,6 +754,7 @@ $(window).scroll(function(event) {
 	}
 	else {
 		if(st > lastScrollTop) {
+			lastSaved = st - lastScrollTopMargin;
 			if($(window).scrollTop() > offset && !$(body).hasClass('blocked')) {
 				if($('.header').hasClass("active")) {
 					$('.header').addClass("active");
@@ -774,13 +776,14 @@ $(window).scroll(function(event) {
 			}
 		}
 		else {
-			$('.header').addClass("active");
-			$('.header').css('z-index', '9999');
-			$('.header').removeClass("hidden");
+			if (lastSaved >= st) {
+				$('.header').addClass("active");
+				$('.header').css('z-index', '9999');
+				$('.header').removeClass("hidden");
+			}
 		}
 	}
 	lastScrollTop = st;
-
 });
 
 /* Gallery */
