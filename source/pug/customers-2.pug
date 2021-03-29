@@ -1,0 +1,121 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Клиенты';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentPage = 2.04; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- let bodyModClass = ' webpage--customers';
+
+block header
+	include modules/header
+
+block content
+	.customers.line-page
+		.customers__container.container
+			include modules/lines
+			h1.customers__title.page-title Клиенты
+
+			.customers__aside.customers__aside--filter
+				select.customers__select(name="")
+					each item, index in CUSTOMERS
+						if index === 0
+
+							option(value="all", selected)= item
+						else
+							option(value="customers-" + index)= item
+				ul.customers__menu#customersMenu
+					each item, index in CUSTOMERS
+						- let addClass = index === 1 ? 'customers__item--active' : '';
+						if index === 0
+						else
+							li.customers__item(class= addClass)
+								a(href="#customers-" + index)= item
+
+			.customers__main
+				.customers__section#customers-1
+					.customers__section-title Нефтегазовые компании
+					.customers__section-logotips
+						img(src="img/customers/1.png", srcset="img/customers/1@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/2.png", srcset="img/customers/2@2x.png 2x", width="226", height="107", alt="")
+				.customers__section#customers-2
+					.customers__section-title Торгово-развлекательные центры
+					.customers__section-logotips
+						img(src="img/customers/3.png", srcset="img/customers/3@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/4.png", srcset="img/customers/4@2x.png 2x", width="226", height="107", alt="")
+				.customers__section#customers-3
+					.customers__section-title Логистические компании
+					.customers__section-logotips
+						img(src="img/customers/5.png", srcset="img/customers/5@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/6.png", srcset="img/customers/6@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/7.png", srcset="img/customers/7@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/8.png", srcset="img/customers/8@2x.png 2x", width="226", height="107", alt="")
+				.customers__section#customers-4
+					.customers__section-title Бизнес центры
+					.customers__section-logotips
+						img(src="img/customers/9.png", srcset="img/customers/9@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/1.png", srcset="img/customers/1@2x.png 2x", width="226", height="107", alt="")
+				.customers__section#customers-5
+					.customers__section-title Спортивные комплексы
+					.customers__section-logotips
+						img(src="img/customers/2.png", srcset="img/customers/2@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/3.png", srcset="img/customers/3@2x.png 2x", width="226", height="107", alt="")
+				.customers__section#customers-6
+					.customers__section-title Культурные центры
+					.customers__section-logotips
+						img(src="img/customers/4.png", srcset="img/customers/4@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/5.png", srcset="img/customers/5@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/6.png", srcset="img/customers/6@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/7.png", srcset="img/customers/7@2x.png 2x", width="226", height="107", alt="")
+				.customers__section#customers-7
+					.customers__section-title Фармацевтика и медицина
+					.customers__section-logotips
+						img(src="img/customers/8.png", srcset="img/customers/8@2x.png 2x", width="226", height="107", alt="")
+				.customers__section#customers-8
+					.customers__section-title Предприятия промышленности
+					.customers__section-logotips
+						img(src="img/customers/9.png", srcset="img/customers/9@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/1.png", srcset="img/customers/1@2x.png 2x", width="226", height="107", alt="")
+				.customers__section#customers-9
+					.customers__section-title Business to business
+					.customers__section-logotips
+						img(src="img/customers/2.png", srcset="img/customers/2@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/3.png", srcset="img/customers/3@2x.png 2x", width="226", height="107", alt="")
+				.customers__section#customers-10
+					.customers__section-title Рестораны, кафе и развлечения
+					.customers__section-logotips
+						img(src="img/customers/4.png", srcset="img/customers/4@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/5.png", srcset="img/customers/5@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/6.png", srcset="img/customers/6@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/7.png", srcset="img/customers/7@2x.png 2x", width="226", height="107", alt="")
+				.customers__section#customers-11
+					.customers__section-title Загородные отели и клубы
+					.customers__section-logotips
+						img(src="img/customers/8.png", srcset="img/customers/1@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/9.png", srcset="img/customers/9@2x.png 2x", width="226", height="107", alt="")
+				.customers__section#customers-12
+					.customers__section-title Жилые комплексы и поселки
+					.customers__section-logotips
+						img(src="img/customers/1.png", srcset="img/customers/1@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/2.png", srcset="img/customers/2@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/3.png", srcset="img/customers/3@2x.png 2x", width="226", height="107", alt="")
+				.customers__section#customers-13
+					.customers__section-title Красота и здоровье
+					.customers__section-logotips
+						img(src="img/customers/4.png", srcset="img/customers/4@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/5.png", srcset="img/customers/5@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/6.png", srcset="img/customers/6@2x.png 2x", width="226", height="107", alt="")
+						img(src="img/customers/7.png", srcset="img/customers/7@2x.png 2x", width="226", height="107", alt="")
+				.customers__section#customers-14
+					.customers__section-title Магазины и офисы
+					.customers__section-logotips
+						img(src="img/customers/8.png", srcset="img/customers/8@2x.png 2x", width="226", height="107", alt="")
+
+
+
+	include modules/projects
+	include modules/services
+
+block footer
+	include modules/footer
+
+

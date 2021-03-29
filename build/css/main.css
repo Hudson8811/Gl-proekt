@@ -7538,7 +7538,7 @@ p {
 }
 
 .header--menu-opened {
-  z-index: 100001;
+  z-index: 100001 !important;
   background-color: transparent;
 }
 
@@ -9335,6 +9335,16 @@ body.blocked {
   margin: 0 0 32px;
 }
 
+.customers__aside--filter .customers__menu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .customers__aside--filter .customers__menu {
+    display: block;
+  }
+}
+
 @media (min-width: 768px) {
   .customers__aside {
     width: 50%;
@@ -9420,6 +9430,16 @@ body.blocked {
   margin-bottom: 0;
 }
 
+.customers__section.hide {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .customers__section.hide {
+    display: block;
+  }
+}
+
 .customers__section-title {
   margin: 0 0 32px;
   font-size: 22px;
@@ -9440,6 +9460,60 @@ body.blocked {
   display: block;
   width: 50%;
   height: auto;
+}
+
+.webpage--customers .select2 {
+  width: calc(100% + 28px) !important;
+  margin-left: -14px;
+}
+
+@media (min-width: 768px) {
+  .webpage--customers .select2 {
+    display: none;
+  }
+}
+
+.webpage--customers .select2-search.select2-search--dropdown {
+  display: none;
+}
+
+.webpage--customers .select2-selection.select2-selection--single {
+  margin: 0 14px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.webpage--customers .select2-selection--single .select2-selection__arrow b {
+  background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='23' viewBox='0 0 15 29' stroke-width='3px' stroke='%23172328' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.5 1L14 14.5L0.5 28' fill='none'/%3e%3c/svg%3e") no-repeat center;
+  -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+}
+
+.webpage--customers .select2-container--open {
+  background-color: #dfdfdf;
+}
+
+.webpage--customers .select2-dropdown {
+  background-color: #dfdfdf;
+}
+
+.webpage--customers .select2-dropdown .select2-results__options li {
+  margin: 0 14px;
+  padding: 13px 25px 13px 0;
+  color: #172328;
+}
+
+.webpage--customers .select2-dropdown .select2-results__options li:last-child {
+  border-bottom: none;
+}
+
+.webpage--customers .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  color: #01a5e4;
+  background-color: transparent;
+}
+
+.webpage--customers .select2-dropdown .select2-results__options li.select2-results__option--selected {
+  color: #01a5e4;
 }
 
 .office-top {
