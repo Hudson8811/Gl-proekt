@@ -39,7 +39,7 @@
 	}
 
 	&--menu-opened {
-		z-index: 100001;
+		z-index: 100001 !important;
 		background-color: transparent;
 
 		#{$self}__contacts,
