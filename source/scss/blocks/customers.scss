@@ -122,6 +122,27 @@
 }
 
 .webpage--customers {
+	/*.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+
+		span {
+			position: relative;
+			margin-right: 16px;
+			background-color: yellow;
+
+			&::before {
+				content: "";
+				position: absolute;
+				z-index: 1;
+				top: 2px;
+				bottom: 5px;
+				left: 0;
+				right: 0;
+				background-color: rgba(red, 0.5);
+			}
+		}
+	}*/
 	.select2 {
 		width: calc(100% + 28px) !important;
 		margin-left: -14px;

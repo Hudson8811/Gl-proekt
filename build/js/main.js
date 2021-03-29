@@ -1068,3 +1068,224 @@ $(window).scroll(function(event) {
 	});
 
 })();
+
+
+(function() {
+	let words = document.querySelectorAll('.__js_word');
+
+	let abc = {
+		'A': 0,
+		'B': 184/1462,
+		'C': 119/1503,
+		'D': 184/1462,
+		'E': 184/1462,
+		'F': 184/1462,
+		'G': 119/1503,
+		'H': 184/1462,
+		'I': 184/1462,
+		'J': -152/1892,
+		'K': 184/1462,
+		'L': 184/1462,
+		'M': 184/1462,
+		'N': 184/1462,
+		'O': 119/1505,
+		'P': 184/1462,
+		'Q': 119/1833,
+		'R': 184/1462,
+		'S': 94/1503,
+		'T': 41/1462,
+		'U': 174/1462,
+		'V': 0,
+		'W': 0,
+		'X': 0,
+		'Y': 0,
+		'Z': 49/1462,
+		'a': 86/1161,
+		'b': 160/1576,
+		'c': 92/1159,
+		'd': 92/1576,
+		'e': 92/1159,
+		'f': 41/1567,
+		'g': 6/1631,
+		'h': 160/1556,
+		'i': 147/1556,
+		'j': -131/2048,
+		'k': 160/1556,
+		'l': 160/1556,
+		'm': 160/1139,
+		'n': 160/1139,
+		'o': 92/1159,
+		'p': 160/1631,
+		'q': 92/1631,
+		'r': 160/1139,
+		's': 92/1159,
+		't': 47/1376,
+		'u': 154/1138,
+		'v': 0,
+		'w': 20/1118,
+		'x': 10/1118,
+		'y': 0,
+		'z': 55/1118,
+		'0': 74/1505,
+		'1': 121/1462,
+		'2': 78/1483,
+		'3': 78/1503,
+		'4': 35/1462,
+		'5': 100/1482,
+		'6': 72/1499,
+		'7': 50/1460,
+		'8': 72/1501,
+		'9': 66/1499,
+		'А': 0,
+ 'Б': 184/1462,
+ 'В': 184/1462,
+ 'Г': 184/1462,
+ 'Д': 10/1462,
+ 'Е': 184/1462,
+ 'Ё': 184/1878,
+ 'Ж': 0,
+ 'З': 94/1503,
+ 'И': 184/1462,
+ 'Й': 184/1462,
+ 'К': 184/1462,
+ 'Л': 16/1482,
+ 'М': 184/1462,
+ 'Н': 184/1462,
+ 'О': 119/1505,
+ 'П': 184/1462,
+ 'Р': 184/1462,
+ 'С': 119/1503,
+ 'Т': 41/1462,
+ 'У': 0,
+ 'Ф': 92/1503,
+ 'Х': 0,
+ 'Ц': 184/1888,
+ 'Ч': 109/1462,
+ 'Ш': 184/1462,
+ 'Щ': 184/1888,
+ 'Ъ': 0,
+ 'Ы': 184/1462,
+ 'Ь': 184/1462,
+ 'Э': 72/1503,
+ 'Ю': 184/1505,
+ 'Я': -10/1462,
+ 'а': 86/1161,
+ 'б': 92/1593,
+ 'в': 160/1118,
+ 'г': 160/1118,
+ 'д': 29/1519,
+ 'е': 92/1159,
+ 'ё': 92/1560,
+ 'ж': 0,
+ 'з': 78/1159,
+ 'и': 160/1118,
+ 'й': 160/1118,
+ 'к': 160/1118,
+ 'л': 0,
+ 'м': 160/1118,
+ 'н': 160/1118,
+ 'о': 92/1159,
+ 'п': 160/1118,
+ 'р': 160/1613,
+ 'с': 92/1159,
+ 'т': 47/1118,
+ 'у': 0,
+ 'ф': 92/2048,
+ 'х': 10/1118,
+ 'ц': 160/1519,
+ 'ч': 123/1118,
+ 'ш': 160/1118,
+ 'щ': 160/1519,
+ 'ъ': 0,
+ 'ы': 160/1118,
+ 'ь': 160/1118,
+ 'э': 74/1159,
+ 'ю': 160/1159,
+ 'я': 0
+ };
+
+	if (words && windowWidth >= 768) {
+		setIndent()
+	}
+
+	$(window).on('resize', function() {
+		if (words.length && windowWidth >= 768) {
+			setIndent();
+		} else {
+			words.forEach(function(item) {
+				item.removeAttribute('style')
+				item.innerHTML = item.getAttribute('data-content');
+			});
+		}
+	})
+
+	function setIndent() {
+		words.forEach(function(item) {
+			let itemStyles = window.getComputedStyle(item, null);
+			let lh = Math.round(parseFloat(itemStyles.getPropertyValue('line-height')));
+			let height = item.clientHeight - parseInt(itemStyles.getPropertyValue('padding-top'), 10) - parseInt(itemStyles.getPropertyValue('padding-bottom'), 10);
+
+			item.setAttribute('data-content', item.textContent);
+
+			if (height / lh < 2) {
+				qqq(item);
+			} else {
+				magic(item);
+			}
+		})
+
+		function qqq(it) {
+			let fz = parseInt(window.getComputedStyle(it, null).getPropertyValue('font-size'), 10);
+			let realSize = fz - ((fz / 100) * 28);
+			let key = it.textContent[0];
+
+			if(abc[key]) {
+				let indent = realSize * abc[key];
+				it.style.textIndent =  -indent + 'px';
+			}
+		}
+
+		function magic(el) {
+			let tmp = document.createElement('p');
+			tmp = el.cloneNode(true);
+			tmp.style.width = el.offsetWidth + 'px';
+			tmp.style.position = 'absolute';
+			tmp.style.left = '-2000px';
+			tmp.innerHTML = 'foo';
+			document.body.appendChild(tmp);
+
+			let content = el.textContent.split(''),
+					oneLineHeight = tmp.scrollHeight,
+					lines = [],
+					i = 0;
+
+					let fz2 = parseInt(window.getComputedStyle(el, null).getPropertyValue('font-size'), 10);
+
+			while (i < content.length) {
+				let line = tmp.innerHTML = '';
+
+				while (i < content.length && tmp.scrollHeight <= oneLineHeight) {
+					tmp.innerHTML = line += content[i++];
+				}
+
+				let lineEndIndex = i === content.length ? i : line.lastIndexOf(' ') + 1;
+				lines.push( content.splice(0, lineEndIndex).join('') );
+				i = 0;
+			}
+			tmp.remove();
+			el.innerHTML = lines.map(function(line) {
+				let fz2 = parseInt(window.getComputedStyle(el, null).getPropertyValue('font-size'), 10);
+
+				let realSize = fz2 - ((fz2 / 100) * 28);
+				let key = line[0];
+
+				return abc[key] ? '<span style="display: inline-block; transform: translateX(' + -(realSize * abc[key]) + 'px)">' + line + '</span>' : '<span>' + line + '</span>';
+
+			}).join('');
+		}
+	}
+
+
+
+	//console.log(abc[key]);
+})();

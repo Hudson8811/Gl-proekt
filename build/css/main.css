@@ -3,6 +3,14 @@
 @import url(nice-select.css);
 @import url(select2.min.css);
 @font-face {
+  font-family: "OS Bold";
+  src: url("../fonts/OS-bold-M.woff2") format("woff2"), url("../fonts/OS-bold-M.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Roboto";
   src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
   font-weight: 400;
@@ -418,7 +426,7 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", "Arial", sans-serif;
   font-size: 14px;
   line-height: 1.5714;
   color: #000000;
@@ -2219,7 +2227,7 @@ p {
 
 .ordered-list__item-count {
   margin-bottom: 4px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", "Arial", sans-serif;
   font-size: 50px;
   line-height: 1;
   color: #677b83;
@@ -3370,7 +3378,7 @@ p {
 }
 
 .projects__title {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", "Arial", sans-serif;
   font-weight: 700;
   position: relative;
   z-index: 2;
@@ -5848,14 +5856,13 @@ p {
 }
 
 .services-page__header-image {
-  max-width: 422px;
   margin-bottom: 40px;
 }
 
 @media (min-width: 768px) {
   .services-page__header-image {
     width: 50%;
-    margin-right: 32px;
+    padding-right: 32px;
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
@@ -5863,7 +5870,7 @@ p {
 
 @media (min-width: 1200px) {
   .services-page__header-image {
-    margin-right: 54px;
+    padding-right: 54px;
   }
 }
 
@@ -9460,6 +9467,30 @@ body.blocked {
   display: block;
   width: 50%;
   height: auto;
+}
+
+.webpage--customers {
+  /*.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+
+		span {
+			position: relative;
+			margin-right: 16px;
+			background-color: yellow;
+
+			&::before {
+				content: "";
+				position: absolute;
+				z-index: 1;
+				top: 2px;
+				bottom: 5px;
+				left: 0;
+				right: 0;
+				background-color: rgba(red, 0.5);
+			}
+		}
+	}*/
 }
 
 .webpage--customers .select2 {

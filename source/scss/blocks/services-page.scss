@@ -8,17 +8,19 @@
 		}
 
 		&-image {
-			max-width: 422px;
+			//max-width: 422px;
 			margin-bottom: 40px;
 
 			@include media(md) {
 				width: 50%;
-				margin-right: 32px;
+				//margin-right: 32px;
+				padding-right: 32px;
 				flex-shrink: 0;
 			}
 
 			@include media(xl) {
-				margin-right: 54px;
+				//margin-right: 54px;
+				padding-right: 54px;
 			}
 
 			img {
