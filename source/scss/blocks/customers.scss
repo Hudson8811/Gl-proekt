@@ -122,14 +122,24 @@
 }
 
 .webpage--customers {
-	/*.wrapper {
+	/*.lines {
+		opacity: 1;
+	}
+	.lines line {
+		background-color: #000;
+		opacity: 1;
+	}
+	.wrapper {
 		display: flex;
-		flex-wrap: wrap;
+		//flex-wrap: wrap;
+		flex-direction: column;
 
 		span {
 			position: relative;
-			margin-right: 16px;
-			background-color: yellow;
+			margin-bottom: 16px;
+			//background-color: yellow;
+			font-size: 100px;
+			line-height: 1;
 
 			&::before {
 				content: "";
@@ -139,7 +149,7 @@
 				bottom: 5px;
 				left: 0;
 				right: 0;
-				background-color: rgba(red, 0.5);
+				//background-color: rgba(red, 0.5);
 			}
 		}
 	}*/
