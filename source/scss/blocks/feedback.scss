@@ -50,6 +50,7 @@
 		line-height: 40px;
 
 		@include media(lg) {
+			margin-left: -3px;
 			margin-bottom: 60px;
 			line-height: 1.125;
 		}

@@ -1,67 +1,68 @@
 .wiki {
-	&__container{
+	&__container {
 		position: relative;
 		padding-top: 28px;
 		padding-bottom: 50px;
-		@include media(md){
+		@include media(md) {
 			padding-top: 49px;
 			padding-bottom: 162px;
 		}
 	}
 
-	&__title{
+	&__title {
 		margin: 0;
 		font-weight: 900;
 		display: block;
-		@include media(md){
-			max-width: 75%;
+		@include media(md) {
+			width: 55%;
 		}
 	}
 
-	&__abc{
+	&__abc {
 		display: flex;
 		margin-left: -2px;
 		margin-right: -2px;
 		margin-top: 30px;
 		flex-wrap: wrap;
-		@include media(md){
+		@include media(md) {
 			flex-wrap: nowrap;
 		}
-		&-item{
+		&-item {
 			margin: 2px 2px;
 			flex-basis: 32px;
-			@include media(lg){
+			@include media(lg) {
 				flex-grow: 1;
 			}
-			&:first-child{
+			&:first-child {
 				flex-basis: 51px;
 			}
-			a,span{
+			a,
+			span {
 				padding: 4px 4px;
 				font-size: 18px;
 				line-height: 26px;
 				font-family: $font-family--secondary;
-				color: #677B83;
+				color: #677b83;
 				display: block;
 				background: #ffffff;
 				text-decoration: none;
 				width: 100%;
 				text-align: center;
 			}
-			a{
-				&:hover{
+			a {
+				&:hover {
 					color: $color-dark;
 				}
 			}
-			span{
+			span {
 				cursor: default;
 				opacity: 0.32;
 			}
-			&--active{
-				a{
-					background: #01A5E4;
+			&--active {
+				a {
+					background: #01a5e4;
 					color: #ffffff;
-					&:hover{
+					&:hover {
 						color: #ffffff;
 					}
 				}
@@ -69,78 +70,78 @@
 		}
 	}
 
-	&__content{
+	&__content {
 		margin-top: 40px;
-		@include media(md){
+		@include media(md) {
 			margin-top: 62px;
 		}
 	}
 
-	&__letter{
+	&__letter {
 		padding: 23px 0 16px;
-		+.wiki__letter{
+		+ .wiki__letter {
 			margin-top: 32px;
 		}
-		&-title{
+		&-title {
 			font-weight: 300;
 			font-size: 42px;
 			line-height: 32px;
 			letter-spacing: -0.07em;
 			color: #172328;
 		}
-		&-items{
+		&-items {
 			margin-top: 8px;
 		}
-		&:hover{
+		&:hover {
 			.wiki__letter-title {
-				color: $color-blue
+				color: $color-blue;
 			}
 		}
 	}
-	&__item{
+	&__item {
 		color: currentColor;
 		display: block;
 		box-sizing: border-box;
 		position: relative;
-		@include media(md){
+		@include media(md) {
 			padding-right: 118px;
-			&::after{
-				content: '';
+			&::after {
+				content: "";
 				display: block;
 				width: 15px;
 				height: 29px;
 				position: absolute;
 				right: 24px;
 				bottom: 19px;
-				background: url('data:image/svg+xml, <svg width="15" height="29" viewBox="0 0 15 29" stroke="black" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 1L14 14.5L0.5 28" fill="none"/></svg>') center center no-repeat;
+				background: url('data:image/svg+xml, <svg width="15" height="29" viewBox="0 0 15 29" stroke="black" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 1L14 14.5L0.5 28" fill="none"/></svg>')
+					center center no-repeat;
 			}
 		}
-		+.wiki__item{
+		+ .wiki__item {
 			margin-top: 24px;
 		}
-		&-title{
+		&-title {
 			font-weight: 700;
 			font-size: 22px;
 			line-height: 1.27;
 			letter-spacing: -0.07em;
 		}
-		&-text{
+		&-text {
 			margin-top: 16px;
 			font-size: 14px;
 			line-height: 22px;
 		}
 
-		&:hover{
-			&::after{
+		&:hover {
+			&::after {
 				background-image: url("data:image/svg+xml,%3Csvg width='15' height='29' viewBox='0 0 15 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 1L14 14.5L0.5 28' stroke='%2301A5E4'/%3E%3C/svg%3E%0A");
 			}
-			.wiki__item-title{
+			.wiki__item-title {
 				color: $color-blue;
 			}
-			.wiki__item-text{
+			.wiki__item-text {
 				text-decoration-line: underline;
 			}
 		}
 	}
 }
-

@@ -324,12 +324,30 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 
 	function animateNumbers() {
 		numbers.each(function() {
-			var endValue = parseInt($(this).attr('data-end-value'), 10);
+			var item = $(this);
+			var endValue = $(this).attr('data-end-value');
+			var endValueInt = parseInt(endValue, 10);
+
+			var endingIndex = endValue.indexOf('.');
+
+			if (endingIndex !== -1) {
+				var ending = endValue.slice(endingIndex)
+				//console.log(ending);
+			}
+
+			function addEnding() {
+				if (ending) {
+					var text = item.text();
+					item.text(text + ending);
+				}
+
+			}
 
 			$(this).easy_number_animate({
 				start_value: 0,
-				end_value: endValue,
-				duration: 1500
+				end_value: endValueInt,
+				duration: 1500,
+				after: addEnding
 			});
 
 		});
@@ -1071,7 +1089,7 @@ $(window).scroll(function(event) {
 
 
 (function() {
-	let words = document.querySelectorAll('.__js_word');
+	let words = document.querySelectorAll('.__js_negative-shift');
 
 	let abc = {
 		'A': 0,
@@ -1205,7 +1223,7 @@ $(window).scroll(function(event) {
  };
 
 	if (words && windowWidth >= 768) {
-		setIndent()
+		setIndent();
 	}
 
 	$(window).on('resize', function() {
@@ -1213,7 +1231,7 @@ $(window).scroll(function(event) {
 			setIndent();
 		} else {
 			words.forEach(function(item) {
-				item.removeAttribute('style')
+				item.removeAttribute('style');
 				item.innerHTML = item.getAttribute('data-content');
 			});
 		}
@@ -1227,14 +1245,14 @@ $(window).scroll(function(event) {
 
 			item.setAttribute('data-content', item.textContent);
 
-			if (height / lh < 2) {
-				qqq(item);
+			if (height / lh < 1.2) {
+				negativeShift(item);
 			} else {
 				magic(item);
 			}
 		})
 
-		function qqq(it) {
+		function negativeShift(it) {
 			let fz = parseInt(window.getComputedStyle(it, null).getPropertyValue('font-size'), 10);
 			let realSize = fz - ((fz / 100) * 28);
 			let key = it.textContent[0];
@@ -1259,8 +1277,6 @@ $(window).scroll(function(event) {
 					lines = [],
 					i = 0;
 
-					let fz2 = parseInt(window.getComputedStyle(el, null).getPropertyValue('font-size'), 10);
-
 			while (i < content.length) {
 				let line = tmp.innerHTML = '';
 
@@ -1284,8 +1300,4 @@ $(window).scroll(function(event) {
 			}).join('');
 		}
 	}
-
-
-
-	//console.log(abc[key]);
 })();

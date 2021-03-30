@@ -44,6 +44,7 @@
 		#{$self}__title {
 			right: auto;
 			left: 0;
+			text-align: left;
 		}
 
 		&::before {
@@ -72,14 +73,18 @@
 		position: absolute;
 		top: 47px;
 		right: 0; //38px;
-		width: 175px;
+		width: 155px;
 		@include text(19px, 1.27);
 		font-weight: 900;
 		letter-spacing: -0.07em;
+		text-align: right;
+		//background-color: yellow;
 
 		@include media(lg) {
-			right: 38px;
+			right: 0; //38px;
+			width: 190px;
 			font-size: 22px;
+			text-align: left;
 		}
 	}
 }

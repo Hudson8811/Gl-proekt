@@ -3,10 +3,82 @@
 @import url(nice-select.css);
 @import url(select2.min.css);
 @font-face {
-  font-family: "OS Bold";
-  src: url("../fonts/OS-bold-M.woff2") format("woff2"), url("../fonts/OS-bold-M.woff") format("woff");
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Light.woff2") format("woff2"), url("../fonts/OpenSans-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-LightItalic.woff2") format("woff2"), url("../fonts/OpenSans-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Italic.woff2") format("woff2"), url("../fonts/OpenSans-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-SemiBoldItalic.woff2") format("woff2"), url("../fonts/OpenSans-SemiBoldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-BoldItalic.woff2") format("woff2"), url("../fonts/OpenSans-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-ExtraBold.woff2") format("woff2"), url("../fonts/OpenSans-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-ExtraBoldItalic.woff2") format("woff2"), url("../fonts/OpenSans-ExtraBoldItalic.woff") format("woff");
+  font-weight: 800;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -2589,6 +2661,7 @@ p {
   .services-slider__wrapper {
     -ms-flex-direction: row;
         flex-direction: row;
+    box-sizing: border-box;
   }
 }
 
@@ -2609,11 +2682,11 @@ p {
 
 @media (min-width: 992px) {
   .services-slider__top {
-    max-width: 486px;
+    max-width: 480px;
     padding: 0;
     top: 65px;
     left: unset;
-    right: 9px;
+    right: 15px;
   }
 }
 
@@ -2688,7 +2761,7 @@ p {
 
 @media (min-width: 992px) {
   .services-slider__content {
-    width: 50%;
+    width: 47.4%;
     padding-top: 140px;
   }
 }
@@ -2763,18 +2836,38 @@ p {
     font-size: 64px;
     line-height: 72px;
     margin-bottom: 70px;
+    /*position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 240px;
+				width: 27px;
+				height: 800px;
+				background-color: rgba(red, 0.4);
+			}*/
   }
 }
 
 .services-slider__list {
-  padding-left: 29px;
-  column-count: 1;
+  padding: 0;
+  /*-moz-column-count: 1;
+		-webkit-column-count: 1;
+		column-count: 1;*/
 }
 
 @media (min-width: 992px) {
   .services-slider__list {
-    padding-left: 20px;
-    column-count: 2;
+    /*-moz-column-count: 2;
+			-webkit-column-count: 2;
+			column-count: 2;
+			column-gap: 2em;*/
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
   }
 }
 
@@ -2794,6 +2887,8 @@ p {
 @media (min-width: 992px) {
   .services-slider__list li {
     margin-bottom: 31px;
+    margin-left: 20px;
+    width: calc(50% - 20px);
   }
 }
 
@@ -4647,6 +4742,7 @@ p {
 
 @media (min-width: 992px) {
   .feedback__title {
+    margin-left: -3px;
     margin-bottom: 60px;
     line-height: 1.125;
   }
@@ -5773,6 +5869,7 @@ p {
 .service-card--reverse .service-card__title {
   right: auto;
   left: 0;
+  text-align: left;
 }
 
 .service-card--reverse::before {
@@ -5802,18 +5899,21 @@ p {
   position: absolute;
   top: 47px;
   right: 0;
-  width: 175px;
+  width: 155px;
   font-size: 19px;
   line-height: 1.27;
   color: #000000;
   font-weight: 900;
   letter-spacing: -0.07em;
+  text-align: right;
 }
 
 @media (min-width: 992px) {
   .service-card__title {
-    right: 38px;
+    right: 0;
+    width: 190px;
     font-size: 22px;
+    text-align: left;
   }
 }
 
@@ -6300,6 +6400,10 @@ p {
   .single-page__partners li {
     width: 25%;
   }
+}
+
+.single-page .lines .line {
+  background-color: rgba(23, 35, 40, 0.16);
 }
 
 @media (min-width: 992px) {
@@ -7248,7 +7352,7 @@ p {
 }
 
 .news-page__title {
-  margin: 0 0 38px -8px;
+  margin: 0 0 38px 0;
 }
 
 .news-page__title br {
@@ -8954,7 +9058,7 @@ body.blocked {
 
 @media (min-width: 768px) {
   .wiki__title {
-    max-width: 75%;
+    width: 55%;
   }
 }
 
@@ -8993,12 +9097,13 @@ body.blocked {
       flex-basis: 51px;
 }
 
-.wiki__abc-item a, .wiki__abc-item span {
+.wiki__abc-item a,
+.wiki__abc-item span {
   padding: 4px 4px;
   font-size: 18px;
   line-height: 26px;
   font-family: "Roboto", "Open Sans", sans-serif;
-  color: #677B83;
+  color: #677b83;
   display: block;
   background: #ffffff;
   text-decoration: none;
@@ -9016,7 +9121,7 @@ body.blocked {
 }
 
 .wiki__abc-item--active a {
-  background: #01A5E4;
+  background: #01a5e4;
   color: #ffffff;
 }
 
@@ -9070,7 +9175,7 @@ body.blocked {
     padding-right: 118px;
   }
   .wiki__item::after {
-    content: '';
+    content: "";
     display: block;
     width: 15px;
     height: 29px;
@@ -9706,6 +9811,7 @@ body.blocked {
     margin-top: -74px;
   }
   .office-bottom__block:first-child .office-bottom__block-title {
+    max-width: 470px;
     margin-top: -155px;
   }
 }
@@ -10548,12 +10654,6 @@ body.blocked {
 
 .production-supp__title {
   color: #ffffff;
-}
-
-@media (min-width: 992px) {
-  .production-supp__title {
-    margin-left: -7px;
-  }
 }
 
 .production-supp__text {

@@ -1,5 +1,5 @@
 .news-page {
-	$card: '.preview-card';
+	$card: ".preview-card";
 
 	&__container {
 		position: relative;
@@ -12,7 +12,7 @@
 	}
 
 	&__title {
-		margin: 0 0 38px -8px;
+		margin: 0 0 38px 0;
 
 		br {
 			display: none;

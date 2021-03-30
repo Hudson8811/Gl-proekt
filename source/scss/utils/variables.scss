@@ -37,8 +37,17 @@ $color-base: $color-default-black; // основной цвет текста, и
 //--------------   $font-family, $file-name, $weight, $style: normal
 
 //
-$fonts: "OS Bold" "OS-bold-M" 700 normal, "Roboto" "Roboto-Regular" 400 normal,
-	"Roboto" "Roboto-Black" 900 normal;
+$fonts: "Open Sans" "OpenSans-Light" 300 normal,
+	"Open Sans" "OpenSans-LightItalic" 300 italic,
+	"Open Sans" "OpenSans-Regular" 400 normal,
+	"Open Sans" "OpenSans-Italic" 400 italic,
+	"Open Sans" "OpenSans-SemiBold" 600 normal,
+	"Open Sans" "OpenSans-SemiBoldItalic" 600 italic,
+	"Open Sans" "OpenSans-Bold" 700 normal,
+	"Open Sans" "OpenSans-BoldItalic" 700 italic,
+	"Open Sans" "OpenSans-ExtraBold" 800 normal,
+	"Open Sans" "OpenSans-ExtraBoldItalic" 800 italic,
+	"Roboto" "Roboto-Regular" 400 normal, "Roboto" "Roboto-Black" 900 normal;
 //"Mulish" "Mulish-ExtraLight" 200 normal, "Mulish" "Mulish-Regular" 400 normal,
 //"Mulish" "Mulish-SemiBold" 600 normal, "Mulish" "Mulish-Bold" 700 normal,
 //"Mulish" "Mulish-Black" 900 normal;

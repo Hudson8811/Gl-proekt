@@ -382,8 +382,9 @@
 
 		&__title {
 			color: $color-default-white;
+
 			@include media(lg) {
-				margin-left: -7px;
+				//margin-left: -7px;
 			}
 		}
 		&__text {
