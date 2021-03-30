@@ -30,11 +30,11 @@
 				outline: none;
 			}
 			#{$item}-text {
-				opacity: 1;
+				opacity: 0;
 				color: $color-default-black;
 			}
 			#{$item}-btn {
-				opacity: 1;
+				opacity: 0;
 			}
 
 			@include media(md) {

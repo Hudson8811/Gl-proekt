@@ -70,11 +70,17 @@
 		font-weight: 700;
 		letter-spacing: -0.07em;
 		margin-bottom: 8px;
+		@include media(lg) {
+			max-width: 240px;
+		}
 	}
 
 	&__text {
 		font-size: 14px;
 		line-height: 22px;
+		@include media(lg) {
+			max-width: 240px;
+		}
 	}
 
 	&__content {

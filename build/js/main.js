@@ -798,7 +798,7 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 
 /* Header */
 var lastScrollTop = 0;
-var lastScrollTopMargin = 300;
+var lastScrollTopMargin = 100;
 var lastSaved = 0;
 
 $(window).scroll(function(event) {

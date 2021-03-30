@@ -3182,9 +3182,21 @@ p {
   margin-bottom: 8px;
 }
 
+@media (min-width: 992px) {
+  .advantages-item__title {
+    max-width: 240px;
+  }
+}
+
 .advantages-item__text {
   font-size: 14px;
   line-height: 22px;
+}
+
+@media (min-width: 992px) {
+  .advantages-item__text {
+    max-width: 240px;
+  }
 }
 
 .advantages-item__content .advantages-item__title {
@@ -5094,12 +5106,12 @@ p {
 }
 
 .service-types__item-inner .service-types__item-text {
-  opacity: 1;
+  opacity: 0;
   color: #000000;
 }
 
 .service-types__item-inner .service-types__item-btn {
-  opacity: 1;
+  opacity: 0;
 }
 
 @media (min-width: 768px) {
@@ -5406,6 +5418,11 @@ p {
 
 .application-section__nav {
   margin-left: auto;
+}
+
+.application-section__nav .slider__btn:hover svg {
+  stroke: #fff;
+  opacity: 0.5;
 }
 
 .application-section__paginate .swiper-pagination-bullet {
