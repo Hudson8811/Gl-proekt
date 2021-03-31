@@ -118,6 +118,8 @@
 	}
 
 	.lines {
+		z-index: -1;
+
 		.line {
 			background-color: rgba($color-dark2, 0.16);
 		}

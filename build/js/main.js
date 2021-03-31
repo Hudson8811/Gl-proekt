@@ -295,7 +295,7 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 })();
 
 /* 16. Animation of statistics */
-/*(function() {
+(function() {
 	var facts = $('.facts');
 	var numbers = $('.__js_number');
 	var animationIsDone = false;
@@ -350,9 +350,9 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 
 		animationIsDone = true;
 	}
-})();*/
+})();
 
-(function () {
+/*(function () {
 	var facts = $('.facts');
 	var numbers = $('.__js_number');
 	var animationIsDone = false;
@@ -388,16 +388,6 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 
 
 
-			/*function addEnding() {
-				if (ending) {
-					var text = item.text();
-					item.text(text + ending);
-					item.removeClass('__js_number');
-				}
-
-			}*/
-
-
 			item.spincrement({
 				from: 0,
 				to: endValueInt,
@@ -418,7 +408,7 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 
 
 
-})();
+})();*/
 
 /* show bubble */
 (function() {

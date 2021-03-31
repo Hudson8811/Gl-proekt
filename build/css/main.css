@@ -3471,7 +3471,6 @@ p {
 @media (min-width: 992px) {
   .projects__nav {
     padding-top: 30px;
-    padding-right: 11px;
     position: relative;
     top: 0;
     right: unset;
@@ -3536,7 +3535,7 @@ p {
 }
 
 .projects__slide::after {
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 10px;
@@ -6038,6 +6037,10 @@ p {
   .services-page__version {
     margin-bottom: 116px;
   }
+}
+
+.services-page .lines {
+  z-index: -1;
 }
 
 .services-page .lines .line {

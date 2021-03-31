@@ -61,7 +61,7 @@
 
 		@include media(lg) {
 			padding-top: 30px;
-			padding-right: 11px;
+			//padding-right: 11px;
 			position: relative;
 			top: 0;
 			right: unset;
@@ -97,11 +97,11 @@
 		user-select: none;
 		pointer-events: none;
 		transition: 0.3s opacity;
-		&.swiper-slide-visible{
+		&.swiper-slide-visible {
 			opacity: 1;
 			user-select: auto;
 			pointer-events: auto;
-			~ .swiper-slide{
+			~ .swiper-slide {
 				opacity: 1;
 				user-select: auto;
 				pointer-events: auto;
@@ -114,7 +114,7 @@
 		}
 
 		&::after {
-			content: '';
+			content: "";
 			display: block;
 			width: 0;
 			height: 10px;
