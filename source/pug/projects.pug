@@ -32,7 +32,7 @@ block content
 			ul.projects-page__list.__js_projects-filter
 				each num in ['1', '2', '3', '4', '5', '6', '7', '8']
 					li.projects-page__item.preview-card(class="__js_" + num)
-						.preview-card__image
+						a.preview-card__image(href= URLS.projectDetail, target='_blank')
 							//-.preview-card__bg-digit 01
 							img(src='img/projects-page/' + num + '.jpg', srcset='img/projects-page/' + num + '@2x.jpg 2x', width='469', height='651', alt='')
 						.preview-card__content
