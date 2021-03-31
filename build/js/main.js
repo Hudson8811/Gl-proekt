@@ -339,6 +339,7 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 				if (ending) {
 					var text = item.text();
 					item.text(text + ending);
+					item.removeClass('__js_number');
 				}
 
 			}
