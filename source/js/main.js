@@ -915,59 +915,58 @@ $(window).scroll(function(event) {
 
 /* Gallery */
 (function(){
-	if (!$.fancybox.isMobile ){
-		var updatefc  = function(instance, current) {
-			var $fc = current.$fc;
-			if ($fc && $fc.length) {
-				current.$slide.css('display', 'block');
+
+	var updatefc  = function(instance, current) {
+		var $fc = current.$fc;
+		if ($fc && $fc.length) {
+			current.$slide.css('display', 'block');
+			$.fancybox.setTranslate(current.$content, instance.getFitPos(current));
+			var fcHeight = $fc.outerHeight(true);
+			if (fcHeight) {
+				current.$slide.css('padding-bottom', fcHeight);
 				$.fancybox.setTranslate(current.$content, instance.getFitPos(current));
-				var fcHeight = $fc.outerHeight(true);
-				if (fcHeight) {
-					current.$slide.css('padding-bottom', fcHeight);
-					$.fancybox.setTranslate(current.$content, instance.getFitPos(current));
-				}
-				current.$slide.css('display', '');
 			}
-
-			if (current.$content){
-				var currentH = $(current.$content).height();
-				var totalH = $(current.$content).parent().height();
-				if ((currentH+21+44) > (totalH + 44)){
-					var top = ($(current.$content).parent().css('padding-top'));
-					$('.fancy-button-close').css('top','-'+top);
-				}
-
-				var currentW = $(current.$content).width();
-				var totalW = $(current.$content).parent().width();
-				if ((currentW+65+65) > (totalW)){
-					var right = (totalW-currentW)/2;
-					$('.fancy-button-close').css('right','-'+right+'px');
-				}
-			}
+			current.$slide.css('display', '');
 		}
 
-		$('[data-fancybox="project"]').fancybox({
-			infobar : false,
-			toolbar : false,
-			buttons : false,
-			arrows : false,
-			loop : true,
-			caption: $.noop,
-			afterLoad : function(instance, current) {
-				if ( instance.group.length > 1 && current.$content ) {
-					current.$content.append('<a data-fancybox-next class="fancy-button-next" href="javascript:;"><svg width="16" height="29"><use xlink:href="#fancy-arrow-r"></use></svg></a><a data-fancybox-prev class="fancy-button-previous" href="javascript:;"><svg width="16" height="29"><use xlink:href="#fancy-arrow"></use></svg></a>');
-				}
-				current.$content.append('<a data-fancybox-close class="fancy-button-close" href="javascript:;"><svg width="27" height="27"><use xlink:href="#close"></use></svg></a>');
-
-				current.$fc = $('<div class="fc-caption"><span>' + current.opts.$orig.data('caption') + '<span></div>').appendTo(current.$content);
-				updatefc(instance, current);
-			},
-			onUpdate(instance, current) {
-				updatefc(instance, current);
+		if (current.$content){
+			var currentH = $(current.$content).height();
+			var totalH = $(current.$content).parent().height();
+			if ((currentH+21+44) > (totalH + 44)){
+				var top = ($(current.$content).parent().css('padding-top'));
+				$('.fancy-button-close').css('top','-'+top);
 			}
-		});
 
+			var currentW = $(current.$content).width();
+			var totalW = $(current.$content).parent().width();
+			if ((currentW+65+65) > (totalW)){
+				var right = (totalW-currentW)/2;
+				$('.fancy-button-close').css('right','-'+right+'px');
+			}
+		}
 	}
+
+	$('[data-fancybox="project"]').fancybox({
+		infobar : false,
+		toolbar : false,
+		buttons : false,
+		arrows : false,
+		loop : true,
+		caption: $.noop,
+		afterLoad : function(instance, current) {
+			if ( instance.group.length > 1 && current.$content ) {
+				current.$content.append('<a data-fancybox-next class="fancy-button-next" href="javascript:;"><svg width="16" height="29"><use xlink:href="#fancy-arrow-r"></use></svg></a><a data-fancybox-prev class="fancy-button-previous" href="javascript:;"><svg width="16" height="29"><use xlink:href="#fancy-arrow"></use></svg></a>');
+			}
+			current.$content.append('<a data-fancybox-close class="fancy-button-close" href="javascript:;"><svg width="27" height="27"><use xlink:href="#close"></use></svg></a>');
+
+			current.$fc = $('<div class="fc-caption"><span>' + current.opts.$orig.data('caption') + '<span></div>').appendTo(current.$content);
+			updatefc(instance, current);
+		},
+		onUpdate(instance, current) {
+			updatefc(instance, current);
+		}
+	});
+
 })();
 
 
@@ -1301,7 +1300,7 @@ $(window).scroll(function(event) {
 		} else {
 			words.forEach(function(item) {
 				item.removeAttribute('style');
-				item.innerHTML = item.getAttribute('data-content');
+				if(item.hasAttribute('data-content')) item.innerHTML = item.getAttribute('data-content');
 			});
 		}
 	})
