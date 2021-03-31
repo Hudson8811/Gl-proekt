@@ -1300,7 +1300,7 @@ $(window).scroll(function(event) {
 		} else {
 			words.forEach(function(item) {
 				item.removeAttribute('style');
-				//item.innerHTML = item.getAttribute('data-content');
+				if(item.hasAttribute('data-content')) item.innerHTML = item.getAttribute('data-content');
 			});
 		}
 	})
