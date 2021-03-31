@@ -11,7 +11,7 @@
 		&::before {
 			content: attr(data-count);
 			position: absolute;
-			right: 0;
+			right: 28px;
 			bottom: 40px;
 
 			@include text(240px, 0.76, $color-pale-sky);

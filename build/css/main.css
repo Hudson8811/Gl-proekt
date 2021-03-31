@@ -5762,7 +5762,7 @@ p {
 .service-card a::before {
   content: attr(data-count);
   position: absolute;
-  right: 0;
+  right: 28px;
   bottom: 40px;
   font-size: 240px;
   line-height: 0.76;
