@@ -300,7 +300,7 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 })();
 
 /* 16. Animation of statistics */
-(function() {
+/*(function() {
 	var facts = $('.facts');
 	var numbers = $('.__js_number');
 	var animationIsDone = false;
@@ -355,6 +355,74 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 
 		animationIsDone = true;
 	}
+})();*/
+
+(function () {
+	var facts = $('.facts');
+	var numbers = $('.__js_number');
+	var animationIsDone = false;
+	var scroll = $(window).scrollTop() + $(window).height();
+
+	if ($('*').is('.facts')) {
+		var offset = facts.offset().top;
+
+		if (!animationIsDone && scroll >= offset + 200) {
+			animateNumbers();
+		}
+
+		$(window).on('scroll', function() {
+			scroll = $(window).scrollTop() + $(window).height();
+
+			if (!animationIsDone && scroll >= offset + 200) {
+				animateNumbers();
+			}
+		});
+	}
+
+	function animateNumbers() {
+		numbers.each(function() {
+			var item = $(this);
+			var endValue = $(this).attr('data-end-value');
+			var endValueInt = parseInt(endValue, 10);
+
+			var endingIndex = endValue.lastIndexOf('.');
+
+			if (endingIndex !== -1) {
+				var decimalPlaces = endValue.length - 1 - endingIndex;
+			}
+
+			/*function addEnding() {
+				if (ending) {
+					var text = item.text();
+					item.text(text + ending);
+					item.removeClass('__js_number');
+				}
+
+			}*/
+
+		/*	$(this).easy_number_animate({
+				start_value: 0,
+				end_value: endValueInt,
+				duration: 1500,
+				after: addEnding
+			});*/
+
+			$(this).spincrement({
+				from: 0,
+				to: endValueInt,
+				decimalPlaces: decimalPlaces ? decimalPlaces : 0,
+				decimalPoint: '.',
+				thousandSeparator: '',
+				duration: 1500,
+				fade: true
+			})
+
+		});
+
+		animationIsDone = true;
+	}
+
+
 })();
 
 /* show bubble */
