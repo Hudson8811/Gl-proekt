@@ -1410,7 +1410,6 @@ p {
 .menu-toggle--close::before, .menu-toggle--close::after {
   -ms-transform: scale(1, 1);
       transform: scale(1, 1);
-  background-color: #ffffff;
 }
 
 .menu-toggle--close::before {
@@ -1429,6 +1428,24 @@ p {
       transform-origin: 50% 50%;
   -ms-transform: translateY(50%) rotate(45deg) scale(1, 1);
       transform: translateY(50%) rotate(45deg) scale(1, 1);
+}
+
+.menu-toggle--dropdown:focus {
+  outline: none;
+}
+
+.menu-toggle--dropdown:focus::before, .menu-toggle--dropdown:focus::after {
+  background-color: #000000 !important;
+}
+
+.menu-toggle--dropdown:active {
+  opacity: 0.7;
+}
+
+@media (min-width: 992px) {
+  .menu-toggle--dropdown:hover::before, .menu-toggle--dropdown:hover::after, .menu-toggle--dropdown:focus::before, .menu-toggle--dropdown:focus::after {
+    background-color: #000000 !important;
+  }
 }
 
 .menu-toggle:focus {

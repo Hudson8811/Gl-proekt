@@ -70,7 +70,7 @@
 		&::before,
 		&::after {
 			transform: scale(1, 1);
-			background-color: $color-default-white;
+			//background-color: $color-default-white;
 		}
 
 		&::before {
@@ -85,6 +85,15 @@
 			animation-fill-mode: forwards;
 			transform-origin: 50% 50%;
 			transform: translateY(50%) rotate(45deg) scale(1, 1);
+		}
+	}
+
+	&--dropdown {
+		@include hover {
+			&::before,
+			&::after {
+				background-color: $color-default-black !important;
+			}
 		}
 	}
 

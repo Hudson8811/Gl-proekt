@@ -32,7 +32,6 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 (function () {
 	var menu = $('.__js_menu');
 	var menuOpenBtn = $('.__js_menu-open');
-	var menuCloseBtn = menu.find('.__js_menu-close');
 	var dropdownLink = menu.find('.__js_dropdown-link');
 	var menuLink = menu.find('.navigation__link');
 	var inner = menu.find('.menu__inner');
@@ -64,9 +63,11 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 	});
 
 	menuOpenBtn.on('click', function() {
+		$(this).blur();
 		if ($(this).hasClass('menu-toggle--active')) {
 			$(this).addClass('menu-toggle--close');
 			$(this).removeClass('menu-toggle--active');
+			$(this).removeClass('menu-toggle--dropdown');
 
 			setTimeout(function() {
 				menuOpenBtn.removeClass('menu-toggle--close');
@@ -117,18 +118,19 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 	menuLink.on('mouseover focus', function() {
 		$('.dropdown').hide();
 
-		/*if(activeDropdownId !== '#' + $(this).attr('data-target')) {
-			$('.dropdown').hide();
-		}*/
-
-		//var flag = ($(this).hasClass('__js_dropdown-link') && !$(this).hasClass('__js_active'));
-
-		if (windowWidth >= mobileBreakpoint && isMoved /*&& flag*/) {
+		if (windowWidth >= mobileBreakpoint && isMoved) {
 			//var thisLink = $(this);
 
 			var targetId = $(this).attr('data-target');
 			var dropdown = $(targetId);
 			dropdown.fadeIn(DURATION);
+
+			if (targetId) {
+				menuOpenBtn.addClass('menu-toggle--dropdown');
+			} else {
+				menuOpenBtn.removeClass('menu-toggle--dropdown');
+			}
+
 
 			//activeDropdownId = targetId;
 
@@ -140,22 +142,15 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 				dropdown.off();
 			});
 
-			//if (activeDropdownId === targetId) {}
 		}
 
 		function hideDropdown() {
 			dropdown.fadeOut(DURATION);
-			//thisLink.removeClass('__js_active');
+			menuOpenBtn.removeClass('menu-toggle--dropdown');
 		}
 	});
 
-	/*function closeMenu() {
-		body.removeClass('webpage--hidden');
-		menu.fadeOut(DURATION);
-		menuCloseBtn.off('click', closeMenu);
-		$('.dropdown').fadeOut(DURATION);
-		$('.header').removeClass('header--menu-opened');
-	}*/
+
 })();
 
 (function() {
