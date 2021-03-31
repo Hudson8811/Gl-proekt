@@ -391,6 +391,8 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 				var decimalPlaces = endValue.length - 1 - endingIndex;
 			}
 
+
+
 			/*function addEnding() {
 				if (ending) {
 					var text = item.text();
@@ -400,27 +402,25 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 
 			}*/
 
-		/*	$(this).easy_number_animate({
-				start_value: 0,
-				end_value: endValueInt,
-				duration: 1500,
-				after: addEnding
-			});*/
 
-			$(this).spincrement({
+			item.spincrement({
 				from: 0,
 				to: endValueInt,
 				decimalPlaces: decimalPlaces ? decimalPlaces : 0,
 				decimalPoint: '.',
 				thousandSeparator: '',
 				duration: 1500,
-				fade: true
+				fade: true,
+				complete: function() {
+					numbers = null;
+				}
 			})
 
 		});
 
 		animationIsDone = true;
 	}
+
 
 
 })();
