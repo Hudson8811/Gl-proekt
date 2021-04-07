@@ -20,12 +20,12 @@ block content
 						label
 							input(type='radio', name='contact_type', value='1', checked)
 							+icon('company')(width="50", height="50")
-							span Офис
+							h2 Офис
 					.contacts__top-tab
 						label
 							input(type='radio', name='contact_type', value='2')
 							+icon('factory')(width="50", height="50")
-							span Производство
+							h2 Производство
 
 		.contacts__bottom.contacts__bottom--active(data-id="1")
 			.contacts__bottom-container.container
@@ -33,9 +33,9 @@ block content
 				.contacts__bottom-left
 					.contacts__bottom-city г. Москва
 					.contacts__bottom-info
-						p ООО «Гласс Проект» <br>ИНН 5036104884
-						p Деловой квартал "Сириус Парк", <br>Каширское шоссе д. 3, корп. 2, стр. 2
-						p +7 (495) 150-34-00 <br>mail@glassproekt.ru
+						address ООО «Гласс Проект» <br>ИНН 5036104884
+						address Деловой квартал "Сириус Парк", <br>Каширское шоссе д. 3, корп. 2, стр. 2
+						address <a href="tel:+74951503400">+7 (495) 150-34-00</a> <br> <a href="mailto:mail@glassproekt.ru">mail@glassproekt.ru</a>
 					.contacts__bottom-social
 						a(href="" target="_blank")
 							+icon('facebook')(width="29", height="29")
@@ -53,11 +53,11 @@ block content
 			.contacts__bottom-container.container
 				include modules/lines
 				.contacts__bottom-left
-					.contacts__bottom-city г. Омсква
+					.contacts__bottom-city г. Москва
 					.contacts__bottom-info
-						p ООО «Гласс Проект» <br>ИНН 5036104884
-						p Деловой квартал "Сириус Парк", <br>Каширское шоссе д. 3, корп. 2, стр. 2
-						p +7 (495) 150-34-00 <br>mail@glassproekt.ru
+						address ООО «Гласс Проект» <br>ИНН 5036104884
+						address Деловой квартал "Сириус Парк", <br>Каширское шоссе д. 3, корп. 2, стр. 2
+						address <a href="tel:+74951503400">+7 (495) 150-34-00</a> <br> <a href="mailto:mail@glassproekt.ru">mail@glassproekt.ru</a>
 					.contacts__bottom-social
 						a(href="" target="_blank")
 							+icon('facebook')(width="29", height="29")

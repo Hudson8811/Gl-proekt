@@ -37,5 +37,6 @@
 
 	&__text {
 		@include text(14px, 1.571, $color-default-white);
+		letter-spacing: 0.02em;
 	}
 }

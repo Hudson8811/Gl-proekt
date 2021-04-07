@@ -53,6 +53,10 @@
 		position: relative;
 		border-top: solid 1px transparent;
 		border-bottom: solid 1px transparent;
+
+		@include media(lg) {
+			max-width: 960px;
+		}
 	}
 
 	&__section {

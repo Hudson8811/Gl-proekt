@@ -5,7 +5,7 @@ mixin service-card(item, cl, tg)
 		a(href= item.url, data-count= item.count)
 			.service-card__image
 				img(src="img/services-page/building.png", srcset="img/services-page/building@2x.png 2x", width="367", height="347", alt="")
-			.service-card__title
+			h2.service-card__title
 				if item.text === 'flag'
 					| Автоматизиро&shy;ван&shy;ные системы
 				else

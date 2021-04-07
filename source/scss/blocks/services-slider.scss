@@ -198,7 +198,7 @@
 
 	&__list {
 		padding: 0;
-		//padding-left: 29px;
+		padding-left: 29px;
 		/*-moz-column-count: 1;
 		-webkit-column-count: 1;
 		column-count: 1;*/
@@ -214,6 +214,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			width: 100%;
+			padding-left: 0;
 		}
 
 		li {

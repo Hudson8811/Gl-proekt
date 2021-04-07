@@ -299,7 +299,7 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 				var offset = $(this).offset().top;
 				var height = $(this).outerHeight();
 
-				if (scroll + 100 >= offset && scroll < offset + height - 100) {
+				if (scroll >= offset - (window.screen.height / 2) && scroll < offset + height - (window.screen.height  / 2)) {
 					$(this).addClass('hover');
 				} else  {
 					$(this).removeClass('hover');

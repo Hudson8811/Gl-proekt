@@ -504,11 +504,21 @@
 		}
 		&__info {
 			margin-top: 16px;
-			> p {
+			> address {
 				font-size: 14px;
 				line-height: 22px;
-				+ p {
+				font-style: normal;
+				+ address {
 					margin-top: 32px;
+				}
+
+				a {
+					color: $color-default-black;
+					@include transition(color);
+
+					@include hover {
+						color: $color-blue;
+					}
 				}
 			}
 		}

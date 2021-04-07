@@ -15,9 +15,8 @@
 		padding: 26px 15px 26px 0;
 		border-bottom: 3px solid rgba($color-pale-sky, 0.12);
 		appearance: none;
-		color: $color-gray-f9;
 		box-sizing: border-box;
-		@include text(14px, 1);
+		@include text(14px, 1, $color-gray-f9);
 
 		&::placeholder {
 			@include text(14px, 1);
