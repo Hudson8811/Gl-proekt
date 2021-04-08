@@ -3,10 +3,21 @@
 
 	&__list {
 		@include list-reset;
+		display: flex;
+		flex-wrap: wrap;
+
+		@include media-custom-height(580px) {
+			display: block;
+		}
 	}
 
 	&__item {
 		margin-bottom: 3.56vh; //24px;
+		width: 50%;
+
+		@include media-custom-height(580px) {
+			width: 100%;
+		}
 
 		&--current {
 			margin-bottom: 1.76vh; //12px;

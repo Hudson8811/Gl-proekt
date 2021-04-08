@@ -2,22 +2,22 @@ header.header#header
 	.header__inner
 		+logo(isHome, 'header__logo')
 
-		.header__contacts
-			a.header__phone(href="tel:+74951503400") +7 (495) 150-34-00
-			a.header__email(href="mailto:email@glassproekt.ru") email@glassproekt.ru
+		.header__contacts(itemscope itemtype="http://schema.org/Organization")
+			a.header__phone(itemprop="telephone", href="tel:+74951503400") +7 (495) 150-34-00
+			a.header__email(itemprop="email", href="mailto:email@glassproekt.ru") email@glassproekt.ru
 
 
-		ul.header__menu.header-menu
+		ul.header__menu.header-menu(itemscope itemtype='http://schema.org/SiteNavigationElement')
 			each item in HEADER_MENU
 				if item.currentSection === currentSection && item.currentPage === currentPage
 					li.header-menu__item.header-menu__item--current
 						a.header-menu__link= item.text
 				else if item.currentSection === currentSection && item.currentPage !== currentPage
 					li.header-menu__item.header-menu__item--current
-						a.header-menu__link(href= item.url)= item.text
+						a.header-menu__link(itemprop='url', href= item.url)= item.text
 				else
 					li.header-menu__item
-						a.header-menu__link(href= item.url)= item.text
+						a.header-menu__link(itemprop='url', href= item.url)= item.text
 
 
 		button.header__menu-toggle.menu-toggle.__js_menu-open(type="button")

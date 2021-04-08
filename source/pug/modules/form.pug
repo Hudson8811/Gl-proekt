@@ -53,8 +53,12 @@ form.form(action='#', method='POST')
 				input(type='radio', name='customer')
 				span.inner
 				span Собственник объекта
-		.form__switch
-			label.field.field--switch
+		.form__flex
+			label.field.field--checkbox
+				input(type='checkbox', name='policy')
+				span.inner
+				span Согласен с <a href="#" target="_blank">политикой конфиденциальности</a>
+			label.field.field--switch.form__switch
 				span Объект под ключ
 				input(type='checkbox', name='object')
 				span.inner

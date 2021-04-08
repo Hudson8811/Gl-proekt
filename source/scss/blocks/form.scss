@@ -158,16 +158,28 @@
 		}
 	}
 
-	&__switch {
-		text-align: right;
+	&__flex {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
 		margin: 31px 0 20px;
 
 		@include media(lg) {
 			margin: 54px 0 45px;
 		}
 
-		label {
-			display: inline-flex;
+		@include media(xl) {
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+
+	&__switch {
+		margin-top: 37px;
+
+		@include media(xl) {
+			margin-top: 0;
 		}
 	}
 

@@ -34,9 +34,11 @@
 }
 
 .swiper-pagination-bullets {
-	display: flex;
-	align-items: center;
+	display: block;
 	margin: 0 39px;
+	max-width: 41px;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .swiper-pagination-bullet {
@@ -45,6 +47,8 @@
 	margin: 0 1px;
 	background-color: $color-gray-c9;
 	opacity: 1;
+	display: inline-block;
+	vertical-align: middle;
 	@include transition(width);
 
 	@include media(md) {

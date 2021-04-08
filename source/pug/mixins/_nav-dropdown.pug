@@ -3,7 +3,6 @@ mixin nav-dropdown(submenu, submenuId)
 	.navigation__dropdown.dropdown(class= addClass, id= submenuId)
 		button.dropdown__back.__js_back-to-menu(type="button")
 			+icon('arrow-left')(width="32", height="32")
-			span.visually-hidden Back to main menu
 		.dropdown__wrapper(data-simplebar)
 			each item in submenu
 				.dropdown__section
@@ -13,13 +12,13 @@ mixin nav-dropdown(submenu, submenuId)
 								a.current= item.main.text
 							else
 								a(href= item.main.url)= item.main.text
-					ul.dropdown__list
+					ul.dropdown__list(itemscope itemtype='http://schema.org/SiteNavigationElement')
 						each it in item.list
 							if it.currentPage === currentPage
 								li.dropdown__item.dropdown__item--current
 									a= it.text
 							else
 								li.dropdown__item
-									a(href= it.url)= it.text
+									a(itemprop='url', href= it.url)= it.text
 
 

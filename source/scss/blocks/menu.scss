@@ -17,6 +17,10 @@
 		margin: 0 auto;
 		padding: 0 32px;
 
+		@media (max-height: 579px) {
+			padding-top: 100px !important;
+		}
+
 		@include media(lg) {
 			position: relative;
 			height: 100%;

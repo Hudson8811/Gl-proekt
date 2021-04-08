@@ -568,8 +568,8 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 				el: '.services-slider-pagi'
 			},
 			navigation: {
-				prevEl: '.services-slider-prev',
-				nextEl: '.services-slider-next'
+				prevEl: '.services-slider__nav .services-slider-prev',
+				nextEl: '.services-slider__nav .services-slider-next'
 			},
 			speed: 300,
 			loop: true,
@@ -608,8 +608,8 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 			el: '.application-section__paginate'
 		},
 		navigation: {
-			prevEl: '.slider__btn--prev',
-			nextEl: '.slider__btn--next'
+			prevEl: '.application-section__nav .slider__btn--prev',
+			nextEl: '.application-section__nav .slider__btn--next'
 		},
 	});
 })();
@@ -625,8 +625,8 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 			el: '.we-use__paginate'
 		},
 		navigation: {
-			prevEl: '.slider__btn--prev',
-			nextEl: '.slider__btn--next'
+			prevEl: '.we-use__nav .slider__btn--prev',
+			nextEl: '.we-use__nav .slider__btn--next'
 		},
 	});
 })();
@@ -680,8 +680,8 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 					el: '.advantages-pagi'
 				},
 				navigation: {
-					prevEl: '.advantages-prev',
-					nextEl: '.advantages-next'
+					prevEl: '.advantages__nav .advantages-prev',
+					nextEl: '.advantages__nav .advantages-next'
 				},
 				speed: 300,
 				slidesPerView: 'auto',
@@ -702,8 +702,8 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 			el: '.projects-pagi'
 		},
 		navigation: {
-			prevEl: '.projects-prev',
-			nextEl: '.projects-next'
+			prevEl: '.projects__nav .projects-prev',
+			nextEl: '.projects__nav .projects-next'
 		},
 		speed: 300,
 		slidesPerView: 'auto',
@@ -720,13 +720,13 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 
 /* Clients slider */
 (function(){
-	var projectsSlider = new Swiper('.__js_clients-slider', {
+	var clientsSlider = new Swiper('.__js_clients-slider', {
 		pagination: {
 			el: '.clients-pagi'
 		},
 		navigation: {
-			prevEl: '.clients-prev',
-			nextEl: '.clients-next'
+			prevEl: '.clients__nav .slider__btn--prev',
+			nextEl: '.clients__nav .slider__btn--next'
 		},
 		speed: 300,
 		slidesPerView: 'auto',
@@ -749,8 +749,8 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 			el: '.news-pagi'
 		},
 		navigation: {
-			prevEl: '.news-prev',
-			nextEl: '.news-next'
+			prevEl: '.news__nav .news-prev',
+			nextEl: '.news__nav .news-next'
 		},
 		speed: 300,
 		slidesPerView: 'auto',
@@ -1061,8 +1061,8 @@ $(window).scroll(function(event) {
 				el: '.production-staff__pagi'
 			},
 			navigation: {
-				prevEl: '.production-staff__prev',
-				nextEl: '.production-staff__next'
+				prevEl: '.production-staff__nav .production-staff__prev',
+				nextEl: '.production-staff__nav .production-staff__next'
 			},
 			speed: 300,
 			slidesPerView: 1,
