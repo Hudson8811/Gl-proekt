@@ -1163,168 +1163,170 @@ $(window).scroll(function(event) {
 
 
 (function() {
-	let words = document.querySelectorAll('.__js_negative-shift');
+	if ($('.plan').length < 1) {
+		let words = document.querySelectorAll('.__js_negative-shift');
 
-	let abc = {
-		'A': {ratio: 0, percent: 29},
-		'B': {ratio: 184/1462, percent: 29},
-		'C': {ratio: 119/1503, percent: 29},
-		'D': {ratio: 184/1462, percent: 29},
-		'E': {ratio: 184/1462, percent: 29},
-		'F': {ratio: 184/1462, percent: 29},
-		'G': {ratio: 119/1503, percent: 29},
-		'H': {ratio: 184/1462, percent: 29},
-		'I': {ratio: 184/1462, percent: 29},
-		'J': {ratio: -152/1892, percent: 29},
-		'K': {ratio: 184/1462, percent: 29},
-		'L': {ratio: 184/1462, percent: 29},
-		'M': {ratio: 184/1462, percent: 29},
-		'N': {ratio: 184/1462, percent: 29},
-		'O': {ratio: 119/1505, percent: 29},
-		'P': {ratio: 184/1462, percent: 29},
-		'Q': {ratio: 119/1833, percent: 29},
-		'R': {ratio: 184/1462, percent: 29},
-		'S': {ratio: 94/1503, percent: 29},
-		'T': {ratio: 41/1462, percent: 29},
-		'U': {ratio: 174/1462, percent: 29},
-		'V': {ratio: 0, percent: 29},
-		'W': {ratio: 0, percent: 29},
-		'X': {ratio: 0, percent: 29},
-		'Y': {ratio: 0, percent: 29},
-		'Z': {ratio: 49/1462, percent: 29},
-		'a': {ratio: 86/1161, percent: 45},
-		'b': {ratio: 160/1576, percent: 45},
-		'c': {ratio: 92/1159, percent: 45},
-		'd': {ratio: 92/1576, percent: 45},
-		'e': {ratio: 92/1159, percent: 45},
-		'f': {ratio: 41/1567, percent: 45},
-		'g': {ratio: 6/1631, percent: 45},
-		'h': {ratio: 160/1556, percent: 45},
-		'i': {ratio: 147/1556, percent: 45},
-		'j': {ratio: -131/2048, percent: 45},
-		'k': {ratio: 160/1556, percent: 45},
-		'l': {ratio: 160/1556, percent: 45},
-		'm': {ratio: 160/1139, percent: 45},
-		'n': {ratio: 160/1139, percent: 45},
-		'o': {ratio: 92/1159, percent: 45},
-		'p': {ratio: 160/1631, percent: 45},
-		'q': {ratio: 92/1631, percent: 45},
-		'r': {ratio: 160/1139, percent: 45},
-		's': {ratio: 92/1159, percent: 45},
-		't': {ratio: 47/1376, percent: 45},
-		'u': {ratio: 154/1138, percent: 45},
-		'v': {ratio: 0, percent: 45},
-		'w': {ratio: 20/1118, percent: 45},
-		'x': {ratio: 10/1118, percent: 45},
-		'y': {ratio: 0, percent: 45},
-		'z': {ratio: 55/1118, percent: 45},
-		'0': {ratio: 74/1505, percent: 27},
-		'1': {ratio: 121/1462, percent: 27},
-		'2': {ratio: 78/1483, percent: 27},
-		'3': {ratio: 78/1503, percent: 27},
-		'4': {ratio: 35/1462, percent: 27},
-		'5': {ratio: 100/1482, percent: 27},
-		'6': {ratio: 72/1499, percent: 27},
-		'7': {ratio: 50/1460, percent: 27},
-		'8': {ratio: 72/1501, percent: 27},
-		'9': {ratio: 66/1499, percent: 27},
-		'А': {ratio: 0, percent: 29},
- 'Б': {ratio: 184/1462, percent: 29},
- 'В': {ratio: 184/1462, percent: 29},
- 'Г': {ratio: 184/1462, percent: 29},
- 'Д': {ratio: 10/1462, percent: 29},
- 'Е': {ratio: 184/1462, percent: 29},
- 'Ё': {ratio: 184/1878, percent: 29},
- 'Ж': {ratio: 0, percent: 29},
- 'З': {ratio: 94/1503, percent: 29},
- 'И': {ratio: 184/1462, percent: 29},
- 'Й': {ratio: 184/1462, percent: 29},
- 'К': {ratio: 184/1462, percent: 29},
- 'Л': {ratio: 16/1482, percent: 29},
- 'М': {ratio: 184/1462, percent: 29},
- 'Н': {ratio: 184/1462, percent: 29},
- 'О': {ratio: 119/1505, percent: 29},
- 'П': {ratio: 184/1462, percent: 29},
- 'Р': {ratio: 184/1462, percent: 29},
- 'С': {ratio: 119/1503, percent: 29},
- 'Т': {ratio: 41/1462, percent: 29},
- 'У': {ratio: 0, percent: 29},
- 'Ф': {ratio: 92/1503, percent: 29},
- 'Х': {ratio: 0, percent: 29},
- 'Ц': {ratio: 184/1888, percent: 29},
- 'Ч': {ratio: 109/1462, percent: 29},
- 'Ш': {ratio: 184/1462, percent: 29},
- 'Щ': {ratio: 184/1888, percent: 29},
- 'Ъ': {ratio: 0, percent: 29},
- 'Ы': {ratio: 184/1462, percent: 29},
- 'Ь': {ratio: 184/1462, percent: 29},
- 'Э': {ratio: 72/1503, percent: 29},
- 'Ю': {ratio: 184/1505, percent: 29},
- 'Я': {ratio: -10/1462, percent: 29},
- 'а': {ratio: 86/1161, percent: 45},
- 'б': {ratio: 92/1593, percent: 45},
- 'в': {ratio: 160/1118, percent: 45},
- 'г': {ratio: 160/1118, percent: 45},
- 'д': {ratio: 29/1519, percent: 45},
- 'е': {ratio: 92/1159, percent: 45},
- 'ё': {ratio: 92/1560, percent: 45},
- 'ж': {ratio: 0, percent: 45},
- 'з': {ratio: 78/1159, percent: 45},
- 'и': {ratio: 160/1118, percent: 45},
- 'й': {ratio: 160/1118, percent: 45},
- 'к': {ratio: 160/1118, percent: 45},
- 'л': {ratio: 0, percent: 45},
- 'м': {ratio: 160/1118, percent: 45},
- 'н': {ratio: 160/1118, percent: 45},
- 'о': {ratio: 92/1159, percent: 45},
- 'п': {ratio: 160/1118, percent: 45},
- 'р': {ratio: 160/1613, percent: 45},
- 'с': {ratio: 92/1159, percent: 45},
- 'т': {ratio: 47/1118, percent: 45},
- 'у': {ratio: 0, percent: 45},
- 'ф': {ratio: 92/2048, percent: 45},
- 'х': {ratio: 10/1118, percent: 45},
- 'ц': {ratio: 160/1519, percent: 45},
- 'ч': {ratio: 123/1118, percent: 45},
- 'ш': {ratio: 160/1118, percent: 45},
- 'щ': {ratio: 160/1519, percent: 45},
- 'ъ': {ratio: 0, percent: 45},
- 'ы': {ratio: 160/1118, percent: 45},
- 'ь': {ratio: 160/1118, percent: 45},
- 'э': {ratio: 74/1159, percent: 45},
- 'ю': {ratio: 160/1159, percent: 45},
- 'я': {ratio: 0, percent: 45}
- };
+		let abc = {
+			'A': {ratio: 0, percent: 29},
+			'B': {ratio: 184/1462, percent: 29},
+			'C': {ratio: 119/1503, percent: 29},
+			'D': {ratio: 184/1462, percent: 29},
+			'E': {ratio: 184/1462, percent: 29},
+			'F': {ratio: 184/1462, percent: 29},
+			'G': {ratio: 119/1503, percent: 29},
+			'H': {ratio: 184/1462, percent: 29},
+			'I': {ratio: 184/1462, percent: 29},
+			'J': {ratio: -152/1892, percent: 29},
+			'K': {ratio: 184/1462, percent: 29},
+			'L': {ratio: 184/1462, percent: 29},
+			'M': {ratio: 184/1462, percent: 29},
+			'N': {ratio: 184/1462, percent: 29},
+			'O': {ratio: 119/1505, percent: 29},
+			'P': {ratio: 184/1462, percent: 29},
+			'Q': {ratio: 119/1833, percent: 29},
+			'R': {ratio: 184/1462, percent: 29},
+			'S': {ratio: 94/1503, percent: 29},
+			'T': {ratio: 41/1462, percent: 29},
+			'U': {ratio: 174/1462, percent: 29},
+			'V': {ratio: 0, percent: 29},
+			'W': {ratio: 0, percent: 29},
+			'X': {ratio: 0, percent: 29},
+			'Y': {ratio: 0, percent: 29},
+			'Z': {ratio: 49/1462, percent: 29},
+			'a': {ratio: 86/1161, percent: 45},
+			'b': {ratio: 160/1576, percent: 45},
+			'c': {ratio: 92/1159, percent: 45},
+			'd': {ratio: 92/1576, percent: 45},
+			'e': {ratio: 92/1159, percent: 45},
+			'f': {ratio: 41/1567, percent: 45},
+			'g': {ratio: 6/1631, percent: 45},
+			'h': {ratio: 160/1556, percent: 45},
+			'i': {ratio: 147/1556, percent: 45},
+			'j': {ratio: -131/2048, percent: 45},
+			'k': {ratio: 160/1556, percent: 45},
+			'l': {ratio: 160/1556, percent: 45},
+			'm': {ratio: 160/1139, percent: 45},
+			'n': {ratio: 160/1139, percent: 45},
+			'o': {ratio: 92/1159, percent: 45},
+			'p': {ratio: 160/1631, percent: 45},
+			'q': {ratio: 92/1631, percent: 45},
+			'r': {ratio: 160/1139, percent: 45},
+			's': {ratio: 92/1159, percent: 45},
+			't': {ratio: 47/1376, percent: 45},
+			'u': {ratio: 154/1138, percent: 45},
+			'v': {ratio: 0, percent: 45},
+			'w': {ratio: 20/1118, percent: 45},
+			'x': {ratio: 10/1118, percent: 45},
+			'y': {ratio: 0, percent: 45},
+			'z': {ratio: 55/1118, percent: 45},
+			'0': {ratio: 74/1505, percent: 27},
+			'1': {ratio: 121/1462, percent: 27},
+			'2': {ratio: 78/1483, percent: 27},
+			'3': {ratio: 78/1503, percent: 27},
+			'4': {ratio: 35/1462, percent: 27},
+			'5': {ratio: 100/1482, percent: 27},
+			'6': {ratio: 72/1499, percent: 27},
+			'7': {ratio: 50/1460, percent: 27},
+			'8': {ratio: 72/1501, percent: 27},
+			'9': {ratio: 66/1499, percent: 27},
+			'А': {ratio: 0, percent: 29},
+			'Б': {ratio: 184/1462, percent: 29},
+			'В': {ratio: 184/1462, percent: 29},
+			'Г': {ratio: 184/1462, percent: 29},
+			'Д': {ratio: 10/1462, percent: 29},
+			'Е': {ratio: 184/1462, percent: 29},
+			'Ё': {ratio: 184/1878, percent: 29},
+			'Ж': {ratio: 0, percent: 29},
+			'З': {ratio: 94/1503, percent: 29},
+			'И': {ratio: 184/1462, percent: 29},
+			'Й': {ratio: 184/1462, percent: 29},
+			'К': {ratio: 184/1462, percent: 29},
+			'Л': {ratio: 16/1482, percent: 29},
+			'М': {ratio: 184/1462, percent: 29},
+			'Н': {ratio: 184/1462, percent: 29},
+			'О': {ratio: 119/1505, percent: 29},
+			'П': {ratio: 184/1462, percent: 29},
+			'Р': {ratio: 184/1462, percent: 29},
+			'С': {ratio: 119/1503, percent: 29},
+			'Т': {ratio: 41/1462, percent: 29},
+			'У': {ratio: 0, percent: 29},
+			'Ф': {ratio: 92/1503, percent: 29},
+			'Х': {ratio: 0, percent: 29},
+			'Ц': {ratio: 184/1888, percent: 29},
+			'Ч': {ratio: 109/1462, percent: 29},
+			'Ш': {ratio: 184/1462, percent: 29},
+			'Щ': {ratio: 184/1888, percent: 29},
+			'Ъ': {ratio: 0, percent: 29},
+			'Ы': {ratio: 184/1462, percent: 29},
+			'Ь': {ratio: 184/1462, percent: 29},
+			'Э': {ratio: 72/1503, percent: 29},
+			'Ю': {ratio: 184/1505, percent: 29},
+			'Я': {ratio: -10/1462, percent: 29},
+			'а': {ratio: 86/1161, percent: 45},
+			'б': {ratio: 92/1593, percent: 45},
+			'в': {ratio: 160/1118, percent: 45},
+			'г': {ratio: 160/1118, percent: 45},
+			'д': {ratio: 29/1519, percent: 45},
+			'е': {ratio: 92/1159, percent: 45},
+			'ё': {ratio: 92/1560, percent: 45},
+			'ж': {ratio: 0, percent: 45},
+			'з': {ratio: 78/1159, percent: 45},
+			'и': {ratio: 160/1118, percent: 45},
+			'й': {ratio: 160/1118, percent: 45},
+			'к': {ratio: 160/1118, percent: 45},
+			'л': {ratio: 0, percent: 45},
+			'м': {ratio: 160/1118, percent: 45},
+			'н': {ratio: 160/1118, percent: 45},
+			'о': {ratio: 92/1159, percent: 45},
+			'п': {ratio: 160/1118, percent: 45},
+			'р': {ratio: 160/1613, percent: 45},
+			'с': {ratio: 92/1159, percent: 45},
+			'т': {ratio: 47/1118, percent: 45},
+			'у': {ratio: 0, percent: 45},
+			'ф': {ratio: 92/2048, percent: 45},
+			'х': {ratio: 10/1118, percent: 45},
+			'ц': {ratio: 160/1519, percent: 45},
+			'ч': {ratio: 123/1118, percent: 45},
+			'ш': {ratio: 160/1118, percent: 45},
+			'щ': {ratio: 160/1519, percent: 45},
+			'ъ': {ratio: 0, percent: 45},
+			'ы': {ratio: 160/1118, percent: 45},
+			'ь': {ratio: 160/1118, percent: 45},
+			'э': {ratio: 74/1159, percent: 45},
+			'ю': {ratio: 160/1159, percent: 45},
+			'я': {ratio: 0, percent: 45}
+		};
 
-	if (words && windowWidth >= 768) {
-		setIndent();
-	}
-
-	$(window).on('resize', function() {
-		if (words.length && windowWidth >= 768) {
+		if (words && windowWidth >= 768) {
 			setIndent();
-		} else {
-			words.forEach(function(item) {
-				item.removeAttribute('style');
-				if(item.hasAttribute('data-content')) item.innerHTML = item.getAttribute('data-content');
-			});
 		}
-	})
 
-	function setIndent() {
-		words.forEach(function(item) {
-			let itemStyles = window.getComputedStyle(item, null);
-			let lh = Math.round(parseFloat(itemStyles.getPropertyValue('line-height')));
-			let height = item.clientHeight - parseInt(itemStyles.getPropertyValue('padding-top'), 10) - parseInt(itemStyles.getPropertyValue('padding-bottom'), 10);
-
-			item.setAttribute('data-content', item.textContent);
-
-			if (height / lh < 1.2) {
-				negativeShift(item);
+		$(window).on('resize', function() {
+			if (words.length && windowWidth >= 768) {
+				setIndent();
 			} else {
-				magic(item);
+				words.forEach(function (item) {
+					item.removeAttribute('style');
+					if (item.hasAttribute('data-content')) item.innerHTML = item.getAttribute('data-content');
+				});
 			}
 		})
+
+		function setIndent() {
+			words.forEach(function(item) {
+				let itemStyles = window.getComputedStyle(item, null);
+				let lh = Math.round(parseFloat(itemStyles.getPropertyValue('line-height')));
+				let height = item.clientHeight - parseInt(itemStyles.getPropertyValue('padding-top'), 10) - parseInt(itemStyles.getPropertyValue('padding-bottom'), 10);
+
+				item.setAttribute('data-content', item.textContent);
+
+				if (height / lh < 1.2) {
+					negativeShift(item);
+				} else {
+					magic(item);
+				}
+			})
+		}
 
 		function negativeShift(it) {
 			let fz = parseInt(window.getComputedStyle(it, null).getPropertyValue('font-size'), 10);
@@ -1348,9 +1350,9 @@ $(window).scroll(function(event) {
 			document.body.appendChild(tmp);
 
 			let content = el.textContent.split(''),
-					oneLineHeight = tmp.scrollHeight,
-					lines = [],
-					i = 0;
+				oneLineHeight = tmp.scrollHeight,
+				lines = [],
+				i = 0;
 
 			while (i < content.length) {
 				let line = tmp.innerHTML = '';
