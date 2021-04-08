@@ -127,7 +127,7 @@ block content
 			include modules/lines
 			.production-contacts__left(itemscope itemtype="http://schema.org/Organization")
 				h2.production-contacts__title.__js_negative-shift Адрес производства
-				div(itemprop="address")
+				div(itemprop="address" itemscope itemtype="https://schema.org/PostalAddress")
 					.production-contacts__city(itemprop="addressLocality") г. Москва
 					.production-contacts__info
 						address(itemprop="streetAddress") Деловой квартал "Сириус Парк", <br>Каширское шоссе д. 3, корп. 2, стр. 2

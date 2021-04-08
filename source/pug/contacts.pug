@@ -31,7 +31,7 @@ block content
 			.contacts__bottom-container.container
 				include modules/lines
 				.contacts__bottom-left(itemscope itemtype="http://schema.org/Organization")
-					div(itemprop="address")
+					div(itemprop="address" itemscope itemtype="https://schema.org/PostalAddress")
 						.contacts__bottom-city(itemprop="addressLocality") г. Москва
 						.contacts__bottom-info
 							address
