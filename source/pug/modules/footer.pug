@@ -34,11 +34,11 @@ footer.footer(itemscope itemtype="http://schema.org/WPFooter")
 				+social('footer__social', ['facebook', 'instagram'])
 
 		.footer__wrapper.footer__wrapper--bottom
-			.footer__copy
-				span(itemprop="copyrightYear") © 2007 – 2020
-				span(itemprop="copyrightHolder") ООО «Гласс Проект»;
+			.footer__copy(itemscope itemtype="http://schema.org/Organization")
+				span © <span itemprop="copyrightYear">2007</span> – 2020
+				span(itemprop="name") ООО «Гласс Проект»;
 				span ОГРН 110507400256;
-				span ИНН 1105074002560
+				span(itemprop="vatID") ИНН 1105074002560
 			a.footer__privacy(itemprop="url", href="#") Политика конфиденциальности
 			.footer__developer
 				a(itemprop="url", href="#") Developed by

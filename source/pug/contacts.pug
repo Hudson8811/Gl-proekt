@@ -31,13 +31,14 @@ block content
 			.contacts__bottom-container.container
 				include modules/lines
 				.contacts__bottom-left(itemscope itemtype="http://schema.org/Organization")
-					.contacts__bottom-city(itemprop="addressLocality") г. Москва
-					.contacts__bottom-info
-						address
-							span(itemprop="legalName") ООО «Гласс Проект» <br>
-							span(itemprop="vatID") ИНН 5036104884
-						address(itemprop="streetAddress") Деловой квартал "Сириус Парк", <br>Каширское шоссе д. 3, корп. 2, стр. 2
-						address <a itemprop="telephone" href="tel:+74951503400">+7 (495) 150-34-00</a> <br> <a itemprop="email" href="mailto:mail@glassproekt.ru">mail@glassproekt.ru</a>
+					div(itemprop="address")
+						.contacts__bottom-city(itemprop="addressLocality") г. Москва
+						.contacts__bottom-info
+							address
+								span(itemprop="name") ООО «Гласс Проект» <br>
+								span(itemprop="vatID") ИНН 5036104884
+							address(itemprop="streetAddress") Деловой квартал "Сириус Парк", <br>Каширское шоссе д. 3, корп. 2, стр. 2
+							address <a itemprop="telephone" href="tel:+74951503400">+7 (495) 150-34-00</a> <br> <a itemprop="email" href="mailto:mail@glassproekt.ru">mail@glassproekt.ru</a>
 					.contacts__bottom-social
 						a(href="" target="_blank")
 							+icon('facebook')(width="29", height="29")
