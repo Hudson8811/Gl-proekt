@@ -1844,6 +1844,12 @@ p {
   }
 }
 
+@media (max-height: 800px) {
+  .navigation__link {
+    font-size: 22px;
+  }
+}
+
 .navigation__link:focus {
   outline: none;
   color: #01a5e4;

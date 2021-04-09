@@ -5,8 +5,16 @@ var DURATION = 300;
 var mobileBreakpoint = 992;
 var windowWidth = $(window).width();
 
+$(document).ready(function (){
+	if (screen.width < 450 && window.orientation === 0) {
+		$('head meta[name="viewport"]').attr('content', 'width=414, maximum-scale=1,user-scalable=none, minimum-scale=0.1');
+	} else {
+		$('head meta[name="viewport"]').attr('content', 'width=device-width, maximum-scale=1,user-scalable=none, minimum-scale=0.1');
+	}
+});
+
 $(window).resize(function () {
-	if (window.screen.width < 450) {
+	if (screen.width < 450 && window.orientation === 0) {
 		$('head meta[name="viewport"]').attr('content', 'width=414, maximum-scale=1,user-scalable=none, minimum-scale=0.1');
 	} else {
 		$('head meta[name="viewport"]').attr('content', 'width=device-width, maximum-scale=1,user-scalable=none, minimum-scale=0.1');
