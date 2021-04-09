@@ -39,6 +39,12 @@
 	max-width: 41px;
 	white-space: nowrap;
 	overflow: hidden;
+
+	@include media(lg) {
+		max-width: 100%;
+		white-space: normal;
+		overflow: auto;
+	}
 }
 
 .swiper-pagination-bullet {
@@ -50,6 +56,14 @@
 	display: inline-block;
 	vertical-align: middle;
 	@include transition(width);
+
+	&:nth-child(5) {
+		margin-right: 10px;
+
+		@include media(lg) {
+			margin-right: 1px;
+		}
+	}
 
 	@include media(md) {
 	}

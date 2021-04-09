@@ -546,6 +546,14 @@ p {
   overflow: hidden;
 }
 
+@media (min-width: 992px) {
+  .swiper-pagination-bullets {
+    max-width: 100%;
+    white-space: normal;
+    overflow: auto;
+  }
+}
+
 .swiper-pagination-bullet {
   width: 5px;
   height: 5px;
@@ -555,6 +563,16 @@ p {
   display: inline-block;
   vertical-align: middle;
   transition: width 0.3s ease;
+}
+
+.swiper-pagination-bullet:nth-child(5) {
+  margin-right: 10px;
+}
+
+@media (min-width: 992px) {
+  .swiper-pagination-bullet:nth-child(5) {
+    margin-right: 1px;
+  }
 }
 
 .swiper-pagination-bullet-active {
