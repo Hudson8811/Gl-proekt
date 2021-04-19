@@ -29,11 +29,14 @@
 
 	&__nav {
 		position: absolute;
-		top: 18px;
+		top: 21px;
 		right: 0;
 
+		@include media(md) {
+			top: 32px;
+		}
+
 		@include media(lg) {
-			padding-top: 14px;
 			padding-right: 12px;
 			position: relative;
 			top: unset;

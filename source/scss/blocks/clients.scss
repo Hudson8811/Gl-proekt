@@ -31,12 +31,6 @@
 		}
 	}
 
-	&__nav {
-		@include media(lg) {
-			padding-top: 30px;
-		}
-	}
-
 	&__all {
 		display: inline-block;
 		font-family: $font-family--secondary;

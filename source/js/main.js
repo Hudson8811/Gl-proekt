@@ -334,12 +334,12 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 
 /* 16. Animation of statistics */
 (function() {
-	var facts = $('.facts');
+	var facts = $('.__js_number-parent');
 	var numbers = $('.__js_number');
 	var animationIsDone = false;
 	var scroll = $(window).scrollTop() + $(window).height();
 
-	if ($('*').is('.facts')) {
+	if ($('*').is('.__js_number-parent')) {
 		var offset = facts.offset().top;
 
 		if (!animationIsDone && scroll >= offset + 200) {
@@ -373,16 +373,15 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 					var text = item.text();
 					item.text(text + ending);
 				}
-
 			}
 
 			$(this).easy_number_animate({
 				start_value: 0,
 				end_value: endValueInt,
 				duration: 1500,
+				delimiter: ' ',
 				after: addEnding
 			});
-
 		});
 
 		animationIsDone = true;

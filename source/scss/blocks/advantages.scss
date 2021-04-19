@@ -149,11 +149,12 @@
 
 	&__nav {
 		position: absolute;
-		top: -5px;
+		top: 25px;
 		right: 0;
 
 		@include media(lg) {
 			display: none;
+			top: -5px;
 		}
 	}
 
