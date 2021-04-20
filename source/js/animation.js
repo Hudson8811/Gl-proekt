@@ -20,7 +20,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 	var letterTl = gsap.timeline({
 		scrollTrigger: {
 			trigger: ".feedback__icon",
-			start: "top bottom",
+			start: "top center",
 			end: '+=250',
 			scrub: 1,
 		}
@@ -240,7 +240,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 			var letterTl = gsap.timeline({
 				scrollTrigger: {
 					trigger: ".feedback__icon",
-					start: "top bottom",
+					start: "top center",
 					end: '+=250',
 					scrub: 1,
 				}
