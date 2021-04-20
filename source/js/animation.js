@@ -23,7 +23,6 @@ if (!mobileCheck() && $('.plan').length > 0) {
 			start: "top 75%",
 			end: '+=250',
 			scrub: 1,
-			markers: true
 		}
 	}).from(".feedback__letter--3",  { yPercent: 100 }, 0);
 
