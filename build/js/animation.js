@@ -20,9 +20,10 @@ if (!mobileCheck() && $('.plan').length > 0) {
 	var letterTl = gsap.timeline({
 		scrollTrigger: {
 			trigger: ".feedback__icon",
-			start: "top center",
+			start: "top 75%",
 			end: '+=250',
 			scrub: 1,
+			markers: true
 		}
 	}).from(".feedback__letter--3",  { yPercent: 100 }, 0);
 
@@ -240,7 +241,7 @@ if (!mobileCheck() && $('.plan').length > 0) {
 			var letterTl = gsap.timeline({
 				scrollTrigger: {
 					trigger: ".feedback__icon",
-					start: "top center",
+					start: "top 75%",
 					end: '+=250',
 					scrub: 1,
 				}
