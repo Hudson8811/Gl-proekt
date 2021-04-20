@@ -1390,4 +1390,39 @@ $(window).scroll(function(event) {
 			}).join('');
 		}
 	}
+
+	$(window).on('load',function (){
+		if ($('#growth').length > 0) {
+			gsap.registerPlugin(ScrollTrigger,DrawSVGPlugin);
+			var tlgrowth = gsap.timeline({paused: true})
+				.from(".path-1", {duration: 0.5, autoAlpha: 0, scale: 0, transformOrigin: 'center', ease: "elastic(2.5, 1)"}, 0.25)
+				.from(".path-12", {duration: 0.5, autoAlpha: 0, scale: 0, transformOrigin: 'center', ease: "elastic(2.5, 1)"}, 0.5)
+				.from(".path-11", {duration: 0.5, autoAlpha: 0, scale: 0, transformOrigin: 'center', ease: "elastic(2.5, 1)"}, 0.75)
+				.from(".path-10", {duration: 0.5, autoAlpha: 0, scale: 0, transformOrigin: 'center', ease: "elastic(2.5, 1)"}, 1)
+				.from(".path-9", {duration: 0.5, autoAlpha: 0, scale: 0, transformOrigin: 'center', ease: "elastic(2.5, 1)"}, 1.25)
+				.from(".path-8", {duration: 0.5, autoAlpha: 0, scale: 0, transformOrigin: 'center', ease: "elastic(2.5, 1)"}, 1.5)
+				.from(".path-7", {duration: 0.5, autoAlpha: 0, scale: 0, transformOrigin: 'center', ease: "elastic(2.5, 1)"}, 1.75)
+				.from(".path-6", {duration: 0.5, autoAlpha: 0, scale: 0, transformOrigin: 'center', ease: "elastic(2.5, 1)"}, 2)
+				.from(".path-5", {duration: 0.5, autoAlpha: 0, scale: 0, transformOrigin: 'center', ease: "elastic(2.5, 1)"}, 2.25)
+				.from(".path-4", {duration: 0.5, autoAlpha: 0, scale: 0, transformOrigin: 'center', ease: "elastic(2.5, 1)"}, 2.5)
+				.from(".path-2", {duration: 0.5, autoAlpha: 0, scale: 0, transformOrigin: 'center', ease: "elastic(2.5, 1)"}, 2.75)
+				.from(".path-3", {duration: 0.5, autoAlpha: 0, scale: 0, transformOrigin: 'center', ease: "elastic(2.5, 1)"}, 3);
+
+
+			tlgrowth.from("#growth-path", {duration: 3, drawSVG: 0}, 0.4)
+
+			ScrollTrigger.create({
+				trigger: "#growth",
+				scrub: true,
+				start: "top center",
+				end: "bottom center",
+				onEnter: () =>{
+					tlgrowth.play();
+				},
+				onLeaveBack: () =>{
+					tlgrowth.reverse();
+				}
+			});
+		}
+	});
 })();
