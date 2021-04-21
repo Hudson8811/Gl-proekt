@@ -2994,7 +2994,7 @@ p {
   left: -5px;
   z-index: 1;
   background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' width='200' height='200'%3e%3ccircle cx='100' cy='100' r='80' fill='%23fff' /%3e%3c/svg%3e") no-repeat center;
-  background-size: 50%;
+  background-size: 44%;
   background-color: #01a5e4;
 }
 
