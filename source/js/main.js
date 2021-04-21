@@ -1418,9 +1418,6 @@ $(window).scroll(function(event) {
 				end: "bottom center",
 				onEnter: () =>{
 					tlgrowth.play();
-				},
-				onLeaveBack: () =>{
-					tlgrowth.reverse();
 				}
 			});
 		}
