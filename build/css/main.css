@@ -4859,24 +4859,41 @@ p {
 
 .feedback__icon {
   margin-bottom: 40px;
+  width: 86px;
+  height: 93px;
+  position: relative;
+  overflow: hidden;
 }
 
 @media (min-width: 992px) {
   .feedback__icon {
     margin-bottom: 100px;
-  }
-}
-
-.feedback__icon img {
-  width: 86px;
-  height: 93px;
-}
-
-@media (min-width: 992px) {
-  .feedback__icon img {
     width: 140px;
     height: 152px;
   }
+}
+
+.feedback__letter {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: bottom;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.feedback__letter--1 {
+  z-index: 1;
+}
+
+.feedback__letter--2 {
+  z-index: 3;
+}
+
+.feedback__letter--3 {
+  z-index: 2;
 }
 
 .feedback__title {
@@ -7086,6 +7103,7 @@ p {
   }
 }
 
+.about-page__growth-image svg,
 .about-page__growth-image img {
   max-width: 100%;
   height: auto;
