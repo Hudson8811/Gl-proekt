@@ -7817,8 +7817,7 @@ p {
 .header {
   position: absolute;
   top: 0;
-  width: 100vw;
-  min-width: 100vw;
+  width: 100%;
   left: 0;
   z-index: 101;
   padding: 26px 0 25px;
