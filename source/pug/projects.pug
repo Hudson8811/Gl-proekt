@@ -14,10 +14,15 @@ block content
 			h1.projects-page__heading.heading.heading--large.__js_negative-shift Проекты
 
 			.projects-page__filter.filter
-				each val, key in { 1: 'Все проекты', 2: 'Бизнес-центры', 3: 'Торгово-развлекательные центры', 4: 'Жилые комплексы', 5: 'Коттеджные поселки', 6: 'Гос. объекты', 7: 'Промышленные объекты', 8: 'Общественные пространства'}
-					- let filterVal = val === 'Все проекты' ? '*' : '.__js_' + key;
-					- let activeClass = val === 'Все проекты' ? ' filter__item--active' : '';
-					button(class="filter__item" + activeClass, type="button", data-filter= filterVal)= val
+				label(class="filter__item")
+					input(type="checkbox", value='*', checked)
+					span Все проекты
+
+				each val, key in { 2: 'Бизнес-центры', 3: 'Торгово-развлекательные центры', 4: 'Жилые комплексы', 5: 'Коттеджные поселки', 6: 'Гос. объекты', 7: 'Промышленные объекты', 8: 'Общественные пространства'}
+					- let filterVal = '.__js_' + key;
+					label(class="filter__item")
+						input(type="checkbox", value=filterVal)
+						span= val
 
 			section.projects-page__search.advanced-search
 				h2.advanced-search__heading Расширенный поиск
@@ -29,9 +34,9 @@ block content
 								input.visually-hidden(id="checkbox-" + index, type="checkbox", name="checkbox-" + index, checked)
 								label(for="checkbox-" + index)= text
 
-			ul.projects-page__list.__js_projects-filter
+			div.projects-page__list.__js_projects-filter
 				each num in ['1', '2', '3', '4', '5', '6', '7', '8']
-					li.projects-page__item.preview-card(class="__js_" + num)
+					div.projects-page__item.preview-card(class="__js_" + num)
 						a.preview-card__image(href= URLS.projectDetail, target='_blank')
 							//-.preview-card__bg-digit 01
 							img(src='img/projects-page/' + num + '.jpg', srcset='img/projects-page/' + num + '@2x.jpg 2x', width='469', height='651', alt='')

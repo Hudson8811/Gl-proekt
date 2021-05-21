@@ -4,29 +4,45 @@
 	position: relative;
 
 	&__item {
-		padding: 4px 10px;
-		background-color: $color-default-white;
-		font-family: $font-family--secondary;
-		font-size: 18px;
-		line-height: 26px;
-		color: $color-dark2;
-		border: none;
-		cursor: pointer;
-		margin-bottom: 5px;
-		@include transition(all);
-
-		@include hover {
-			background-color: $color-blue;
-			color: $color-default-white;
-		}
+		display: inline-block;
+		user-select: none;
 
 		&:not(:last-child) {
 			margin-right: 1px;
 		}
 
-		&--active {
-			background-color: $color-blue;
-			color: $color-default-white;
+		span{
+			padding: 4px 10px;
+			background-color: $color-default-white;
+			font-family: $font-family--secondary;
+			font-size: 18px;
+			line-height: 26px;
+			color: $color-dark2;
+			border: none;
+			margin-bottom: 5px;
+			cursor: pointer;
+			display: inline-block;
+			@include transition(all);
+			@include hover {
+				background-color: $color-blue;
+				color: $color-default-white;
+			}
 		}
+
+		input{
+			display: none;
+			opacity: 0;
+			visibility: hidden;
+			width: 1px;
+			height: 1px;
+			position: absolute;
+			&:checked{
+				+span{
+					background-color: $color-blue;
+					color: $color-default-white;
+				}
+			}
+		}
+
 	}
 }

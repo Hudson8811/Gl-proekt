@@ -1115,9 +1115,9 @@ $(window).scroll(function(event) {
 (function(){
 	$(window).on('load', function() {
 		var select = $('.__js_filter-select');
-		var filterItem = $('.filter__item');
-		var filterItemAll = $('.filter__item[data-filter="*"]');
-		var filterActiveClass = 'filter__item--active';
+		var filterItem = $('.filter__item input');
+		var filterItemAll = $('.filter__item input[value="*"]');
+		//var filterActiveClass = 'filter__item--active';
 
 		var newsFilter = $('.__js_news-filter').isotope({
 			itemSelector: '.news-page__item',
@@ -1149,18 +1149,33 @@ $(window).scroll(function(event) {
 			grid.isotope({ filter: filterValue });
 		});
 
-		filterItem.on('click', function() {
-			var filterValue = $(this).attr('data-filter');
+		filterItem.on('change', function() {
 
-			$(this).addClass(filterActiveClass).siblings().removeClass(filterActiveClass);
+			var filterValue = '';
+			filterItem.each(function (){
+				if ($(this).is(':checked')){
+					var value = $(this).val();
+					if (value !== '*'){
+						if (filterValue !== '') filterValue+=', ';
+						filterValue += value;
+					} else {
+						filterValue = '*';
+						return false;
+					}
+				}
+			});
+
 			newsFilter.isotope({ filter: filterValue });
 			projectsFilter.isotope({ filter: filterValue });
 		});
 
+
 		$('.__js_news-tag').on('click', function(evt) {
 			evt.preventDefault();
 			var filterValue = $(this).attr('data-filter');
-			$('.filter__item[data-filter="' + filterValue + '"]').addClass(filterActiveClass).siblings().removeClass(filterActiveClass);
+			console.log(filterValue);
+			filterItem.prop('checked',false);
+			$('.filter__item input[value="' + filterValue + '"]').prop('checked',true);
 			newsFilter.isotope({ filter: filterValue });
 		});
 

@@ -22,10 +22,16 @@ block content
 
 			// Filter
 			.news-page__filter.filter.news-page__filter
-				each val, key in { 1: 'Все', 2: 'Проекты', 3: 'Выступления', 4: 'Выставки', 5: 'Пресс-релизы', 6: 'СМИ', 7: 'Экспертное мнение'}
-					- let filterVal = val === 'Все' ? '*' : '.__js_' + key;
-					- let activeClass = val === 'Все' ? ' filter__item--active' : '';
-					button(class="filter__item" + activeClass, type="button", data-filter= filterVal)= val
+				label(class="filter__item")
+					input(type="checkbox", value='*', checked)
+					span Все
+
+				each val, key in { 2: 'Проекты', 3: 'Выступления', 4: 'Выставки', 5: 'Пресс-релизы', 6: 'СМИ', 7: 'Экспертное мнение'}
+					- let filterVal = '.__js_' + key;
+					label(class="filter__item")
+						input(type="checkbox", value=filterVal)
+						span= val
+
 			.news-page__grid.__js_news-filter
 				.news-page__item.preview-card.preview-card--with-tags.__js_2.__js_7
 					.preview-card__image

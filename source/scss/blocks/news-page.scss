@@ -55,6 +55,9 @@
 			&__bottom-wrapper {
 				align-items: flex-end;
 			}
+			&__content{
+				pointer-events: auto;
+			}
 		}
 
 		&--w50 {
