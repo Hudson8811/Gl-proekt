@@ -42,7 +42,7 @@ function getScrollbarWidth() {
 	return (w1 - w2);
 }
 
-//$('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
+$('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 
 /* site menu */
 (function () {
