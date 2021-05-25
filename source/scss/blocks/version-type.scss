@@ -71,10 +71,20 @@
 		position: absolute;
 		left: -12px;
 		top: 50%;
+		z-index: 1;
 		transform: translateX(-100%) translateY(-50%);
 
 		@include media(sm) {
 			left: -32px;
+		}
+
+		&.left {
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+
+			@include media(sm) {
+				right: -32px;
+			}
 		}
 	}
 }

@@ -449,13 +449,16 @@ $('.header').css({'width': 'calc(100vw - ' + getScrollbarWidth() + 'px)'});
 /* show bubble */
 (function() {
 	var showBubbleBtn = $('.__js_show-bubble');
-	var bubbleClass = 'bubble--active';
 
 	showBubbleBtn.on('click', function(evt) {
 		evt.stopPropagation();
 		var target = $(this).attr('data-target');
 
-		$(target).fadeIn(DURATION).addClass(bubbleClass);
+		if ($(this).offset().left < $(window).width()/2) {
+			$(target).fadeIn(DURATION).addClass('left');
+		} else {
+			$(target).fadeIn(DURATION).removeClass('left');
+		}
 
 		body.one('click', function() {
 			$(target).fadeOut(DURATION);
