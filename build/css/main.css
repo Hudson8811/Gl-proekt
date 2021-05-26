@@ -3856,7 +3856,6 @@ p {
   height: 100%;
   position: relative;
   z-index: 2;
-  pointer-events: none;
 }
 
 .preview-card__tags {
@@ -5663,7 +5662,7 @@ p {
 
 @media (min-width: 768px) {
   .advantages-garden__heading {
-    width: 50%;
+    width: 75%;
     margin-bottom: 32px;
   }
 }
